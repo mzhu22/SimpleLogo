@@ -3,11 +3,11 @@ package backend;
 import Interfaces.IInstruction;
 
 public class Instruction implements IInstruction {
-
+	protected int myParameter; 
 	@Override
-	public Object doAction() {
+	public Number doAction() {
 		// TODO Auto-generated method stub
-		return null;
+		return myParameter;
 	}
 
 }

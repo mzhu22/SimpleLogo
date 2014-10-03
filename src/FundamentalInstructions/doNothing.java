@@ -4,12 +4,12 @@ package FundamentalInstructions;
 public class doNothing extends FundamentalInstruction {
 
 	public doNothing() {
-		super(null,0, null);
+		super(0, "nada");
 	}
 
 	@Override
-	public Object doAction() {
+	public Number doAction() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 }

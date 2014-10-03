@@ -1,18 +1,16 @@
 package FundamentalInstructions;
-import java.util.List;
-
 import Interfaces.IInstruction;
 
 
 public class Forward extends FundamentalInstruction implements IInstruction{
 
-	public Forward( List<Integer> parameters){
-		super(parameters, 1, "fd");
+	public Forward( int parameter){
+		super(parameter, "fd");
 	}
 
 	@Override
-	public Object doAction() {
-		return null;
+	public Number doAction() {
+		return myParameter;
 		// TODO Auto-generated method stub
 		
 	}

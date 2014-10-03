@@ -3,14 +3,14 @@ package FundamentalInstructions;
 public class HideTurtle extends FundamentalInstruction {
 
 	public HideTurtle() {
-		super(null, 0, "Htut");
+		super( 0, "HT");
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Object doAction() {
+	public Number doAction() {
 		// TODO Auto-generated method stub
-		return null;
+		return 0;
 	}
 
 }

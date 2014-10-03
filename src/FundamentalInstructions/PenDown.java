@@ -4,14 +4,14 @@ package FundamentalInstructions;
 public class PenDown extends FundamentalInstruction {
 
 	public PenDown() {
-		super(null, 0, "pDn");
+		super( 1, "pDn");
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Object doAction() {
+	public Number doAction() {
 		// TODO Auto-generated method stub
-		return null;
+		return 1;
 	}
 
 }

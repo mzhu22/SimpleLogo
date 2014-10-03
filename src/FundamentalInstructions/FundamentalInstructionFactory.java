@@ -3,18 +3,17 @@ package FundamentalInstructions;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class InstructionFactory {
+public class FundamentalInstructionFactory {
 
 	public Map<String, Class<?>> myFundamentalInstructions;
 	
-	public FundamentalInstruction getInstruction( String instruction, List<Integer> parameters){
+	public FundamentalInstruction getInstruction( String instruction, int parameters){
 		
 		myFundamentalInstructions = new HashMap<String, Class<?>>();
-		myFundamentalInstructions.put("fd", new Forward(parameters).getClass());
-		myFundamentalInstructions.put("rt", new Rotate(parameters).getClass());
+		myFundamentalInstructions.put("FD", new Forward(parameters).getClass());
+		myFundamentalInstructions.put("FORWARD",new Forward(parameters).getClass()); 
 		
 		
 		return makeInstructionInstance(instruction, parameters);
@@ -22,14 +21,14 @@ public class InstructionFactory {
 	}
 
 	private FundamentalInstruction makeInstructionInstance(String instruction,
-			List<Integer> parameters) {
+			int parameter) {
 		
 		Class<?> instructionType = myFundamentalInstructions.get(instruction);
 		Constructor<?> constructor = null;
 		
 		
 		try {
-			constructor = instructionType.getConstructor(parameters.getClass());
+			constructor = instructionType.getConstructor(int.class);
 			
 			
 		} catch (NoSuchMethodException e) {
@@ -40,7 +39,7 @@ public class InstructionFactory {
 		
 		
 		try {
-			return (FundamentalInstruction) constructor.newInstance(parameters);
+			return (FundamentalInstruction) constructor.newInstance(parameter);
 			
 			
 		} catch (InstantiationException e) {

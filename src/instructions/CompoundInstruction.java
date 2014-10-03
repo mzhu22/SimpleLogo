@@ -9,6 +9,7 @@ import FundamentalInstructions.FundamentalInstruction;
 
 public class CompoundInstruction  extends Instruction implements Iterable<FundamentalInstruction> {
 	protected List<FundamentalInstruction> myComponentInstructions; 
+	protected List<Number> myComponentParameters; 
 	
 	
 	
@@ -24,7 +25,7 @@ public class CompoundInstruction  extends Instruction implements Iterable<Fundam
 	}
 
 	
-	public Object doAction(){
+	public Number doAction(){
 		for(FundamentalInstruction someInstruction : this){
 			someInstruction.doAction(); 
 		}

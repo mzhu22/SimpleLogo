@@ -1,38 +1,31 @@
 package FundamentalInstructions;
-import java.util.List;
-public abstract class FundamentalInstruction {
-	
-	protected int myNumParameters ;  
-	protected List<Integer> myParameters;
+import backend.Instruction;
+public abstract class FundamentalInstruction extends Instruction {
+	 
+	protected int myParameter;
 	protected static String myCode; //Change for different languages later
 
 
-	public FundamentalInstruction( List<Integer> parameters, int numParameters, String Code){
-		myParameters = parameters; 
-		myNumParameters = numParameters ;
+	public FundamentalInstruction( int parameter, String Code){
+		myParameter = parameter; 
 		myCode = Code; 
 	}
 
 
 	public String toString(){
 		StringBuilder toRet = new StringBuilder(); 
-		
-		toRet.append("my Parameters are : "); 
-		
-		for(Integer i : myParameters){
-			toRet.append(i +" " + "\n"); 
-		}
-		toRet.append(" . I have "+myNumParameters +" parameters."); 	
+	
+		toRet.append(myCode + " :" + myParameter); 	
 		return toRet.toString(); 
 	}
 	
 
-	public abstract Object doAction();
+	public abstract Number doAction();
 	
 	// TO DO pass doaction actionable frontend object
 
-	protected List<Integer> getParameters(){
-		return myParameters; 
+	protected int getParameters(){
+		return myParameter; 
 	}	
 }
 

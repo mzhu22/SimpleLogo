@@ -1,15 +1,16 @@
 package FundamentalInstructions;
-public class ShowTurtle extends FundamentalInstruction {
 
-	public ShowTurtle() {
-		super(1, "st");
+public class Right extends FundamentalInstruction {
+
+	public Right(int parameter, String Code) {
+		super(parameter, Code);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public Number doAction() {
 		// TODO Auto-generated method stub
-		return null;
+		return myParameter;
 	}
 
 }

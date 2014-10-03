@@ -4,7 +4,8 @@ package FundamentalInstructions;
 public class PenDown extends FundamentalInstruction {
 
 	public PenDown() {
-		super( 1, "pDn");
+		super(1);
+		myCode = "pDn";
 		// TODO Auto-generated constructor stub
 	}
 

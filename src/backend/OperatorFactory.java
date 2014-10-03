@@ -1,11 +1,14 @@
-package FundamentalInstructions;
+package backend;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FundamentalInstructionFactory {
+import FundamentalInstructions.Forward;
+import FundamentalInstructions.FundamentalInstruction;
+
+public class OperatorFactory {
 
 	public Map<String, Class<?>> myFundamentalInstructions;
 	

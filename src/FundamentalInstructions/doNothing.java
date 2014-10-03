@@ -4,7 +4,8 @@ package FundamentalInstructions;
 public class doNothing extends FundamentalInstruction {
 
 	public doNothing() {
-		super(0, "nada");
+		super(0);
+		myCode = "nada"; 
 	}
 
 	@Override

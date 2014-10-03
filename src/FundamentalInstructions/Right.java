@@ -2,8 +2,9 @@ package FundamentalInstructions;
 
 public class Right extends FundamentalInstruction {
 
-	public Right(int parameter, String Code) {
-		super(parameter, Code);
+	public Right(int parameter) {
+		super(parameter);
+		myCode = "rt"; 
 		// TODO Auto-generated constructor stub
 	}
 

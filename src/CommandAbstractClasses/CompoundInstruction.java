@@ -1,10 +1,9 @@
-package instructions;
+package CommandAbstractClasses;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
-import backend.Instruction;
 import FundamentalInstructions.FundamentalInstruction;
 
 public class CompoundInstruction  extends Instruction implements Iterable<FundamentalInstruction> {

@@ -1,14 +1,13 @@
 package FundamentalInstructions;
-import backend.Instruction;
+import CommandAbstractClasses.Instruction;
 public abstract class FundamentalInstruction extends Instruction {
 	 
 	protected int myParameter;
 	protected static String myCode; //Change for different languages later
 
 
-	public FundamentalInstruction( int parameter, String Code){
+	public FundamentalInstruction( int parameter){
 		myParameter = parameter; 
-		myCode = Code; 
 	}
 
 

@@ -5,7 +5,8 @@ import Interfaces.IInstruction;
 public class Forward extends FundamentalInstruction implements IInstruction{
 
 	public Forward( int parameter){
-		super(parameter, "fd");
+		super(parameter);
+		myCode = "fd"; 
 	}
 
 	@Override

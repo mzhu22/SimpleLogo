@@ -2,15 +2,20 @@ package FundamentalInstructions;
 public class ShowTurtle extends FundamentalInstruction {
 
 	public ShowTurtle() {
-		super(1);
+		super( null);
 		myCode = "st";
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Number doAction() {
+	public void doAction() {
+		// TODO Auto-generated method stub 
+	}
+
+	@Override
+	public double evaluate() {
 		// TODO Auto-generated method stub
-		return null;
+		return ONE;
 	}
 
 }

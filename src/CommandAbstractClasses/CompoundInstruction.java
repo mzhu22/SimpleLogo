@@ -4,18 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
+import ExpressionTree.ExpressionNode;
 import FundamentalInstructions.FundamentalInstruction;
 
-public class CompoundInstruction  extends Instruction implements Iterable<FundamentalInstruction> {
+public class CompoundInstruction extends ExpressionNode  implements Iterable<FundamentalInstruction> {
+	
+	
 	protected List<FundamentalInstruction> myComponentInstructions; 
 	protected List<Number> myComponentParameters; 
 	
 	
-	
-	public CompoundInstruction(){
-		myComponentInstructions = new ArrayList<FundamentalInstruction>(); 
-		
+	public CompoundInstruction(ExpressionNode right, ExpressionNode left) {
+		super(right, left);
+		// TODO Auto-generated constructor stub
 	}
+	
 	@Override
 	public Iterator<FundamentalInstruction> iterator() {
 		// TODO Auto-generated method stub
@@ -29,5 +32,10 @@ public class CompoundInstruction  extends Instruction implements Iterable<Fundam
 			someInstruction.doAction(); 
 		}
 		return null; 
+	}
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

@@ -3,15 +3,20 @@ package FundamentalInstructions;
 public class HideTurtle extends FundamentalInstruction {
 
 	public HideTurtle() {
-		super( 0);
+		super( null);
 		myCode = "HT"; 
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Number doAction() {
+	public void doAction() {
 		// TODO Auto-generated method stub
-		return 0;
+	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return ZERO;
 	}
 
 }

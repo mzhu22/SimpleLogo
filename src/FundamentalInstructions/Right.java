@@ -1,17 +1,24 @@
 package FundamentalInstructions;
 
+import ExpressionTree.ExpressionNode;
+
 public class Right extends FundamentalInstruction {
 
-	public Right(int parameter) {
-		super(parameter);
+	public Right(int parameter, ExpressionNode myRight) {
+		super(myRight );
 		myCode = "rt"; 
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Number doAction() {
+	public void doAction() {
 		// TODO Auto-generated method stub
-		return myParameter;
+	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return(myInfo = myRight.evaluate());
 	}
 
 }

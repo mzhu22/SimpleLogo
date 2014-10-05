@@ -1,18 +1,20 @@
 package Comparators;
 
 import CommandAbstractClasses.Comparator;
+import ExpressionTree.ExpressionNode;
 
 public class Less extends Comparator {
 
-	public Less(Number first, Number second) {
+
+	public Less(ExpressionNode first, ExpressionNode second) {
 		super(first, second);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public int compare() {
+	public double evaluate() {
 		// TODO Auto-generated method stub
-		return 0; 
+		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
 	}
 
 	

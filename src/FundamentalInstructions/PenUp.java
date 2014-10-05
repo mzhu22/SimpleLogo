@@ -5,15 +5,20 @@ package FundamentalInstructions;
 public class PenUp extends FundamentalInstruction {
 
 	public PenUp(){
-		super(0);
+		super(null);
 		myCode = "pUp"; 
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public Number doAction() {
+	public void doAction() {
 		// TODO Auto-generated method stub
-		return null; 
+	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return ONE;
 	}
 
 }

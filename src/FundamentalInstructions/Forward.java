@@ -1,18 +1,23 @@
 package FundamentalInstructions;
-import Interfaces.IInstruction;
+import ExpressionTree.ExpressionNode;
 
 
-public class Forward extends FundamentalInstruction implements IInstruction{
+public class Forward extends FundamentalInstruction{
 
-	public Forward( int parameter){
-		super(parameter);
+	public Forward( int parameter, ExpressionNode myRight){
+		super(myRight);
 		myCode = "fd"; 
 	}
 
 	@Override
-	public Number doAction() {
-		return myParameter;
+	public void doAction() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return (myInfo = myRight.evaluate());
 	}
 }

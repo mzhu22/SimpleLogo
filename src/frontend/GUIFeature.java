@@ -1,3 +1,11 @@
+/**
+ * This abstract class represents any sort of interaction tool that the user may have to deal with.
+ * An example of this is a button or a drop down menu.
+ * 
+ * @author Safkat Islam
+ * @author Chris Bernt
+ */
+
 package frontend;
 
 import javafx.scene.Node;

@@ -2,14 +2,14 @@ package Comparators;
 
 import CommandAbstractClasses.Operation;
 
-public class Less extends Operation {
+public class Or extends Operation {
 
 
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
+		return ( (getLeft().evaluate() + getRight().evaluate()) != 0 ) ? 1 : 0 ; 
 	}
 
 	@Override
@@ -18,6 +18,4 @@ public class Less extends Operation {
 		
 	}
 
-	
-	
 }

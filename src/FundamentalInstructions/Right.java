@@ -1,17 +1,18 @@
 package FundamentalInstructions;
 
+
 public class Right extends FundamentalInstruction {
 
-	public Right(int parameter) {
-		super(parameter);
-		myCode = "rt"; 
-		// TODO Auto-generated constructor stub
+
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
 	}
 
 	@Override
-	public Number doAction() {
+	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myParameter;
+		return(myInfo = myRight.evaluate());
 	}
 
 }

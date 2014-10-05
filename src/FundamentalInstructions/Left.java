@@ -1,11 +1,19 @@
 package FundamentalInstructions;
 
-public class Left extends Right {
 
-	public Left(int parameter, String Code) {
-		super(-1*parameter);
-		myCode = "lf"; 
-		// TODO Auto-generated constructor stub
+public class Left extends FundamentalInstruction {
+
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 
 }

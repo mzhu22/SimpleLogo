@@ -1,15 +1,15 @@
-package Comparators;
+package MathOperations;
 
 import CommandAbstractClasses.Operation;
 
-public class Less extends Operation {
+public class Minus extends Operation{
 
-
+	
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
+		return -getLeft().evaluate();
 	}
 
 	@Override
@@ -18,6 +18,4 @@ public class Less extends Operation {
 		
 	}
 
-	
-	
 }

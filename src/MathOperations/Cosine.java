@@ -1,15 +1,15 @@
-package Comparators;
+package MathOperations;
 
 import CommandAbstractClasses.Operation;
 
-public class Less extends Operation {
+public class Cosine extends Operation {
 
 
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
+		return Math.cos((PI*getLeft().evaluate())/ONE_EIGHTY);
 	}
 
 	@Override
@@ -18,6 +18,4 @@ public class Less extends Operation {
 		
 	}
 
-	
-	
 }

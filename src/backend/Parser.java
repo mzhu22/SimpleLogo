@@ -7,19 +7,12 @@ public class Parser {
 	
 	
 	public List<String> parse (String input){
-		input = input.toLowerCase();
-    	
-    	List<String> insnList = new ArrayList<>();
-    	String[] splitInput = input.split(" ");
-    	
-    	
+    	return null;
     }
 
 	
 	private ArrayList<ArrayList<String>> parseHelper(){
-		
-		
-		
+		return null;
 	}
 	
 	

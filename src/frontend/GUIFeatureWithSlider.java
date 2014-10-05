@@ -8,7 +8,7 @@ package frontend;
 
 import javafx.scene.Node;
 
-public class GUIFeatureWithSlider extends GUIFeature {
+public abstract class GUIFeatureWithSlider extends GUIFeature {
 
 	/**
 	 * @see frontend.GUIFeature@action()

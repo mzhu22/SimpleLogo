@@ -1,5 +1,5 @@
 /**
- * This class represents a GUIFeature that uses a window to interact.
+ * This class represents a GUIFeature that uses a clickable window to interact.
  * 
  * @author Safkat Islam
  * @author Chris Bernt
@@ -8,7 +8,7 @@ package frontend;
 
 import javafx.scene.Node;
 
-public class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow {
+public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow {
 
 	/**
 	 * @see frontend.GUIFeature@action()

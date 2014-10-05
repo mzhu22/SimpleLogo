@@ -8,7 +8,7 @@ package frontend;
 
 import javafx.scene.Node;
 
-public class GUIFeatureWithTextBox extends GUIFeature {
+public abstract class GUIFeatureWithTextBox extends GUIFeature {
 
 	/**
 	 * @see frontend.GUIFeature@action()

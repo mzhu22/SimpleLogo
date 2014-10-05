@@ -16,6 +16,12 @@ public class Log extends Operation {
 		return Math.log(getLeft().evaluate());
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	
 	
 	

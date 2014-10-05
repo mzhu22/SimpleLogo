@@ -16,4 +16,10 @@ public class Cosine extends Operation {
 		return Math.cos((PI*getLeft().evaluate())/ONE_EIGHTY);
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -16,4 +16,10 @@ public class Equal extends Comparator {
 		return ( getLeft().evaluate() == getRight().evaluate()) ? 1 : 0 ; 
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

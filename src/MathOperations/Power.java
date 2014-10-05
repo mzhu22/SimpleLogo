@@ -16,4 +16,10 @@ public class Power extends Operation {
 		return Math.pow(getLeft().evaluate(), getRight().evaluate());
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

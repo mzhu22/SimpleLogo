@@ -18,4 +18,10 @@ public class And extends Comparator {
 		return ( (getLeft().evaluate() * getRight().evaluate()) != 0 ) ? 1 : 0 ; 
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

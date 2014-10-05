@@ -16,4 +16,10 @@ public class Product extends Operation{
 		return getRight().evaluate()*getLeft().evaluate() ;
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

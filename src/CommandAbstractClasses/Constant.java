@@ -18,4 +18,10 @@ public class Constant extends ExpressionNode {
 		return myInfo;
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

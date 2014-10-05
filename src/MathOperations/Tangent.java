@@ -16,4 +16,10 @@ public class Tangent extends Operation {
 		return Math.tan((PI*getLeft().evaluate())/ONE_EIGHTY);
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

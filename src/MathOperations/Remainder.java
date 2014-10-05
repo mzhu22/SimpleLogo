@@ -16,4 +16,10 @@ public class Remainder extends Operation {
 		return getLeft().evaluate() % getRight().evaluate();
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

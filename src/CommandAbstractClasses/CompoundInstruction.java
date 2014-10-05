@@ -27,11 +27,10 @@ public class CompoundInstruction extends ExpressionNode  implements Iterable<Fun
 	}
 
 	
-	public Number doAction(){
+	public void doAction(){
 		for(FundamentalInstruction someInstruction : this){
 			someInstruction.doAction(); 
 		}
-		return null; 
 	}
 	@Override
 	public double evaluate() {

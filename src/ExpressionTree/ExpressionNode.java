@@ -30,4 +30,6 @@ public abstract class ExpressionNode {
 		myRight = toSet; 
 	}
 
+	
+	public abstract void doAction(); 
 }

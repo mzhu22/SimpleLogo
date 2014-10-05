@@ -16,4 +16,10 @@ public class Arctan extends Operation {
 		return Math.atan(getLeft().evaluate());
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -15,4 +15,10 @@ public class Sine extends Operation {
 		// TODO Auto-generated method stub
 		return Math.sin((PI*getLeft().evaluate())/ONE_EIGHTY);
 	}
+
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
 }

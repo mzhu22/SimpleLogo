@@ -10,4 +10,10 @@ public class YCor  extends TurtleQuery {
 		return 0;
 	}
 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

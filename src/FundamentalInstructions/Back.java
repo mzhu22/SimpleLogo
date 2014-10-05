@@ -1,13 +1,20 @@
 package FundamentalInstructions;
 
-import ExpressionTree.ExpressionNode;
 
-public class Back extends Forward {
+public class Back extends FundamentalInstruction {
 
-	public Back(int parameter, ExpressionNode myRight) {
-		super(-ONE*parameter,  myRight);
-		myCode = "bk"; 
-		// TODO Auto-generated constructor stub
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return (myInfo = myLeft.evaluate());
+	}
+
+
 
 }

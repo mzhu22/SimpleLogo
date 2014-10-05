@@ -1,16 +1,9 @@
 package Comparators;
 
-import CommandAbstractClasses.Comparator;
-import ExpressionTree.ExpressionNode;
+import CommandAbstractClasses.Operation;
 
 
-
-public class And extends Comparator {
-
-	public And(ExpressionNode first, ExpressionNode second) {
-		super(first, second);
-		// TODO Auto-generated constructor stub
-	}
+public class And extends Operation {
 
 	@Override
 	public double evaluate() {

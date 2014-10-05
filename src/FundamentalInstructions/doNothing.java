@@ -3,10 +3,6 @@ package FundamentalInstructions;
 
 public class doNothing extends FundamentalInstruction {
 
-	public doNothing() {
-		super( null);
-		myCode = "nada"; 
-	}
 
 	@Override
 	public double evaluate() {

@@ -4,20 +4,15 @@ public abstract class ExpressionNode {
 	protected double myInfo; 
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
-	
-	
-	public ExpressionNode( ExpressionNode left, ExpressionNode right){ 
-		myLeft = left; 	
-		myRight = right;
-	}
-	
-	
+
+
+
 	public abstract double evaluate(); 
 
 	public ExpressionNode getLeft(){
 		return myLeft; 
 	}
-	
+
 	public ExpressionNode getRight(){	
 		return myRight; 
 	}
@@ -30,6 +25,12 @@ public abstract class ExpressionNode {
 		myRight = toSet; 
 	}
 
-	
+
+	public void setInfo(int a){
+
+		myInfo = a; 
+
+	}
+
 	public abstract void doAction(); 
 }

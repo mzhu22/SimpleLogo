@@ -1,11 +1,6 @@
 package FundamentalInstructions;
 public class ShowTurtle extends FundamentalInstruction {
 
-	public ShowTurtle() {
-		super( null);
-		myCode = "st";
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public void doAction() {

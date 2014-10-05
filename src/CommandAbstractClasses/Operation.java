@@ -10,11 +10,7 @@ public abstract class Operation extends ExpressionNode {
 	protected static final double PI = Math.PI; 
 	protected static Random randomizer; 
 	
-	public Operation(ExpressionNode first, ExpressionNode second) {
-		super(first, second);
-		// TODO Auto-generated constructor stub
-	}
-	
+
 
 	
 }

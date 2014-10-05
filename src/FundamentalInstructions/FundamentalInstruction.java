@@ -9,10 +9,6 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 	protected static final int ZERO = 0; 
 
 
-	public FundamentalInstruction(ExpressionNode right ){
-		super(right, null); 
-		
-	}
 
 
 	public String toString(){

@@ -1,14 +1,10 @@
 package Comparators;
 
-import CommandAbstractClasses.Comparator;
-import ExpressionTree.ExpressionNode;
+import CommandAbstractClasses.Operation;
 
-public class Greater extends Comparator {
+public class Greater extends Operation {
 
-	public Greater(ExpressionNode first, ExpressionNode second) {
-		super(first, second);
-		// TODO Auto-generated constructor stub
-	}
+
 
 
 	@Override

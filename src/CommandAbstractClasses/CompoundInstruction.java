@@ -1,6 +1,5 @@
 package CommandAbstractClasses;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Iterator;
 
@@ -14,10 +13,6 @@ public class CompoundInstruction extends ExpressionNode  implements Iterable<Fun
 	protected List<Number> myComponentParameters; 
 	
 	
-	public CompoundInstruction(ExpressionNode right, ExpressionNode left) {
-		super(right, left);
-		// TODO Auto-generated constructor stub
-	}
 	
 	@Override
 	public Iterator<FundamentalInstruction> iterator() {

@@ -1,14 +1,10 @@
 package Comparators;
 
-import CommandAbstractClasses.Comparator;
-import ExpressionTree.ExpressionNode;
+import CommandAbstractClasses.Operation;
 
-public class Or extends Comparator {
+public class Or extends Operation {
 
-	public Or(ExpressionNode first, ExpressionNode second) {
-		super(first, second);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
 	public double evaluate() {

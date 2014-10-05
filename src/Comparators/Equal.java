@@ -1,14 +1,9 @@
 package Comparators;
 
-import CommandAbstractClasses.Comparator;
-import ExpressionTree.ExpressionNode;
+import CommandAbstractClasses.Operation;
 
-public class Equal extends Comparator {
+public class Equal extends Operation {
 
-	public Equal(ExpressionNode first, ExpressionNode second) {
-		super(first, second);
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public double evaluate() {

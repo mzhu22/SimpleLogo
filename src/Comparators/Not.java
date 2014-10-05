@@ -1,14 +1,10 @@
 package Comparators;
 
-import CommandAbstractClasses.Comparator;
-import ExpressionTree.ExpressionNode;
+import CommandAbstractClasses.Operation;
 
-public class Not  extends Comparator{
+public class Not  extends Operation{
 
-	public Not(ExpressionNode first, ExpressionNode second) {
-		super(first, null);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
 	public double evaluate() {

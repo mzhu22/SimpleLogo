@@ -2,11 +2,7 @@ package FundamentalInstructions;
 
 public class HideTurtle extends FundamentalInstruction {
 
-	public HideTurtle() {
-		super( null);
-		myCode = "HT"; 
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
 	public void doAction() {

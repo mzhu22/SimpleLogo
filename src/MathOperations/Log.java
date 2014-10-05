@@ -1,14 +1,10 @@
 package MathOperations;
 
 import CommandAbstractClasses.Operation;
-import ExpressionTree.ExpressionNode;
 
 public class Log extends Operation {
 
-	public Log(ExpressionNode first) {
-		super(first, null);
-		// TODO Auto-generated constructor stub
-	}
+
 
 	@Override
 	public double evaluate() {

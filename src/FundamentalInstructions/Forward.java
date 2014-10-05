@@ -1,13 +1,8 @@
 package FundamentalInstructions;
-import ExpressionTree.ExpressionNode;
-
 
 public class Forward extends FundamentalInstruction{
 
-	public Forward( int parameter, ExpressionNode myRight){
-		super(myRight);
-		myCode = "fd"; 
-	}
+
 
 	@Override
 	public void doAction() {
@@ -18,6 +13,6 @@ public class Forward extends FundamentalInstruction{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return (myInfo = myRight.evaluate());
+		return (myInfo = myLeft.evaluate());
 	}
 }

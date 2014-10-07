@@ -4,7 +4,11 @@ import CommandAbstractClasses.Operation;
 
 public class Log extends Operation {
 
-
+	public Log (){
+		
+		numChildren = 1; 
+	}
+	
 
 	@Override
 	public double evaluate() {

@@ -2,14 +2,14 @@ package backend;
 
 import java.util.List;
 
-import ExpressionTree.InputTokenizer;
+import ExpressionTree.InputToNode;
 
 public class Parser {
 	
 	
 	public List<String> parse (String input){
 		
-		InputTokenizer tokenGenerator = new InputTokenizer(); 	
+		InputToNode tokenGenerator = new InputToNode(); 	
 
     	return tokenGenerator.splitIntoTokens(input); 
 	}

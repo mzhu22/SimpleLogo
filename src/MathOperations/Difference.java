@@ -4,7 +4,11 @@ import CommandAbstractClasses.Operation;
 
 public class Difference extends Operation {
 
-
+	public Difference (){
+		
+		numChildren = 2; 
+	}
+	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub

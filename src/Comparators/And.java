@@ -5,6 +5,11 @@ import CommandAbstractClasses.Operation;
 
 public class And extends Operation {
 
+	public And() {
+		
+		numChildren = 2; 
+	}
+	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub

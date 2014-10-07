@@ -8,6 +8,7 @@
 
 package frontend;
 
+import javafx.scene.Group;
 import javafx.scene.Node;
 
 public abstract class GUIFeature {
@@ -35,5 +36,5 @@ public abstract class GUIFeature {
 	 * Creates the graphical representation of the GUIFeature.
 	 * @return The JavaFX Node object that is the graphical representation and that the user interacts with.
 	 */
-	public abstract Node makeTool();
+	public abstract Group makeTool();
 }

@@ -22,7 +22,7 @@ public class GUIMaker {
 		Scene scene = new Scene(myRoot, width, height);
 		
 		GUIFeature[] features = new GUIFeature[] {
-			
+			new InputTextBox(100, 100, 100, 100)
 		};
 		
 		for(GUIFeature f : features){

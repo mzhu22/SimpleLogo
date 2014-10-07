@@ -6,34 +6,35 @@
  */
 package frontend;
 
+import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public abstract class GUIFeatureWithTextBox extends GUIFeature {
 
+	protected double myWidth;
+	protected double myHeight;
+	
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithTextBox(double x, double y) {
+	public GUIFeatureWithTextBox(double x, double y, double width, double height) {
 		super(x, y);
-		// TODO Auto-generated constructor stub
+		myWidth = width;
+		myHeight = height;
 	}
 
 	/**
 	 * @see frontend.GUIFeature#action()
 	 */
 	@Override
-	public void action() {
-		// TODO Auto-generated method stub
-
-	}
+	public abstract void action();
 
 	/**
 	 * @see frontend.GUIFeature#makeTool()
 	 */
 	@Override
-	public Node makeTool() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public abstract Group makeTool();
 
 }

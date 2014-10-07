@@ -6,6 +6,7 @@
  */
 package frontend;
 
+import javafx.scene.Group;
 import javafx.scene.Node;
 
 public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow {
@@ -31,7 +32,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow
 	 * @see frontend.GUIFeature#makeTool()
 	 */
 	@Override
-	public Node makeTool() {
+	public Group makeTool() {
 		// TODO Auto-generated method stub
 		return null;
 	}

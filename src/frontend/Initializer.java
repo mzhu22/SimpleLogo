@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 
 public class Initializer extends Application {
     private GUIMaker myMaker;
-    private int guiWidth = 400;
-    private int guiHeight = 400;
+    private int guiWidth = 800;
+    private int guiHeight = 800;
 
     /**
      * Set things up at the beginning.

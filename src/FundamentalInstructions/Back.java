@@ -1,11 +1,20 @@
 package FundamentalInstructions;
 
-public class Back extends Forward {
 
-	public Back(int parameter) {
-		super(-1*parameter);
-		myCode = "bk"; 
-		// TODO Auto-generated constructor stub
+public class Back extends FundamentalInstruction {
+
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
 	}
+
+	@Override
+	public double evaluate() {
+		// TODO Auto-generated method stub
+		return (myInfo = myLeft.evaluate());
+	}
+
+
 
 }

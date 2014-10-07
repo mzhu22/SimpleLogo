@@ -1,15 +1,13 @@
-package Comparators;
+package MathOperations;
 
 import CommandAbstractClasses.Operation;
 
-public class Less extends Operation {
-
-
+public class Arctan extends Operation {
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
+		return Math.atan(getLeft().evaluate());
 	}
 
 	@Override
@@ -18,6 +16,4 @@ public class Less extends Operation {
 		
 	}
 
-	
-	
 }

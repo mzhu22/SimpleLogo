@@ -1,18 +1,18 @@
 package FundamentalInstructions;
-import Interfaces.IInstruction;
+
+public class Forward extends FundamentalInstruction{
 
 
-public class Forward extends FundamentalInstruction implements IInstruction{
 
-	public Forward( int parameter){
-		super(parameter);
-		myCode = "fd"; 
+	@Override
+	public void doAction() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	@Override
-	public Number doAction() {
-		return myParameter;
+	public double evaluate() {
 		// TODO Auto-generated method stub
-		
+		return (myInfo = myLeft.evaluate());
 	}
 }

@@ -3,14 +3,15 @@ package FundamentalInstructions;
 
 public class doNothing extends FundamentalInstruction {
 
-	public doNothing() {
-		super(0);
-		myCode = "nada"; 
+
+	@Override
+	public double evaluate() {
+		return ZERO;
 	}
 
 	@Override
-	public Number doAction() {
+	public void doAction() {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 }

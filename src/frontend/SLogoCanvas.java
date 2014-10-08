@@ -37,7 +37,8 @@ public class SLogoCanvas extends Canvas {
 		myHolder.setLayoutY(y);
 		myHolder.setPrefHeight(height);
 		myHolder.setPrefWidth(width);
-		myHolder.getChildren().add(this);		
+		myHolder.getChildren().add(this);
+	
 	}
 
 	/**

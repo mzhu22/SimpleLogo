@@ -8,14 +8,24 @@ package frontend;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Slider;
 
 public abstract class GUIFeatureWithSlider extends GUIFeature {
 
+	
+	private int myMin;
+	private int myMax;
+	private int myStart;
+	
+	private Slider slider;
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithSlider(double x, double y) {
+	public GUIFeatureWithSlider(double x, double y, int min, int max, int startValue) {
 		super(x, y);
+		myMin = min;
+		myMax = max;
+		myStart = startValue;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -24,8 +34,7 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	 */
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	/**
@@ -33,8 +42,16 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	 */
 	@Override
 	public Group makeTool() {
-		// TODO Auto-generated method stub
-		return null;
+		Group g = new Group();
+		slider = new Slider(myMin, myMax, myStart);
+		g.getChildren().add(slider);
+		slider.getValue();
+		return g;
+		
+	}
+	
+	public double getSliderValue(){
+		return slider.getValue();
 	}
 
 }

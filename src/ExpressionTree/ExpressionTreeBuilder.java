@@ -1,9 +1,6 @@
 package ExpressionTree;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.Stack;
-import java.util.StringTokenizer;
 
 public class ExpressionTreeBuilder {
 
@@ -31,13 +28,9 @@ public class ExpressionTreeBuilder {
 			}
 
 			temp.push(holder);
-			System.out.println(holder.evaluate()); 
 
 		}
-
-
-
-		return temp.pop(); // temporary placeholder to get rid of errors
+		return temp.pop(); // if this has worked correctly th
 	}
 
 
@@ -58,7 +51,7 @@ public class ExpressionTreeBuilder {
 
 	public static void main(String[] main) {
 
-		String origInput = " + SIN - 50 -150 30"; 
+		String origInput = "* - + 50 30 2 3"; 
 
 
 

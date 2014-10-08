@@ -12,7 +12,7 @@ public class Arctan extends Operation {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return Math.atan(getLeft().evaluate());
+		return Math.toDegrees(Math.atan(getLeft().evaluate()));
 	}
 
 	@Override

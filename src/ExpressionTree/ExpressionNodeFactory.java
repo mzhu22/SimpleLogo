@@ -1,10 +1,13 @@
 package ExpressionTree;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import CommandAbstractClasses.Constant;
+import Comparators.*;
 import FundamentalInstructions.doNothing;
 import MathOperations.*; 
 
-public final class ExpressionNodeFactory {
+public final class ExpressionNodeFactory implements Observable {
 
 
 	public ExpressionNode getNode( String s){
@@ -45,13 +48,23 @@ public final class ExpressionNodeFactory {
 
 			case "POW" : return new Power(); 
 
+			case "AND" : return new And(); 
+
+			case "OR" : return new Or(); 
+
+			case "NOT" : return new Not(); 
+
+			case "NOTEQUAL?" : case "NOTEQUALP" :return new NotEqual(); 
+
+			case "EQUAL?" : case "EQUALP" :return new Equal(); 
+
+			case "GREATER?" : case "GREATERP" :return new Greater(); 
+
+			case "LESS?" : case  "LESSP" : return new Less(); 
+
 			default: return new doNothing(); 
 
-
 			}
-
-
-
 		}
 
 
@@ -61,19 +74,33 @@ public final class ExpressionNodeFactory {
 
 	}
 
+	@Override
+	public void addListener(InvalidationListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
 
-	//	public static void main(String[] args){
-	//		
-	//		String []  tester = {"SUM","+", "DIFFERENCE","-", "PRODUCT", "*", "QUOTIENT" , "/" , "REMAINDER", 
-	//				 "%", "MINUS" ,  "~", "RANDOM", "SIN", "COS" , "TAN", "ATAN" , "LOG", "POW", "5", "boobs"}; 
-	//			
-	//			
-	//			for(String s: tester){
-	//				
-	//				System.out.println(getNode(s).getClass().toString()); 
-	//			}
-	//		}
-	//		
+	@Override
+	public void removeListener(InvalidationListener listener) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+//	public static void main(String[] args){
+//
+//		String []  tester = {"SUM","+", "DIFFERENCE","-", "PRODUCT", "*", "QUOTIENT" , "/" , "REMAINDER", 
+//				"%", "MINUS" ,  "~", "RANDOM", "SIN", "COS" , "TAN", "ATAN" , "LOG", "POW", "5", "boobs"
+//				, "AND" , "OR" , "NOT" , "NOTEQUAL?" , "NOTEQUALP", "EQUAL?","EQUALP" , "GREATER?", "GREATERP", "LESS?",
+//		"LESSP"}; 
+//
+//
+//		for(String s: tester){
+//
+//			System.out.println(getNode(s).getClass().toString()); 
+//		}
+//	}
+
 }
 
 

@@ -5,6 +5,8 @@ import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -26,9 +28,22 @@ public class GUIMaker {
 		Scene scene = new Scene(myRoot, width, height);
 		
 
+		TabPane tp = new TabPane();
+		tp.getTabs().add(createTab("Tab one"));
+		tp.getTabs().add(createTab("Tab two"));
+		
+		myRoot.getChildren().add(tp);
+		
+		return scene;
+		
+		
+	}
+
+	private Tab createTab(String tabTitle) {
+		Group curRoot = new Group();
 		
 		myCanvas = new SLogoCanvas(400,400,200,200);
-		myRoot.getChildren().add(myCanvas.getHolder());
+		curRoot.getChildren().add(myCanvas.getHolder());
 		
 		GUIFeature[] features = new GUIFeature[] {
 			new InputTextBox(100, 100, 100, 100),
@@ -43,13 +58,11 @@ public class GUIMaker {
 		
 		
 		for(GUIFeature f : features){
-			myRoot.getChildren().add(f.makeTool());
+			curRoot.getChildren().add(f.makeTool());
 		}
-		
-		
-		return scene;
-		
-		
+		Tab tab = new Tab(tabTitle);
+		tab.setContent(curRoot);
+		return tab;
 	}
 	
 }

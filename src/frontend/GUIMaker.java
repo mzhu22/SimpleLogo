@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -44,6 +45,14 @@ public class GUIMaker {
 		
 		myCanvas = new SLogoCanvas(400,400,200,200);
 		curRoot.getChildren().add(myCanvas.getHolder());
+		
+		ActionObject test = new ActionObject(50,50,null, myCanvas);
+		test.move(50);
+		test.rotate(30);
+		test.move(50);
+		test.rotate(-30);
+		test.move(50);
+		
 		
 		GUIFeature[] features = new GUIFeature[] {
 			new InputTextBox(100, 100, 100, 100),

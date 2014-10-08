@@ -7,7 +7,7 @@ import javafx.scene.control.TextArea;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
 
-	private TextArea inputBox;
+	
 	
 	public InputTextBox(double x, double y, double width, double height) {
 		super(x, y, width, height);
@@ -28,28 +28,7 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 		}
 	}
 
-	@Override
-	public Group makeTool() {
-		Group g = new Group();
-		
-		inputBox = new TextArea();
-		inputBox.setLayoutX(this.myX);
-		inputBox.setLayoutY(this.myY);
+	
 
-		inputBox.setPrefWidth(this.myWidth);
-		inputBox.setPrefHeight(this.myHeight);
-		
-		
-		g.getChildren().add(inputBox);
-		
-		Button b = new Button("Submit");
-		b.setLayoutX(this.myX + this.myWidth);
-		b.setLayoutY(this.myY);
-		b.setOnMouseClicked(event -> this.action());
-		
-		g.getChildren().add(b);
-		
-		return g;
-	}	
 
 }

@@ -37,7 +37,7 @@ public class GUIMaker {
 			new HelpButton(400, 400, "Help"),
 			new MakeTestLineButton(500,500,"Test", myCanvas),
 			new SetLineColorButton(50, 400, "Line Color", myCanvas),
-	
+			new ChangeLineWidthTextBox(400, 50, 100, 10, myCanvas)
 			
 		};
 		

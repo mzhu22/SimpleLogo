@@ -8,11 +8,14 @@ package frontend;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 public abstract class GUIFeatureWithTextBox extends GUIFeature {
 
+	protected TextArea inputBox;
 	protected double myWidth;
 	protected double myHeight;
 	
@@ -35,6 +38,27 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 	 * @see frontend.GUIFeature#makeTool()
 	 */
 	@Override
-	public abstract Group makeTool();
+	public Group makeTool() {
+		Group g = new Group();
+		
+		inputBox = new TextArea();
+		inputBox.setLayoutX(this.myX);
+		inputBox.setLayoutY(this.myY);
+
+		inputBox.setPrefWidth(this.myWidth);
+		inputBox.setPrefHeight(this.myHeight);
+		
+		
+		g.getChildren().add(inputBox);
+		
+		Button b = new Button("Submit");
+		b.setLayoutX(this.myX + this.myWidth);
+		b.setLayoutY(this.myY);
+		b.setOnMouseClicked(event -> this.action());
+		
+		g.getChildren().add(b);
+		
+		return g;
+	}	
 
 }

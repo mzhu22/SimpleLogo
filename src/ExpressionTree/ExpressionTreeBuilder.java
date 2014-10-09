@@ -18,6 +18,7 @@ public class ExpressionTreeBuilder {
 		while(!processNodes.isEmpty()){
 			ExpressionNode holder = processNodes.pop(); 
 
+			//error checking here regarding # of inputs, etc. 
 			if( holder.getNumChildren() == 1){
 				holder.setLeft(temp.pop());
 			}
@@ -27,10 +28,14 @@ public class ExpressionTreeBuilder {
 				holder.setRight(temp.pop());
 			}
 
+			
+			//Need to check if it is a fundamental instruction
+				//add a copy to the "list or stack thing" to send to frontend
+				//only fundamental instructions: fd, turn, penup, pendown, turtle on/off, compounds, stamp
 			temp.push(holder);
 
 		}
-		return temp.pop(); // if this has worked correctly th
+		return temp.pop(); // if this has worked correctly 
 	}
 
 
@@ -51,9 +56,7 @@ public class ExpressionTreeBuilder {
 
 	public static void main(String[] main) {
 
-		String origInput = "* - + 50 30 2 3"; 
-
-
+		String origInput = "SIN + + 50 30 2 3"; 
 
 		ExpressionNode finalTest =getTree( getNodes(origInput)); 
 		System.out.println(finalTest.evaluate()); 

@@ -2,9 +2,9 @@ package ExpressionTree;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
-import CommandAbstractClasses.Constant;
+import CommandAbstractClasses.*;
 import Comparators.*;
-import FundamentalInstructions.doNothing;
+import FundamentalInstructions.*;
 import MathOperations.*; 
 
 public final class ExpressionNodeFactory implements Observable {
@@ -20,49 +20,68 @@ public final class ExpressionNodeFactory implements Observable {
 		}
 		catch(NumberFormatException e ){
 
-
+			//TODO: GET RID OF SWITCH CASES EVENTUALLY
+			//TODO: implement different languages 
+			//TODO: rename packages so they don't have capital letters 
 			switch (s) {
-			case "SUM" : case  "+": return new Add(); 
+				//Fundamental instructions
+				case "FORWARD" : case "FD": return new Forward();
+				
+				case "RIGHT" : case "RT" : return new Right();
+				
+				case "PENUP" : case "PU": return new PenUp();
+				
+				case "PENDOWN" : case "PD": return new PenDown();
+				
+				case "BACK" : case "BK" : return new Back();
+				
+				case "LEFT" : case "LT" : return new Left();
+				
+				case "SHOWTURTLE" : case "ST" : return new ShowTurtle();
+				
+				case "HIDETURTLE" : case "HT" : return new HideTurtle();
+				
+				case "SUM" : case  "+": return new Add(); 
 
-			case "DIFFERENCE" : case "-": return new Difference(); 
+				case "DIFFERENCE" : case "-": return new Difference(); 
 
-			case  "PRODUCT" : case "*" : return new Product(); 
+				case "PRODUCT" : case "*" : return new Product(); 
 
-			case "QUOTIENT" : case "/" : return new Quotient(); 
+				case "QUOTIENT" : case "/" : return new Quotient(); 
 
-			case "REMAINDER" : case "%" : return new Remainder(); 
+				case "REMAINDER" : case "%" : return new Remainder(); 
 
-			case "MINUS" : case "~": return new Minus(); 
+				case "MINUS" : case "~": return new Minus(); 
 
-			case "RANDOM" : return new Randoms();
+				case "RANDOM" : return new Randoms();
 
-			case "SIN" : return new Sine(); 
+				case "SIN" : return new Sine(); 
 
-			case "COS" : return new Cosine(); 
+				case "COS" : return new Cosine(); 
 
-			case "TAN" : return new Tangent(); 
+				case "TAN" : return new Tangent(); 
 
-			case "ATAN" : return new Arctan(); 
+				case "ATAN" : return new Arctan(); 
 
-			case "LOG" : return new Log(); 
+				case "LOG" : return new Log(); 
 
-			case "POW" : return new Power(); 
+				case "POW" : return new Power(); 
 
-			case "AND" : return new And(); 
+				case "AND" : return new And(); 
 
-			case "OR" : return new Or(); 
+				case "OR" : return new Or(); 
 
-			case "NOT" : return new Not(); 
+				case "NOT" : return new Not(); 
 
-			case "NOTEQUAL?" : case "NOTEQUALP" :return new NotEqual(); 
+				case "NOTEQUAL?" : case "NOTEQUALP" :return new NotEqual(); 
 
-			case "EQUAL?" : case "EQUALP" :return new Equal(); 
+				case "EQUAL?" : case "EQUALP" :return new Equal(); 
 
-			case "GREATER?" : case "GREATERP" :return new Greater(); 
+				case "GREATER?" : case "GREATERP" :return new Greater(); 
 
-			case "LESS?" : case  "LESSP" : return new Less(); 
+				case "LESS?" : case  "LESSP" : return new Less(); 
 
-			default: return new doNothing(); 
+				default: return new doNothing(); 
 
 			}
 		}

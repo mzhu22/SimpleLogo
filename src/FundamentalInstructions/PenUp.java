@@ -4,6 +4,12 @@ package FundamentalInstructions;
 
 public class PenUp extends FundamentalInstruction {
 
+	
+	public PenUp() {
+		
+		numChildren = 0; 
+	}
+	
 	@Override
 	public void doAction() {
 		// TODO Auto-generated method stub

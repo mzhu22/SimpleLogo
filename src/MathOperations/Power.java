@@ -4,7 +4,12 @@ import CommandAbstractClasses.Operation;
 
 public class Power extends Operation {
 
+
 	
+	public Power (){
+		
+		numChildren = 2; 
+	}
 
 	@Override
 	public double evaluate() {

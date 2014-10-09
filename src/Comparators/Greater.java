@@ -4,7 +4,9 @@ import CommandAbstractClasses.Operation;
 
 public class Greater extends Operation {
 
-
+	public Greater (){
+		numChildren = 2; 
+	}
 
 
 	@Override

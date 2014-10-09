@@ -4,6 +4,10 @@ import CommandAbstractClasses.Operation;
 
 public class Tangent extends Operation {
 
+	public Tangent(){
+		
+		numChildren = 1; 
+	}
 	
 	@Override
 	public double evaluate() {

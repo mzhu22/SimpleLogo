@@ -2,6 +2,10 @@ package FundamentalInstructions;
 
 public class HideTurtle extends FundamentalInstruction {
 
+	public HideTurtle(){
+		
+		numChildren = 0; 
+	}
 
 
 	@Override

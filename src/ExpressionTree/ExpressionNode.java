@@ -4,7 +4,7 @@ public abstract class ExpressionNode {
 	protected double myInfo; 
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
-
+	protected int numChildren; 
 
 
 	public abstract double evaluate(); 
@@ -19,18 +19,26 @@ public abstract class ExpressionNode {
 
 	public void setLeft( ExpressionNode toSet){
 		myLeft = toSet; 
+		numChildren --; 
 	}
 
 	public void setRight( ExpressionNode toSet){
-		myRight = toSet; 
+		myRight = toSet;
+		numChildren--; 
 	}
 
 
-	public void setInfo(int a){
+	public void setInfo(double a){
 
 		myInfo = a; 
 
 	}
 
 	public abstract void doAction(); 
+
+	public int  getNumChildren(){
+		
+		return numChildren; 
+		
+	}
 }

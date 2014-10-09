@@ -4,6 +4,10 @@ import CommandAbstractClasses.Operation;
 
 public class Sine extends Operation {
 	
+	public Sine () {
+		
+		numChildren = 1; 
+	}
 	
 
 	@Override

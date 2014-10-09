@@ -5,6 +5,10 @@ import CommandAbstractClasses.Operation;
 public class Less extends Operation {
 
 
+	public Less () {
+		numChildren = 2; 
+		
+	}
 
 	@Override
 	public double evaluate() {

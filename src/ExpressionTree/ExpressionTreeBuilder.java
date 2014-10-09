@@ -13,6 +13,7 @@ public class ExpressionTreeBuilder {
 	private static List<ExpressionNode> outputList;
 
 	public ExpressionTreeBuilder( String s){
+
 		outputList = new ArrayList<>();
 		Stack<ExpressionNode> process =getNodes(s); 
 		 ExpressionNode tree = getTree(process); 
@@ -91,13 +92,13 @@ public class ExpressionTreeBuilder {
 	
 	public static void main(String[] main) {
 		outputList = new ArrayList<>();
-
 		String origInput = "FD SUM FD 50 50"; 
 
 		ExpressionNode finalTest =getTree( getNodes(origInput)); 
 		System.out.println(finalTest.evaluate());
 		
 		makeOutputStack(finalTest);
+		System.out.println(outputList.get(0).evaluate());
 	} 
 
 }

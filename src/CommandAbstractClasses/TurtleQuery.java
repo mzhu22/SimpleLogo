@@ -1,13 +1,16 @@
 package CommandAbstractClasses;
 
+import frontend.ActionObject;
 import ExpressionTree.ExpressionNode;
 
 
 
 public  abstract class TurtleQuery extends ExpressionNode {
 
-
-	public TurtleQuery(){
+	protected ActionObject myActionable; 
+	
+	public TurtleQuery(ActionObject actionable){
+		myActionable = actionable; 
 		numChildren = 0; 
 	}
 	

@@ -6,8 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
-
-	
 	
 	public InputTextBox(double x, double y, double width, double height) {
 		super(x, y, width, height);
@@ -21,6 +19,8 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 			InputController ic = new InputController();
 			ic.giveInput(input);
 			//SEND TO PARSER
+			
+			
 		}
 		else{
 			System.out.println("Empty");

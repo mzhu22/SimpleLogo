@@ -13,9 +13,6 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 	protected static final int ONE = 1; 
 	protected static final int ZERO = 0; 
 
-
-
-
 	public String toString(){
 		StringBuilder toRet = new StringBuilder(); 
 	
@@ -26,6 +23,8 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 	public abstract void doAction();
 	
 	// TO DO pass doaction actionable frontend object
+	
+	
 
 	
 }

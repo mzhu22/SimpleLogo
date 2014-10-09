@@ -81,7 +81,23 @@ public class ActionObject {
 	public void hideTurtle(){
 		myShowTurtle = false;
 	}
+
 	
+	public boolean isPenDown(){
+		return myIsPenDown; 
+	}
+
 	
+	public boolean isTurtle(){
+		return myShowTurtle; 
+	}
 	
+	public double getX(){
+		return myX; 
+	}
+
+	public double getY(){
+		return myY; 
+	}
+
 }

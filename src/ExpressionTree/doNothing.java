@@ -1,7 +1,7 @@
-package FundamentalInstructions;
+package ExpressionTree;
 
 
-public class doNothing extends FundamentalInstruction {
+public class doNothing extends ExpressionNode {
 
 	
 	public doNothing() {
@@ -11,7 +11,7 @@ public class doNothing extends FundamentalInstruction {
 
 	@Override
 	public double evaluate() {
-		return ZERO;
+		return 0;
 	}
 
 	@Override

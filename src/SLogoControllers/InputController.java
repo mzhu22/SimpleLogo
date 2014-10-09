@@ -2,10 +2,12 @@ package SLogoControllers;
 
 import java.util.List;
 
+import backend.Parser;
 import ExpressionTree.ExpressionNode;
 
+
 public class InputController {
-	
+	private Parser parser = new Parser(); 	
 	String input;
 	
 	public void giveInput(String s){
@@ -15,7 +17,6 @@ public class InputController {
 	}
 	
 	public List<ExpressionNode> getInstructions(){
-		//return parse(input);
-		return null;
+		return parser.parse(input);
 	}
 }

@@ -4,17 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExpressionTree.ExpressionNode;
+import ExpressionTree.ExpressionTreeBuilder;
 
 
 
 
 public class Parser {
+	private List<ExpressionNode> commandsForFrontEnd = new ArrayList<>(); 
+	private ExpressionTreeBuilder maker; 
 	
-	private List<ExpressionNodes>() outPut  
-	
-	public void  parse (String input){
-		
-		
+	public List<ExpressionNode>  parse (String input){
+		maker = new ExpressionTreeBuilder(input); 
+		commandsForFrontEnd.addAll( maker.getFundamentalInstructions()); 
+		return commandsForFrontEnd; 
 		
 	}
 	

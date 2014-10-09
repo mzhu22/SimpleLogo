@@ -16,8 +16,9 @@ public class ExpressionTreeBuilder {
 
 		outputList = new ArrayList<>();
 		Stack<ExpressionNode> process =getNodes(s); 
-		 ExpressionNode tree = getTree(process); 
-		makeOutputStack(tree); 
+		ExpressionNode processTree = getTree(process); 
+		System.out.println(processTree.myInfo + " is the value I have evaluated"); 
+		makeOutputStack(processTree); 
 	}
 
 	public static ExpressionNode getTree( Stack<ExpressionNode> processNodes){
@@ -42,6 +43,7 @@ public class ExpressionTreeBuilder {
 			temp.push(holder);
 
 		}
+		temp.peek().evaluate(); 
 		return temp.pop(); // if this has worked correctly 
 	}
 
@@ -92,13 +94,13 @@ public class ExpressionTreeBuilder {
 	
 	public static void main(String[] main) {
 		outputList = new ArrayList<>();
-		String origInput = "FD SUM FD 50 50"; 
-
-		ExpressionNode finalTest =getTree( getNodes(origInput)); 
-		System.out.println(finalTest.evaluate());
+		String origInput = "FD SUM FD 50 SUM 50 BK 20";
 		
-		makeOutputStack(finalTest);
-		System.out.println(outputList.get(0).evaluate());
+		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
+		
+		for(ExpressionNode s :outputList ){
+			System.out.print(s.myInfo + " "); 
+		}
 	} 
 
 }

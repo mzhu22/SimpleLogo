@@ -30,8 +30,13 @@ public class GUIMaker {
 		
 
 		TabPane tp = new TabPane();
-		tp.getTabs().add(createTab("Tab one"));
+		Tab firstTab = createTab("Tab One");
+		firstTab.setClosable(false);
+		tp.getTabs().add(firstTab);
+		
 		tp.getTabs().add(createTab("Tab two"));
+		
+		//Should add a button that allows new tabs to be created
 		
 		myRoot.getChildren().add(tp);
 		
@@ -49,8 +54,12 @@ public class GUIMaker {
 		ActionObject test = new ActionObject(50,50,null, myCanvas);
 		test.move(50);
 		test.rotate(30);
+		test.penUp();
 		test.move(50);
+		test.penDown();
 		test.rotate(-30);
+		test.move(50);
+		test.setDirection(270);
 		test.move(50);
 		
 		
@@ -59,9 +68,10 @@ public class GUIMaker {
 			new QuitButton(0, 200, "Quit"),
 			new ChangeBackgroundButton(300, 300, "BG Color", myCanvas.getHolder()),
 			new HelpButton(400, 400, "Help"),
-			new MakeTestLineButton(500,500,"Test", myCanvas),
+			new MakeTestLineButton(500,500,"Test", test),
 			new SetLineColorButton(50, 400, "Line Color", myCanvas),
-			new ChangeLineWidthTextBox(400, 50, 100, 10, myCanvas)
+			new ChangeLineWidthTextBox(400, 50, 100, 10, myCanvas),
+			new ClearCanvasButton(500, 300, "Clear", myCanvas)
 			
 		};
 		

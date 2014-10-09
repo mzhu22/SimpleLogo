@@ -63,6 +63,10 @@ public class ActionObject {
 		
 	}
 	
+	public void setDirection(double dir){
+		myDirection = dir;
+	}
+	
 	
 	public void penUp(){
 		myIsPenDown = false;

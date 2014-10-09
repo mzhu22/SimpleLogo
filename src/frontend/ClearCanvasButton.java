@@ -1,6 +1,7 @@
 package frontend;
 
 import javafx.scene.canvas.Canvas;
+import javafx.scene.paint.Color;
 
 public class ClearCanvasButton extends GUIFeatureWithButton {
 
@@ -13,9 +14,10 @@ public class ClearCanvasButton extends GUIFeatureWithButton {
 
 	@Override
 	public void action() {
-		((SLogoCanvas) myCanvas).getHolder().setStyle("-fx-background-color: white");
+		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);
 		myCanvas.getGraphicsContext2D().clearRect(0, 0, 1000, 1000); //BAD hardcoding
 		
+
 		//also reset turtle
 	}
 

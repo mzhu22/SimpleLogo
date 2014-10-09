@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 public class ChangeBackgroundButton extends GUIFeatureChangeColorButton{
 
-	private static final String FX_BACKGROUND_COLOR = "-fx-background-color: ";
 	private Node myNode;
 	
 	public ChangeBackgroundButton(double x, double y, String buttonName, Node node) {
@@ -23,10 +22,8 @@ public class ChangeBackgroundButton extends GUIFeatureChangeColorButton{
 	}
 	
 	@Override
-	public void submitAction(){
-		String colorHex = this.colorPicker.getValue().toString().substring(2, 8);
-    	myNode.setStyle(FX_BACKGROUND_COLOR + colorHex);
-		
+	public void submitAction(){	
+		((SLogoCanvas) myNode).changeBackground(this.colorPicker.getValue());
 	}
 	
 	

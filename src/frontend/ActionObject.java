@@ -1,17 +1,28 @@
 package frontend;
 
+import java.io.File;
+
 import javafx.geometry.Point2D;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class ActionObject {
 	
 	private static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
+	private static final double WIDTH = 30;
+	private static final double HEIGHT = 30;
+	
+	
+	
 	private double myX;
 	private double myY;
 	private double myDirection; //0 is right, 90 up, 180 left, 270 down
 	
-	private Image myImage;
+	private ImageView myImage;
 	
 	private Canvas myCanvas;
 	
@@ -19,7 +30,7 @@ public class ActionObject {
 	private boolean myShowTurtle;
 	
 	
-	public ActionObject(double startX, double startY, Image startImage, Canvas canvas){
+	public ActionObject(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
 		myY = startY;
 		myCanvas = canvas;
@@ -28,6 +39,21 @@ public class ActionObject {
 		myShowTurtle = true;
 		
 		myDirection = 0;
+		
+		
+		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
+        myImage = new ImageView();
+        myImage.setImage(image);
+        
+        
+		myImage.setFitHeight(HEIGHT);
+		myImage.setFitWidth(WIDTH);
+			
+		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myImage);
+		
+		myImage.setX(startX);
+		myImage.setY(startY);
+			
 	}
 	
 	
@@ -46,24 +72,30 @@ public class ActionObject {
 			((SLogoCanvas) myCanvas).drawLine(oldPosition, newPosition);
 		}
 		
+		myImage.setX(myX - (myImage.getFitWidth() / 2));
+		myImage.setY(myY - (myImage.getFitHeight() / 2));
+		
 		return value;
 		
 	}
 	
 	public int rotate(int value){ //positive value are rotating left
 		
-		myDirection += value;
-		if(myDirection >= 360) myDirection -= 360;
-		if(myDirection < 0) myDirection += 360;
+		myDirection += (value%360);
+		
+		myImage.setRotate(myImage.getRotate() - (value%360));
 		
 		return value;
 	}
 	
-	public void changeImage(){
-		
+	public void changeImage(String newImage){
+		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
+        myImage.setImage(image);
+        
 	}
 	
 	public void setDirection(double dir){
+		myImage.setRotate(-dir + 90);
 		myDirection = dir;
 	}
 	

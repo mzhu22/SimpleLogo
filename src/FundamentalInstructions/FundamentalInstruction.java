@@ -5,7 +5,6 @@ import ExpressionTree.ExpressionNode;
 public abstract class FundamentalInstruction extends ExpressionNode{
 	
 	public FundamentalInstruction() {
-		
 		numChildren = 1; 
 	}
 	

@@ -2,9 +2,9 @@ package ExpressionTree;
 
 import java.util.Stack;
 
+import FundamentalInstructions.FundamentalInstruction;
+
 public class ExpressionTreeBuilder {
-
-
 
 	private static ExpressionNodeFactory nodeGetter; 
 	private static Stack<ExpressionNode> temp;
@@ -47,8 +47,16 @@ public class ExpressionTreeBuilder {
 
 		String[] split = s.trim().split(" "); 
 		for(String string : split ){
+			
 			returnNodes.push(nodeGetter.getNode(string)); 
-			System.out.println(nodeGetter.getNode(string).getClass().toString());
+			Class<? extends ExpressionNode> nodeClass = nodeGetter.getNode(string).getClass();
+			System.out.println(nodeClass.toString());
+			
+			//Checks if the instruction is a FundamentalInstruction
+			if(FundamentalInstruction.class.isAssignableFrom(nodeClass)){
+				System.out.println("BOOM");
+				
+			}
 		}
 		return returnNodes;
 	}
@@ -56,7 +64,7 @@ public class ExpressionTreeBuilder {
 
 	public static void main(String[] main) {
 
-		String origInput = "SIN + + 50 30 2 3"; 
+		String origInput = "FD - - 50 30 2 3"; 
 
 		ExpressionNode finalTest =getTree( getNodes(origInput)); 
 		System.out.println(finalTest.evaluate()); 

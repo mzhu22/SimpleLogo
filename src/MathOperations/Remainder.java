@@ -5,6 +5,10 @@ import CommandAbstractClasses.Operation;
 public class Remainder extends Operation {
 
 	
+	public Remainder (){
+		
+		numChildren = 2; 
+	}
 
 	@Override
 	public double evaluate() {

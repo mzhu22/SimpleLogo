@@ -4,7 +4,10 @@ import CommandAbstractClasses.Operation;
 
 public class Quotient  extends Operation {
 
-
+	public Quotient (){
+		
+		numChildren =2; 
+	}
 
 	@Override
 	public double evaluate() {

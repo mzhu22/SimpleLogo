@@ -1,5 +1,7 @@
 package frontend;
 
+import java.io.File;
+
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -86,8 +88,10 @@ public class ActionObject {
 		return value;
 	}
 	
-	public void changeImage(){
-		
+	public void changeImage(String newImage){
+		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
+        myImage.setImage(image);
+        
 	}
 	
 	public void setDirection(double dir){

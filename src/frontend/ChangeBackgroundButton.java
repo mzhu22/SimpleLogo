@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 
 public class ChangeBackgroundButton extends GUIFeatureChangeColorButton{
 
-	private static final String FX_BACKGROUND_COLOR = "-fx-background-color: ";
 	private Node myNode;
 	
 	public ChangeBackgroundButton(double x, double y, String buttonName, Node node) {

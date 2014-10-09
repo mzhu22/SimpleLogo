@@ -57,8 +57,7 @@ public class GUIMaker {
 		test.rotate(30);
 		test.move(50);
 		test.rotate(-30);
-		test.move(50);
-		
+		test.move(50);	
 		
 		GUIFeature[] features = new GUIFeature[] {
 			new InputTextBox(100, 100, 100, 100),
@@ -69,7 +68,8 @@ public class GUIMaker {
 			new SetLineColorButton(50, 400, "Line Color", myCanvas),
 			new ChangeLineWidthTextBox(400, 50, 100, 10, myCanvas),
 			new ClearCanvasButton(500, 300, "Clear", myCanvas),
-			new ToggleGridLinesButton(500, 200, "Toggle Grid", myCanvas)
+			new ToggleGridLinesButton(500, 200, "Toggle Grid", myCanvas),
+			new ChangeActionObjectImageButton(500, 300, "Change Image", test)
 			
 		};
 		

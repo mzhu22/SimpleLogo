@@ -8,9 +8,10 @@ public class ExpressionTreeBuilder {
 
 	private static ExpressionNodeFactory nodeGetter; 
 	private static Stack<ExpressionNode> temp;
+	private static Stack<ExpressionNode> outputStack;
 
 	public ExpressionTreeBuilder( String s){
-
+		outputStack = new Stack<>();
 	}
 
 	public static ExpressionNode getTree( Stack<ExpressionNode> processNodes){
@@ -55,20 +56,39 @@ public class ExpressionTreeBuilder {
 			//Checks if the instruction is a FundamentalInstruction
 			if(FundamentalInstruction.class.isAssignableFrom(nodeClass)){
 				System.out.println("BOOM");
-				
 			}
 		}
 		return returnNodes;
 	}
-
+	
+	
+	/**
+	 * Go through the ExpressionTree using in-order traversal (left-root-right) to push
+	 * fundamental instructions to the output stack in order of their declaration
+	 * @param head
+	 */
+	public static void makeOutputStack(ExpressionNode head){
+		ExpressionNode curr = head;
+		if(curr == null){
+			return;
+		}
+		
+		makeOutputStack(curr.myLeft);
+		if(FundamentalInstruction.class.isAssignableFrom(curr.getClass())){
+			outputStack.push(curr);
+		}
+		makeOutputStack(curr.myRight);
+	}
 
 	public static void main(String[] main) {
+		outputStack = new Stack<>();
 
-		String origInput = "FD - - 50 30 2 3"; 
+		String origInput = "FD SUM FD 50 50"; 
 
 		ExpressionNode finalTest =getTree( getNodes(origInput)); 
-		System.out.println(finalTest.evaluate()); 
-
+		System.out.println(finalTest.evaluate());
+		
+		makeOutputStack(finalTest);
 	} 
 
 }

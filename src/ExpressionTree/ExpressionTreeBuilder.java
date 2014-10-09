@@ -1,5 +1,7 @@
 package ExpressionTree;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 import FundamentalInstructions.FundamentalInstruction;
@@ -8,10 +10,13 @@ public class ExpressionTreeBuilder {
 
 	private static ExpressionNodeFactory nodeGetter; 
 	private static Stack<ExpressionNode> temp;
-	private static Stack<ExpressionNode> outputStack;
+	private static List<ExpressionNode> outputList;
 
 	public ExpressionTreeBuilder( String s){
-		outputStack = new Stack<>();
+		outputList = new ArrayList<>();
+		Stack<ExpressionNode> process =getNodes(s); 
+		 ExpressionNode tree = getTree(process); 
+		makeOutputStack(tree); 
 	}
 
 	public static ExpressionNode getTree( Stack<ExpressionNode> processNodes){
@@ -51,11 +56,11 @@ public class ExpressionTreeBuilder {
 			
 			returnNodes.push(nodeGetter.getNode(string)); 
 			Class<? extends ExpressionNode> nodeClass = nodeGetter.getNode(string).getClass();
-			System.out.println(nodeClass.toString());
+			//System.out.println(nodeClass.toString());
 			
 			//Checks if the instruction is a FundamentalInstruction
 			if(FundamentalInstruction.class.isAssignableFrom(nodeClass)){
-				System.out.println("BOOM");
+				//System.out.println("BOOM");
 			}
 		}
 		return returnNodes;
@@ -75,13 +80,17 @@ public class ExpressionTreeBuilder {
 		
 		makeOutputStack(curr.myLeft);
 		if(FundamentalInstruction.class.isAssignableFrom(curr.getClass())){
-			outputStack.push(curr);
+			outputList.add(curr);
 		}
 		makeOutputStack(curr.myRight);
 	}
 
+	public List<ExpressionNode> getOutputList(){
+		return outputList; 
+	}
+	
 	public static void main(String[] main) {
-		outputStack = new Stack<>();
+		outputList = new ArrayList<>();
 
 		String origInput = "FD SUM FD 50 50"; 
 

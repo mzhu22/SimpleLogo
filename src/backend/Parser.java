@@ -15,7 +15,7 @@ public class Parser {
 	
 	public List<ExpressionNode>  parse (String input){
 		maker = new ExpressionTreeBuilder(input); 
-		commandsForFrontEnd.addAll( maker.getFundamentalInstructions()); 
+		commandsForFrontEnd.addAll( maker.getOutputList()); 
 		return commandsForFrontEnd; 
 		
 	}

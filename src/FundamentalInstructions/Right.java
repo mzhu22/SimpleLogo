@@ -3,7 +3,7 @@ package FundamentalInstructions;
 
 public class Right extends FundamentalInstruction {
 
-
+	
 	@Override
 	public void doAction() {
 		// TODO Auto-generated method stub
@@ -12,7 +12,7 @@ public class Right extends FundamentalInstruction {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return(myInfo = myRight.evaluate());
+		return(myInfo = myLeft.evaluate());
 	}
 
 }

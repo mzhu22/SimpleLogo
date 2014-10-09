@@ -3,7 +3,12 @@ package FundamentalInstructions;
 import ExpressionTree.ExpressionNode;
 
 public abstract class FundamentalInstruction extends ExpressionNode{
-	 
+	
+	public FundamentalInstruction() {
+		
+		numChildren = 1; 
+	}
+	
 	protected static String myCode; //Change for different languages later
 	protected static final int ONE = 1; 
 	protected static final int ZERO = 0; 

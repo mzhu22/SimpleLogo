@@ -4,7 +4,11 @@ import CommandAbstractClasses.Operation;
 
 public class Equal extends Operation {
 
-
+	public Equal (){
+		
+		numChildren = 2; 
+	}
+	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub

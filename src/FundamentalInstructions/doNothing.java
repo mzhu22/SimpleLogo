@@ -3,6 +3,11 @@ package FundamentalInstructions;
 
 public class doNothing extends FundamentalInstruction {
 
+	
+	public doNothing() {
+		
+		numChildren = 0; 
+	}
 
 	@Override
 	public double evaluate() {

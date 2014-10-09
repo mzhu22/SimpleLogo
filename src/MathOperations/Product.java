@@ -5,6 +5,10 @@ import CommandAbstractClasses.Operation;
 public class Product extends Operation{
 
 	
+	public Product() {
+		
+		numChildren =2; 
+	}
 
 	@Override
 	public double evaluate() {

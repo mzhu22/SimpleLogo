@@ -4,6 +4,10 @@ import CommandAbstractClasses.Operation;
 
 public class Cosine extends Operation {
 
+	public Cosine(){
+		
+		numChildren = 1; 
+	}
 
 
 	@Override

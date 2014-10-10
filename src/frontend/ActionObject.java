@@ -3,6 +3,7 @@ package frontend;
 import java.io.File;
 
 import javafx.geometry.Point2D;
+import javafx.geometry.Point3D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -38,7 +39,7 @@ public class ActionObject {
 		myIsPenDown = true;
 		myShowTurtle = true;
 		
-		myDirection = 0;
+		myDirection = 90; //START FACING UP
 		
 		
 		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
@@ -51,13 +52,13 @@ public class ActionObject {
 			
 		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myImage);
 		
-		myImage.setX(startX);
-		myImage.setY(startY);
+		myImage.setX(startX - (myImage.getFitWidth() / 2));
+		myImage.setY(startY - (myImage.getFitHeight() / 2));
 			
 	}
 	
 	
-	public int move(int value){
+	public double move(double value){
 	
 		Point2D oldPosition = new Point2D(myX, myY);
 		
@@ -79,7 +80,7 @@ public class ActionObject {
 		
 	}
 	
-	public int rotate(int value){ //positive value are rotating left
+	public double rotate(double value){ //positive value are rotating left
 		
 		myDirection += (value%360);
 		

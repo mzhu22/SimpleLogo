@@ -1,5 +1,7 @@
 package FundamentalInstructions;
 
+import frontend.ActionObject;
+
 
 
 public class PenUp extends FundamentalInstruction {
@@ -11,8 +13,8 @@ public class PenUp extends FundamentalInstruction {
 	}
 	
 	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
+	public void doAction(ActionObject turtle) {
+		turtle.penUp();
 	}
 
 	@Override

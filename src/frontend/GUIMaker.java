@@ -33,6 +33,7 @@ public class GUIMaker {
 		
 
 		TabPane tp = new TabPane();
+		tp.setPrefSize(width, height);
 		tp.getTabs().add(createTab("Tab One"));
 		
 		tp.getTabs().add(createTab("Tab Two"));
@@ -51,16 +52,11 @@ public class GUIMaker {
 		myCanvas = new SLogoCanvas(400,400,200,200);
 		curRoot.getChildren().add(myCanvas.getHolder());
 		
-		ActionObject test = new ActionObject(50,50,"images/arrow_red.png", myCanvas);
-		test.setDirection(0);
-		test.move(50);
-		test.rotate(30);
-		test.move(50);
-		test.rotate(-30);
-		test.move(50);	
+		ActionObject test = new ActionObject(50,50,"images/arrow_red.png", myCanvas);	
+		ActionObjectMover myMover = new ActionObjectMover(test);
 		
 		GUIFeature[] features = new GUIFeature[] {
-			new InputTextBox(100, 100, 100, 100),
+			new InputTextBox(100, 100, 100, 100, myMover),
 			new QuitButton(0, 200, "Quit"),
 			new ChangeBackgroundButton(300, 300, "BG Color", myCanvas),
 			new HelpButton(400, 400, "Help"),
@@ -80,6 +76,7 @@ public class GUIMaker {
 		Tab tab = new Tab(tabTitle);
 		tab.setContent(curRoot);
 		return tab;
+
 	}
 	
 }

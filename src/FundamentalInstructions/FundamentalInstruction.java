@@ -1,8 +1,10 @@
 package FundamentalInstructions;
 
+import frontend.ActionObject;
 import ExpressionTree.ExpressionNode;
 
 public abstract class FundamentalInstruction extends ExpressionNode{
+	
 	
 	public FundamentalInstruction() {
 		numChildren = 1; 
@@ -19,12 +21,11 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 		return toRet.toString(); 
 	}
 
-	public abstract void doAction();
+	public abstract void doAction(ActionObject turtle);
 	
 	// TO DO pass doaction actionable frontend object
 	
 	
 
-	
 }
 

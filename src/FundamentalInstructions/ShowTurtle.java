@@ -1,4 +1,7 @@
 package FundamentalInstructions;
+
+import frontend.ActionObject;
+
 public class ShowTurtle extends FundamentalInstruction {
 
 
@@ -8,8 +11,8 @@ public class ShowTurtle extends FundamentalInstruction {
 	}
 	
 	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub 
+	public void doAction(ActionObject turtle) {
+		turtle.showTurtle();
 	}
 
 	@Override

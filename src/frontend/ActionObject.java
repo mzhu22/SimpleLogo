@@ -110,9 +110,11 @@ public class ActionObject {
 	
 	public void showTurtle(){
 		myShowTurtle = true;
+		myImage.setVisible(myShowTurtle);
 	}
 	public void hideTurtle(){
 		myShowTurtle = false;
+		myImage.setVisible(myShowTurtle);
 	}
 
 	

@@ -7,8 +7,11 @@ import javafx.scene.control.TextArea;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
 	
-	public InputTextBox(double x, double y, double width, double height) {
+	ActionObjectMover myMover;
+	
+	public InputTextBox(double x, double y, double width, double height, ActionObjectMover mover) {
 		super(x, y, width, height);
+		myMover = mover;
 	}
 
 	@Override
@@ -18,7 +21,7 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 		if(input != null && !input.isEmpty()){
 			InputController ic = new InputController();
 			ic.giveInput(input);
-			//SEND TO PARSER
+			myMover.startDrawing(ic.getInstructions());
 			
 			
 		}

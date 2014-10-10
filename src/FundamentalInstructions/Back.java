@@ -1,11 +1,13 @@
 package FundamentalInstructions;
 
+import frontend.ActionObject;
+
 
 public class Back extends FundamentalInstruction {
 
 	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub	
+	public void doAction(ActionObject turtle) {
+		turtle.move(-myInfo);
 	}
 
 	@Override
@@ -13,7 +15,6 @@ public class Back extends FundamentalInstruction {
 		// TODO Auto-generated method stub
 		return (myInfo = myLeft.evaluate());
 	}
-
 
 
 }

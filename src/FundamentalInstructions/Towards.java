@@ -1,5 +1,7 @@
 package FundamentalInstructions;
 
+import frontend.ActionObject;
+
 public class Towards extends FundamentalInstruction {
 
 	public Towards(){
@@ -9,8 +11,8 @@ public class Towards extends FundamentalInstruction {
 
 
 	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
+	public void doAction(ActionObject turtle) {
+		turtle.setDirection(myInfo);
 
 	}
 

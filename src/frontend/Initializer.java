@@ -1,6 +1,7 @@
 package frontend;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,7 @@ public class Initializer extends Application {
         myMaker = new GUIMaker(guiWidth, guiHeight);
         
         Scene scene = myMaker.make(s, guiWidth, guiHeight);
+        scene.setFill(Color.LIGHTGRAY);
         s.setScene(scene);
         s.show();
         

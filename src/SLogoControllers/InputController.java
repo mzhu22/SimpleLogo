@@ -13,7 +13,6 @@ public class InputController {
 	public void giveInput(String s){
 		input = s; 
 		System.out.println(s);
-
 	}
 	
 	public List<ExpressionNode> getInstructions(){

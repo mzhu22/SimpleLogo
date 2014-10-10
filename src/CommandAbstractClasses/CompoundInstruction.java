@@ -12,7 +12,9 @@ public class CompoundInstruction extends ExpressionNode  implements Iterable<Fun
 	protected List<FundamentalInstruction> myComponentInstructions; 
 	protected List<Number> myComponentParameters; 
 	
-	
+	public CompoundInstruction(){
+		
+	}
 	
 	@Override
 	public Iterator<FundamentalInstruction> iterator() {
@@ -20,7 +22,6 @@ public class CompoundInstruction extends ExpressionNode  implements Iterable<Fun
 		Iterator<FundamentalInstruction> iter = myComponentInstructions.iterator();
         return iter; 
 	}
-
 	
 	public void doAction(){
 		for(FundamentalInstruction someInstruction : this){

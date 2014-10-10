@@ -6,6 +6,7 @@ import CommandAbstractClasses.*;
 import Comparators.*;
 import FundamentalInstructions.*;
 import MathOperations.*; 
+import controlStructures.*;
 
 public final class ExpressionNodeFactory implements Observable {
 
@@ -80,6 +81,8 @@ public final class ExpressionNodeFactory implements Observable {
 				case "GREATER?" : case "GREATERP" :return new Greater(); 
 
 				case "LESS?" : case  "LESSP" : return new Less(); 
+				
+				case "REPEAT" : return new Repeat();
 
 				default: return new doNothing(); 
 

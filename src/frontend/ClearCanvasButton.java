@@ -15,7 +15,7 @@ public class ClearCanvasButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);
-		myCanvas.getGraphicsContext2D().clearRect(0, 0, 1000, 1000); //BAD hardcoding
+		myCanvas.getGraphicsContext2D().clearRect(0, 0, myCanvas.getWidth(), myCanvas.getHeight());
 		
 
 		//also reset turtle

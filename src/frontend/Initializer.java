@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 public class Initializer extends Application {
     private GUIMaker myMaker;
     private int guiWidth = 800;
-    private int guiHeight = 800;
+    private int guiHeight = 650;
 
     /**
      * Set things up at the beginning.
@@ -27,7 +27,7 @@ public class Initializer extends Application {
         
         myMaker = new GUIMaker(guiWidth, guiHeight);
         
-        Scene scene = myMaker.make(s, guiWidth, guiHeight);
+        Scene scene = myMaker.make(s);
         scene.setFill(Color.LIGHTGRAY);
         s.setScene(scene);
         s.show();

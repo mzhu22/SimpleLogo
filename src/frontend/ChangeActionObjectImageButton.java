@@ -30,8 +30,7 @@ public class ChangeActionObjectImageButton extends GUIFeatureWithButton {
 	private String correctFormat(String s){
 		//Kinda hardcoded
 		
-		
-		int idx = s.indexOf("images/");
+		int idx = s.indexOf("images");
 		return s.substring(idx);
 	}
 

@@ -5,6 +5,7 @@ import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
@@ -15,12 +16,17 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
+import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
 
 public class GUIMaker {
+	
+	public static final int BUTTON_OFFSET_X = 50;
 	private int myWidth;
 	private int myHeight;
+	private double myTabWidth;
+	private double myTabHeight;
 	private Group myRoot;
-	private SLogoCanvas myCanvas;
 	
 	public GUIMaker(int w, int h){
 		myWidth = w;
@@ -28,12 +34,14 @@ public class GUIMaker {
 		myRoot = new Group();
 	}
 	
-	public Scene make(Stage s, int width, int height){
-		Scene scene = new Scene(myRoot, width, height);
+	public Scene make(Stage s){
+		Scene scene = new Scene(myRoot, myWidth, myHeight);
 		
 
 		TabPane tp = new TabPane();
-		tp.setPrefSize(width, height);
+		tp.resize(myWidth, myHeight);
+		myTabWidth = tp.getWidth();
+		myTabHeight = tp.getHeight();
 		tp.getTabs().add(createTab("Tab One"));
 		
 		tp.getTabs().add(createTab("Tab Two"));
@@ -49,23 +57,26 @@ public class GUIMaker {
 	private Tab createTab(String tabTitle) {
 		Group curRoot = new Group();
 		
-		myCanvas = new SLogoCanvas(400,400,200,200);
+		SLogoCanvas myCanvas = new SLogoCanvas(500, 500, 0, 0);
+		ColorPicker myColorPicker = new ColorPicker();
+		
 		curRoot.getChildren().add(myCanvas.getHolder());
 		
-		ActionObject test = new ActionObject(50,50,"images/arrow_red.png", myCanvas);	
+		ActionObject test = new ActionObject(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
 		ActionObjectMover myMover = new ActionObjectMover(test);
-		
+		double button_x = myTabWidth - BUTTON_WIDTH;
+				
 		GUIFeature[] features = new GUIFeature[] {
-			new InputTextBox(100, 100, 100, 100, myMover),
-			new QuitButton(0, 200, "Quit"),
-			new ChangeBackgroundButton(300, 300, "BG Color", myCanvas),
-			new HelpButton(400, 400, "Help"),
-			new MakeTestLineButton(500,500,"Test", test),
-			new SetLineColorButton(50, 400, "Line Color", myCanvas),
-			new ChangeLineWidthTextBox(400, 50, 100, 10, myCanvas),
-			new ClearCanvasButton(500, 300, "Clear", myCanvas),
-			new ToggleGridLinesButton(500, 200, "Toggle Grid", myCanvas),
-			new ChangeActionObjectImageButton(500, 300, "Change Image", test)
+			new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
+			new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, "Run", "Enter commands here"),
+			new QuitButton(button_x, BUTTON_HEIGHT*1, "Quit"),
+			new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, "Change Background Color", myCanvas, myColorPicker),
+			new HelpButton(button_x, BUTTON_HEIGHT*3, "Help"),
+			new SetLineColorButton(button_x, BUTTON_HEIGHT*4, "Change Line Color", myCanvas, myColorPicker),
+			new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myCanvas, "Change Line Width", "Line Width"),
+			new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
+			new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
+			new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
 			
 		};
 		

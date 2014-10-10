@@ -2,14 +2,16 @@ package frontend;
 
 import ErrorsAndExceptions.ErrorPopUp;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.TextField;
 
 public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 
 	private Canvas myCanvas;
 	
 	public ChangeLineWidthTextBox(double x, double y, double width,
-			double height, Canvas canvas) {
-		super(x, y, width, height);
+			double height, Canvas canvas, String buttonName, String initialText) {
+		super(x, y, width, height, buttonName, initialText);
+		this.inputBox = new TextField();
 		myCanvas = canvas;
 		
 	}

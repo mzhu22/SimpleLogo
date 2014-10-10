@@ -11,19 +11,21 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class ChangeBackgroundButton extends GUIFeatureChangeColorButton{
+public class ChangeBackgroundButton extends GUIFeatureWithButton{
 
 	private Node myNode;
+	private ColorPicker myColorPicker;
 	
-	public ChangeBackgroundButton(double x, double y, String buttonName, Node node) {
+	public ChangeBackgroundButton(double x, double y, String buttonName, Node node, ColorPicker cp) {
 		super(x, y, buttonName);
 		myNode = node;
+		myColorPicker = cp;
 		
 	}
 	
 	@Override
-	public void submitAction(){	
-		((SLogoCanvas) myNode).changeBackground(this.colorPicker.getValue());
+	public void action(){	
+		((SLogoCanvas) myNode).changeBackground(this.myColorPicker.getValue());
 	}
 	
 	

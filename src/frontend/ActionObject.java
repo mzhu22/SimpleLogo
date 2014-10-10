@@ -18,7 +18,6 @@ public class ActionObject {
 	private static final double HEIGHT = 30;
 	
 	
-	
 	private double myX;
 	private double myY;
 	private double myDirection; //0 is right, 90 up, 180 left, 270 down
@@ -65,19 +64,43 @@ public class ActionObject {
 		
 		myX += (value * Math.cos(myDirection * DEGREES_TO_RADIANS_FACTOR));
 		myY -= (value * Math.sin(myDirection * DEGREES_TO_RADIANS_FACTOR));
+		
+		if(myX - myImage.getFitWidth()/2 <= 0){
+			myX += myCanvas.getWidth();
+		}
+		if(myX + myImage.getFitWidth()/2 >= myCanvas.getWidth()){
+			myX -= myCanvas.getWidth();
+		}
+		
+		if(myY - myImage.getFitHeight()/2 <= 0){
+			myY += myCanvas.getHeight();
+		}
+		if(myY + myImage.getFitHeight()/2 >= myCanvas.getHeight()){
+			myY -= myCanvas.getHeight();
+		}
+		
 		//MINUS since normal xy plane has positive y as up; here positive y is down
 		
 		Point2D newPosition = new Point2D(myX, myY);
 		
-		if(myIsPenDown){
-			((SLogoCanvas) myCanvas).drawLine(oldPosition, newPosition);
-		}
+		makeLine(oldPosition, newPosition);
 		
 		myImage.setX(myX - (myImage.getFitWidth() / 2));
 		myImage.setY(myY - (myImage.getFitHeight() / 2));
 		
 		return value;
 		
+	}
+
+
+	/**
+	 * @param oldPosition
+	 * @param newPosition
+	 */
+	private void makeLine(Point2D oldPosition, Point2D newPosition) {
+		if(myIsPenDown){
+			((SLogoCanvas) myCanvas).drawLine(oldPosition, newPosition);
+		}
 	}
 	
 	public double rotate(double value){ //positive value are rotating left
@@ -98,6 +121,14 @@ public class ActionObject {
 	public void setDirection(double dir){
 		myImage.setRotate(-dir + 90);
 		myDirection = dir;
+	}
+	
+	public void goToCoord(double x, double y){
+		myX = x;
+		myY = y;
+		myImage.setX(x);
+		myImage.setY(y);
+		
 	}
 	
 	
@@ -127,6 +158,8 @@ public class ActionObject {
 		return myShowTurtle; 
 	}
 	
+	
+	
 	public double getX(){
 		return myX; 
 	}
@@ -134,5 +167,7 @@ public class ActionObject {
 	public double getY(){
 		return myY; 
 	}
-
+	
+	
+	
 }

@@ -4,13 +4,15 @@ import SLogoControllers.InputController;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
 	
 	ActionObjectMover myMover;
 	
-	public InputTextBox(double x, double y, double width, double height, ActionObjectMover mover) {
-		super(x, y, width, height);
+	public InputTextBox(double x, double y, double width, double height, ActionObjectMover mover, String buttonName, String initialText) {
+		super(x, y, width, height, buttonName, initialText);
+		this.inputBox = new TextArea();
 		myMover = mover;
 	}
 

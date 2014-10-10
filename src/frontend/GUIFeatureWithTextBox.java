@@ -11,21 +11,28 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TextInputControl;
 import javafx.scene.text.Text;
+import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
 
 public abstract class GUIFeatureWithTextBox extends GUIFeature {
 
-	protected TextArea inputBox;
+	protected TextInputControl inputBox;
 	protected double myWidth;
 	protected double myHeight;
+	protected String myButtonName;
+	protected String myInitialText;
 	
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithTextBox(double x, double y, double width, double height) {
+	public GUIFeatureWithTextBox(double x, double y, double width, double height, String buttonName, String initialText) {
 		super(x, y);
 		myWidth = width;
 		myHeight = height;
+		myButtonName = buttonName;
+		myInitialText = initialText;
 	}
 
 	/**
@@ -41,19 +48,24 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 	public Group makeTool() {
 		Group g = new Group();
 		
-		inputBox = new TextArea();
 		inputBox.setLayoutX(this.myX);
 		inputBox.setLayoutY(this.myY);
 
 		inputBox.setPrefWidth(this.myWidth);
 		inputBox.setPrefHeight(this.myHeight);
 		
+		inputBox.setPromptText(myInitialText);
+		
 		
 		g.getChildren().add(inputBox);
 		
-		Button b = new Button("Submit");
+		Button b = new Button(myButtonName);
 		b.setLayoutX(this.myX + this.myWidth);
 		b.setLayoutY(this.myY);
+		b.setMinWidth(BUTTON_WIDTH);
+		b.setMaxWidth(BUTTON_WIDTH);
+		b.setMinHeight(BUTTON_HEIGHT);
+		b.setMaxHeight(BUTTON_HEIGHT);
 		b.setOnMouseClicked(event -> this.action());
 		
 		g.getChildren().add(b);

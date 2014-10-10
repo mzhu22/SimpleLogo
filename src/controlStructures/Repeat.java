@@ -1,27 +1,22 @@
 package controlStructures;
 
-import java.util.List;
 
-import ExpressionTree.ExpressionNode;
+import frontend.ActionObject;
+import FundamentalInstructions.FundamentalInstruction;
 
-public class Repeat extends ExpressionNode{
-
-	protected List<ExpressionNode> myInstructions;
+public class Repeat extends FundamentalInstruction{
 	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		for(int i=1; i<getLeft().evaluate(); i++){
-			getRight().evaluate();
-			
-		}
-		return 0;
+		return myInfo = getLeft().evaluate();
 	}
 
-	public void doAction() {
-		// TODO Auto-generated method stub
-		for(ExpressionNode insn: myInstructions){
-			//insn.doAction();
+	public void doAction(ActionObject turtle) {
+		for(int i=0; i<myInfo; i++){
+			// TODO: fix casting?
+			// The getRight should always be a FundamentalInsturction? 
+			((FundamentalInstruction) getRight()).doAction(turtle);
 		}
 	}
 

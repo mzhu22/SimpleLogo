@@ -10,14 +10,15 @@ public class ExpressionTreeBuilder {
 
 	private static ExpressionNodeFactory nodeGetter; 
 	private static Stack<ExpressionNode> temp;
-	private static List<ExpressionNode> outputList;
+	private static List<FundamentalInstruction> outputList;
 
 	public ExpressionTreeBuilder( String s){
 		outputList = new ArrayList<>();
 		Stack<ExpressionNode> process =getNodes(s); 
 		ExpressionNode processTree = getTree(process); 
 		System.out.println(processTree.myInfo + " is the value I have evaluated"); 
-		makeOutputStack(processTree); 
+		processTree.makeInstructionList();
+		outputList = processTree.getInstructionList(); 
 	}
 
 	public static ExpressionNode getTree( Stack<ExpressionNode> processNodes){
@@ -68,32 +69,8 @@ public class ExpressionTreeBuilder {
 		return returnNodes;
 	}
 	
-	
-	/**
-	 * Go through the ExpressionTree using in-order traversal (left-root-right) to push
-	 * fundamental instructions to the output stack in order of their declaration
-	 * @param head
-	 */
-	public static void makeOutputStack(ExpressionNode head){
-		ExpressionNode curr = head;
-		if(curr == null){
-			return;
-		}
-		
-		makeOutputStack(curr.myLeft);
-		if(FundamentalInstruction.class.isAssignableFrom(curr.getClass())){
-			outputList.add(curr);
-		}
-		makeOutputStack(curr.myRight);
-	}
-
-	public List<ExpressionNode> getOutputList(){
-		return outputList; 
-	}
-	
 	public static void main(String[] main) {
-		outputList = new ArrayList<>();
-		String origInput = "REPEAT 5 FD 50";
+		String origInput = "FD SUM FD SUM FD 50 50 50";
 		
 		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
 		

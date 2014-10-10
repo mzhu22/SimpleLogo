@@ -10,29 +10,23 @@ public abstract class ExpressionNode {
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
 	protected int numChildren; 
-	protected List<FundamentalInstruction> instructionList = new ArrayList<>();
-
 
 	public abstract double evaluate(); 
 
-	public void makeInstructionList(){
-		
+	public List<FundamentalInstruction> makeInstructionList(){
+			List<FundamentalInstruction> instructionList = new ArrayList<>();
+			
 			if(getLeft()!=null){
-				getLeft().makeInstructionList();
-				instructionList.addAll(getLeft().instructionList);
+				instructionList.addAll(getLeft().makeInstructionList());
 			}
 			if(FundamentalInstruction.class.isAssignableFrom(this.getClass())){
 				instructionList.add((FundamentalInstruction)this);
 			}
 			if(getRight()!=null){
-				getRight().makeInstructionList();
-				instructionList.addAll(getRight().instructionList);
+				instructionList.addAll(getRight().makeInstructionList());
 			}
+			return instructionList;
 	}
-	
-	public List<FundamentalInstruction> getInstructionList(){
-		return instructionList;
-	} 
 	
 	public ExpressionNode getLeft(){
 		return myLeft; 

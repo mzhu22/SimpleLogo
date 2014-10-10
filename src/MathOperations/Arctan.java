@@ -14,11 +14,4 @@ public class Arctan extends Operation {
 		// TODO Auto-generated method stub
 		return Math.toDegrees(Math.atan(getLeft().evaluate()));
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

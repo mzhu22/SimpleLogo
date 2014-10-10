@@ -14,11 +14,4 @@ public class Difference extends Operation {
 		// TODO Auto-generated method stub
 		return getLeft().evaluate() - getRight().evaluate();
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

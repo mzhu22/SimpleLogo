@@ -14,9 +14,5 @@ public class doNothing extends ExpressionNode {
 		return 0;
 	}
 
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
+	
 }

@@ -15,11 +15,4 @@ public class Or extends Operation {
 		// TODO Auto-generated method stub
 		return ( (getLeft().evaluate() + getRight().evaluate()) != 0 ) ? 1 : 0 ; 
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

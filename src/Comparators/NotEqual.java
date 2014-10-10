@@ -14,11 +14,4 @@ public class NotEqual extends Operation {
 	public double evaluate() {
 		return ( getLeft().evaluate() != getRight().evaluate()) ? 1 : 0 ; 
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

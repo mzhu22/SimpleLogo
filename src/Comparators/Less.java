@@ -15,13 +15,4 @@ public class Less extends Operation {
 		// TODO Auto-generated method stub
 		return ( getLeft().evaluate() < getRight().evaluate()) ? 1 : 0 ; 
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
 }

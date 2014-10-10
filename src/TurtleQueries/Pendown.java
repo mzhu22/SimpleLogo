@@ -16,11 +16,4 @@ public class Pendown extends TurtleQuery {
 		// return 1 if pendown, 0 otherwise
 		return myActionable.isPenDown() ? 1:0;
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

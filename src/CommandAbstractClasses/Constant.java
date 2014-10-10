@@ -15,12 +15,5 @@ public class Constant extends ExpressionNode {
 		// TODO Auto-generated method stub
 		return myInfo;
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
 	
-
 }

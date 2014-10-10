@@ -16,11 +16,4 @@ public class Randoms extends Operation {
 		randomizer= new Random(); 
 		return (randomizer.nextDouble()) * Math.abs(getLeft().evaluate());
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

@@ -16,11 +16,4 @@ public class XCor extends TurtleQuery {
 		// somehow get the turtle's x-coordinate
 		return myActionable.getX();
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

@@ -14,11 +14,4 @@ public class Minus extends Operation{
 		// TODO Auto-generated method stub
 		return -getLeft().evaluate();
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

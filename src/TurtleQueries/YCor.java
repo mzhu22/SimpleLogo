@@ -15,11 +15,4 @@ public class YCor  extends TurtleQuery {
 		// TODO Auto-generated method stub
 		return myActionable.getY();
 	}
-
-	@Override
-	public void doAction() {
-		// TODO Auto-generated method stub
-		
-	}
-
 }

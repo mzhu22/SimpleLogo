@@ -25,7 +25,7 @@ public class CompoundInstruction extends ExpressionNode  implements Iterable<Fun
 	
 	public void doAction(){
 		for(FundamentalInstruction someInstruction : this){
-			someInstruction.doAction(); 
+			someInstruction.doAction(null); 
 		}
 	}
 	@Override

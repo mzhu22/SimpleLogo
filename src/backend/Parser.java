@@ -12,8 +12,13 @@ public class Parser {
 	
 	public List<ExpressionNode>  parse (String input){
 		input = input.toUpperCase();
-		maker = new ExpressionTreeBuilder(input); 
-		commandsForFrontEnd.addAll( maker.getOutputList()); 
+		
+		
+		String[] split = input.split("\n"); 
+		for(String s : split){
+		maker = new ExpressionTreeBuilder(s); 
+		commandsForFrontEnd.addAll( maker.getOutputList());
+		} 
 		return commandsForFrontEnd; 
 	}
 	

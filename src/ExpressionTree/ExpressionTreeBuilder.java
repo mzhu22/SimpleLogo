@@ -69,14 +69,14 @@ public class ExpressionTreeBuilder {
 		return outputList;
 	}
 	
-	public static void main(String[] main) {
-		String origInput = "REPEAT 1 FD 35";
-		
-		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
-		
-		for(ExpressionNode s :outputList ){
-			System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
-		}
-	} 
+//	public static void main(String[] main) {
+//		String origInput = "REPEAT 1 FD 35";
+//		
+//		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
+//		
+//		for(ExpressionNode s :outputList ){
+//			System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
+//		}
+//	} 
 
 }

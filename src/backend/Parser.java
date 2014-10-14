@@ -1,5 +1,13 @@
 package backend;
 
+
+/**
+ * @author Dimeji Abidoye
+ * Class that takes in front end inputs and returns front end actionables
+ *
+ */
+
+
 import java.util.ArrayList;
 import java.util.List;
 

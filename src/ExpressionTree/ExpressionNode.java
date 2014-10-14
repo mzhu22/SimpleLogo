@@ -62,4 +62,8 @@ public abstract class ExpressionNode {
 		return numChildren; 
 		
 	}
+	
+	public double getInfo(){
+		return myInfo; 
+	}
 }

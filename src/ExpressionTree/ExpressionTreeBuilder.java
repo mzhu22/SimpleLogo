@@ -1,5 +1,9 @@
 package ExpressionTree;
-
+/**
+ * @author Dimeji Abidoye
+ * 
+ *
+ */
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -11,6 +15,7 @@ public class ExpressionTreeBuilder {
 	private static ExpressionNodeFactory nodeGetter; 
 	private static Stack<ExpressionNode> temp;
 	private static List<FundamentalInstruction> outputList;
+	//private static VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 
 	public ExpressionTreeBuilder( String s){
 		outputList = new ArrayList<>();
@@ -38,6 +43,7 @@ public class ExpressionTreeBuilder {
 			//Need to check if it is a fundamental instruction
 				//add a copy to the "list or stack thing" to send to frontend
 				//only fundamental instructions: fd, turn, penup, pendown, turtle on/off, compounds, stamp
+			System.out.println(holder.getClass());
 			temp.push(holder);
 
 		}
@@ -68,15 +74,39 @@ public class ExpressionTreeBuilder {
 	public List<FundamentalInstruction> getOutputList(){
 		return outputList;
 	}
-	
+//	
 //	public static void main(String[] main) {
-//		String origInput = "REPEAT 1 FD 35";
+//		String origInput = "MAKE :two 30";
 //		
 //		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
 //		
 //		for(ExpressionNode s :outputList ){
 //			System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
 //		}
+//	
+//		
+//	for(String  s : myVariables.keySet()){
+//
+//		System.out.println( s + " " + myVariables.getVariable(s).getInfo()); 
+//	}
+//	
+//	
+//	
+//	
+//	ExpressionTreeBuilder uilder = new ExpressionTreeBuilder(  "MAKE :two - :two 4 "); 
+//	
+//	for(ExpressionNode s :outputList ){
+//		System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
+//	}
+//
+//	
+//	for(String  s : myVariables.keySet()){
+//
+//		System.out.println( s + " "+ myVariables.getVariable(s).getInfo()); 
+//	}
+//
 //	} 
 
+	
+	
 }

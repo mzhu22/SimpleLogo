@@ -6,6 +6,7 @@ package ExpressionTree;
  */
 import java.util.ArrayList;
 import java.util.List;
+//import java.util.Scanner;
 import java.util.Stack;
 
 import FundamentalInstructions.FundamentalInstruction;
@@ -38,12 +39,8 @@ public class ExpressionTreeBuilder {
 				holder.setLeft(temp.pop());
 				holder.setRight(temp.pop());
 			}
-
 			
-			//Need to check if it is a fundamental instruction
-				//add a copy to the "list or stack thing" to send to frontend
-				//only fundamental instructions: fd, turn, penup, pendown, turtle on/off, compounds, stamp
-			System.out.println(holder.getClass());
+			System.out.println(holder.getClass() + " this is the current holder's class");
 			temp.push(holder);
 
 		}
@@ -58,55 +55,51 @@ public class ExpressionTreeBuilder {
 
 		String[] split = s.trim().split(" "); 
 		for(String string : split ){
-			
+
 			returnNodes.push(nodeGetter.getNode(string)); 
 			Class<? extends ExpressionNode> nodeClass = nodeGetter.getNode(string).getClass();
-			//System.out.println(nodeClass.toString());
-			
-			//Checks if the instruction is a FundamentalInstruction
+
 			if(FundamentalInstruction.class.isAssignableFrom(nodeClass)){
-				//System.out.println("BOOM");
+				
 			}
 		}
 		return returnNodes;
 	}
-	
+
 	public List<FundamentalInstruction> getOutputList(){
 		return outputList;
 	}
-//	
-//	public static void main(String[] main) {
-//		String origInput = "MAKE :two 30";
-//		
-//		ExpressionTreeBuilder builder = new ExpressionTreeBuilder( origInput); 
-//		
-//		for(ExpressionNode s :outputList ){
-//			System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
-//		}
-//	
-//		
-//	for(String  s : myVariables.keySet()){
-//
-//		System.out.println( s + " " + myVariables.getVariable(s).getInfo()); 
-//	}
-//	
-//	
-//	
-//	
-//	ExpressionTreeBuilder uilder = new ExpressionTreeBuilder(  "MAKE :two - :two 4 "); 
-//	
-//	for(ExpressionNode s :outputList ){
-//		System.out.println(s.myInfo + " "+ s.getClass() + " " + s.myInfo); 
-//	}
-//
-//	
-//	for(String  s : myVariables.keySet()){
-//
-//		System.out.println( s + " "+ myVariables.getVariable(s).getInfo()); 
-//	}
-//
-//	} 
 
-	
-	
+//	public static void main(String[] main) {
+//
+//
+//
+//		@SuppressWarnings("resource")
+//		Scanner sc = new Scanner(System.in);
+//
+//		String s = sc.nextLine(); 
+//		
+//		
+//		while(s != "END"){
+//			
+//			s = s.toUpperCase();
+//			System.out.println(s + " this is the input string"); 
+//			
+//			ExpressionTreeBuilder builder = new ExpressionTreeBuilder(s); 	
+//			
+//			for(ExpressionNode a :outputList ){
+//				System.out.println(a.myInfo + " "+ a.getClass() + " these are the fundamental nodes in the tree"); 
+//			}
+//			
+//			for(String  a : myVariables.keySet()){
+//				System.out.println( a + " "+ myVariables.getVariable(a).getInfo()); 
+//			
+//			}
+//		 s = sc.nextLine();
+//		} 
+//
+//		
+//		System.out.println( "this is the end"); 
+//	}
+
 }

@@ -15,11 +15,13 @@ import javafx.collections.FXCollections;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
 
 public abstract class GUIFeatureWithDropDown extends GUIFeature {
 
 	protected List<String> myItems;
+	protected String myPromptText;
 	
 	/**
 	 * @see frontend.GUIFeature@action()
@@ -27,6 +29,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	public GUIFeatureWithDropDown(double x, double y) {
 		super(x, y);
 		myItems = new ArrayList<String>();
+		fillItemList();
 	}
 
 	/**
@@ -37,6 +40,8 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 		
 	}
 	
+	public abstract void fillItemList();
+	
 	public abstract void doDropDownClickAction(String chosen);
 
 	/**
@@ -44,7 +49,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	 */
 	@Override
 	public Group makeTool() {
-		ChoiceBox<String> cb = new ChoiceBox<String>();
+		ComboBox<String> cb = new ComboBox<String>();
 		cb.setItems(FXCollections.observableArrayList(
 			    myItems));
 		
@@ -65,7 +70,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 			}
 			
 		});
-		
+		cb.setPromptText(myPromptText);
 		g.getChildren().add(cb);
 		return g;
 	}

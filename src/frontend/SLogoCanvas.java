@@ -7,6 +7,9 @@
 
 package frontend;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javafx.geometry.Point2D;
 import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
@@ -15,6 +18,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 public class SLogoCanvas extends Canvas {
@@ -22,6 +26,12 @@ public class SLogoCanvas extends Canvas {
 	private Pane myHolder;
 	private GridPane myGrid;
 	private Rectangle myBackground;
+	
+	private Color myLineColor;
+	private double myLineWidth;
+	private String myLineStyle;
+	private final static Map<String, Double> LINE_STYLES = new HashMap<String, Double>();
+
 	
 	private static final int SPACE_BETWEEN_GRID_LINES = 10;
 	/**
@@ -36,6 +46,12 @@ public class SLogoCanvas extends Canvas {
 		// TODO Auto-generated constructor stub
 		super(width, height);
 		
+		LINE_STYLES.put("Dotted", 3d);
+		LINE_STYLES.put("Dashed", 10d);
+		LINE_STYLES.put("Solid", Double.MAX_VALUE);
+		
+		myLineStyle = "Dashed";
+		
 		myHolder = new Pane();
 		myHolder.setLayoutX(x);
 		myHolder.setLayoutY(y);
@@ -48,7 +64,6 @@ public class SLogoCanvas extends Canvas {
 		myGrid.setPrefWidth(width);
 		
 		
-		
 		for(int i = 0; i < width/SPACE_BETWEEN_GRID_LINES; i++){
 			myGrid.getColumnConstraints().add(new ColumnConstraints(SPACE_BETWEEN_GRID_LINES));			
 		}
@@ -58,6 +73,9 @@ public class SLogoCanvas extends Canvas {
 		
 		
 		myGrid.setGridLinesVisible(false);
+		
+		myLineColor = Color.BLACK;
+		myLineWidth = 1;
 		
 		myBackground = new Rectangle(0,0,width, height);
 		myBackground.setFill(Color.WHITE);
@@ -80,7 +98,14 @@ public class SLogoCanvas extends Canvas {
 	 */
 	public void drawLine(Point2D p1, Point2D p2)
 	{
-		this.getGraphicsContext2D().strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		Line line = new Line(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		line.setStroke(myLineColor);
+		line.setStrokeWidth(myLineWidth);
+		System.out.println(myLineStyle);
+		line.getStrokeDashArray().addAll(LINE_STYLES.get(myLineStyle));
+		myHolder.getChildren().add(line);
+		
+		//this.getGraphicsContext2D().strokeLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 	}
 	
 	public Pane getHolder()
@@ -94,7 +119,8 @@ public class SLogoCanvas extends Canvas {
 	 */
 	public void setLineColor(Color c)
 	{
-		this.getGraphicsContext2D().setStroke(c);
+		myLineColor = c;
+		//this.getGraphicsContext2D().setStroke(c);
 	}
 	
 	/**
@@ -103,7 +129,12 @@ public class SLogoCanvas extends Canvas {
 	 */
 	public void setLineWidth(double width)
 	{
-		this.getGraphicsContext2D().setLineWidth(width);
+		myLineWidth = width;
+		//this.getGraphicsContext2D().setLineWidth(width);
+	}
+	
+	public void setLineStyle(String style){
+		myLineStyle = style;
 	}
 	
 	public void toggleGridLines(){

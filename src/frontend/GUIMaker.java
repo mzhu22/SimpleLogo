@@ -9,6 +9,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
@@ -27,6 +28,7 @@ public class GUIMaker {
 	private double myTabWidth;
 	private double myTabHeight;
 	private Group myRoot;
+	
 	
 	public GUIMaker(int w, int h){
 		myWidth = w;
@@ -48,6 +50,8 @@ public class GUIMaker {
 		
 		//Should add a button that allows new tabs to be created
 		myRoot.getChildren().add(tp);
+		
+//		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new ActionObjectKeyHandler(myMover));
 		
 		return scene;
 		
@@ -77,7 +81,9 @@ public class GUIMaker {
 			new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
 			new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
 			new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, test),
+			new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, "Enable Arrows"),
 			new GUIChooseImage(button_x, BUTTON_HEIGHT*10, test),
+			new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, myCanvas),
 			
 			//new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
 			
@@ -87,8 +93,13 @@ public class GUIMaker {
 		for(GUIFeature f : features){
 			curRoot.getChildren().add(f.makeTool());
 		}
+		
+		curRoot.addEventHandler(KeyEvent.KEY_PRESSED, new ActionObjectKeyHandler(myMover));
+		
+		
 		Tab tab = new Tab(tabTitle);
 		tab.setContent(curRoot);
+		
 		return tab;
 
 	}

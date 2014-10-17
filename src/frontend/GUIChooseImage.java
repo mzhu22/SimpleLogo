@@ -15,10 +15,11 @@ public class GUIChooseImage extends GUIFeatureWithDropDown{
 	public GUIChooseImage(double x, double y, ActionObject turtle) {
 		super(x, y);
 		myTurtle = turtle;
-		createListOfImages();
+		myPromptText = "Select Image";
 	}
 
-	public void createListOfImages(){
+	@Override
+	public void fillItemList(){
 		File[] files = new File(IMAGE_FOLDER_NAME).listFiles();
 		
 		for (File file : files) {

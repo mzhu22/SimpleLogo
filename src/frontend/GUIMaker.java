@@ -82,8 +82,8 @@ public class GUIMaker {
 			new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
 			new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, test),
 			new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, "Enable Arrows"),
-			new GUIChooseImage(button_x, BUTTON_HEIGHT*10, test),
-			new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, myCanvas),
+			new GUIChooseImage(button_x, BUTTON_HEIGHT*10, "Select Image", test),
+			new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, "Select Line Style", myCanvas),
 			
 			//new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
 			

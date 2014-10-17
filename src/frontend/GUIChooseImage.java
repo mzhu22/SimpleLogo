@@ -12,10 +12,9 @@ public class GUIChooseImage extends GUIFeatureWithDropDown{
 	protected final static int IMAGE_FOLDER_NAME_LENGTH = IMAGE_FOLDER_NAME.length();
 	
 	
-	public GUIChooseImage(double x, double y, ActionObject turtle) {
-		super(x, y);
+	public GUIChooseImage(double x, double y, String prompt, ActionObject turtle) {
+		super(x, y, prompt);
 		myTurtle = turtle;
-		myPromptText = "Select Image";
 	}
 
 	@Override

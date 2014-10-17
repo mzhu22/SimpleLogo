@@ -4,10 +4,9 @@ public class GUIChooseLineStyle extends GUIFeatureWithDropDown {
 
 	private SLogoCanvas myCanvas;
 	
-	public GUIChooseLineStyle(double x, double y, SLogoCanvas canvas) {
-		super(x, y);
+	public GUIChooseLineStyle(double x, double y, String prompt, SLogoCanvas canvas) {
+		super(x, y, prompt);
 		myCanvas = canvas;
-		myPromptText = "Select Line Style";
 	}
 
 	@Override

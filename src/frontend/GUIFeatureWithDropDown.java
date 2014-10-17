@@ -26,8 +26,9 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithDropDown(double x, double y) {
+	public GUIFeatureWithDropDown(double x, double y, String prompt) {
 		super(x, y);
+		myPromptText = prompt;
 		myItems = new ArrayList<String>();
 		fillItemList();
 	}

@@ -101,7 +101,6 @@ public class SLogoCanvas extends Canvas {
 		Line line = new Line(p1.getX(), p1.getY(), p2.getX(), p2.getY());
 		line.setStroke(myLineColor);
 		line.setStrokeWidth(myLineWidth);
-		System.out.println(myLineStyle);
 		line.getStrokeDashArray().addAll(LINE_STYLES.get(myLineStyle));
 		myHolder.getChildren().add(line);
 		

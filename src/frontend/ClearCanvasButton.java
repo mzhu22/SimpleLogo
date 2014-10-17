@@ -1,7 +1,10 @@
 package frontend;
 
+import java.util.function.Predicate;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public class ClearCanvasButton extends GUIFeatureWithButton {
 
@@ -18,10 +21,15 @@ public class ClearCanvasButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);
-		myCanvas.getGraphicsContext2D().clearRect(0, 0, myCanvas.getWidth(), myCanvas.getHeight());
-		
+		((SLogoCanvas)myCanvas).getHolder().getChildren().removeIf(new Predicate<Object>(){
 
-		//also reset turtle
+			@Override
+			public boolean test(Object t) {
+				return t instanceof Line;
+			}
+			
+		});
+
 	}
 
 }

@@ -10,7 +10,6 @@ public class ActionObjectMover {
 	private ActionObject myTurtle;
 	
 	public ActionObjectMover(ActionObject turtle) {
-		// TODO Auto-generated constructor stub
 		myTurtle = turtle;
 	}
 	

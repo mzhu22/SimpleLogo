@@ -5,13 +5,16 @@ import javafx.scene.paint.Color;
 
 public class ClearCanvasButton extends GUIFeatureWithButton {
 
-	private Canvas myCanvas;
+	protected Canvas myCanvas;
 	
 	public ClearCanvasButton(double x, double y, String buttonName, Canvas canvas) {
 		super(x, y, buttonName);
 		myCanvas = canvas;
 	}
 
+	/**
+	 * turns grid lines off? - TODO
+	 */
 	@Override
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);

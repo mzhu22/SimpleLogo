@@ -29,11 +29,19 @@ public class ActionObject {
 	private boolean myIsPenDown;
 	private boolean myShowTurtle;
 	
+	private double myInitX;
+	private double myInitY;
+	private String myInitImage;
+	
 	
 	public ActionObject(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
 		myY = startY;
 		myCanvas = canvas;
+		
+		myInitX = startX;
+		myInitY = startY;
+		myInitImage = startImage;
 		
 		myIsPenDown = true;
 		myShowTurtle = true;
@@ -64,6 +72,7 @@ public class ActionObject {
 		
 		myX += (value * Math.cos(myDirection * DEGREES_TO_RADIANS_FACTOR));
 		myY -= (value * Math.sin(myDirection * DEGREES_TO_RADIANS_FACTOR));
+		//MINUS since normal xy plane has positive y as up; here positive y is down
 		
 		if(myX - myImage.getFitWidth()/2 <= 0){
 			myX += myCanvas.getWidth();
@@ -78,8 +87,6 @@ public class ActionObject {
 		if(myY + myImage.getFitHeight()/2 >= myCanvas.getHeight()){
 			myY -= myCanvas.getHeight();
 		}
-		
-		//MINUS since normal xy plane has positive y as up; here positive y is down
 		
 		Point2D newPosition = new Point2D(myX, myY);
 		
@@ -113,6 +120,7 @@ public class ActionObject {
 	}
 	
 	public void changeImage(String newImage){
+		
 		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
         myImage.setImage(image);
         
@@ -126,9 +134,17 @@ public class ActionObject {
 	public void goToCoord(double x, double y){
 		myX = x;
 		myY = y;
-		myImage.setX(x);
-		myImage.setY(y);
+		myImage.setX(myX - (myImage.getFitWidth() / 2));
+		myImage.setY(myY - (myImage.getFitHeight() / 2));
 		
+	}
+	
+	public void resetPosition(){
+		goToCoord(myInitX, myInitY);
+	}
+	
+	public void resetImage(){
+		changeImage(myInitImage);
 	}
 	
 	

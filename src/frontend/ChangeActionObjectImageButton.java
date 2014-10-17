@@ -18,6 +18,10 @@ public class ChangeActionObjectImageButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		
+		
+		
+		
+		
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.dir") +"/src/images"));
         File file = fileChooser.showOpenDialog(new Stage());

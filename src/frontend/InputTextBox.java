@@ -1,5 +1,6 @@
 package frontend;
 
+import ErrorsAndExceptions.ErrorPopUp;
 import SLogoControllers.InputController;
 import javafx.scene.Group;
 import javafx.scene.control.Button;
@@ -28,8 +29,8 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 			
 		}
 		else{
-			System.out.println("Empty");
-			//show GUI error popup
+			ErrorPopUp epu = new ErrorPopUp();
+			epu.display("Empty input");
 		}
 	}
 

@@ -76,7 +76,10 @@ public class GUIMaker {
 			new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myCanvas, "Change Line Width", "Line Width"),
 			new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
 			new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
-			new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
+			new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, test),
+			new GUIChooseImage(button_x, BUTTON_HEIGHT*10, test),
+			
+			//new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
 			
 		};
 		

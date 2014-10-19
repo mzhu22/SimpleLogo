@@ -48,6 +48,13 @@ public class GUIMaker {
 		
 		tp.getTabs().add(createTab("Tab Two"));
 		
+		
+		// possible refactor to make tabs
+
+		SLogoTab st = new SLogoTab(tp.getWidth(), tp.getHeight());
+		tp.getTabs().add(st.createTab(tp.getTabs().size() + 1));
+		
+		
 		//Should add a button that allows new tabs to be created
 		myRoot.getChildren().add(tp);
 		

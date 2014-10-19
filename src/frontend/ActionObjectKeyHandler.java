@@ -1,5 +1,8 @@
 package frontend;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import SLogoControllers.InputController;
 import javafx.event.EventHandler;
 import javafx.scene.image.ImageView;
@@ -10,7 +13,14 @@ import javafx.scene.shape.Rectangle;
 public class ActionObjectKeyHandler implements EventHandler<KeyEvent>{
 
 	private ActionObjectMover myMover;
-	
+	private final static Map<KeyCode, String> ARROW_KEYS = new HashMap<KeyCode, String>()
+			{{
+				put(KeyCode.UP, "fd 50");
+				put(KeyCode.DOWN, "fd -50");
+				put(KeyCode.LEFT, "left 10");
+				put(KeyCode.RIGHT, "right 10");
+			}};;
+			
 	public ActionObjectKeyHandler(ActionObjectMover mover){
 		myMover = mover;
 	}
@@ -19,26 +29,17 @@ public class ActionObjectKeyHandler implements EventHandler<KeyEvent>{
 	public void handle(KeyEvent event) {
 		boolean shouldDraw = false;
 		InputController ic = new InputController();
-		
-		if(event.getCode() == KeyCode.UP){
-			ic.giveInput("fd 50");
+		KeyCode kc = event.getCode();
+		if(this.ARROW_KEYS.containsKey(kc))
+		{
+			ic.giveInput(this.ARROW_KEYS.get(kc));
 			shouldDraw = true;
 		}
-		if(event.getCode() == KeyCode.DOWN){
-			ic.giveInput("fd -50");
-			shouldDraw = true;
+
+		if(shouldDraw)
+		{
+			myMover.startDrawing(ic.getInstructions());
 		}
-		if(event.getCode() == KeyCode.LEFT){
-			ic.giveInput("left 10");
-			shouldDraw = true;
-		}
-		if(event.getCode() == KeyCode.RIGHT){
-			ic.giveInput("right 10");
-			shouldDraw = true;
-		}
-		
-		
-		if(shouldDraw) myMover.startDrawing(ic.getInstructions());
 		
 	}
 

@@ -4,7 +4,9 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
+
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +15,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
 
 public abstract class GUIFeatureWithDropDown extends GUIFeature {
 
@@ -34,7 +33,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public void action(){
@@ -46,7 +45,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	public abstract void doDropDownClickAction(String chosen);
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

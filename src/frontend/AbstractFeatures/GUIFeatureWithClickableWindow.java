@@ -4,23 +4,22 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 
 public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow {
 
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithClickableWindow(double x, double y) {
-		super(x, y);
+	public GUIFeatureWithClickableWindow(double x, double y, double width, double height) {
+		super(x, y, width, height);
 		// TODO Auto-generated constructor stub
 	}
 
 	/**
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public void action() {
@@ -29,7 +28,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow
 	}
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

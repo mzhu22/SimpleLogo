@@ -6,7 +6,7 @@ public class Towards extends FundamentalInstruction {
 
 	public Towards(){
 
-		numChildren = 2; 
+		numChildren = 1; 
 	}
 
 

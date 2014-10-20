@@ -1,15 +1,9 @@
 package frontend;
 
-import java.io.File;
-
 import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 public class Turtle {
 	
@@ -25,8 +19,8 @@ public class Turtle {
 	private ImageView myImage;
 	
 	private Canvas myCanvas;
+	private Pen myPen;
 	
-	private boolean myIsPenDown;
 	private boolean myShowTurtle;
 	
 	private double myInitX;
@@ -39,11 +33,12 @@ public class Turtle {
 		myY = startY;
 		myCanvas = canvas;
 		
+		myPen = new Pen();
+		
 		myInitX = startX;
 		myInitY = startY;
 		myInitImage = startImage;
-		
-		myIsPenDown = true;
+
 		myShowTurtle = true;
 		
 		myDirection = 90; //START FACING UP
@@ -87,22 +82,15 @@ public class Turtle {
 		
 	}
 
-	
-	
-	private void edgeHandler(int angleOffset){
-		double angle = angleOffset - myDirection;
-		
-	}
-	
 	/**
-	 * Handles edge cases. Needs serious refactoring but may have many parameters/
-	 * if checks since X's and Y's are slightly different with Point2D.
+	 * Handles edge cases. Needs serious refactoring which is difficult since each case
+	 * is only slightly different (ie +/-, X or Y is different in Point2D)
 	 * @param oldPosition
 	 * @return
 	 */
 	private Point2D handleEdgeCases(Point2D oldPosition) {
 		if(myX <= 0){
-			double angle = myDirection + -180;
+			double angle = 180 - myDirection;
 			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(0, interimY);
 			makeLine(oldPosition, interim);
@@ -111,7 +99,7 @@ public class Turtle {
 			
 		}
 		else if(myX >= myCanvas.getWidth()){
-			double angle = myDirection;			
+			double angle = myDirection;
 			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
 			makeLine(oldPosition, interim);
@@ -120,7 +108,7 @@ public class Turtle {
 		}
 		
 		else if(myY <= 0){
-			double angle = myDirection + -90;
+			double angle = 90 - myDirection;
 			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, 0);
 			makeLine(oldPosition, interim);
@@ -144,9 +132,7 @@ public class Turtle {
 	 * @param newPosition
 	 */
 	private void makeLine(Point2D oldPosition, Point2D newPosition) {
-		if(myIsPenDown){
-			((SLogoCanvas) myCanvas).drawLine(oldPosition, newPosition);
-		}
+		myPen.drawLine(oldPosition, newPosition, ((SLogoCanvas)myCanvas).getHolder());
 	}
 	
 	public double rotate(double value){ //positive value are rotating left
@@ -186,14 +172,6 @@ public class Turtle {
 		changeImage(myInitImage);
 	}
 	
-	
-	public void penUp(){
-		myIsPenDown = false;
-	}
-	public void penDown(){
-		myIsPenDown = true;
-	}
-	
 	public void showTurtle(){
 		myShowTurtle = true;
 		myImage.setVisible(myShowTurtle);
@@ -202,18 +180,15 @@ public class Turtle {
 		myShowTurtle = false;
 		myImage.setVisible(myShowTurtle);
 	}
-
 	
-	public boolean isPenDown(){
-		return myIsPenDown; 
+	
+	public Pen getPen(){
+		return myPen;
 	}
-
 	
-	public boolean isTurtle(){
+	public boolean isShowing(){
 		return myShowTurtle; 
 	}
-	
-	
 	
 	public double getX(){
 		return myX; 

@@ -1,9 +1,11 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
 import java.io.File;
 
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import frontend.Turtle;
+import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class ChangeTurtleImageButton extends GUIFeatureWithButton {
 

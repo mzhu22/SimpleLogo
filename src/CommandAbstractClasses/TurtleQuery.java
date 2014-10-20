@@ -6,17 +6,17 @@ package CommandAbstractClasses;
  *
  */
 
-import frontend.Turtle;
 import ExpressionTree.ExpressionNode;
+import frontend.Turtle;
 
 
 
 public  abstract class TurtleQuery extends ExpressionNode {
 
-	protected Turtle myActionable; 
+	protected Turtle myTurtle; 
 	
 	public TurtleQuery(Turtle actionable){
-		myActionable = actionable; 
+		myTurtle = actionable; 
 		numChildren = 0; 
 	}
 	

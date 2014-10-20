@@ -1,7 +1,7 @@
 package TurtleQueries;
 
-import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
+import frontend.Turtle;
 
 public class Heading extends TurtleQuery{
 

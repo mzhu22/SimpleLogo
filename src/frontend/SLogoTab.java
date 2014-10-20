@@ -1,20 +1,37 @@
 package frontend;
 
-import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
+import frontend.AbstractFeatures.GUIFeature;
+import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.GUIFeatureWithColorPicker;
+import frontend.ConcreteFeatures.ChangeBackgroundButton;
+import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
+import frontend.ConcreteFeatures.ClearCanvasButton;
+import frontend.ConcreteFeatures.EnableArrowsButton;
+import frontend.ConcreteFeatures.GUIChooseImage;
+import frontend.ConcreteFeatures.GUIChooseLineStyle;
+import frontend.ConcreteFeatures.HelpButton;
+import frontend.ConcreteFeatures.InputTextBox;
+import frontend.ConcreteFeatures.QuitButton;
+import frontend.ConcreteFeatures.ResetButton;
+import frontend.ConcreteFeatures.SetLineColorButton;
+import frontend.ConcreteFeatures.ToggleGridLinesButton;
 
 public class SLogoTab {
 
+	private static final int CANVAS_HEIGHT = 500;
+	private static final int CANVAS_WIDTH = 500;
 	//private final static int GUIFeature[] DEFAULT_FEATURES ;
 	private double myWidth;
 	private double myHeight;
 	private Group myRoot = new Group();
-	private SLogoCanvas myCanvas = new SLogoCanvas(500, 500, 0, 0);
+	private SLogoCanvas myCanvas = new SLogoCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, 0, 0);
 	private ColorPicker myColorPicker = new ColorPicker();
 	private Turtle myTurtle;
 	private TurtleMover myMover;
@@ -29,7 +46,9 @@ public class SLogoTab {
 		
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		myTurtle = new Turtle(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
+		myTurtle = new Turtle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2,"images/arrow_red.png", myCanvas);	
+		Pen turtlePen = myTurtle.getPen();
+		
 		myMover = new TurtleMover(myTurtle);
 
 		startingFeatures = new GUIFeature[] {
@@ -38,14 +57,14 @@ public class SLogoTab {
 				new QuitButton(button_x, BUTTON_HEIGHT*1, "Quit"),
 				new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, "Change Background Color", myCanvas, myColorPicker),
 				new HelpButton(button_x, BUTTON_HEIGHT*3, "Help"),
-				new SetLineColorButton(button_x, BUTTON_HEIGHT*4, "Change Line Color", myCanvas, myColorPicker),
-				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myCanvas, "Change Line Width", "Line Width"),
+				new SetLineColorButton(button_x, BUTTON_HEIGHT*4, "Change Line Color", turtlePen, myColorPicker),
+				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, "Change Line Width", "Line Width"),
 				new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
 				new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
-				new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, myTurtle),
+				new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, myTurtle, turtlePen),
 				new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, "Enable Arrows"),
 				new GUIChooseImage(button_x, BUTTON_HEIGHT*10, "Select Image", myTurtle),
-				new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, "Select Line Style", myCanvas),
+				new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, "Select Line Style", turtlePen),
 				new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, "Add New Workspace", myTabPane),
 		};
 	}

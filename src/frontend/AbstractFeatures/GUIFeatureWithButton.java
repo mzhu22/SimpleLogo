@@ -4,10 +4,9 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 
 public abstract class GUIFeatureWithButton extends GUIFeature {
@@ -26,13 +25,13 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	}
 
 	/** 
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public abstract void action();
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

@@ -1,10 +1,11 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
+import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class HelpButton extends GUIFeatureWithButton {
 

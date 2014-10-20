@@ -1,11 +1,36 @@
 package ExpressionTree;
 
-import CommandAbstractClasses.*;
-import Comparators.*;
-import FundamentalInstructions.*;
-import MathOperations.*; 
-import controlStructures.*;
-import ExpressionTree.VariableNodeMap;
+import CommandAbstractClasses.Constant;
+import Comparators.And;
+import Comparators.Equal;
+import Comparators.Greater;
+import Comparators.Less;
+import Comparators.Not;
+import Comparators.NotEqual;
+import Comparators.Or;
+import FundamentalInstructions.Back;
+import FundamentalInstructions.Forward;
+import FundamentalInstructions.HideTurtle;
+import FundamentalInstructions.Left;
+import FundamentalInstructions.PenDown;
+import FundamentalInstructions.PenUp;
+import FundamentalInstructions.Right;
+import FundamentalInstructions.ShowTurtle;
+import MathOperations.Add;
+import MathOperations.Arctan;
+import MathOperations.Cosine;
+import MathOperations.Difference;
+import MathOperations.Log;
+import MathOperations.Minus;
+import MathOperations.Power;
+import MathOperations.Product;
+import MathOperations.Quotient;
+import MathOperations.Randoms;
+import MathOperations.Remainder;
+import MathOperations.Sine;
+import MathOperations.Tangent;
+import controlStructures.Make;
+import controlStructures.Repeat;
 
 public final class ExpressionNodeFactory {
 

@@ -1,8 +1,9 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+
+import frontend.Turtle;
+import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
 public class GUIChooseImage extends GUIFeatureWithDropDown{
 	

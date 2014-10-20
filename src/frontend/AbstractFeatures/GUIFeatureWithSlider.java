@@ -4,10 +4,9 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.Slider;
 
 public abstract class GUIFeatureWithSlider extends GUIFeature {
@@ -30,7 +29,7 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public void action() {
@@ -38,7 +37,7 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

@@ -1,7 +1,7 @@
 package TurtleQueries;
 
-import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
+import frontend.Turtle;
 
 public class YCor  extends TurtleQuery {
 
@@ -13,6 +13,6 @@ public class YCor  extends TurtleQuery {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myActionable.getY();
+		return myTurtle.getY();
 	}
 }

@@ -4,7 +4,7 @@ package controlStructures;
 import java.util.ArrayList;
 import java.util.List;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 import FundamentalInstructions.FundamentalInstruction;
 
 public class Repeat extends FundamentalInstruction{
@@ -22,7 +22,7 @@ public class Repeat extends FundamentalInstruction{
 		return 0;
 	}
 
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 	}
 
 	@Override

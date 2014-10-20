@@ -5,9 +5,9 @@ import javafx.scene.control.Slider;
 
 public class MakeTestLineButton extends GUIFeatureWithButton{
 
-	private ActionObject myTestObject;
+	private Turtle myTestObject;
 	
-	MakeTestLineButton(double x, double y, String buttonName, ActionObject s) {
+	MakeTestLineButton(double x, double y, String buttonName, Turtle s) {
 		super(x, y, buttonName);
 		myTestObject = s;
 	}

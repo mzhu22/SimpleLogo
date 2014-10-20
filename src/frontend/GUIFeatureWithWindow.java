@@ -11,11 +11,16 @@ import javafx.scene.Node;
 
 public abstract class GUIFeatureWithWindow extends GUIFeature {
 
+	private double myWidth;
+	private double myHeight;
+	
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithWindow(double x, double y) {
+	public GUIFeatureWithWindow(double x, double y, double width, double height) {
 		super(x, y);
+		myWidth = width;
+		myHeight = height;
 		// TODO Auto-generated constructor stub
 	}
 

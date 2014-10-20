@@ -1,6 +1,6 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 
 
 public class Left extends FundamentalInstruction {
@@ -12,7 +12,7 @@ public class Left extends FundamentalInstruction {
 	}
 
 	@Override
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 		turtle.rotate(myInfo);
 	}
 

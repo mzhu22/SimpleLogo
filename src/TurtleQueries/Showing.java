@@ -1,11 +1,11 @@
 package TurtleQueries;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
 
 public class Showing extends TurtleQuery{
 
-	public Showing(ActionObject actionable) {
+	public Showing(Turtle actionable) {
 		super(actionable);
 		// TODO Auto-generated constructor stub
 	}

@@ -11,7 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-public class ActionObject {
+public class Turtle {
 	
 	private static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	private static final double WIDTH = 30;
@@ -34,7 +34,7 @@ public class ActionObject {
 	private String myInitImage;
 	
 	
-	public ActionObject(double startX, double startY, String startImage, Canvas canvas){
+	public Turtle(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
 		myY = startY;
 		myCanvas = canvas;
@@ -74,19 +74,7 @@ public class ActionObject {
 		myY -= (value * Math.sin(myDirection * DEGREES_TO_RADIANS_FACTOR));
 		//MINUS since normal xy plane has positive y as up; here positive y is down
 		
-		if(myX - myImage.getFitWidth()/2 <= 0){
-			myX += myCanvas.getWidth();
-		}
-		if(myX + myImage.getFitWidth()/2 >= myCanvas.getWidth()){
-			myX -= myCanvas.getWidth();
-		}
-		
-		if(myY - myImage.getFitHeight()/2 <= 0){
-			myY += myCanvas.getHeight();
-		}
-		if(myY + myImage.getFitHeight()/2 >= myCanvas.getHeight()){
-			myY -= myCanvas.getHeight();
-		}
+		oldPosition = handleEdgeCases(oldPosition);
 		
 		Point2D newPosition = new Point2D(myX, myY);
 		
@@ -97,6 +85,57 @@ public class ActionObject {
 		
 		return value;
 		
+	}
+
+	
+	
+	private void edgeHandler(int angleOffset){
+		double angle = angleOffset - myDirection;
+		
+	}
+	
+	/**
+	 * Handles edge cases. Needs serious refactoring but may have many parameters/
+	 * if checks since X's and Y's are slightly different with Point2D.
+	 * @param oldPosition
+	 * @return
+	 */
+	private Point2D handleEdgeCases(Point2D oldPosition) {
+		if(myX <= 0){
+			double angle = myDirection + -180;
+			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
+			Point2D interim = new Point2D(0, interimY);
+			makeLine(oldPosition, interim);
+			oldPosition = new Point2D(myCanvas.getWidth(), interimY);
+			myX += myCanvas.getWidth();
+			
+		}
+		else if(myX >= myCanvas.getWidth()){
+			double angle = myDirection;			
+			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
+			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
+			makeLine(oldPosition, interim);
+			oldPosition = new Point2D(0, interimY);
+			myX %= myCanvas.getWidth();
+		}
+		
+		else if(myY <= 0){
+			double angle = myDirection + -90;
+			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
+			Point2D interim = new Point2D(interimX, 0);
+			makeLine(oldPosition, interim);
+			oldPosition = new Point2D(interimX, myCanvas.getWidth());
+			myY += myCanvas.getHeight();
+		}
+		else if(myY >= myCanvas.getHeight()){
+			double angle = 270 - myDirection;	
+			double interimX = myX - ((myCanvas.getHeight() - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
+			Point2D interim = new Point2D(interimX, myCanvas.getHeight());
+			makeLine(oldPosition, interim);
+			oldPosition = new Point2D(interimX, 0);
+			myY %= myCanvas.getHeight();
+		}
+		return oldPosition;
 	}
 
 

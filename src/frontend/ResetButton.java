@@ -5,9 +5,9 @@ import javafx.scene.paint.Color;
 
 public class ResetButton extends ClearCanvasButton {
 
-	ActionObject myTurtle;
+	Turtle myTurtle;
 	
-	public ResetButton(double x, double y, String buttonName, Canvas canvas, ActionObject turtle) {
+	public ResetButton(double x, double y, String buttonName, Canvas canvas, Turtle turtle) {
 		super(x, y, buttonName, canvas);
 		myTurtle = turtle;
 	}

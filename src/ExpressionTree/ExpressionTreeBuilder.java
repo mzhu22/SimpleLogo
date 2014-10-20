@@ -40,7 +40,7 @@ public class ExpressionTreeBuilder {
 				holder.setRight(temp.pop());
 			}
 			
-			System.out.println(holder.getClass() + " this is the current holder's class");
+			//System.out.println(holder.getClass() + " this is the current holder's class");
 			temp.push(holder);
 
 		}

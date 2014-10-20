@@ -1,6 +1,6 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 
 public class Towards extends FundamentalInstruction {
 
@@ -11,7 +11,7 @@ public class Towards extends FundamentalInstruction {
 
 
 	@Override
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 		turtle.setDirection(myInfo);
 
 	}

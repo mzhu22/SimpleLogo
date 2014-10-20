@@ -1,11 +1,11 @@
 package TurtleQueries;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
 
 public class Pendown extends TurtleQuery {
 
-	public Pendown(ActionObject actionable) {
+	public Pendown(Turtle actionable) {
 		super(actionable);
 		// TODO Auto-generated constructor stub
 	}

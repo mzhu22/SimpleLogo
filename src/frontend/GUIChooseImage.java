@@ -6,13 +6,13 @@ import java.util.List;
 
 public class GUIChooseImage extends GUIFeatureWithDropDown{
 	
-	private ActionObject myTurtle;
+	private Turtle myTurtle;
 	
 	protected final static String IMAGE_FOLDER_NAME = "src/images/";
 	protected final static int IMAGE_FOLDER_NAME_LENGTH = IMAGE_FOLDER_NAME.length();
 	
 	
-	public GUIChooseImage(double x, double y, String prompt, ActionObject turtle) {
+	public GUIChooseImage(double x, double y, String prompt, Turtle turtle) {
 		super(x, y, prompt);
 		myTurtle = turtle;
 	}

@@ -5,11 +5,11 @@ import java.io.File;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-public class ChangeActionObjectImageButton extends GUIFeatureWithButton {
+public class ChangeTurtleImageButton extends GUIFeatureWithButton {
 
-	ActionObject myObject;
+	Turtle myObject;
 	
-	public ChangeActionObjectImageButton(double x, double y, String buttonName, ActionObject obj) {
+	public ChangeTurtleImageButton(double x, double y, String buttonName, Turtle obj) {
 		super(x, y, buttonName);
 		myObject = obj;
 		

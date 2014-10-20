@@ -1,6 +1,6 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 import ExpressionTree.ExpressionNode;
 
 public abstract class FundamentalInstruction extends ExpressionNode{
@@ -21,7 +21,7 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 		return toRet.toString(); 
 	}
 
-	public abstract void doAction(ActionObject turtle);
+	public abstract void doAction(Turtle turtle);
 	
 	// TO DO pass doaction actionable frontend object
 	

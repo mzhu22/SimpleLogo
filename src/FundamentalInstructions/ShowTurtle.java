@@ -1,6 +1,6 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 
 public class ShowTurtle extends FundamentalInstruction {
 
@@ -11,7 +11,7 @@ public class ShowTurtle extends FundamentalInstruction {
 	}
 	
 	@Override
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 		turtle.showTurtle();
 	}
 

@@ -5,11 +5,11 @@ import java.util.List;
 import ExpressionTree.ExpressionNode;
 import FundamentalInstructions.FundamentalInstruction;
 
-public class ActionObjectMover {
+public class TurtleMover {
 
-	private ActionObject myTurtle;
+	private Turtle myTurtle;
 	
-	public ActionObjectMover(ActionObject turtle) {
+	public TurtleMover(Turtle turtle) {
 		myTurtle = turtle;
 	}
 	

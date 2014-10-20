@@ -1,12 +1,12 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 
 
 public class Back extends FundamentalInstruction {
 
 	@Override
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 		turtle.move(-myInfo);
 	}
 

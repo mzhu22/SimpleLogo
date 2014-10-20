@@ -16,8 +16,8 @@ public class SLogoTab {
 	private Group myRoot = new Group();
 	private SLogoCanvas myCanvas = new SLogoCanvas(500, 500, 0, 0);
 	private ColorPicker myColorPicker = new ColorPicker();
-	private ActionObject myTurtle;
-	private ActionObjectMover myMover;
+	private Turtle myTurtle;
+	private TurtleMover myMover;
 	private GUIFeature[] startingFeatures;
 	private TabPane myTabPane;
 
@@ -29,8 +29,8 @@ public class SLogoTab {
 		
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		myTurtle = new ActionObject(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
-		myMover = new ActionObjectMover(myTurtle);
+		myTurtle = new Turtle(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
+		myMover = new TurtleMover(myTurtle);
 
 		startingFeatures = new GUIFeature[] {
 				new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
@@ -56,7 +56,7 @@ public class SLogoTab {
 			myRoot.getChildren().add(f.makeTool());
 		}
 
-		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new ActionObjectKeyHandler(myMover));
+		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new TurtleKeyHandler(myMover));
 
 		String tabTitle = "Workspace " + numTab;
 		Tab tab = new Tab(tabTitle);

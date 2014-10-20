@@ -1,6 +1,6 @@
 package FundamentalInstructions;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 
 
 public class PenDown extends FundamentalInstruction {
@@ -21,7 +21,7 @@ public class PenDown extends FundamentalInstruction {
 
 
 	@Override
-	public void doAction(ActionObject turtle) {
+	public void doAction(Turtle turtle) {
 		turtle.penDown();
 	}
 

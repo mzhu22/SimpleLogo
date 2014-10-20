@@ -10,9 +10,9 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.shape.Rectangle;
 
-public class ActionObjectKeyHandler implements EventHandler<KeyEvent>{
+public class TurtleKeyHandler implements EventHandler<KeyEvent>{
 
-	private ActionObjectMover myMover;
+	private TurtleMover myMover;
 	private final static Map<KeyCode, String> ARROW_KEYS = new HashMap<KeyCode, String>()
 			{{
 				put(KeyCode.UP, "fd 50");
@@ -21,7 +21,7 @@ public class ActionObjectKeyHandler implements EventHandler<KeyEvent>{
 				put(KeyCode.RIGHT, "right 10");
 			}};;
 			
-	public ActionObjectKeyHandler(ActionObjectMover mover){
+	public TurtleKeyHandler(TurtleMover mover){
 		myMover = mover;
 	}
 

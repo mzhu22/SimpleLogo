@@ -1,11 +1,11 @@
 package TurtleQueries;
 
-import frontend.ActionObject;
+import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
 
 public class XCor extends TurtleQuery {
 
-	public XCor(ActionObject actionable) {
+	public XCor(Turtle actionable) {
 		super(actionable);
 		// TODO Auto-generated constructor stub
 	}

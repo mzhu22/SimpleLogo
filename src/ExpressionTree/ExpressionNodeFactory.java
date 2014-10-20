@@ -97,6 +97,8 @@ public final class ExpressionNodeFactory {
 
 			case "MAKE" : return new Make(); 
 			
+			case "[" : return new ListNode();
+			
 			default: return new doNothing(); 
 
 		}

@@ -7,9 +7,16 @@ import java.util.List;
 import frontend.Turtle;
 import FundamentalInstructions.FundamentalInstruction;
 
+/**
+ * Used to enable repeat instructions and for loops. Repeat simply holds subsequent 
+ * instructions as children. When makeInstructionList is called, Repeat calls 
+ * makeInstructionList on its children N times, where N is the input to Repeat.
+ *  
+ * @author Mike Zhu
+ *
+ */
 public class Repeat extends FundamentalInstruction{
 
-	
 	public Repeat (){
 		
 		numChildren = 2 ; 
@@ -17,6 +24,7 @@ public class Repeat extends FundamentalInstruction{
 	@Override
 	public double evaluate() {
 		//Evaluate this node == evaluate all children first (make sure each node has a val)
+		
 		getLeft().evaluate();
 		getRight().evaluate();
 		return 0;

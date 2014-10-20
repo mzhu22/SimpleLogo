@@ -87,22 +87,15 @@ public class Turtle {
 		
 	}
 
-	
-	
-	private void edgeHandler(int angleOffset){
-		double angle = angleOffset - myDirection;
-		
-	}
-	
 	/**
-	 * Handles edge cases. Needs serious refactoring but may have many parameters/
-	 * if checks since X's and Y's are slightly different with Point2D.
+	 * Handles edge cases. Needs serious refactoring which is difficult since each case
+	 * is only slightly different (ie +/-, X or Y is different in Point2D)
 	 * @param oldPosition
 	 * @return
 	 */
 	private Point2D handleEdgeCases(Point2D oldPosition) {
 		if(myX <= 0){
-			double angle = myDirection + -180;
+			double angle = 180 - myDirection;
 			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(0, interimY);
 			makeLine(oldPosition, interim);
@@ -111,7 +104,7 @@ public class Turtle {
 			
 		}
 		else if(myX >= myCanvas.getWidth()){
-			double angle = myDirection;			
+			double angle = myDirection;
 			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
 			makeLine(oldPosition, interim);
@@ -120,7 +113,7 @@ public class Turtle {
 		}
 		
 		else if(myY <= 0){
-			double angle = myDirection + -90;
+			double angle = 90 - myDirection;
 			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, 0);
 			makeLine(oldPosition, interim);

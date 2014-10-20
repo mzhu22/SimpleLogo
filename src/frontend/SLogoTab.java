@@ -5,6 +5,7 @@ import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
 
 public class SLogoTab {
@@ -15,21 +16,23 @@ public class SLogoTab {
 	private Group myRoot = new Group();
 	private SLogoCanvas myCanvas = new SLogoCanvas(500, 500, 0, 0);
 	private ColorPicker myColorPicker = new ColorPicker();
+	private ActionObject myTurtle;
+	private ActionObjectMover myMover;
+	private GUIFeature[] startingFeatures;
+	private TabPane myTabPane;
 
-	public SLogoTab(double width, double height)
+	public SLogoTab(TabPane tp)
 	{
-		this.myWidth = width;
-		this.myHeight = height;
-	}
-
-	public Tab createTab(int numTab) {
-
+		this.myTabPane = tp;
+		this.myWidth = this.myTabPane.getWidth();
+		this.myHeight = this.myTabPane.getHeight();
+		
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		ActionObject test = new ActionObject(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
-		ActionObjectMover myMover = new ActionObjectMover(test);
+		myTurtle = new ActionObject(myCanvas.getWidth()/2, myCanvas.getHeight()/2,"images/arrow_red.png", myCanvas);	
+		myMover = new ActionObjectMover(myTurtle);
 
-		GUIFeature[] features = new GUIFeature[] {
+		startingFeatures = new GUIFeature[] {
 				new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
 				new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, "Run", "Enter commands here"),
 				new QuitButton(button_x, BUTTON_HEIGHT*1, "Quit"),
@@ -39,23 +42,23 @@ public class SLogoTab {
 				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myCanvas, "Change Line Width", "Line Width"),
 				new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
 				new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
-				new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, test),
+				new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, myTurtle),
 				new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, "Enable Arrows"),
-				new GUIChooseImage(button_x, BUTTON_HEIGHT*10, "Select Image", test),
+				new GUIChooseImage(button_x, BUTTON_HEIGHT*10, "Select Image", myTurtle),
 				new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, "Select Line Style", myCanvas),
-
-				//new ChangeActionObjectImageButton(button_x, BUTTON_HEIGHT*7, "Change Image", test)
-
+				new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, "Add New Workspace", myTabPane),
 		};
+	}
 
+	public Tab createTab(int numTab) {
 
-		for(GUIFeature f : features){
+		for(GUIFeature f : startingFeatures){
 			myRoot.getChildren().add(f.makeTool());
 		}
 
 		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new ActionObjectKeyHandler(myMover));
 
-		String tabTitle = "Tab " + numTab;
+		String tabTitle = "Workspace " + numTab;
 		Tab tab = new Tab(tabTitle);
 		tab.setContent(myRoot);
 
@@ -63,4 +66,20 @@ public class SLogoTab {
 
 	}
 
+	public class AddWorkspaceButton extends GUIFeatureWithButton {
+
+		private TabPane myTabPane;
+		public AddWorkspaceButton(double x, double y, String buttonName, TabPane tp) {
+			super(x, y, buttonName);
+			this.myTabPane = tp;
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public void action() {
+			SLogoTab st = new SLogoTab(this.myTabPane);
+			this.myTabPane.getTabs().add(st.createTab(this.myTabPane.getTabs().size() + 1));
+		}
+
+	}
 }

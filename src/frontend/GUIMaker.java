@@ -17,8 +17,8 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
-import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 public class GUIMaker {
 	

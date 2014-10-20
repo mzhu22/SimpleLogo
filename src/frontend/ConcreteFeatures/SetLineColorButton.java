@@ -1,5 +1,7 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
+import frontend.SLogoCanvas;
+import frontend.AbstractFeatures.GUIFeatureWithButton;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;

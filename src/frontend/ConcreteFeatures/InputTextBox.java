@@ -1,5 +1,7 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
+import frontend.TurtleMover;
+import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 import ErrorsAndExceptions.ErrorPopUp;
 import SLogoControllers.InputController;
 import javafx.scene.Group;

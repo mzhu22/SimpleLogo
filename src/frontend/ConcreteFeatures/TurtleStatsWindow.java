@@ -1,4 +1,6 @@
-package frontend;
+package frontend.ConcreteFeatures;
+
+import frontend.AbstractFeatures.GUIFeatureWithWindow;
 
 public class TurtleStatsWindow extends GUIFeatureWithWindow{
 

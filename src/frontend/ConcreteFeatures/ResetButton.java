@@ -1,7 +1,9 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
+import frontend.SLogoCanvas;
+import frontend.Turtle;
 
 public class ResetButton extends ClearCanvasButton {
 

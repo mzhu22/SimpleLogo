@@ -4,7 +4,7 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -20,7 +20,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow
 	}
 
 	/**
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public void action() {
@@ -29,7 +29,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow
 	}
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

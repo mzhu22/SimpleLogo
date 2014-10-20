@@ -6,7 +6,7 @@
  * @author Chris Bernt
  */
 
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.Node;

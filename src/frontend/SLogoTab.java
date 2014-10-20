@@ -1,7 +1,10 @@
 package frontend;
 
-import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
+import frontend.ConcreteFeatures.*;
+import frontend.AbstractFeatures.*;
+import frontend.*;
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;

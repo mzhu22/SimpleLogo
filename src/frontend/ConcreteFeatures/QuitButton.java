@@ -1,4 +1,6 @@
-package frontend;
+package frontend.ConcreteFeatures;
+
+import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class QuitButton extends GUIFeatureWithButton{
 

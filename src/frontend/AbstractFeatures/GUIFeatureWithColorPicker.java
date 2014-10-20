@@ -1,4 +1,4 @@
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;

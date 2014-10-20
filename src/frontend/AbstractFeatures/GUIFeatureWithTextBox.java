@@ -4,7 +4,7 @@
  * @author Safkat Islam
  * @author Chris Bernt
  */
-package frontend;
+package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.Node;
@@ -13,8 +13,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.text.Text;
-import static frontend.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.GUIFeatureWithButton.BUTTON_WIDTH;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 public abstract class GUIFeatureWithTextBox extends GUIFeature {
 
@@ -36,13 +36,13 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.GUIFeature#action()
+	 * @see frontend.AbstractFeatures.GUIFeature#action()
 	 */
 	@Override
 	public abstract void action();
 
 	/**
-	 * @see frontend.GUIFeature#makeTool()
+	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
 	 */
 	@Override
 	public Group makeTool() {

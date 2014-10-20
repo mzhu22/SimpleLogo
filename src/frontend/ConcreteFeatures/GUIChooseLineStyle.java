@@ -1,4 +1,7 @@
-package frontend;
+package frontend.ConcreteFeatures;
+
+import frontend.SLogoCanvas;
+import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
 public class GUIChooseLineStyle extends GUIFeatureWithDropDown {
 

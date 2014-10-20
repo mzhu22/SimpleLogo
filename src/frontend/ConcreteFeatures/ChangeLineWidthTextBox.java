@@ -1,8 +1,10 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
-import ErrorsAndExceptions.ErrorPopUp;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.TextField;
+import ErrorsAndExceptions.ErrorPopUp;
+import frontend.SLogoCanvas;
+import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
 public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 

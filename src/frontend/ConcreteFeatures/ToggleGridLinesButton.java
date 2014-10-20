@@ -1,5 +1,7 @@
-package frontend;
+package frontend.ConcreteFeatures;
 
+import frontend.SLogoCanvas;
+import frontend.AbstractFeatures.GUIFeatureWithButton;
 import javafx.scene.canvas.Canvas;
 
 public class ToggleGridLinesButton extends GUIFeatureWithButton {

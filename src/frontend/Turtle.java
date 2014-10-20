@@ -73,7 +73,7 @@ public class Turtle {
 		
 		Point2D newPosition = new Point2D(myX, myY);
 		
-		makeLine(oldPosition, newPosition);
+		this.makeLine(oldPosition, newPosition);
 		
 		myImage.setX(myX - (myImage.getFitWidth() / 2));
 		myImage.setY(myY - (myImage.getFitHeight() / 2));

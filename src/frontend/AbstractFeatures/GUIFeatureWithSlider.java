@@ -7,7 +7,6 @@
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 import javafx.scene.control.Slider;
 
 public abstract class GUIFeatureWithSlider extends GUIFeature {

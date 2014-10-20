@@ -1,13 +1,10 @@
 package frontend.ConcreteFeatures;
 
-import frontend.TurtleMover;
-import frontend.AbstractFeatures.GUIFeatureWithTextBox;
+import javafx.scene.control.TextArea;
 import ErrorsAndExceptions.ErrorPopUp;
 import SLogoControllers.InputController;
-import javafx.scene.Group;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import frontend.TurtleMover;
+import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
 	

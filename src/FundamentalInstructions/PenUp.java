@@ -14,7 +14,7 @@ public class PenUp extends FundamentalInstruction {
 	
 	@Override
 	public void doAction(Turtle turtle) {
-		turtle.penUp();
+		turtle.getPen().penUp();
 	}
 
 	@Override

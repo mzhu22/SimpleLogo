@@ -1,17 +1,9 @@
 package frontend.ConcreteFeatures;
 
+import javafx.scene.Node;
+import javafx.scene.control.ColorPicker;
 import frontend.SLogoCanvas;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.layout.Region;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 public class ChangeBackgroundButton extends GUIFeatureWithButton{
 

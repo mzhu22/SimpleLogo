@@ -3,12 +3,10 @@ package frontend;
 import java.util.HashMap;
 import java.util.Map;
 
-import SLogoControllers.InputController;
 import javafx.event.EventHandler;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.shape.Rectangle;
+import SLogoControllers.InputController;
 
 public class TurtleKeyHandler implements EventHandler<KeyEvent>{
 

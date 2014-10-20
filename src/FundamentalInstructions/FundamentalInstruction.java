@@ -1,7 +1,7 @@
 package FundamentalInstructions;
 
-import frontend.Turtle;
 import ExpressionTree.ExpressionNode;
+import frontend.Turtle;
 
 public abstract class FundamentalInstruction extends ExpressionNode{
 	

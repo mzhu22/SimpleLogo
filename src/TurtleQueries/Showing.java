@@ -1,7 +1,7 @@
 package TurtleQueries;
 
-import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
+import frontend.Turtle;
 
 public class Showing extends TurtleQuery{
 
@@ -13,6 +13,6 @@ public class Showing extends TurtleQuery{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myActionable.isTurtle() ? 1:0;
+		return myTurtle.isShowing() ? 1:0;
 	}
 }

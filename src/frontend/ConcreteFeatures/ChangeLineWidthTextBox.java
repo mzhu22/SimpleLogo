@@ -1,27 +1,26 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.canvas.Canvas;
 import javafx.scene.control.TextField;
 import ErrorsAndExceptions.ErrorPopUp;
-import frontend.SLogoCanvas;
+import frontend.Pen;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
 public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 
-	private Canvas myCanvas;
+	private Pen myPen;
 	
 	public ChangeLineWidthTextBox(double x, double y, double width,
-			double height, Canvas canvas, String buttonName, String initialText) {
+			double height, Pen pen, String buttonName, String initialText) {
 		super(x, y, width, height, buttonName, initialText);
 		this.inputBox = new TextField();
-		myCanvas = canvas;
+		myPen = pen;
 		
 	}
 
 	@Override
 	public void action() {
 		try{
-			((SLogoCanvas)myCanvas).setLineWidth(Integer.parseInt(inputBox.getText()));
+			myPen.setLineWidth(Integer.parseInt(inputBox.getText()));
 		}
 		catch(NumberFormatException e){
 			ErrorPopUp epu = new ErrorPopUp();

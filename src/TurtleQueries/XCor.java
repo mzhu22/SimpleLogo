@@ -1,7 +1,7 @@
 package TurtleQueries;
 
-import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
+import frontend.Turtle;
 
 public class XCor extends TurtleQuery {
 
@@ -14,6 +14,6 @@ public class XCor extends TurtleQuery {
 	public double evaluate() {
 		// TODO Auto-generated method stub
 		// somehow get the turtle's x-coordinate
-		return myActionable.getX();
+		return myTurtle.getX();
 	}
 }

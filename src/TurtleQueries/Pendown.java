@@ -1,12 +1,12 @@
 package TurtleQueries;
 
-import frontend.Turtle;
 import CommandAbstractClasses.TurtleQuery;
+import frontend.Turtle;
 
 public class Pendown extends TurtleQuery {
 
-	public Pendown(Turtle actionable) {
-		super(actionable);
+	public Pendown(Turtle turtle) {
+		super(turtle);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -14,6 +14,6 @@ public class Pendown extends TurtleQuery {
 	public double evaluate() {
 		// TODO Auto-generated method stub
 		// return 1 if pendown, 0 otherwise
-		return myActionable.isPenDown() ? 1:0;
+		return myTurtle.getPen().isPenDown() ? 1:0;
 	}
 }

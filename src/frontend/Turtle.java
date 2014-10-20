@@ -1,15 +1,9 @@
 package frontend;
 
-import java.io.File;
-
 import javafx.geometry.Point2D;
-import javafx.geometry.Point3D;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.stage.Stage;
 
 public class Turtle {
 	
@@ -25,8 +19,8 @@ public class Turtle {
 	private ImageView myImage;
 	
 	private Canvas myCanvas;
+	private Pen myPen;
 	
-	private boolean myIsPenDown;
 	private boolean myShowTurtle;
 	
 	private double myInitX;
@@ -39,11 +33,12 @@ public class Turtle {
 		myY = startY;
 		myCanvas = canvas;
 		
+		myPen = new Pen();
+		
 		myInitX = startX;
 		myInitY = startY;
 		myInitImage = startImage;
-		
-		myIsPenDown = true;
+
 		myShowTurtle = true;
 		
 		myDirection = 90; //START FACING UP
@@ -137,9 +132,7 @@ public class Turtle {
 	 * @param newPosition
 	 */
 	private void makeLine(Point2D oldPosition, Point2D newPosition) {
-		if(myIsPenDown){
-			((SLogoCanvas) myCanvas).drawLine(oldPosition, newPosition);
-		}
+		myPen.drawLine(oldPosition, newPosition, ((SLogoCanvas)myCanvas).getHolder());
 	}
 	
 	public double rotate(double value){ //positive value are rotating left
@@ -179,14 +172,6 @@ public class Turtle {
 		changeImage(myInitImage);
 	}
 	
-	
-	public void penUp(){
-		myIsPenDown = false;
-	}
-	public void penDown(){
-		myIsPenDown = true;
-	}
-	
 	public void showTurtle(){
 		myShowTurtle = true;
 		myImage.setVisible(myShowTurtle);
@@ -195,18 +180,15 @@ public class Turtle {
 		myShowTurtle = false;
 		myImage.setVisible(myShowTurtle);
 	}
-
 	
-	public boolean isPenDown(){
-		return myIsPenDown; 
+	
+	public Pen getPen(){
+		return myPen;
 	}
-
 	
-	public boolean isTurtle(){
+	public boolean isShowing(){
 		return myShowTurtle; 
 	}
-	
-	
 	
 	public double getX(){
 		return myX; 

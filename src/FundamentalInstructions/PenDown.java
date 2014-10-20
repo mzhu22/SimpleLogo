@@ -22,7 +22,7 @@ public class PenDown extends FundamentalInstruction {
 
 	@Override
 	public void doAction(Turtle turtle) {
-		turtle.penDown();
+		turtle.getPen().penDown();
 	}
 
 }

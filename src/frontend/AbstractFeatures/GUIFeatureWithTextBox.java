@@ -6,15 +6,11 @@
  */
 package frontend.AbstractFeatures;
 
-import javafx.scene.Group;
-import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextInputControl;
-import javafx.scene.text.Text;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
+import javafx.scene.Group;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextInputControl;
 
 public abstract class GUIFeatureWithTextBox extends GUIFeature {
 

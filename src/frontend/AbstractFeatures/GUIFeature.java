@@ -9,7 +9,6 @@
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
-import javafx.scene.Node;
 
 public abstract class GUIFeature {
 	

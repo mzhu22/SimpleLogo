@@ -1,20 +1,20 @@
 package frontend.ConcreteFeatures;
 
-import frontend.SLogoCanvas;
+import frontend.Pen;
 import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
 public class GUIChooseLineStyle extends GUIFeatureWithDropDown {
 
-	private SLogoCanvas myCanvas;
+	private Pen myPen;
 	
-	public GUIChooseLineStyle(double x, double y, String prompt, SLogoCanvas canvas) {
+	public GUIChooseLineStyle(double x, double y, String prompt, Pen pen) {
 		super(x, y, prompt);
-		myCanvas = canvas;
+		myPen = pen;
 	}
 
 	@Override
 	public void doDropDownClickAction(String chosen) {
-		myCanvas.setLineStyle(chosen);
+		myPen.setLineStyle(chosen);
 
 	}
 

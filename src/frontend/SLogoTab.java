@@ -2,6 +2,9 @@ package frontend;
 
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
+
+import java.util.ResourceBundle;
+
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
@@ -37,9 +40,13 @@ public class SLogoTab {
 	private TurtleMover myMover;
 	private GUIFeature[] startingFeatures;
 	private TabPane myTabPane;
+	
+	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/buttonNames");
 
 	public SLogoTab(TabPane tp)
 	{
+		
+		
 		this.myTabPane = tp;
 		this.myWidth = this.myTabPane.getWidth();
 		this.myHeight = this.myTabPane.getHeight();
@@ -53,19 +60,19 @@ public class SLogoTab {
 
 		startingFeatures = new GUIFeature[] {
 				new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-				new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, "Run", "Enter commands here"),
-				new QuitButton(button_x, BUTTON_HEIGHT*1, "Quit"),
-				new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, "Change Background Color", myCanvas, myColorPicker),
+				new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), "Enter commands here"),
+				new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
+				new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 				new HelpButton(button_x, BUTTON_HEIGHT*3, "Help"),
-				new SetLineColorButton(button_x, BUTTON_HEIGHT*4, "Change Line Color", turtlePen, myColorPicker),
-				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, "Change Line Width", "Line Width"),
-				new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, "Clear", myCanvas),
-				new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, "Toggle Grid", myCanvas),
-				new ResetButton(button_x, BUTTON_HEIGHT*7, "Reset", myCanvas, myTurtle, turtlePen),
-				new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, "Enable Arrows"),
-				new GUIChooseImage(button_x, BUTTON_HEIGHT*10, "Select Image", myTurtle),
-				new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, "Select Line Style", turtlePen),
-				new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, "Add New Workspace", myTabPane),
+				new SetLineColorButton(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), turtlePen, myColorPicker),
+				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
+				new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
+				new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
+				new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtle, turtlePen),
+				new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
+				new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtle),
+				new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), turtlePen),
+				new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
 		};
 	}
 

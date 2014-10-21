@@ -4,6 +4,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import frontend.GUIMaker;
+import static frontend.SLogoTab.GUI_NAMES;
 
 /**
  * The class that sets up the stage, initializes
@@ -24,7 +25,7 @@ public class Initializer extends Application {
     @Override
     public void start (Stage s) {
 
-        s.setTitle("SLogo");
+        s.setTitle(GUI_NAMES.getString("Title"));
         
         myMaker = new GUIMaker(guiWidth, guiHeight);
         

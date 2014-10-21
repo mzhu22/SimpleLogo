@@ -1,5 +1,7 @@
 package frontend;
 
+import java.util.ResourceBundle;
+
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
@@ -19,6 +21,7 @@ public class GUIMaker {
 		myWidth = w;
 		myHeight = h;
 		myRoot = new Group();
+	
 	}
 	
 	public Scene make(Stage s){

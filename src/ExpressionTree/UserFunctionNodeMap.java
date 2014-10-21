@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class UserFunctionNodeMap {
 
-	private static Map<String, ExpressionNode> userFunctionMap; 
+	private Map<String, ExpressionNode> userFunctionMap; 
 	
 	private static UserFunctionNodeMap myUserFunctionNodeMap = new UserFunctionNodeMap();
 	
@@ -14,11 +14,11 @@ public class UserFunctionNodeMap {
 		userFunctionMap = new HashMap<>(); 
 	}
 	
-	public static ExpressionNode getFunction(String s){
+	public ExpressionNode getFunction(String s){
 		return userFunctionMap.get(s);
 	}
 	
-	public static boolean contains(String s){
+	public boolean contains(String s){
 		return userFunctionMap.containsKey(s);
 	}
 		
@@ -26,7 +26,7 @@ public class UserFunctionNodeMap {
 		return myUserFunctionNodeMap; 
 	}
 
-	public static void addFunction(String identifier, ExpressionNode function){
+	public void addFunction(String identifier, ExpressionNode function){
 		if(!userFunctionMap.keySet().contains(identifier) ) {
 			userFunctionMap.put(identifier, function);
 		}
@@ -36,7 +36,7 @@ public class UserFunctionNodeMap {
 		userFunctionMap.remove(identifier); 
 	}
 	
-	public static Set<String> keySet(){
+	public Set<String> keySet(){
 		return userFunctionMap.keySet(); 
 	}
 	

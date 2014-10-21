@@ -147,9 +147,8 @@ public final class ExpressionNodeFactory {
 	 * @return
 	 */
 	public ExpressionNode unknownFunctionHandler(String s){
-		if(UserFunctionNodeMap.contains(s)){
-			System.out.println("works");
-			return UserFunctionNodeMap.getFunction(s);
+		if(myUserFunctions.contains(s)){
+			return myUserFunctions.getFunction(s);
 		}
 		System.out.println("Unknown command");
 		return new doNothing(s);

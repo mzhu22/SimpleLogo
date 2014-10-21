@@ -15,9 +15,10 @@ import ExpressionTree.ExpressionNode;
 import ExpressionTree.ExpressionTreeBuilder;
 
 public class Parser {
-	private List<ExpressionNode> commandsForFrontEnd = new ArrayList<>(); 
 
 	public List<ExpressionNode>  parse (String input){
+		List<ExpressionNode> commandsForFrontEnd = new ArrayList<>(); 
+
 		input = input.toUpperCase();
 
 		String[] split = input.split("\n"); 
@@ -25,6 +26,8 @@ public class Parser {
 			ExpressionTreeBuilder maker = new ExpressionTreeBuilder(s); 
 			commandsForFrontEnd.addAll( maker.getOutputList());
 		} 
+		
+		System.out.println(commandsForFrontEnd.size());
 		return commandsForFrontEnd; 
 	}
 

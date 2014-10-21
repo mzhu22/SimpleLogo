@@ -91,37 +91,4 @@ public class ExpressionTreeBuilder {
 	public List<FundamentalInstruction> getOutputList(){
 		return outputList;
 	}
-
-	//	public static void main(String[] main) {
-	//
-	//
-	//
-	//		@SuppressWarnings("resource")
-	//		Scanner sc = new Scanner(System.in);
-	//
-	//		String s = sc.nextLine(); 
-	//		
-	//		
-	//		while(s != "END"){
-	//			
-	//			s = s.toUpperCase();
-	//			System.out.println(s + " this is the input string"); 
-	//			
-	//			ExpressionTreeBuilder builder = new ExpressionTreeBuilder(s); 	
-	//			
-	//			for(ExpressionNode a :outputList ){
-	//				System.out.println(a.myInfo + " "+ a.getClass() + " these are the fundamental nodes in the tree"); 
-	//			}
-	//			
-	//			for(String  a : myVariables.keySet()){
-	//				System.out.println( a + " "+ myVariables.getVariable(a).getInfo()); 
-	//			
-	//			}
-	//		 s = sc.nextLine();
-	//		} 
-	//
-	//		
-	//		System.out.println( "this is the end"); 
-	//	}
-
 }

@@ -11,7 +11,10 @@ import ExpressionTree.doNothing;
  */
 public class To extends ExpressionNode{
 	
+	private UserFunctionNodeMap myUserFunctions;
+
 	public To(){
+		myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
 		numChildren = 2; 
 	}
 
@@ -20,13 +23,11 @@ public class To extends ExpressionNode{
 		// TODO Auto-generated method stub
 		myInfo = 0;
 		
-		
 		doNothing temp = (doNothing) getLeft();
 		String functionName = temp.getIdentifier();
 		
-		UserFunctionNodeMap.addFunction(functionName, getRight());
+		myUserFunctions.addFunction(functionName, getRight());
 
-		System.out.println(UserFunctionNodeMap.keySet().size());
 		return myInfo;
 	}
 }

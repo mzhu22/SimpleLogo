@@ -31,17 +31,18 @@ import MathOperations.Sine;
 import MathOperations.Tangent;
 import controlStructures.Make;
 import controlStructures.Repeat;
+import controlStructures.To;
 
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
-	
+	private UserFunctionNodeMap myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
+		
 	public ExpressionNode getNode( String s){
 
 		ExpressionNode toReturn; 
 		double constant =0; 
 
-		
 		if(s.startsWith(":")) return variableHandler(s); 
 		
 		try{
@@ -51,7 +52,6 @@ public final class ExpressionNodeFactory {
 			
 			return commandHandler(s);
 		}
-
 
 		toReturn = new Constant(); 
 		toReturn.setInfo(constant); 
@@ -122,18 +122,38 @@ public final class ExpressionNodeFactory {
 
 			case "MAKE" : return new Make(); 
 			
-			case "[" : return new ListNode();
-			
-			default: return new doNothing(); 
+			case "TO" : return new To();
+						
+			default: return unknownFunctionHandler(s); 
 
 		}
 	}
 
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
-		 // temporary just to test regex
 	}
-
+	
+	/**
+	 * Called when Logo word is not one of the built-in commands. 
+	 * When word comes after the To command, either:
+	 * 	a. Adds word to the UserFunctionMap 
+	 * 	b. Throws error if the word is already in UserFunctionMap
+	 * 
+	 * When word is called as its own instruction, checks UserFunctionMap and
+	 * 	a. Returns ListNode representing that command
+	 * 	b. Throws error if the command was not found
+	 * 
+	 * @param s == Logo word input
+	 * @return
+	 */
+	public ExpressionNode unknownFunctionHandler(String s){
+		if(UserFunctionNodeMap.contains(s)){
+			System.out.println("works");
+			return UserFunctionNodeMap.getFunction(s);
+		}
+		System.out.println("Unknown command");
+		return new doNothing(s);
+	}
 
 //	public static void main(String[] args){
 //

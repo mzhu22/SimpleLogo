@@ -18,9 +18,9 @@ import frontend.Turtle;
 public class Repeat extends FundamentalInstruction{
 
 	public Repeat (){
-		
 		numChildren = 2 ; 
 	}
+	
 	@Override
 	public double evaluate() {
 		//Evaluate this node == evaluate all children first (make sure each node has a val)

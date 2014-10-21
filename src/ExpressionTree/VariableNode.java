@@ -1,15 +1,14 @@
-package CommandAbstractClasses;
+package ExpressionTree;
 
-import ExpressionTree.ExpressionNode;
+
 
 public class VariableNode extends ExpressionNode {
 	
-	private String indentifier; 
+	private String identifier; 
 	
 	public VariableNode () {
 		numChildren =0; 		 
 	}
-	
 	
 	@Override
 	public double evaluate() {
@@ -22,7 +21,7 @@ public class VariableNode extends ExpressionNode {
 	} 
 	
 	public String getIdentifier(){
-		return indentifier ; 	
+		return identifier ; 	
 	}
 
 

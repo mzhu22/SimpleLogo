@@ -18,6 +18,7 @@ public class ExpressionTreeBuilder {
 	private static List<FundamentalInstruction> outputList;
 	private static List<ExpressionNode> nodeList; 
 	private static int balance; 
+	private boolean makingNewFunction;
 
 	public ExpressionTreeBuilder(String s){
 		outputList = new ArrayList<>();
@@ -73,7 +74,6 @@ public class ExpressionTreeBuilder {
 				balance -- ; 				
 			}
 			else{
-
 				if( balance == 0 ){
 					returnNodes.push(nodeGetter.getNode(string)); 
 				}

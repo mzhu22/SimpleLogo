@@ -4,18 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import CommandAbstractClasses.VariableNode;
-
 public class VariableNodeMap {
 
-	
 	private Map<String, VariableNode> variableMap; 
 	
 	private static VariableNodeMap myVariableNodeMap = new VariableNodeMap();
 	
 	private VariableNodeMap(){
 		variableMap = new HashMap<String, VariableNode>(); 
-		// 
 	}
 	
 	public VariableNode getVariable(String variableName){

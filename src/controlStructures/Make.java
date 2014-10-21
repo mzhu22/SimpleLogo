@@ -6,7 +6,6 @@ public class Make extends ExpressionNode {
 
 	public Make(){
 		numChildren = 2; 
-		
 	}
 	
 	@Override

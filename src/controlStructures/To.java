@@ -12,7 +12,7 @@ import ExpressionTree.doNothing;
 public class To extends ExpressionNode{
 	
 	private UserFunctionNodeMap myUserFunctions;
-
+	
 	public To(){
 		super(2); 
 		myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();

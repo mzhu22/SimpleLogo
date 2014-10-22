@@ -34,9 +34,7 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 		}
 		
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
-		for(String s : myVariables.keySet()){
-			System.out.println(myVariables.getVariableNodeMap().getVariable(s).getInfo());
-		}
+		
 	}
 
 	

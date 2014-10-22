@@ -10,6 +10,8 @@ public abstract class ExpressionNode {
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
 	protected int numChildren; 
+	
+	protected List<ExpressionNode> myChildren;  
 	protected List<FundamentalInstruction> instructionList ; 
 	public ExpressionNode( int numChild){
 		numChildren = numChild;		
@@ -66,4 +68,6 @@ public abstract class ExpressionNode {
 	public double getInfo(){
 		return myInfo; 
 	}
+
+
 }

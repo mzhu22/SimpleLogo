@@ -46,6 +46,7 @@ public class SLogoTab {
 	private TurtleMover myMover;
 	private List<GUIFeature> startingFeatures;
 	private TabPane myTabPane;
+	private PaneUpdater myPaneUpdater;
 
 	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/buttonNames");
 
@@ -72,12 +73,12 @@ public class SLogoTab {
 					)
 				);
 
-		PaneUpdater pu = new PaneUpdater(updateables);
+		myPaneUpdater = new PaneUpdater(updateables);
 
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
 						new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), pu),
+						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater),
 						new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 						new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 						new HelpButton(button_x, BUTTON_HEIGHT*3, "Help"),
@@ -85,7 +86,7 @@ public class SLogoTab {
 						new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
 						new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
 						new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
-						new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtle, turtlePen),
+						new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtle, turtlePen, myPaneUpdater),
 						new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
 						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtle),
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), turtlePen),
@@ -103,7 +104,7 @@ public class SLogoTab {
 			myRoot.getChildren().add(f.makeTool());
 		}
 
-		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new TurtleKeyHandler(myMover));
+		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new TurtleKeyHandler(myMover, myPaneUpdater));
 
 		String tabTitle = "Workspace " + numTab;
 		Tab tab = new Tab(tabTitle);

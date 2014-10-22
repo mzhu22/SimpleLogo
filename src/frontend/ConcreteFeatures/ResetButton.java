@@ -2,18 +2,24 @@ package frontend.ConcreteFeatures;
 
 import javafx.scene.canvas.Canvas;
 import javafx.scene.paint.Color;
+import frontend.PaneUpdater;
 import frontend.Pen;
 import frontend.Turtle;
+import static frontend.Pen.DEFAULT_LINE_COLOR;
+import static frontend.Pen.DEFAULT_LINE_STYLE;
+import static frontend.Pen.DEFAULT_LINE_WIDTH;
 
 public class ResetButton extends ClearCanvasButton {
 
-	Turtle myTurtle;
-	Pen myPen;
+	private Turtle myTurtle;
+	private Pen myPen;
+	private PaneUpdater myPaneUpdater;
 	
-	public ResetButton(double x, double y, String buttonName, Canvas canvas, Turtle turtle, Pen pen) {
+	public ResetButton(double x, double y, String buttonName, Canvas canvas, Turtle turtle, Pen pen, PaneUpdater pu) {
 		super(x, y, buttonName, canvas);
-		myTurtle = turtle;
-		myPen = pen;
+		this.myTurtle = turtle;
+		this.myPen = pen;
+		this.myPaneUpdater = pu;
 	}
 	
 	/**
@@ -26,13 +32,16 @@ public class ResetButton extends ClearCanvasButton {
 	 */
 	@Override
 	public void action(){
-		super.action();
-		myTurtle.resetPosition();
-		myTurtle.setDirection(90);
-		myTurtle.resetImage();
 		
-		myPen.setLineColor(Color.BLACK);
-		myPen.setLineWidth(1);
+		super.action();
+		this.myTurtle.resetPosition();
+		this.myTurtle.setDirection(90);
+		this.myTurtle.resetImage();
+		
+		this.myPen.setLineColor(DEFAULT_LINE_COLOR);
+		this.myPen.setLineWidth(DEFAULT_LINE_WIDTH);
+		this.myPen.setLineStyle(DEFAULT_LINE_STYLE);
+		this.myPaneUpdater.updateAll();
 	}
 	
 }

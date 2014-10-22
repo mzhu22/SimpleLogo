@@ -12,7 +12,6 @@ public class Turtle {
 	private static final double WIDTH = 30;
 	private static final double HEIGHT = 30;
 	
-	
 	private double myX;
 	private double myY;
 	private double myDirection; //0 is right, 90 up, 180 left, 270 down
@@ -34,7 +33,7 @@ public class Turtle {
 		myY = startY;
 		myCanvas = canvas;
 		
-		myPen = new Pen(Color.BLACK, 1, true, "Solid");
+		myPen = new Pen();
 		
 		myInitX = startX;
 		myInitY = startY;

@@ -11,6 +11,7 @@ import SLogoControllers.InputController;
 public class TurtleKeyHandler implements EventHandler<KeyEvent>{
 
 	private TurtleMover myMover;
+	private PaneUpdater myPaneUpdater;
 	private final static Map<KeyCode, String> ARROW_KEYS = new HashMap<KeyCode, String>()
 			{{
 				put(KeyCode.UP, "fd 50");
@@ -19,8 +20,9 @@ public class TurtleKeyHandler implements EventHandler<KeyEvent>{
 				put(KeyCode.RIGHT, "right 10");
 			}};;
 			
-	public TurtleKeyHandler(TurtleMover mover){
-		myMover = mover;
+	public TurtleKeyHandler(TurtleMover mover, PaneUpdater pu){
+		this.myMover = mover;
+		this.myPaneUpdater = pu;
 	}
 
 	@Override
@@ -37,6 +39,7 @@ public class TurtleKeyHandler implements EventHandler<KeyEvent>{
 		if(shouldDraw)
 		{
 			myMover.startDrawing(ic.getInstructions());
+			this.myPaneUpdater.updateAll();
 		}
 		
 	}

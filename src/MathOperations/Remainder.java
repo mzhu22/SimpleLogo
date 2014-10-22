@@ -7,7 +7,7 @@ public class Remainder extends Operation {
 	
 	public Remainder (){
 		
-		numChildren = 2; 
+		super(2); 
 	}
 
 	@Override

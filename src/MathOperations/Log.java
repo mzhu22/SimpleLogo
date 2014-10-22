@@ -6,7 +6,7 @@ public class Log extends Operation {
 
 	public Log (){
 		
-		numChildren = 1; 
+		super(1);  
 	}
 	
 

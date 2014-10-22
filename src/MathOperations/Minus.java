@@ -6,7 +6,7 @@ public class Minus extends Operation{
 
 	public Minus () {
 		
-		numChildren = 1; 
+		super(1); 
 	}
 	
 	@Override

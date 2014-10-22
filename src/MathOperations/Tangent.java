@@ -6,7 +6,7 @@ public class Tangent extends Operation {
 
 	public Tangent(){
 		
-		numChildren = 1; 
+		super(1); 
 	}
 	
 	@Override

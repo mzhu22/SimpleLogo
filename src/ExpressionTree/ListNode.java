@@ -24,8 +24,8 @@ public class ListNode extends ExpressionNode {
 	private ExpressionTreeBuilder myBuilder;
 
 	public ListNode(){
+		super(0); 
 		myLogoCode = new StringBuilder();
-		numChildren = 0 ;
 	}
 
 	@Override

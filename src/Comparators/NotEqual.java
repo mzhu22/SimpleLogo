@@ -5,8 +5,7 @@ import CommandAbstractClasses.Operation;
 public class NotEqual extends Operation {
 
 	public NotEqual (){
-		
-		numChildren = 2; 
+		super(2); 
 	}
 
 

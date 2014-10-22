@@ -6,7 +6,7 @@ public class Quotient  extends Operation {
 
 	public Quotient (){
 		
-		numChildren =2; 
+		super(2);  
 	}
 
 	@Override

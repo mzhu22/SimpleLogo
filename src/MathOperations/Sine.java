@@ -6,7 +6,7 @@ public class Sine extends Operation {
 	
 	public Sine () {
 		
-		numChildren = 1; 
+		super(1); 
 	}
 	
 

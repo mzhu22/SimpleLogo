@@ -6,7 +6,7 @@ public class Difference extends Operation {
 
 	public Difference (){
 		
-		numChildren = 2; 
+		super(2); 
 	}
 	
 	@Override

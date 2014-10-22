@@ -6,7 +6,7 @@ public class Equal extends Operation {
 
 	public Equal (){
 		
-		numChildren = 2; 
+		 super(2); 
 	}
 	
 	@Override

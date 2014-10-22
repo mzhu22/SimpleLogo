@@ -5,7 +5,7 @@ import ExpressionTree.ExpressionNode;
 public class Make extends ExpressionNode {
 
 	public Make(){
-		numChildren = 2; 
+		super(2);  
 	}
 	
 	@Override

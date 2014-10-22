@@ -7,7 +7,7 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 	
 	
 	public FundamentalInstruction() {
-		numChildren = 1; 
+		super(1); 
 	}
 	
 	protected static String myCode; //Change for different languages later

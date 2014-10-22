@@ -9,12 +9,12 @@ public class doNothing extends ExpressionNode {
 	private String identifier;
 	
 	public doNothing() {
-		numChildren = 0; 
+		super(0); 
 	}
 	
 	public doNothing(String s){
+		super(0); 
 		identifier = s;
-		numChildren = 0;
 	}
 
 	@Override

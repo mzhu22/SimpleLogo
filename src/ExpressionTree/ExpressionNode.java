@@ -11,6 +11,10 @@ public abstract class ExpressionNode {
 	protected ExpressionNode myLeft; 
 	protected int numChildren; 
 
+	public ExpressionNode( int numChild){
+		numChildren = numChild;		
+	}
+	
 	public abstract double evaluate(); 
 
 	public List<FundamentalInstruction> makeInstructionList(){

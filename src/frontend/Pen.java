@@ -3,6 +3,7 @@ package frontend;
 import java.util.HashMap;
 import java.util.Map;
 
+import ErrorsAndExceptions.ErrorPopUp;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -21,12 +22,20 @@ public class Pen {
 				put("Solid", Double.MAX_VALUE);
 			}};
 	
-	public Pen(){
+	public Pen(Color initColor, double initWidth, boolean initIsDown, String initStyle){
+	
+		myIsPenDown = initIsDown;
+		myLineColor = initColor;
+		myLineWidth = initWidth;
 		
-		myLineStyle = "Dashed";
-		myIsPenDown = true;
-		myLineColor = Color.BLACK;
-		myLineWidth = 1;
+		if(LINE_STYLES.containsKey(initStyle)){
+			myLineStyle = initStyle;
+		}
+		else{
+			ErrorPopUp epu = new ErrorPopUp();
+			epu.display("Entered invalid line style. Defaulted to solid.");
+			myLineStyle = "Solid";
+		}
 	}
 	
 	/**

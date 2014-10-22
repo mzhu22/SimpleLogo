@@ -4,17 +4,20 @@ import javafx.scene.control.TextArea;
 import ErrorsAndExceptions.ErrorPopUp;
 import ExpressionTree.VariableNodeMap;
 import SLogoControllers.InputController;
+import frontend.PaneUpdater;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
 public class InputTextBox extends GUIFeatureWithTextBox {
 	
 	TurtleMover myMover;
+	PaneUpdater myPaneUpdater;
 	
-	public InputTextBox(double x, double y, double width, double height, TurtleMover mover, String buttonName, String initialText) {
+	public InputTextBox(double x, double y, double width, double height, TurtleMover mover, String buttonName, String initialText, PaneUpdater pu) {
 		super(x, y, width, height, buttonName, initialText);
 		this.inputBox = new TextArea();
-		myMover = mover;
+		this.myMover = mover;
+		this.myPaneUpdater = pu;
 	}
 
 	@Override
@@ -24,19 +27,14 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 		if(input != null && !input.isEmpty()){
 			InputController ic = new InputController();
 			ic.giveInput(input);
-			myMover.startDrawing(ic.getInstructions());
-			
-			
+			this.myMover.startDrawing(ic.getInstructions());
+			this.myPaneUpdater.updateAll();
 		}
 		else{
 			ErrorPopUp epu = new ErrorPopUp();
 			epu.display("Empty input");
 		}
 		
-		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
-		for(String s : myVariables.keySet()){
-			System.out.println(myVariables.getVariableNodeMap().getVariable(s).getInfo());
-		}
 	}
 
 	

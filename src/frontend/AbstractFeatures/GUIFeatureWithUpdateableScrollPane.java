@@ -7,21 +7,22 @@
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 
-public abstract class GUIFeatureWithWindow extends GUIFeature {
+public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 
 	private double myWidth;
 	private double myHeight;
+	protected ScrollPane myWindow;
 	
 	/**
 	 * @see frontend.GUIFeature@action()
 	 */
-	public GUIFeatureWithWindow(double x, double y, double width, double height) {
+	public GUIFeatureWithUpdateableScrollPane(double x, double y, double width, double height) {
 		super(x, y);
 		myWidth = width;
 		myHeight = height;
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -39,11 +40,19 @@ public abstract class GUIFeatureWithWindow extends GUIFeature {
 	@Override
 	public Group makeTool() {
 		Group g = new Group();
-		Pane myWindow = new Pane();
+		myWindow = new ScrollPane();
 		myWindow.setLayoutX(myX);
 		myWindow.setLayoutY(myY);
 		myWindow.setPrefSize(myWidth, myHeight);
+		updatePane();
+		g.getChildren().add(myWindow);
 		return g;
 	}
+	
+	/**
+	 * Modifies the parameter Group to fill the Pane.
+	 * @param g
+	 */
+	public abstract void updatePane();
 
 }

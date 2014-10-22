@@ -26,8 +26,6 @@ public class Parser {
 			ExpressionTreeBuilder maker = new ExpressionTreeBuilder(s); 
 			commandsForFrontEnd.addAll( maker.getOutputList());
 		} 
-		
-		System.out.println(commandsForFrontEnd.size());
 		return commandsForFrontEnd; 
 	}
 

@@ -18,7 +18,6 @@ public class ExpressionTreeBuilder {
 	private static List<FundamentalInstruction> outputList;
 	private static List<ExpressionNode> nodeList; 
 	private static int balance; 
-	private boolean makingNewFunction;
 
 	public ExpressionTreeBuilder(String s){
 		outputList = new ArrayList<>();
@@ -58,7 +57,7 @@ public class ExpressionTreeBuilder {
 
 	public static Stack<ExpressionNode> getNodes(String s){
 		nodeGetter = new ExpressionNodeFactory();
-
+		balance = 0; 
 		Stack<ExpressionNode> returnNodes = new Stack<ExpressionNode>();
 
 		String[] split = s.trim().split(" "); 
@@ -66,7 +65,7 @@ public class ExpressionTreeBuilder {
 		for(String string : split ){
 
 			//Case for code organized in brackets (e.g., for repeats)
-			if(string.matches("\\[") ){
+			if(string.matches("\\[") && balance == 0){
 				balance ++ ; 	
 				returnNodes.push(new ListNode());
 			}
@@ -77,10 +76,10 @@ public class ExpressionTreeBuilder {
 				if( balance == 0 ){
 					returnNodes.push(nodeGetter.getNode(string)); 
 				}
-				else {				
-					ListNode list = (ListNode) returnNodes.pop();
+				else  {				
+					ListNode list = (ListNode) returnNodes.peek();
 					list.add(string);
-					returnNodes.push(list);
+					//returnNodes.push(list);
 				}
 			}
 

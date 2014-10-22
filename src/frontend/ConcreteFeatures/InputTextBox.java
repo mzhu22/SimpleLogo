@@ -2,6 +2,7 @@ package frontend.ConcreteFeatures;
 
 import javafx.scene.control.TextArea;
 import ErrorsAndExceptions.ErrorPopUp;
+import ExpressionTree.VariableNodeMap;
 import SLogoControllers.InputController;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
@@ -30,6 +31,11 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 		else{
 			ErrorPopUp epu = new ErrorPopUp();
 			epu.display("Empty input");
+		}
+		
+		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
+		for(String s : myVariables.keySet()){
+			System.out.println(myVariables.getVariableNodeMap().getVariable(s).getInfo());
 		}
 	}
 

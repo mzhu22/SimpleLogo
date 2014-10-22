@@ -41,7 +41,11 @@ public class ListNode extends ExpressionNode {
 
 	@Override
 	public List<FundamentalInstruction> makeInstructionList(){
-		return myFundamentals;
+		List<FundamentalInstruction> toReturn = new ArrayList<>(); 
+		for(FundamentalInstruction instr : myFundamentals){		
+			if(!toReturn.contains(instr)) toReturn.add(instr); 
+		}
+		return toReturn; 
 	}
 	
 }

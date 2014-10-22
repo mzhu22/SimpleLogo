@@ -7,6 +7,7 @@
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
+import javafx.scene.layout.Pane;
 
 public abstract class GUIFeatureWithWindow extends GUIFeature {
 
@@ -37,8 +38,12 @@ public abstract class GUIFeatureWithWindow extends GUIFeature {
 	 */
 	@Override
 	public Group makeTool() {
-		// TODO Auto-generated method stub
-		return null;
+		Group g = new Group();
+		Pane myWindow = new Pane();
+		myWindow.setLayoutX(myX);
+		myWindow.setLayoutY(myY);
+		myWindow.setPrefSize(myWidth, myHeight);
+		return g;
 	}
 
 }

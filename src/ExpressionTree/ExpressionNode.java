@@ -10,11 +10,17 @@ public abstract class ExpressionNode {
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
 	protected int numChildren; 
-
+	
+	protected List<ExpressionNode> myChildren;  
+	protected List<FundamentalInstruction> instructionList ; 
+	public ExpressionNode( int numChild){
+		numChildren = numChild;		
+	}
+	
 	public abstract double evaluate(); 
 
 	public List<FundamentalInstruction> makeInstructionList(){
-			List<FundamentalInstruction> instructionList = new ArrayList<>();
+			instructionList = new ArrayList<>();
 			
 			if(getLeft()!=null){
 				instructionList.addAll(getLeft().makeInstructionList());
@@ -62,4 +68,6 @@ public abstract class ExpressionNode {
 	public double getInfo(){
 		return myInfo; 
 	}
+
+
 }

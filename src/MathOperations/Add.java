@@ -5,7 +5,7 @@ import CommandAbstractClasses.Operation;
 public class Add extends Operation {
 
 	public Add() {
-		numChildren =2; 
+		super(2); 
 		
 	} 
 	@Override

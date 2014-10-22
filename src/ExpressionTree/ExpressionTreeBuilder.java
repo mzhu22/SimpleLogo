@@ -13,16 +13,16 @@ import FundamentalInstructions.FundamentalInstruction;
 
 public class ExpressionTreeBuilder {
 
-	private static ExpressionNodeFactory nodeGetter; 
-	private static Stack<ExpressionNode> temp;
-	private static List<FundamentalInstruction> outputList;
-	private static List<ExpressionNode> nodeList; 
-	private static int balance; 
+	private ExpressionNodeFactory nodeGetter; 
+	private List<FundamentalInstruction> outputList;
+	private List<ExpressionNode> nodeList; 
+	private int balance; 
 
 	public ExpressionTreeBuilder(String s){
 		outputList = new ArrayList<>();
 		nodeList = new ArrayList<>();
 		Stack<ExpressionNode> process = getNodes(s); 
+				
 		getTree(process); 
 
 		for(ExpressionNode n: nodeList){
@@ -30,12 +30,12 @@ public class ExpressionTreeBuilder {
 		}
 	}
 
-	public static void getTree(Stack<ExpressionNode> processNodes){
-		temp = new Stack<>() ;
+	public  void getTree(Stack<ExpressionNode> processNodes){
+		Stack<ExpressionNode> temp = new Stack<>() ;
 		while(!processNodes.isEmpty()){
 			ExpressionNode holder = processNodes.pop(); 
 
-			//error checking here regarding # of inputs, etc. 
+			//TODO: Refactor so this doesn't just do setLeft() and setRight()
 			if(holder.getNumChildren() == 1){
 				holder.setLeft(temp.pop());
 			}
@@ -55,7 +55,7 @@ public class ExpressionTreeBuilder {
 		}
 	}
 
-	public static Stack<ExpressionNode> getNodes(String s){
+	public  Stack<ExpressionNode> getNodes(String s){
 		nodeGetter = new ExpressionNodeFactory();
 		balance = 0; 
 		Stack<ExpressionNode> returnNodes = new Stack<ExpressionNode>();

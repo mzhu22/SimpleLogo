@@ -5,7 +5,7 @@ import CommandAbstractClasses.Operation;
 public class Not  extends Operation{
 
 	public Not(){
-		numChildren = 1; 
+		super( 1); 
 	}
 
 	@Override

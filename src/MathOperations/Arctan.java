@@ -6,7 +6,7 @@ public class Arctan extends Operation {
 
 	
 	public Arctan(){
-		numChildren = 1; 
+		super(1); 
 	}
 	
 	@Override

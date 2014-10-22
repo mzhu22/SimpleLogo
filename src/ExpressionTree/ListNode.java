@@ -24,8 +24,8 @@ public class ListNode extends ExpressionNode {
 	private ExpressionTreeBuilder myBuilder;
 
 	public ListNode(){
+		super(0); 
 		myLogoCode = new StringBuilder();
-		numChildren = 0 ;
 	}
 
 	@Override
@@ -41,7 +41,11 @@ public class ListNode extends ExpressionNode {
 
 	@Override
 	public List<FundamentalInstruction> makeInstructionList(){
-		return myFundamentals;
+		List<FundamentalInstruction> toReturn = new ArrayList<>(); 
+		for(FundamentalInstruction instr : myFundamentals){		
+			if(!toReturn.contains(instr)) toReturn.add(instr); 
+		}
+		return toReturn; 
 	}
 	
 }

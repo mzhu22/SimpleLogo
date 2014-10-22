@@ -8,7 +8,7 @@ import CommandAbstractClasses.Operation;
 public class Randoms extends Operation {
 
 	public Randoms () {
-		numChildren = 1; 
+		super(1);  
 	}
 	
 	@Override

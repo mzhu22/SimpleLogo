@@ -34,7 +34,6 @@ public class InputTextBox extends GUIFeatureWithTextBox {
 			ErrorPopUp epu = new ErrorPopUp();
 			epu.display("Empty input");
 		}
-		
 	}
 
 	

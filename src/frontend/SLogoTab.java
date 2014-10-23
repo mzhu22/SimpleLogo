@@ -41,7 +41,7 @@ public class SLogoTab {
 	private GUIFeature[] startingFeatures;
 	private TabPane myTabPane;
 	
-	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/buttonNames");
+	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/SpanishButtonNames");
 
 	public SLogoTab(TabPane tp)
 	{
@@ -60,10 +60,10 @@ public class SLogoTab {
 
 		startingFeatures = new GUIFeature[] {
 				new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-				new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), "Enter commands here"),
+				new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("EnterCommands")),
 				new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 				new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
-				new HelpButton(button_x, BUTTON_HEIGHT*3, "Help"),
+				new HelpButton(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
 				new SetLineColorButton(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), turtlePen, myColorPicker),
 				new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
 				new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),

@@ -6,7 +6,7 @@ public class Cosine extends Operation {
 
 	public Cosine(){
 		
-		numChildren = 1; 
+		super(1);  
 	}
 
 

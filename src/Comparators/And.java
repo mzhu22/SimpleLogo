@@ -6,8 +6,7 @@ import CommandAbstractClasses.Operation;
 public class And extends Operation {
 
 	public And() {
-		
-		numChildren = 2; 
+		super(2); 
 	}
 	
 	@Override

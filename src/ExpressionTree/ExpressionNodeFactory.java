@@ -150,22 +150,7 @@ public final class ExpressionNodeFactory {
 		if(myUserFunctions.contains(s)){
 			return myUserFunctions.getFunction(s);
 		}
-		System.out.println("Unknown command");
 		return new doNothing(s);
 	}
-
-//	public static void main(String[] args){
-//
-//		String []  tester = {"SUM","+", "DIFFERENCE","-", "PRODUCT", "*", "QUOTIENT" , "/" , "REMAINDER", 
-//				"%", "MINUS" ,  "~", "RANDOM", "SIN", "COS" , "TAN", "ATAN" , "LOG", "POW", "5", "boobs"
-//				, "AND" , "OR" , "NOT" , "NOTEQUAL?" , "NOTEQUALP", "EQUAL?","EQUALP" , "GREATER?", "GREATERP", "LESS?",
-//		"LESSP"}; 
-//
-//
-//		for(String s: tester){
-//
-//			System.out.println(getNode(s).getClass().toString()); 
-//		}
-//	}
 
 }

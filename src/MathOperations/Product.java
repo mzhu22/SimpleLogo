@@ -7,7 +7,7 @@ public class Product extends Operation{
 	
 	public Product() {
 		
-		numChildren =2; 
+		super(2); 
 	}
 
 	@Override

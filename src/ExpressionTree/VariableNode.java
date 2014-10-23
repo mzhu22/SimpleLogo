@@ -7,7 +7,7 @@ public class VariableNode extends ExpressionNode {
 	private String identifier; 
 	
 	public VariableNode () {
-		numChildren =0; 		 
+		super(0); 		 
 	}
 	
 	@Override

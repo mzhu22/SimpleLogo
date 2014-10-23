@@ -8,7 +8,7 @@ package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 
-public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithWindow {
+public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithUpdateableScrollPane {
 
 	/**
 	 * @see frontend.GUIFeature@action()

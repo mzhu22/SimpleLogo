@@ -5,8 +5,7 @@ import CommandAbstractClasses.Operation;
 public class Or extends Operation {
 
 	public Or(){
-		
-		numChildren = 2; 
+		super(2); 
 	}
 
 

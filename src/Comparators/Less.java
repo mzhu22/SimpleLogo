@@ -6,7 +6,7 @@ public class Less extends Operation {
 
 
 	public Less () {
-		numChildren = 2; 
+		super(2); 
 		
 	}
 

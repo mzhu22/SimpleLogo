@@ -4,13 +4,13 @@ import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 public class Turtle {
 	
 	private static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	private static final double WIDTH = 30;
 	private static final double HEIGHT = 30;
-	
 	
 	private double myX;
 	private double myY;
@@ -95,10 +95,10 @@ public class Turtle {
 			Point2D interim = new Point2D(0, interimY);
 			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(myCanvas.getWidth(), interimY);
-			myX += myCanvas.getWidth();
+			myX += (Math.ceil((-myX / myCanvas.getWidth()))*myCanvas.getWidth());
 			
 		}
-		else if(myX >= myCanvas.getWidth()){
+		if(myX >= myCanvas.getWidth()){
 			double angle = myDirection;
 			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
@@ -107,15 +107,15 @@ public class Turtle {
 			myX %= myCanvas.getWidth();
 		}
 		
-		else if(myY <= 0){
+		if(myY <= 0){
 			double angle = 90 - myDirection;
 			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, 0);
 			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(interimX, myCanvas.getWidth());
-			myY += myCanvas.getHeight();
+			myY += (Math.ceil((-myY / myCanvas.getHeight()))*myCanvas.getHeight());
 		}
-		else if(myY >= myCanvas.getHeight()){
+		if(myY >= myCanvas.getHeight()){
 			double angle = 270 - myDirection;	
 			double interimX = myX - ((myCanvas.getHeight() - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, myCanvas.getHeight());
@@ -137,11 +137,19 @@ public class Turtle {
 	
 	public double rotate(double value){ //positive value are rotating left
 		
-		myDirection += (value%360);
+		myDirection += value;
+		handleDirection();
 		
 		myImage.setRotate(myImage.getRotate() - (value%360));
 		
 		return value;
+	}
+	
+	private void handleDirection(){
+		myDirection %= 360;
+		if(myDirection < 0){
+			myDirection += 360;
+		}
 	}
 	
 	public void changeImage(String newImage){
@@ -154,6 +162,11 @@ public class Turtle {
 	public void setDirection(double dir){
 		myImage.setRotate(-dir + 90);
 		myDirection = dir;
+		handleDirection();
+	}
+	
+	public double getDirection(){
+		return myDirection;
 	}
 	
 	public void goToCoord(double x, double y){

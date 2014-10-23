@@ -8,7 +8,7 @@ public class Power extends Operation {
 	
 	public Power (){
 		
-		numChildren = 2; 
+		super(2); 
 	}
 
 	@Override

@@ -1,10 +1,16 @@
 package ExpressionTree;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class VariableNodeMap {
+public class VariableNodeMap implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	private Map<String, VariableNode> variableMap; 
 	

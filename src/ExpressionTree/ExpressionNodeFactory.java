@@ -40,6 +40,9 @@ public final class ExpressionNodeFactory {
 		
 	public ExpressionNode getNode( String s){
 
+		
+		
+		
 		ExpressionNode toReturn; 
 		double constant =0; 
 

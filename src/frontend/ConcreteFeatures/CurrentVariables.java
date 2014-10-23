@@ -12,7 +12,6 @@ public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 
 	public CurrentVariables(double x, double y, double width, double height) {
 		super(x, y, width, height);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
@@ -21,10 +20,10 @@ public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 				
 		String finalOutput = "Variables \n";
 		for(String s : myVariables.keySet()){
-			finalOutput += "\t" + s.substring(1) + "\t" + myVariables.getVariable(s).getInfo() + "\n";
+			finalOutput += "\t" + s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getInfo() + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
-		t.setStyle("-fx-font-size: 16px");
+		t.setStyle("-fx-font-size: 14px");
 		myWindow.setContent(t);
 	}
 	

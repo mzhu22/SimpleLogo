@@ -34,7 +34,7 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 			finalOutput += "\t" + s + "\t" + turtleInfo.get(s) + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
-		t.setStyle("-fx-font-size: 16px");
+		t.setStyle("-fx-font-size: 14px");
 		myWindow.setContent(t);
 		
 	}

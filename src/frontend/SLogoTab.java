@@ -21,6 +21,7 @@ import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 import frontend.ConcreteFeatures.ChangeBackgroundButton;
 import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
 import frontend.ConcreteFeatures.ClearCanvasButton;
+import frontend.ConcreteFeatures.CommandsWindow;
 import frontend.ConcreteFeatures.CurrentVariables;
 import frontend.ConcreteFeatures.EnableArrowsButton;
 import frontend.ConcreteFeatures.GUIChooseImage;
@@ -48,13 +49,12 @@ public class SLogoTab {
 	private TabPane myTabPane;
 
 	
-	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/SpanishButtonNames");
+	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/EnglishButtonNames");
 	private PaneUpdater myPaneUpdater;
 
 
 	public SLogoTab(TabPane tp)
 	{
-
 
 		this.myTabPane = tp;
 		this.myWidth = this.myTabPane.getWidth();
@@ -69,8 +69,9 @@ public class SLogoTab {
 
 		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
 				Arrays.asList(
-						new CurrentVariables(button_x - 200, 0, 200, 200),
-						new TurtleStatsWindow(button_x - 200, 250, 200, 200, myTurtle)
+						new CurrentVariables(button_x - 200, 0, 200, 100),
+						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtle),
+						new CommandsWindow(button_x - 200, 450, 200, 100)
 						
 					)
 				);

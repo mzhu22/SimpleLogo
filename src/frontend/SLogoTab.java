@@ -55,7 +55,6 @@ public class SLogoTab {
 
 	public SLogoTab(TabPane tp)
 	{
-
 		this.myTabPane = tp;
 		this.myWidth = this.myTabPane.getWidth();
 		this.myHeight = this.myTabPane.getHeight();

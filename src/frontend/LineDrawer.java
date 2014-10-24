@@ -69,11 +69,11 @@ public class LineDrawer {
 		}
 		
 		
-		myPen.drawLine(oldPosition, new Point2D(myX, myY), myPane);
+		makeLine(oldPosition, new Point2D(myX, myY));
 		return new Point2D(myX, myY);
 	}
 
-	private void makeLine(Point2D oldPosition, Point2D interim) {
-		myPen.drawLine(oldPosition, interim, myPane);
+	private void makeLine(Point2D oldPos, Point2D newPos) {
+		myPen.drawLine(oldPos, newPos, myPane);
 	}
 }

@@ -1,14 +1,18 @@
 package frontend;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 
 public class Turtle {
 	
-	private static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
+	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	private static final double WIDTH = 30;
 	private static final double HEIGHT = 30;
 	
@@ -27,6 +31,7 @@ public class Turtle {
 	private double myInitY;
 	private String myInitImage;
 	
+	private LineDrawer myDrawer;
 	
 	public Turtle(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
@@ -44,6 +49,7 @@ public class Turtle {
 		myDirection = 90; //START FACING UP
 		
 		
+		
 		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
         myImage = new ImageView();
         myImage.setImage(image);
@@ -56,7 +62,6 @@ public class Turtle {
 		
 		myImage.setX(startX - (myImage.getFitWidth() / 2));
 		myImage.setY(startY - (myImage.getFitHeight() / 2));
-			
 	}
 	
 	
@@ -69,11 +74,11 @@ public class Turtle {
 		myY -= (value * Math.sin(myDirection * DEGREES_TO_RADIANS_FACTOR));
 		//MINUS since normal xy plane has positive y as up; here positive y is down
 		
-		oldPosition = handleEdgeCases(oldPosition);
+		myDrawer = new LineDrawer(this, ((SLogoCanvas) myCanvas).getHolder());
+		Point2D curPosition = myDrawer.draw(oldPosition);
+		myX = curPosition.getX();
+		myY = curPosition.getY();
 		
-		Point2D newPosition = new Point2D(myX, myY);
-		
-		this.makeLine(oldPosition, newPosition);
 		
 		myImage.setX(myX - (myImage.getFitWidth() / 2));
 		myImage.setY(myY - (myImage.getFitHeight() / 2));
@@ -125,7 +130,8 @@ public class Turtle {
 		}
 		return oldPosition;
 	}
-
+		
+	
 
 	/**
 	 * @param oldPosition

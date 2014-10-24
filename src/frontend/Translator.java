@@ -35,6 +35,7 @@ public class Translator {
 	
 	
 	private String translateOne(String s){
+		s = s.toLowerCase();
 		if(myDictionary.containsKey(s)){
 			return myDictionary.get(s);
 		}

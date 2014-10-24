@@ -7,15 +7,17 @@ import ExpressionTree.ExpressionNode;
 
 public class TurtleMover {
 
-	private Turtle myTurtle;
+	private TurtleCollection myTurtleCollection;
 	
-	public TurtleMover(Turtle turtle) {
-		myTurtle = turtle;
+	public TurtleMover(TurtleCollection turtleCollection) {
+		myTurtleCollection = turtleCollection;
 	}
 	
 	public void startDrawing(List<ExpressionNode> instructions){
 		for(ExpressionNode n : instructions){
-			((DisplayNode)n).doAction(myTurtle);
+			for(Turtle t : myTurtleCollection){
+				((DisplayNode) n ).doAction(t);
+			}
 		}
 		
 	}

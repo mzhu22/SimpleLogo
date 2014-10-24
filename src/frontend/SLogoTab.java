@@ -50,12 +50,15 @@ public class SLogoTab {
 	private TabPane myTabPane;
 	private Translator myTranslator;
 	
+	private TurtleCollection myTurtleCollection;
+	
 	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.buttonLanguages/EnglishButtonNames");
 	private PaneUpdater myPaneUpdater;
 
 
 	public SLogoTab(TabPane tp)
 	{
+		
 		this.myTabPane = tp;
 		this.myWidth = this.myTabPane.getWidth();
 		this.myHeight = this.myTabPane.getHeight();
@@ -64,8 +67,13 @@ public class SLogoTab {
 		double button_x = this.myWidth - BUTTON_WIDTH;
 		myTurtle = new Turtle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2,"images/arrow_red.png", myCanvas);	
 		Pen turtlePen = myTurtle.getPen();
+		
+		
+		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>());
+		myTurtleCollection.addTurtle(myTurtle);
+		myTurtleCollection.addTurtle(new Turtle(100, 100,"images/arrow_red.png", myCanvas));
 
-		myMover = new TurtleMover(myTurtle);
+		myMover = new TurtleMover(myTurtleCollection);
 		
 		myTranslator = new Translator();
 

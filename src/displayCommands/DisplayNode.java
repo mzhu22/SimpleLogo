@@ -22,7 +22,5 @@ public abstract class DisplayNode extends ExpressionNode{
 
 	public abstract void doAction(Turtle turtle);
 	
-	// TO DO pass doaction actionable frontend object	
-
 }
 

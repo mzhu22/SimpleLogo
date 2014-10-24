@@ -23,7 +23,7 @@ public class InputController {
 	
 	public void giveInput(String s){
 		input = myTranslator.translate(s);
-		
+//		System.out.println(input);
 	}
 	
 	public List<ExpressionNode> getInstructions(){

@@ -33,6 +33,7 @@ public class Turtle {
 	
 	private LineDrawer myDrawer;
 	
+	
 	public Turtle(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
 		myY = startY;
@@ -62,6 +63,7 @@ public class Turtle {
 		
 		myImage.setX(startX - (myImage.getFitWidth() / 2));
 		myImage.setY(startY - (myImage.getFitHeight() / 2));
+		
 	}
 	
 	
@@ -162,7 +164,5 @@ public class Turtle {
 	public double getY(){
 		return myY; 
 	}
-	
-	
-	
+
 }

@@ -12,6 +12,7 @@ public abstract class ExpressionNode {
 	protected ExpressionNode myLeft; 
 	protected int numChildren;   
 	protected List<DisplayNode> instructionList ; 
+
 	public ExpressionNode( int numChild){
 		numChildren = numChild;		
 	}
@@ -31,7 +32,7 @@ public abstract class ExpressionNode {
 			instructionList.addAll(getRight().makeInstructionList());
 		}
 		return instructionList;
-	}
+}
 
 	protected ExpressionNode getLeft(){
 		return myLeft; 
@@ -73,4 +74,6 @@ public abstract class ExpressionNode {
 		childStack.push(this); 
 	}
 
+
+	
 }

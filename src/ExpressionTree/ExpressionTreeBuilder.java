@@ -14,14 +14,17 @@ import displayCommands.DisplayNode;
 public class ExpressionTreeBuilder {
 
 	private ExpressionNodeFactory nodeGetter; 
+
 	private List<DisplayNode> outputList;
 	private List<ExpressionNode> nodeList;  
+
 
 	public ExpressionTreeBuilder(String s){
 		nodeGetter = new ExpressionNodeFactory(); 
 		outputList = new ArrayList<>();
 		nodeList = new ArrayList<>();
 		Stack<ExpressionNode> process = nodeGetter.getAllNodes(s); 
+
 				
 		getTree(process); 
 

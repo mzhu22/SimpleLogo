@@ -74,7 +74,7 @@ public final class ExpressionNodeFactory {
 	
 	
 	private ExpressionNode getNode( String s){
-		
+
 		ExpressionNode toReturn; 
 		double constant =0; 
 

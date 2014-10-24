@@ -1,20 +1,23 @@
-package FundamentalInstructions;
+package displayCommands;
 
 import frontend.Turtle;
 
+public class HideTurtle extends DisplayNode {
 
-public class Back extends FundamentalInstruction {
+	public HideTurtle(){
+		super(0); 
+	}
+
 
 	@Override
 	public void doAction(Turtle turtle) {
-		turtle.move(-myInfo);
+		turtle.hideTurtle();
 	}
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return (myInfo = myLeft.evaluate());
+		return ZERO;
 	}
-
 
 }

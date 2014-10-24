@@ -12,7 +12,7 @@ import ExpressionTree.doNothing;
 public class To extends ExpressionNode{
 	
 	private UserFunctionNodeMap myUserFunctions;
-
+	
 	public To(){
 		super(2); 
 		myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
@@ -21,13 +21,13 @@ public class To extends ExpressionNode{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myInfo = 0;
+		myValue = 0;
 		
 		doNothing temp = (doNothing) getLeft();
 		String functionName = temp.getIdentifier();
 		
 		myUserFunctions.addFunction(functionName, getRight());
 
-		return myInfo;
+		return myValue;
 	}
 }

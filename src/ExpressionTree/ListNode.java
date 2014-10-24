@@ -3,9 +3,9 @@ package ExpressionTree;
 import java.util.ArrayList;
 import java.util.List;
 
+import displayCommands.DisplayNode;
 import ExpressionTree.ExpressionNode;
 import ExpressionTree.ExpressionTreeBuilder;
-import FundamentalInstructions.FundamentalInstruction;
 
 /**
  * ListNode represents a sequence of Expressions. ListNode enables storage of expressions 
@@ -20,7 +20,7 @@ import FundamentalInstructions.FundamentalInstruction;
 public class ListNode extends ExpressionNode {
 
 	private StringBuilder myLogoCode;
-	private List<FundamentalInstruction> myFundamentals = new ArrayList<>();
+	private List<DisplayNode> myFundamentals = new ArrayList<>();
 	private ExpressionTreeBuilder myBuilder;
 
 	public ListNode(){
@@ -40,8 +40,12 @@ public class ListNode extends ExpressionNode {
 	}
 
 	@Override
-	public List<FundamentalInstruction> makeInstructionList(){
-		return myFundamentals;
+	public List<DisplayNode> makeInstructionList(){
+		List<DisplayNode> toReturn = new ArrayList<>(); 
+		for(DisplayNode instr : myFundamentals){		
+			if(!toReturn.contains(instr)) toReturn.add(instr); 
+		}
+		return toReturn; 
 	}
 	
 }

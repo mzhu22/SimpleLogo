@@ -1,8 +1,8 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.text.Text;
-import ExpressionTree.HistoryCollection;
-import ExpressionTree.VariableNodeMap;
+import expressionTree.HistoryCollection;
+import expressionTree.VariableNodeMap;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 
 public class HistoryWindow extends GUIFeatureWithUpdateableScrollPane{

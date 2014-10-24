@@ -1,9 +1,9 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.control.TextArea;
-import ErrorsAndExceptions.ErrorPopUp;
-import ExpressionTree.VariableNodeMap;
 import SLogoControllers.InputController;
+import errorsAndExceptions.ErrorPopUp;
+import expressionTree.VariableNodeMap;
 import frontend.PaneUpdater;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;

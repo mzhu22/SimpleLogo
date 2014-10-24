@@ -1,7 +1,7 @@
 package save.load;
 
-import ExpressionTree.UserFunctionNodeMap;
-import ExpressionTree.VariableNodeMap;
+import expressionTree.UserFunctionMap;
+import expressionTree.VariableNodeMap;
 
 /**
  * Data object that holds all configuration settings of a Slogo session. This includes
@@ -15,6 +15,6 @@ import ExpressionTree.VariableNodeMap;
  */
 public class SlogoConfigs {
 	VariableNodeMap myVariables;
-	UserFunctionNodeMap myUserFunctions;
+	UserFunctionMap myUserFunctions;
 	
 }

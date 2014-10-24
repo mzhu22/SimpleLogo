@@ -2,7 +2,7 @@ package displayCommands;
 
 import java.util.Stack;
 
-import ExpressionTree.ExpressionNode;
+import expressionTree.ExpressionNode;
 import frontend.Turtle;
 
 public class SetPalette extends DisplayNode {

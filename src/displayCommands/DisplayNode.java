@@ -1,6 +1,6 @@
 package displayCommands;
 
-import ExpressionTree.ExpressionNode;
+import expressionTree.ExpressionNode;
 import frontend.Turtle;
 
 public abstract class DisplayNode extends ExpressionNode{

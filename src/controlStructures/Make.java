@@ -1,6 +1,6 @@
 package controlStructures;
 
-import ExpressionTree.ExpressionNode;
+import expressionTree.ExpressionNode;
 
 public class Make extends ExpressionNode {
 

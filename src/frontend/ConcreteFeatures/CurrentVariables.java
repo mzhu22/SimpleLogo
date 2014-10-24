@@ -1,11 +1,11 @@
 package frontend.ConcreteFeatures;
 
-import ExpressionTree.VariableNodeMap;
 import javafx.scene.Group;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import expressionTree.VariableNodeMap;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 
 public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{

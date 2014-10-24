@@ -11,8 +11,8 @@ package backend;
 import java.util.ArrayList;
 import java.util.List;
 
-import ExpressionTree.ExpressionNode;
-import ExpressionTree.ExpressionTreeBuilder;
+import expressionTree.ExpressionNode;
+import expressionTree.ExpressionTreeBuilder;
 
 public class Parser {
 

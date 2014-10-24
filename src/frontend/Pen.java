@@ -3,7 +3,7 @@ package frontend;
 import java.util.HashMap;
 import java.util.Map;
 
-import ErrorsAndExceptions.ErrorPopUp;
+import errorsAndExceptions.ErrorPopUp;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;

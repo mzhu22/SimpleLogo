@@ -1,7 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.control.TextField;
-import ErrorsAndExceptions.ErrorPopUp;
+import errorsAndExceptions.ErrorPopUp;
 import frontend.Pen;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 

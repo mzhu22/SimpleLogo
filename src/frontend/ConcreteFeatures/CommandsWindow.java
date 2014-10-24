@@ -1,8 +1,8 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.text.Text;
-import ExpressionTree.UserFunctionNodeMap;
-import ExpressionTree.VariableNodeMap;
+import expressionTree.UserFunctionMap;
+import expressionTree.VariableNodeMap;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 
 public class CommandsWindow extends GUIFeatureWithUpdateableScrollPane {
@@ -15,7 +15,7 @@ public class CommandsWindow extends GUIFeatureWithUpdateableScrollPane {
 	public void updatePane() {
 		
 		//very similar to other updateable panes, will be refactored
-		UserFunctionNodeMap myFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
+		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionNodeMap();
 		
 		String finalOutput = "Functions \n";
 		for(String s : myFunctions.keySet()){

@@ -1,8 +1,10 @@
 package controlStructures;
 
-import ExpressionTree.ExpressionNode;
-import ExpressionTree.UserFunctionNodeMap;
-import ExpressionTree.doNothing;
+import java.util.Stack;
+
+import expressionTree.ExpressionNode;
+import expressionTree.ListNode;
+import expressionTree.UserFunction;
 
 /**
  * Used when the user wants to define custom functions
@@ -11,23 +13,41 @@ import ExpressionTree.doNothing;
  */
 public class To extends ExpressionNode{
 	
-	private UserFunctionNodeMap myUserFunctions;
+	private UserFunction myFunction;
+	private ListNode myVariables; 
+	private ListNode myCommands; 
+	
 	
 	public To(){
-		super(2); 
-		myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
+		super(3); 
 	}
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
-		myValue = 0;
+		System.out.println("evaluating to"); 
+		myVariables.evaluate(); 
+		myCommands.evaluate(); 
+		 
 		
-		doNothing temp = (doNothing) getLeft();
-		String functionName = temp.getIdentifier();
-		
-		myUserFunctions.addFunction(functionName, getRight());
-
-		return myValue;
+		myFunction.setMyVariables(myVariables);
+		System.out.println(myVariables.getListContents().size() + " blah");
+		myFunction.setMyCommands(myCommands);
+		System.out.println(myCommands.getListContents().size() + " blah"); 
+		return 0; 
+	
 	}
+	
+	public void setChildren( Stack<ExpressionNode> childStack){
+		myFunction = (UserFunction) childStack.pop();
+		numChildren --; 
+		myVariables = (ListNode) childStack.pop(); 
+		numChildren --; 
+		myCommands = (ListNode) childStack.pop(); 
+		numChildren --; 
+	
+		
+		
+	
+	}
+	
 }

@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import ExpressionTree.VariableNodeMap;
+import expressionTree.VariableNodeMap;
 
 public class FileWriter {
 	public FileWriter(){

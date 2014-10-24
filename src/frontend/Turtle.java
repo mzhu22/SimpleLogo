@@ -5,8 +5,11 @@ import java.util.List;
 
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.effect.BoxBlur;
+import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
@@ -21,6 +24,7 @@ public class Turtle {
 	private double myDirection; //0 is right, 90 up, 180 left, 270 down
 	
 	private ImageView myImage;
+	private HBox myContainer;
 	
 	private Canvas myCanvas;
 	private Pen myPen;
@@ -32,6 +36,8 @@ public class Turtle {
 	private String myInitImage;
 	
 	private LineDrawer myDrawer;
+	
+	private boolean isActive;
 	
 	public Turtle(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;
@@ -48,20 +54,26 @@ public class Turtle {
 		
 		myDirection = 90; //START FACING UP
 		
-		
+		isActive = true;
 		
 		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
         myImage = new ImageView();
         myImage.setImage(image);
-        
+        myContainer = new HBox();
+        myContainer.setPrefSize(WIDTH, HEIGHT);
         
 		myImage.setFitHeight(HEIGHT);
 		myImage.setFitWidth(WIDTH);
 			
 		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myImage);
 		
-		myImage.setX(startX - (myImage.getFitWidth() / 2));
-		myImage.setY(startY - (myImage.getFitHeight() / 2));
+		myContainer.setLayoutX(startX - (myContainer.getWidth() / 2));
+		myContainer.setLayoutY(startY - (myContainer.getHeight() / 2));
+		myContainer.getChildren().add(myImage);
+		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myContainer);
+		
+		handleActiveOutline();
+		
 	}
 	
 	
@@ -80,73 +92,19 @@ public class Turtle {
 		myY = curPosition.getY();
 		
 		
-		myImage.setX(myX - (myImage.getFitWidth() / 2));
-		myImage.setY(myY - (myImage.getFitHeight() / 2));
+		myContainer.setLayoutX(myX - (myContainer.getWidth() / 2));
+		myContainer.setLayoutY(myY - (myContainer.getHeight() / 2));
 		
 		return value;
 		
 	}
 
-	/**
-	 * Handles edge cases. Needs serious refactoring which is difficult since each case
-	 * is only slightly different (ie +/-, X or Y is different in Point2D)
-	 * @param oldPosition
-	 * @return
-	 */
-	private Point2D handleEdgeCases(Point2D oldPosition) {
-		if(myX <= 0){
-			double angle = 180 - myDirection;
-			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(0, interimY);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(myCanvas.getWidth(), interimY);
-			myX += (Math.ceil((-myX / myCanvas.getWidth()))*myCanvas.getWidth());
-			
-		}
-		if(myX >= myCanvas.getWidth()){
-			double angle = myDirection;
-			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(0, interimY);
-			myX %= myCanvas.getWidth();
-		}
-		
-		if(myY <= 0){
-			double angle = 90 - myDirection;
-			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(interimX, 0);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(interimX, myCanvas.getWidth());
-			myY += (Math.ceil((-myY / myCanvas.getHeight()))*myCanvas.getHeight());
-		}
-		if(myY >= myCanvas.getHeight()){
-			double angle = 270 - myDirection;	
-			double interimX = myX - ((myCanvas.getHeight() - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(interimX, myCanvas.getHeight());
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(interimX, 0);
-			myY %= myCanvas.getHeight();
-		}
-		return oldPosition;
-	}
-		
-	
-
-	/**
-	 * @param oldPosition
-	 * @param newPosition
-	 */
-	private void makeLine(Point2D oldPosition, Point2D newPosition) {
-		myPen.drawLine(oldPosition, newPosition, ((SLogoCanvas)myCanvas).getHolder());
-	}
-	
 	public double rotate(double value){ //positive value are rotating left
 		
 		myDirection += value;
 		handleDirection();
 		
-		myImage.setRotate(myImage.getRotate() - (value%360));
+		myContainer.setRotate(myContainer.getRotate() - (value%360));
 		
 		return value;
 	}
@@ -158,6 +116,21 @@ public class Turtle {
 		}
 	}
 	
+	public void handleActiveOutline(){
+		String styleInner = "";
+		if(isActive){
+			styleInner = "-fx-border-color: green;"
+		              + "-fx-border-width: 2;"
+		              + "-fx-border-style: solid;";
+		}
+		else{
+			styleInner = "-fx-border-color: red;"
+		              + "-fx-border-width: 2;"
+		              + "-fx-border-style: solid;";
+		}
+		myContainer.setStyle(styleInner);
+	}
+	
 	public void changeImage(String newImage){
 		
 		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
@@ -166,7 +139,7 @@ public class Turtle {
 	}
 	
 	public void setDirection(double dir){
-		myImage.setRotate(-dir + 90);
+		myContainer.setRotate(-dir + 90);
 		myDirection = dir;
 		handleDirection();
 	}
@@ -178,8 +151,8 @@ public class Turtle {
 	public void goToCoord(double x, double y){
 		myX = x;
 		myY = y;
-		myImage.setX(myX - (myImage.getFitWidth() / 2));
-		myImage.setY(myY - (myImage.getFitHeight() / 2));
+		myContainer.setLayoutX(myX - (myContainer.getWidth() / 2));
+		myContainer.setLayoutY(myY - (myContainer.getHeight() / 2));
 		
 	}
 	
@@ -193,11 +166,11 @@ public class Turtle {
 	
 	public void showTurtle(){
 		myShowTurtle = true;
-		myImage.setVisible(myShowTurtle);
+		myContainer.setVisible(myShowTurtle);
 	}
 	public void hideTurtle(){
 		myShowTurtle = false;
-		myImage.setVisible(myShowTurtle);
+		myContainer.setVisible(myShowTurtle);
 	}
 	
 	
@@ -217,6 +190,13 @@ public class Turtle {
 		return myY; 
 	}
 	
+	public boolean getIsActive(){
+		return isActive;
+	}
 	
-	
+	public void setActive(boolean active){
+		isActive = active;
+		handleActiveOutline();
+	}
+
 }

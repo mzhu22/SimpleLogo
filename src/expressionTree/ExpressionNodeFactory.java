@@ -23,11 +23,11 @@ public final class ExpressionNodeFactory {
 		for(String string : split ){
 
 			//Case for code organized in brackets (e.g., for repeats)
-			if(string.matches("\\[") && balance == 0){
+			if(string.equals("ListStart".toUpperCase()) && balance == 0){
 				balance ++ ; 	
 				returnNodes.push(new ListNode());
 			}
-			else if(string.matches("\\]")){
+			else if(string.equals("ListEnd".toUpperCase())){
 				balance -- ; 				
 			}
 			else{

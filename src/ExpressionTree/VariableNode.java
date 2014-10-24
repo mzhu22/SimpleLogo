@@ -1,8 +1,10 @@
 package ExpressionTree;
 
+import java.io.Serializable;
 
 
-public class VariableNode extends ExpressionNode {
+
+public class VariableNode extends ExpressionNode implements Serializable{
 	
 	private String identifier; 
 	

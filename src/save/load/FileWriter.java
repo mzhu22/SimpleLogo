@@ -47,6 +47,8 @@ public class FileWriter {
 	 */
 	public static void main (String[] args) throws IOException, ClassNotFoundException{
 		FileWriter tester = new FileWriter();
+		VariableNodeMap temp = VariableNodeMap.getVariableNodeMap();
+		temp.getVariable("B");
 		tester.writeToFile();
 		tester.readFromFile();
 	}

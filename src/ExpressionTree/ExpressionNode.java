@@ -13,6 +13,15 @@ public abstract class ExpressionNode {
 	
 	protected List<ExpressionNode> myChildren;  
 	protected List<FundamentalInstruction> instructionList ; 
+	
+	/**
+	 * Default number of children is 2. The vast majority of Slogo commands follows this
+	 * syntax
+	 */
+	public ExpressionNode(){
+		numChildren = 2;
+	}
+	
 	public ExpressionNode( int numChild){
 		numChildren = numChild;		
 	}

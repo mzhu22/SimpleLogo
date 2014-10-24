@@ -70,6 +70,7 @@ public class SLogoTab {
 		
 		
 		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>());
+		myTurtle.setActive(false);
 		myTurtleCollection.addTurtle(myTurtle);
 		myTurtleCollection.addTurtle(new Turtle(100, 100,"images/arrow_red.png", myCanvas));
 

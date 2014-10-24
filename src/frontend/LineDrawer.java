@@ -32,7 +32,7 @@ public class LineDrawer {
 	 */
 	public Point2D draw(Point2D oldPosition) {
 
-		if(myX <= 0){
+		if(myX < 0){
 			double angle = 180 - myDirection;
 			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(0, interimY);
@@ -41,7 +41,7 @@ public class LineDrawer {
 			myX += (Math.ceil((-myX / CANVAS_WIDTH))*CANVAS_WIDTH);			
 		}
 		
-		if(myX >= CANVAS_WIDTH){
+		if(myX > CANVAS_WIDTH){
 			double angle = myDirection;
 			double interimY = myY - ((CANVAS_WIDTH - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(CANVAS_WIDTH, interimY);
@@ -50,7 +50,7 @@ public class LineDrawer {
 			myX %= CANVAS_WIDTH;
 		}
 		
-		if(myY <= 0){
+		if(myY < 0){
 			double angle = 90 - myDirection;
 			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, 0);
@@ -59,7 +59,7 @@ public class LineDrawer {
 			myY += (Math.ceil((-myY / CANVAS_HEIGHT))*CANVAS_HEIGHT);
 		}
 		
-		if(myY >= CANVAS_HEIGHT){
+		if(myY > CANVAS_HEIGHT){
 			double angle = 270 - myDirection;	
 			double interimX = myX - ((CANVAS_HEIGHT - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, CANVAS_HEIGHT);

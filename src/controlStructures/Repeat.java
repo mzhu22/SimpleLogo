@@ -4,7 +4,7 @@ package controlStructures;
 import java.util.ArrayList;
 import java.util.List;
 
-import FundamentalInstructions.FundamentalInstruction;
+import displayCommands.DisplayNode;
 import frontend.Turtle;
 
 /**
@@ -15,10 +15,10 @@ import frontend.Turtle;
  * @author Mike Zhu
  *
  */
-public class Repeat extends FundamentalInstruction{
+public class Repeat extends DisplayNode{
 
 	public Repeat (){
-		numChildren = 2 ; 
+		super(2) ; 
 	}
 	
 	@Override
@@ -34,16 +34,16 @@ public class Repeat extends FundamentalInstruction{
 	}
 
 	@Override
-	public List<FundamentalInstruction> makeInstructionList(){
+	public List<DisplayNode> makeInstructionList(){
 
-		List<FundamentalInstruction> instructionList = new ArrayList<>();	
+		List<DisplayNode> instructionList = new ArrayList<>();	
 
 		for(int i =0 ; i < getLeft().evaluate(); i++){
 			if(getLeft()!=null){
 				instructionList.addAll(getLeft().makeInstructionList());
 			}
-			if(FundamentalInstruction.class.isAssignableFrom(getClass())){
-				instructionList.add((FundamentalInstruction)this);
+			if(DisplayNode.class.isAssignableFrom(getClass())){
+				instructionList.add((DisplayNode)this);
 			}
 			if(getRight()!=null){
 				instructionList.addAll(getRight().makeInstructionList());

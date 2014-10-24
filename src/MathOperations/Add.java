@@ -11,7 +11,7 @@ public class Add extends Operation {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myInfo = getRight().evaluate() + getLeft().evaluate();
+		return myValue = getRight().evaluate() + getLeft().evaluate();
 	}
 	
 }

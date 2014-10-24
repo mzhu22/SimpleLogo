@@ -1,5 +1,7 @@
 package ExpressionTree;
 
+import java.util.Stack;
+
 import CommandAbstractClasses.Constant;
 import Comparators.And;
 import Comparators.Equal;
@@ -8,14 +10,6 @@ import Comparators.Less;
 import Comparators.Not;
 import Comparators.NotEqual;
 import Comparators.Or;
-import FundamentalInstructions.Back;
-import FundamentalInstructions.Forward;
-import FundamentalInstructions.HideTurtle;
-import FundamentalInstructions.Left;
-import FundamentalInstructions.PenDown;
-import FundamentalInstructions.PenUp;
-import FundamentalInstructions.Right;
-import FundamentalInstructions.ShowTurtle;
 import MathOperations.Add;
 import MathOperations.Arctan;
 import MathOperations.Cosine;
@@ -32,17 +26,55 @@ import MathOperations.Tangent;
 import controlStructures.Make;
 import controlStructures.Repeat;
 import controlStructures.To;
+import displayCommands.Back;
+import displayCommands.Forward;
+import displayCommands.HideTurtle;
+import displayCommands.Left;
+import displayCommands.PenDown;
+import displayCommands.PenUp;
+import displayCommands.Right;
+import displayCommands.ShowTurtle;
 
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 	private UserFunctionNodeMap myUserFunctions = UserFunctionNodeMap.getUserFunctionNodeMap();
 		
-	public ExpressionNode getNode( String s){
+	
+	public  Stack<ExpressionNode> getAllNodes(String s){
+		int balance = 0; 
+		Stack<ExpressionNode> returnNodes = new Stack<ExpressionNode>();
 
-		
-		
-		
+		String[] split = s.trim().split(" "); 
+
+		for(String string : split ){
+
+			//Case for code organized in brackets (e.g., for repeats)
+			if(string.matches("\\[") && balance == 0){
+				balance ++ ; 	
+				returnNodes.push(new ListNode());
+			}
+			else if(string.matches("\\]")){
+				balance -- ; 				
+			}
+			else{
+				if( balance == 0 ){
+					returnNodes.push(getNode(string)); 
+				}
+				else  {				
+					ListNode list = (ListNode) returnNodes.peek();
+					list.add(string);
+					//returnNodes.push(list);
+				}
+			}
+
+		}
+		return returnNodes;
+	}
+	
+	
+	private ExpressionNode getNode( String s){
+
 		ExpressionNode toReturn; 
 		double constant =0; 
 
@@ -64,7 +96,7 @@ public final class ExpressionNodeFactory {
 
 	private ExpressionNode commandHandler(String s) {
 		switch (s) {
-			//Fundamental instructions
+			//Display Node
 			case "FORWARD" : case "FD": return new Forward();
 			
 			case "RIGHT" : case "RT" : return new Right();

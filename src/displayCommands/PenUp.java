@@ -1,18 +1,20 @@
-package FundamentalInstructions;
+package displayCommands;
 
 import frontend.Turtle;
 
-public class ShowTurtle extends FundamentalInstruction {
 
 
-	public ShowTurtle(){
+public class PenUp extends DisplayNode {
+
+	
+	public PenUp() {
 		
-		numChildren = 0; 
+		super(0); 
 	}
 	
 	@Override
 	public void doAction(Turtle turtle) {
-		turtle.showTurtle();
+		turtle.getPen().penUp();
 	}
 
 	@Override

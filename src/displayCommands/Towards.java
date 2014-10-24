@@ -1,18 +1,17 @@
-package FundamentalInstructions;
+package displayCommands;
 
 import frontend.Turtle;
 
-public class Towards extends FundamentalInstruction {
+public class Towards extends DisplayNode {
 
 	public Towards(){
-
-		numChildren = 1; 
+		super(1); 
 	}
 
 
 	@Override
 	public void doAction(Turtle turtle) {
-		turtle.setDirection(myInfo);
+		turtle.setDirection(myValue);
 
 	}
 

@@ -19,6 +19,7 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
 import frontend.AbstractFeatures.GUIFeatureWithColorPicker;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 import frontend.ConcreteFeatures.ChangeBackgroundButton;
+import frontend.ConcreteFeatures.ChangeCodingLanguage;
 import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
 import frontend.ConcreteFeatures.ClearCanvasButton;
 import frontend.ConcreteFeatures.CommandsWindow;
@@ -47,9 +48,9 @@ public class SLogoTab {
 	private TurtleMover myMover;
 	private List<GUIFeature> startingFeatures;
 	private TabPane myTabPane;
-
+	private Translator myTranslator;
 	
-	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.languages/EnglishButtonNames");
+	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.buttonLanguages/EnglishButtonNames");
 	private PaneUpdater myPaneUpdater;
 
 
@@ -65,6 +66,8 @@ public class SLogoTab {
 		Pen turtlePen = myTurtle.getPen();
 
 		myMover = new TurtleMover(myTurtle);
+		
+		myTranslator = new Translator();
 
 		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
 				Arrays.asList(
@@ -80,7 +83,7 @@ public class SLogoTab {
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
 						new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater),
+						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator),
 						new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 						new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 						new HelpButton(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
@@ -92,7 +95,8 @@ public class SLogoTab {
 						new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
 						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtle),
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), turtlePen),
-						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane)
+						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
+						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator)
 						
 					)
 				);

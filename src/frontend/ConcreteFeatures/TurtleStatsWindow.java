@@ -23,7 +23,7 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 	public void updatePane() {
 		Map<String, String> turtleInfo = new HashMap<String, String>();
 		turtleInfo.put("X:", ((Long) Math.round((myTurtle.getX() - CANVAS_WIDTH/2))).toString());
-		turtleInfo.put("Y:", ((Long) Math.round(myTurtle.getY() - CANVAS_HEIGHT/2)).toString());
+		turtleInfo.put("Y:", ((Long) Math.round(-1* (myTurtle.getY() - CANVAS_HEIGHT/2))).toString());
 		turtleInfo.put("Heading:", ((Long) Math.round(myTurtle.getDirection())).toString());
 		turtleInfo.put("Showing:", ((Boolean) myTurtle.isShowing()).toString());
 		turtleInfo.put("Pen Down:", ((Boolean) myTurtle.getPen().isPenDown()).toString());

@@ -87,60 +87,6 @@ public class Turtle {
 		
 	}
 
-	/**
-	 * Handles edge cases. Needs serious refactoring which is difficult since each case
-	 * is only slightly different (ie +/-, X or Y is different in Point2D)
-	 * @param oldPosition
-	 * @return
-	 */
-	private Point2D handleEdgeCases(Point2D oldPosition) {
-		if(myX <= 0){
-			double angle = 180 - myDirection;
-			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(0, interimY);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(myCanvas.getWidth(), interimY);
-			myX += (Math.ceil((-myX / myCanvas.getWidth()))*myCanvas.getWidth());
-			
-		}
-		if(myX >= myCanvas.getWidth()){
-			double angle = myDirection;
-			double interimY = myY - ((myCanvas.getWidth() - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(myCanvas.getWidth(), interimY);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(0, interimY);
-			myX %= myCanvas.getWidth();
-		}
-		
-		if(myY <= 0){
-			double angle = 90 - myDirection;
-			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(interimX, 0);
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(interimX, myCanvas.getWidth());
-			myY += (Math.ceil((-myY / myCanvas.getHeight()))*myCanvas.getHeight());
-		}
-		if(myY >= myCanvas.getHeight()){
-			double angle = 270 - myDirection;	
-			double interimX = myX - ((myCanvas.getHeight() - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
-			Point2D interim = new Point2D(interimX, myCanvas.getHeight());
-			makeLine(oldPosition, interim);
-			oldPosition = new Point2D(interimX, 0);
-			myY %= myCanvas.getHeight();
-		}
-		return oldPosition;
-	}
-		
-	
-
-	/**
-	 * @param oldPosition
-	 * @param newPosition
-	 */
-	private void makeLine(Point2D oldPosition, Point2D newPosition) {
-		myPen.drawLine(oldPosition, newPosition, ((SLogoCanvas)myCanvas).getHolder());
-	}
-	
 	public double rotate(double value){ //positive value are rotating left
 		
 		myDirection += value;

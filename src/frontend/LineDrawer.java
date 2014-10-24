@@ -36,7 +36,7 @@ public class LineDrawer {
 			double angle = 180 - myDirection;
 			double interimY = myY - (myX * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(0, interimY);
-			myPen.drawLine(oldPosition, interim, myPane);
+			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(CANVAS_WIDTH, interimY);
 			myX += (Math.ceil((-myX / CANVAS_WIDTH))*CANVAS_WIDTH);			
 		}
@@ -45,7 +45,7 @@ public class LineDrawer {
 			double angle = myDirection;
 			double interimY = myY - ((CANVAS_WIDTH - myX) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(CANVAS_WIDTH, interimY);
-			myPen.drawLine(oldPosition, interim, myPane);
+			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(0, interimY);
 			myX %= CANVAS_WIDTH;
 		}
@@ -54,7 +54,7 @@ public class LineDrawer {
 			double angle = 90 - myDirection;
 			double interimX = myX + (myY * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, 0);
-			myPen.drawLine(oldPosition, interim, myPane);
+			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(interimX, CANVAS_WIDTH);
 			myY += (Math.ceil((-myY / CANVAS_HEIGHT))*CANVAS_HEIGHT);
 		}
@@ -63,7 +63,7 @@ public class LineDrawer {
 			double angle = 270 - myDirection;	
 			double interimX = myX - ((CANVAS_HEIGHT - myY) * Math.tan(angle * DEGREES_TO_RADIANS_FACTOR));
 			Point2D interim = new Point2D(interimX, CANVAS_HEIGHT);
-			myPen.drawLine(oldPosition, interim, myPane);
+			makeLine(oldPosition, interim);
 			oldPosition = new Point2D(interimX, 0);
 			myY %= CANVAS_HEIGHT;
 		}
@@ -71,5 +71,9 @@ public class LineDrawer {
 		
 		myPen.drawLine(oldPosition, new Point2D(myX, myY), myPane);
 		return new Point2D(myX, myY);
+	}
+
+	private void makeLine(Point2D oldPosition, Point2D interim) {
+		myPen.drawLine(oldPosition, interim, myPane);
 	}
 }

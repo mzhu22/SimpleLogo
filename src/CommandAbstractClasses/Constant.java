@@ -17,7 +17,7 @@ public class Constant extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myInfo;
+		return myValue;
 	}
 	
 }

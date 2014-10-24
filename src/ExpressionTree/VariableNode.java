@@ -15,11 +15,11 @@ public class VariableNode extends ExpressionNode implements Serializable{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myInfo;
+		return myValue;
 	}
 
 	public void SetInfo(int x ){
-		myInfo = x; 
+		myValue = x; 
 	} 
 	
 	public String getIdentifier(){
@@ -28,7 +28,7 @@ public class VariableNode extends ExpressionNode implements Serializable{
 
 
 	public double getInfo(){
-		return myInfo; 
+		return myValue; 
 	}
 
 

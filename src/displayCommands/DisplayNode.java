@@ -1,13 +1,13 @@
-package FundamentalInstructions;
+package displayCommands;
 
 import ExpressionTree.ExpressionNode;
 import frontend.Turtle;
 
-public abstract class FundamentalInstruction extends ExpressionNode{
+public abstract class DisplayNode extends ExpressionNode{
 	
 	
-	public FundamentalInstruction() {
-		super(1); 
+	public DisplayNode( int i) {
+		super(i); 
 	}
 	
 	protected static final int ONE = 1; 
@@ -16,7 +16,7 @@ public abstract class FundamentalInstruction extends ExpressionNode{
 	public String toString(){
 		StringBuilder toRet = new StringBuilder(); 
 	
-		toRet.append(getClass().toString() + " :" + myInfo); 	
+		toRet.append(getClass().toString() + " :" + myValue); 	
 		return toRet.toString(); 
 	}
 

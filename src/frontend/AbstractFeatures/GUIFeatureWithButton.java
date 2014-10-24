@@ -21,7 +21,6 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	public GUIFeatureWithButton(double x, double y, String buttonName) {
 		super(x, y);
 		myName = buttonName;
-		// TODO Auto-generated constructor stub
 	}
 
 	/** 

@@ -2,17 +2,17 @@ package ExpressionTree;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
-import FundamentalInstructions.FundamentalInstruction;
+import displayCommands.DisplayNode;
 
 public abstract class ExpressionNode {
-	protected double myInfo; 
+	protected double myValue; 
 	protected ExpressionNode myRight; 
 	protected ExpressionNode myLeft; 
 	protected int numChildren; 
 	
-	protected List<ExpressionNode> myChildren;  
-	protected List<FundamentalInstruction> instructionList ; 
+	protected List<DisplayNode> instructionList ; 
 	
 	/**
 	 * Default number of children is 2. The vast majority of Slogo commands follows this
@@ -20,63 +20,69 @@ public abstract class ExpressionNode {
 	 */
 	public ExpressionNode(){
 		numChildren = 2;
-	}
-	
-	public ExpressionNode( int numChild){
+	} 
+
+	public ExpressionNode(int numChild){
 		numChildren = numChild;		
 	}
-	
+
 	public abstract double evaluate(); 
 
-	public List<FundamentalInstruction> makeInstructionList(){
-			instructionList = new ArrayList<>();
-			
-			if(getLeft()!=null){
-				instructionList.addAll(getLeft().makeInstructionList());
-			}
-			if(FundamentalInstruction.class.isAssignableFrom(this.getClass())){
-				instructionList.add((FundamentalInstruction)this);
-			}
-			if(getRight()!=null){
-				instructionList.addAll(getRight().makeInstructionList());
-			}
-			return instructionList;
-	}
-	
-	public ExpressionNode getLeft(){
+	public List<DisplayNode> makeInstructionList(){
+		instructionList = new ArrayList<>();
+
+		if(getLeft()!=null){
+			instructionList.addAll(getLeft().makeInstructionList());
+		}
+		if(DisplayNode.class.isAssignableFrom(this.getClass())){
+			instructionList.add((DisplayNode)this);
+		}
+		if(getRight()!=null){
+			instructionList.addAll(getRight().makeInstructionList());
+		}
+		return instructionList;
+}
+
+	protected ExpressionNode getLeft(){
 		return myLeft; 
 	}
 
-	public ExpressionNode getRight(){	
+	protected ExpressionNode getRight(){	
 		return myRight; 
 	}
 
-	public void setLeft( ExpressionNode toSet){
+	private void setLeft( ExpressionNode toSet){
 		myLeft = toSet; 
 		numChildren --; 
 	}
 
-	public void setRight( ExpressionNode toSet){
+	private void setRight( ExpressionNode toSet){
 		myRight = toSet;
 		numChildren--; 
 	}
 
-
 	public void setInfo(double a){
-
-		myInfo = a; 
-
+		myValue = a; 
 	}
-	
-	public int  getNumChildren(){
-		
-		return numChildren; 
-		
+	private int  getNumChildren(){
+
+		return numChildren; 	
 	}
-	
 	public double getInfo(){
-		return myInfo; 
+		return myValue; 
 	}
+
+	public void setChildren( Stack<ExpressionNode> childStack){
+		if(getNumChildren() == 1){
+			setLeft(childStack.pop());
+		}
+		else if(getNumChildren() == 2){
+			setLeft(childStack.pop());
+			setRight(childStack.pop());
+		}
+		childStack.push(this); 
+	}
+
 
 	
 }

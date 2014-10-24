@@ -12,8 +12,8 @@ public class Make extends ExpressionNode {
 	public double evaluate() {
 		// TODO Auto-generated method stub
 		myLeft.setInfo( myRight.evaluate());
-		myInfo = myRight.evaluate();
-		return myInfo;
+		myValue = myRight.evaluate();
+		return myValue;
 	}
 
 }

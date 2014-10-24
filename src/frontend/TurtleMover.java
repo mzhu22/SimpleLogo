@@ -2,8 +2,8 @@ package frontend;
 
 import java.util.List;
 
+import displayCommands.DisplayNode;
 import ExpressionTree.ExpressionNode;
-import FundamentalInstructions.FundamentalInstruction;
 
 public class TurtleMover {
 
@@ -15,7 +15,7 @@ public class TurtleMover {
 	
 	public void startDrawing(List<ExpressionNode> instructions){
 		for(ExpressionNode n : instructions){
-			((FundamentalInstruction)n).doAction(myTurtle);
+			((DisplayNode)n).doAction(myTurtle);
 		}
 		
 	}

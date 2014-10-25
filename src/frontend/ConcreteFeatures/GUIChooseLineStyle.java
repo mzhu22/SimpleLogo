@@ -1,20 +1,25 @@
 package frontend.ConcreteFeatures;
 
 import frontend.Pen;
+import frontend.Turtle;
+import frontend.TurtleCollection;
 import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
 public class GUIChooseLineStyle extends GUIFeatureWithDropDown {
 
-	private Pen myPen;
+	private TurtleCollection myTurtleCollection;
 	
-	public GUIChooseLineStyle(double x, double y, String prompt, Pen pen) {
+	public GUIChooseLineStyle(double x, double y, String prompt, TurtleCollection turtles) {
 		super(x, y, prompt);
-		myPen = pen;
+		myTurtleCollection = turtles;
 	}
 
 	@Override
 	public void doDropDownClickAction(String chosen) {
-		myPen.setLineStyle(chosen);
+		for(Turtle t: myTurtleCollection)
+		{
+			t.getPen().setLineStyle(chosen);
+		}
 
 	}
 

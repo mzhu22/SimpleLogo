@@ -3,19 +3,19 @@ package frontend.ConcreteFeatures;
 import java.io.File;
 
 import frontend.Turtle;
+import frontend.TurtleCollection;
 import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
 public class GUIChooseImage extends GUIFeatureWithDropDown{
-	
-	private Turtle myTurtle;
+	private TurtleCollection myTurtleCollection;
 	
 	protected final static String IMAGE_FOLDER_NAME = "src/images/";
 	protected final static int IMAGE_FOLDER_NAME_LENGTH = IMAGE_FOLDER_NAME.length();
 	
 	
-	public GUIChooseImage(double x, double y, String prompt, Turtle turtle) {
+	public GUIChooseImage(double x, double y, String prompt, TurtleCollection turtles) {
 		super(x, y, prompt);
-		myTurtle = turtle;
+		myTurtleCollection = turtles;
 	}
 
 	@Override
@@ -31,11 +31,10 @@ public class GUIChooseImage extends GUIFeatureWithDropDown{
 
 	@Override
 	public void doDropDownClickAction(String chosen) {
-		
-		/* WILL NEED \ INSTEAD FOR WINDOWS?????*/
-		
-		
-		myTurtle.changeImage("images/" + chosen);
+		for(Turtle t : myTurtleCollection)
+		{
+			t.changeImage("images/" + chosen);
+		}
 		
 	}
 }

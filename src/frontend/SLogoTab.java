@@ -81,7 +81,7 @@ public class SLogoTab {
 		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
 				Arrays.asList(
 						new CurrentVariables(button_x - 200, 0, 200, 100),
-						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtle),
+						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtleCollection),
 						new CommandsWindow(button_x - 200, 450, 200, 100)
 						
 					)
@@ -96,14 +96,14 @@ public class SLogoTab {
 						new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 						new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 						new HelpButton(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
-						new SetLineColorButton(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), turtlePen, myColorPicker),
-						new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, turtlePen, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
+						new SetLineColorButton(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), myTurtleCollection, myColorPicker),
+						new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myTurtleCollection, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
 						new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
 						new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
-						new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtle, turtlePen, myPaneUpdater),
+						new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtleCollection, myPaneUpdater),
 						new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
-						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtle),
-						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), turtlePen),
+						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
+						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
 						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator)
 						

@@ -28,11 +28,11 @@ public final class ExpressionNodeFactory {
 		for(String string : split ){
 
 			//Case for code organized in brackets (e.g., for repeats)
-			if(string.matches("\\[") && balance == 0){
+			if(string.matches("ListStart") && balance == 0){
 				balance ++ ; 	
 				returnNodes.push(new ListNode());
 			}
-			else if(string.matches("\\]")){
+			else if(string.matches("ListEnd")){
 				balance -- ; 				
 			}
 			else{
@@ -84,7 +84,7 @@ public final class ExpressionNodeFactory {
 			command = "SlogoRandom";
 		}
 		
-		ExpressionNode node = new doNothing();
+		ExpressionNode node = null;
 
 		for(String packageName : myPackages){
 			String className = packageName + "." + command;
@@ -95,6 +95,10 @@ public final class ExpressionNodeFactory {
 			} catch (ClassNotFoundException e) {
 				continue;
 			}
+		}
+		if(node == null){
+			node = new doNothing();
+			System.out.println(command);
 		}
 		return node;
 	}

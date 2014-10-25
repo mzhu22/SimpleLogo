@@ -1,12 +1,11 @@
 /**
  * This class creates a PopUp message used for displaying error messages to the user.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 
 package errorsAndExceptions;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -51,9 +50,11 @@ public class ErrorPopUp {
 	};
 	
 	/**
-	 * Makes the PopUp window visible.
+	 * Displays the actual PopUp and throws an exception if needed.
 	 * 
-	 * @param errorMessage Message from Exception to display to user.
+	 * @param errorMessage The message to be displayed.
+	 * @param throwException Whether an exception needed to be thrown.
+	 * @throws SLogoException The type of exception to throw.
 	 */
 	public void display(String errorMessage, boolean throwException) throws SLogoException{
 		root.getChildren().clear();

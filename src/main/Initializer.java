@@ -1,4 +1,14 @@
+/**
+ * The class that sets up the stage, initializes
+ * the first scene and animation/frame details, and
+ * runs the program as an Application.
+ *
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
+
 package main;
+
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -6,21 +16,13 @@ import javafx.stage.Stage;
 import frontend.GUIMaker;
 import static frontend.SLogoTab.GUI_NAMES;
 
-/**
- * The class that sets up the stage, initializes
- * the first scene and animation/frame details, and
- * runs the program as an Application.
- *
- * @author Chris Bernt
- */
-
 public class Initializer extends Application {
     private GUIMaker myMaker;
     private int guiWidth = 1000;
     private int guiHeight = 650;
 
     /**
-     * Set things up at the beginning.
+     * Set stage and scene up at the beginning.
      */
     @Override
     public void start (Stage s) {
@@ -38,8 +40,9 @@ public class Initializer extends Application {
     }
 
     /**
-     * @param args
      * Begins the simulation. Called in Main.java.
+     * 
+     * @param args Input from command line if run from a terminal.
      */
     public void begin(String[] args) {
         launch(args);

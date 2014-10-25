@@ -1,7 +1,14 @@
+/**
+ * This class is to represent the error that should be thrown if something goes wrong.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
+
 package errorsAndExceptions;
 
 public class SLogoException extends RuntimeException {
-
+	
 	// for serialization
     private static final long serialVersionUID = 1L;
 
@@ -25,5 +32,4 @@ public class SLogoException extends RuntimeException {
     public SLogoException (String message, Throwable cause) {
         super(message, cause);
     }
-
 }

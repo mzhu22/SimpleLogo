@@ -1,17 +1,18 @@
+/**
+ * Class whose sole purpose is to start the program.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 
 package main;
 
-
-/**
- * @author Chris Bernt
- * Class whose sole purpose is to start the program.
- *
- */
 public class Main {
 
     /**
-     * @param args
      * Runs the program.
+     * @param args Input from command line if run from a terminal.
      */
     public static void main(final String[] args) {
         final Initializer init = new Initializer();

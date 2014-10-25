@@ -1,13 +1,9 @@
 package turtleQueries;
 
-import commandAbstractClasses.TurtleQuery;
-
-import frontend.Turtle;
-
 public class IsShowing extends TurtleQuery{
 
-	public IsShowing(Turtle actionable) {
-		super(actionable);
+	public IsShowing() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

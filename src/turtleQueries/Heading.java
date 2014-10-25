@@ -1,13 +1,12 @@
 package turtleQueries;
 
-import commandAbstractClasses.TurtleQuery;
-
 import frontend.Turtle;
 
 public class Heading extends TurtleQuery{
-
-	public Heading(Turtle actionable) {
-		super(actionable);
+	
+	
+	public Heading() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

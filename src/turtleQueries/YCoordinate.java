@@ -1,13 +1,9 @@
 package turtleQueries;
 
-import commandAbstractClasses.TurtleQuery;
-
-import frontend.Turtle;
-
 public class YCoordinate  extends TurtleQuery {
 
-	public YCoordinate(Turtle actionable) {
-		super(actionable);
+	public YCoordinate() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

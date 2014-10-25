@@ -1,13 +1,9 @@
 package turtleQueries;
 
-import commandAbstractClasses.TurtleQuery;
-
-import frontend.Turtle;
-
 public class IsPenDown extends TurtleQuery {
 
-	public IsPenDown(Turtle turtle) {
-		super(turtle);
+	public IsPenDown() {
+		super();
 		// TODO Auto-generated constructor stub
 	}
 

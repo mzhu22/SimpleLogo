@@ -5,6 +5,20 @@ import java.util.Stack;
 import commandAbstractClasses.*;
 import errorsAndExceptions.ErrorPopUp;
 
+/**
+ * Class called by ExpressionTreeBuilder that takes in a String representing user-input 
+ * Slogo code, returns a set of ExpressionNodes used to build the tree.
+ * 
+ * Contains code to parse two special cases:
+ * 1) Left and right brackets indicating sections of code used in Repeat and user-defined
+ * functions
+ * 2) Variables identified by a colon, e.g. :b
+ * 
+ * ExpressionNode objects are created using reflection. Throws up error window when 
+ * unrecognized commands are entered. 
+ * @author Mike Zhu
+ *
+ */
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();

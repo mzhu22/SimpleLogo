@@ -3,6 +3,7 @@ package expressionTree;
 import java.util.Stack;
 
 import commandAbstractClasses.*;
+import errorsAndExceptions.ErrorPopUp;
 
 public final class ExpressionNodeFactory {
 
@@ -97,8 +98,8 @@ public final class ExpressionNodeFactory {
 			}
 		}
 		if(node == null){
-			node = new doNothing();
-			System.out.println(command);
+			userError("Unrecognized command");
+			return new doNothing();
 		}
 		return node;
 	}
@@ -106,25 +107,9 @@ public final class ExpressionNodeFactory {
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
 	}
-
-	/**
-	 * Called when Logo word is not one of the built-in commands. 
-	 * When word comes after the To command, either:
-	 * 	a. Adds word to the UserFunctionMap 
-	 * 	b. Throws error if the word is already in UserFunctionMap
-	 * 
-	 * When word is called as its own instruction, checks UserFunctionMap and
-	 * 	a. Returns ListNode representing that command
-	 * 	b. Throws error if the command was not found
-	 * 
-	 * @param s == Logo word input
-	 * @return
-	 */
-	public ExpressionNode unknownFunctionHandler(String s){
-		if(myUserFunctions.contains(s)){
-			return myUserFunctions.getFunction(s);
-		}
-		
-		return new doNothing(s);
+	
+	public void userError(String s){
+		ErrorPopUp error = new ErrorPopUp();
+		error.display(s);
 	}
 }

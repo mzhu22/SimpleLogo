@@ -1,5 +1,6 @@
 package displayCommands;
 import frontend.Turtle;
+import frontend.TurtleCollection;
 
 public class SetBackground extends DisplayNode {
 
@@ -9,9 +10,14 @@ public class SetBackground extends DisplayNode {
 	}
 
 	@Override
-	public void doAction(Turtle turtle) {
-		// TODO Auto-generated method stub
+	protected void doAction(Turtle turtle) {
 		
+	}
+	
+	@Override
+	public void doAction(TurtleCollection turtles)
+	{
+		turtles.getCanvas().changeBackground((int) myValue);
 	}
 
 	@Override

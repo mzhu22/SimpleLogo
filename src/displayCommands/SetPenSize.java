@@ -11,8 +11,7 @@ public class SetPenSize extends DisplayNode{
 
 	@Override
 	public void doAction(Turtle turtle) {
-		// TODO Auto-generated method stub
-		
+		turtle.getPen().setLineWidth(myValue);
 	}
 
 	@Override

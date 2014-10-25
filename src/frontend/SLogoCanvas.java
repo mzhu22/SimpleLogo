@@ -7,6 +7,9 @@
 
 package frontend;
 
+import java.util.ArrayList;
+
+import java.util.List;
 import java.util.function.Predicate;
 
 import javafx.scene.canvas.Canvas;
@@ -17,13 +20,15 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
+import static frontend.SLogoTab.GUI_PREFERENCES;
 
 public class SLogoCanvas extends Canvas {
 
 	private Pane myHolder;
 	private GridPane myGrid;
 	private Rectangle myBackground;
-
+	private List<Color> myColors;
+	
 	private static final int SPACE_BETWEEN_GRID_LINES = 10;
 	/**
 	 * Constructor. 
@@ -36,6 +41,7 @@ public class SLogoCanvas extends Canvas {
 	public SLogoCanvas(double width, double height, double x, double y) {
 		super(width, height);
 
+		myColors = new ArrayList<Color>();
 		myHolder = new Pane();
 		myHolder.setLayoutX(x);
 		myHolder.setLayoutY(y);
@@ -65,6 +71,8 @@ public class SLogoCanvas extends Canvas {
 		myHolder.getChildren().add(myBackground);
 		myHolder.getChildren().add(this);
 		myHolder.getChildren().add(myGrid);
+		
+		setUpColorPalette();
 	
 	}
 	
@@ -77,8 +85,35 @@ public class SLogoCanvas extends Canvas {
 		});
 	}
 	
+	public void setUpColorPalette(){
+		String[] colors = GUI_PREFERENCES.getString("StartingPalettes").split(";");
+		for(String s : colors){
+			String[] rgbVals = s.split(",");
+			List<Integer> rgbs = new ArrayList<Integer>();
+			for(String val : rgbVals){
+				rgbs.add(Integer.parseInt(val.trim()));
+			}
+			this.myColors.add(Color.rgb(rgbs.get(0), rgbs.get(1), rgbs.get(2)));
+		}
+	}
+	
 	public void changeBackground(Color c){
 		myBackground.setFill(c);
+	}
+	
+	public void changeBackground(int index)
+	{
+		this.myBackground.setFill(this.getColor(index));
+	}
+	
+	public void addColor(double index, int r, int g, int b)
+	{
+		myColors.add((int) index, Color.rgb(r, g, b));
+	}
+	
+	public Color getColor(int index)
+	{
+		return this.myColors.get(index);
 	}
 	
 	public Pane getHolder()

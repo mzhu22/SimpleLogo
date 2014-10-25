@@ -55,8 +55,9 @@ public class SLogoTab {
 	private Translator myTranslator;
 	
 	private TurtleCollection myTurtleCollection;
-	
+	public static final ResourceBundle GUI_PREFERENCES = ResourceBundle.getBundle("resources.buttonLanguages/GUIPreferences");
 	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.buttonLanguages/EnglishButtonNames");
+	public static final String[] IMAGE_LIST = GUI_PREFERENCES.getString("StartingImages").split(",");
 	private PaneUpdater myPaneUpdater;
 	private HistoryCollection myHistory;
 

@@ -153,7 +153,7 @@ public class Turtle {
 	
 	public void changeImage(String newImage){
 		
-		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
+		Image image = new Image(getClass().getResourceAsStream("../images/" + newImage));
         myImage.setImage(image);
         
 	}

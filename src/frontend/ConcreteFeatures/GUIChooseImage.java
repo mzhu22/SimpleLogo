@@ -34,7 +34,7 @@ public class GUIChooseImage extends GUIFeatureWithDropDown{
 		myTurtleCollection.setActiveTurtles();
 		for(Turtle t : myTurtleCollection)
 		{
-			t.changeImage("images/" + chosen);
+			t.changeImage(chosen);
 		}
 		
 	}

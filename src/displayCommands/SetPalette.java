@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import expressionTree.ExpressionNode;
 import frontend.Turtle;
+import frontend.TurtleCollection;
 
 public class SetPalette extends DisplayNode {
 
@@ -13,7 +14,13 @@ public class SetPalette extends DisplayNode {
 	}
 
 	@Override
-	public void doAction(Turtle turtle) {
+	public void doAction(TurtleCollection turtles)
+	{
+		//turtles.getCanvas().addColor(index, r, g, b);
+	}
+	
+	@Override
+	protected void doAction(Turtle turtle) {
 		// TODO Auto-generated method stub
 
 	}

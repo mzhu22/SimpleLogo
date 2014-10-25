@@ -48,7 +48,7 @@ public class SLogoTab {
 	private Group myRoot = new Group();
 	private SLogoCanvas myCanvas;
 	private ColorPicker myColorPicker = new ColorPicker();
-	private Turtle myTurtle;
+	private Turtle myInitialTurtle;
 	private TurtleMover myMover;
 	private List<GUIFeature> startingFeatures;
 	private TabPane myTabPane;
@@ -71,19 +71,12 @@ public class SLogoTab {
 
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		myTurtle = new Turtle(200, 200, TURTLE_DEFAULT_IMAGE, myCanvas);	
+		myInitialTurtle = new Turtle(myCanvas);	
 		
 		
 		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>(), myCanvas);
-		myTurtle.setActive(false);
-		myTurtleCollection.addTurtle(myTurtle);
-		myTurtleCollection.addTurtle(new Turtle(100, 100,TURTLE_DEFAULT_IMAGE, myCanvas));
-
-		
-		
-		
-		myTurtleCollection.setActiveTurtles(new ArrayList<Integer>(Arrays.asList(0, 1, 2)));
-		
+		myTurtleCollection.addTurtle(myInitialTurtle);
+				
 		myMover = new TurtleMover(myTurtleCollection);
 		
 		myTranslator = new Translator();

@@ -17,9 +17,6 @@ public class ClearCanvasButton extends GUIFeatureWithButton {
 		myCanvas = canvas;
 	}
 
-	/**
-	 * turns grid lines off? - TODO
-	 */
 	@Override
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);

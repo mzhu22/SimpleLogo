@@ -20,8 +20,8 @@ import static frontend.SLogoTab.CANVAS_WIDTH;
 public class Turtle {
 	
 	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
-	private static final double IMAGE_WIDTH = 30;
-	private static final double IMAGE_HEIGHT = 30;
+	public static final double IMAGE_WIDTH = 30;
+	public static final double IMAGE_HEIGHT = 30;
 	public static final String TURTLE_DEFAULT_IMAGE = "images/arrow_red.png";
 	private static final int TURTLE_DEFAULT_Y = CANVAS_HEIGHT/2;
 	private static final int TURTLE_DEFAULT_X = CANVAS_WIDTH/2;
@@ -156,6 +156,12 @@ public class Turtle {
 		Image image = new Image(getClass().getResourceAsStream("../" + newImage));
         myImage.setImage(image);
         
+	}
+	
+	public void stamp(){
+		Stamp stamp = new Stamp(myX, myY, myDirection,  myImage.getImage());
+		((SLogoCanvas) myCanvas).getHolder().getChildren().add(stamp);
+		
 	}
 	
 	public void setDirection(double dir){

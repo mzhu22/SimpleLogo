@@ -15,12 +15,10 @@ public class Ask extends DisplayNode {
 	public Ask() {
 		super(2);
 		toAsk = new ArrayList<>(); 
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void doAction(Turtle turtle) {
-		// TODO Auto-generated method stub
 		
 	}
 

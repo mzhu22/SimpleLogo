@@ -11,14 +11,14 @@ import expressionTree.UserFunction;
  * @author Mike Zhu
  *
  */
-public class To extends ExpressionNode{
+public class MakeUserInstruction extends ExpressionNode{
 	
 	private UserFunction myFunction;
 	private ListNode myVariables; 
 	private ListNode myCommands; 
 	
 	
-	public To(){
+	public MakeUserInstruction(){
 		super(3); 
 	}
 

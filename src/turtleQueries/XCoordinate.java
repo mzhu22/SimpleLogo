@@ -4,9 +4,9 @@ import commandAbstractClasses.TurtleQuery;
 
 import frontend.Turtle;
 
-public class XCor extends TurtleQuery {
+public class XCoordinate extends TurtleQuery {
 
-	public XCor(Turtle actionable) {
+	public XCoordinate(Turtle actionable) {
 		super(actionable);
 		// TODO Auto-generated constructor stub
 	}

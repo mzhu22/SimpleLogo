@@ -1,6 +1,7 @@
 package frontend;
 
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
+import static frontend.Turtle.TURTLE_DEFAULT_IMAGE;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 import java.util.ArrayList;
@@ -37,12 +38,12 @@ import frontend.ConcreteFeatures.TurtleStatsWindow;
 
 public class SLogoTab {
 
-	public static final int CANVAS_HEIGHT = 500;
 	public static final int CANVAS_WIDTH = 500;
+	public static final int CANVAS_HEIGHT = 500;
 	private double myWidth;
 	private double myHeight;
 	private Group myRoot = new Group();
-	private SLogoCanvas myCanvas = new SLogoCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, 0, 0);
+	private SLogoCanvas myCanvas;
 	private ColorPicker myColorPicker = new ColorPicker();
 	private Turtle myTurtle;
 	private TurtleMover myMover;
@@ -58,6 +59,7 @@ public class SLogoTab {
 
 	public SLogoTab(TabPane tp)
 	{
+		this.myCanvas = new SLogoCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, 0, 0);
 		
 		this.myTabPane = tp;
 		this.myWidth = this.myTabPane.getWidth();
@@ -65,15 +67,16 @@ public class SLogoTab {
 
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		myTurtle = new Turtle(CANVAS_WIDTH/2, CANVAS_HEIGHT/2,"images/arrow_red.png", myCanvas);	
-		Pen turtlePen = myTurtle.getPen();
+		myTurtle = new Turtle(200, 200, TURTLE_DEFAULT_IMAGE, myCanvas);	
 		
 		
-		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>());
+		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>(), myCanvas);
 		myTurtle.setActive(false);
 		myTurtleCollection.addTurtle(myTurtle);
-		myTurtleCollection.addTurtle(new Turtle(100, 100,"images/arrow_red.png", myCanvas));
+		myTurtleCollection.addTurtle(new Turtle(100, 100,TURTLE_DEFAULT_IMAGE, myCanvas));
 
+		myTurtleCollection.setActiveTurtles(new ArrayList<Integer>(Arrays.asList(0, 1, 2)));
+		
 		myMover = new TurtleMover(myTurtleCollection);
 		
 		myTranslator = new Translator();

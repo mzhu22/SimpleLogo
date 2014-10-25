@@ -61,14 +61,14 @@ public abstract class ExpressionNode {
 		numChildren--; 
 	}
 
-	public void setInfo(double a){
+	public void setValue(double a){
 		myValue = a; 
 	}
 	protected int  getNumChildren(){
 
 		return numChildren; 	
 	}
-	public double getInfo(){
+	public double getValue(){
 		return myValue; 
 	}
 

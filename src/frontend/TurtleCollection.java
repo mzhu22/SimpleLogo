@@ -1,24 +1,66 @@
 package frontend;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javafx.scene.canvas.Canvas;
+
 public class TurtleCollection implements Iterable<Turtle>{
 
-	private Map<Integer, Turtle> myTurtles;
+	private Map<Integer, Turtle> myTurtles;	
 	
+	private List<Turtle> myActiveTurtles;	
 	
-	public TurtleCollection (List<Turtle> turtles){
+	private Canvas myCanvas;
+	
+	public TurtleCollection (List<Turtle> turtles, Canvas canvas){
+		myCanvas = canvas;
+		
 		myTurtles = new HashMap<Integer, Turtle>();
+		myActiveTurtles = new ArrayList<Turtle>();
 		for(int i = 0; i < turtles.size(); i++){
-			myTurtles.put(i, turtles.get(i));
+			Turtle t = turtles.get(i);
+			myTurtles.put(i, t);
+			if(t.getIsActive())
+			{
+				myActiveTurtles.add(t);
+			}
 		}
+		
 	}
 	
 	public void addTurtle(Turtle t){
 		myTurtles.put(myTurtles.size(), t);
+		if(t.getIsActive())
+		{
+			myActiveTurtles.add(t);
+		}
+	}
+	
+	public void setActiveTurtles(List<Integer> turtles){
+		for(Turtle t : myActiveTurtles)
+		{
+			t.setActive(false);
+		}
+		myActiveTurtles = new ArrayList<Turtle>();
+		for(Integer i : turtles)
+		{
+			Turtle t;
+			if(myTurtles.containsKey(i))
+			{
+				t = myTurtles.get(i);
+				t.setActive(true);
+			}
+			else
+			{
+				t = new Turtle(myCanvas);
+				myTurtles.put(i, t);
+			}
+			myActiveTurtles.add(t);
+		}
 	}
 	
 	@Override
@@ -29,13 +71,13 @@ public class TurtleCollection implements Iterable<Turtle>{
 
 			@Override
 			public boolean hasNext() {
-				return myCounter < myTurtles.size()-1;
+				return myCounter < myActiveTurtles.size()-1;
 			}
 
 			@Override
 			public Turtle next() {
 				myCounter++;
-				return myTurtles.get(myCounter);
+				return myActiveTurtles.get(myCounter);
 			}
 			
 		};

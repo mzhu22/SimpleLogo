@@ -1,9 +1,9 @@
 package displayCommands;
 import frontend.Turtle;
 
-public class Setbackground extends DisplayNode {
+public class SetBackground extends DisplayNode {
 
-	public Setbackground() {
+	public SetBackground() {
 		super(1);
 		// TODO Auto-generated constructor stub
 	}

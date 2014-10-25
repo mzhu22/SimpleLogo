@@ -7,9 +7,9 @@ import displayCommands.DisplayNode;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
 
-public class Do extends ExpressionNode {
+public class DoTimes extends ExpressionNode {
 
-	public Do() {
+	public DoTimes() {
 		super(2);
 		// TODO Auto-generated constructor stub
 	}
@@ -26,9 +26,9 @@ public class Do extends ExpressionNode {
 		instructionList = new ArrayList<>();
 		ListNode myLeft = (ListNode) getLeft(); 
 		
-		for(int i =1 ; i <= myLeft.getListContents().get(1).getInfo(); i++){
+		for(int i =1 ; i <= myLeft.getListContents().get(1).getValue(); i++){
 			instructionList.addAll(getRight().makeInstructionList());
-			myLeft.getListContents().get(0).setInfo(i);			
+			myLeft.getListContents().get(0).setValue(i);			
 		}
 		
 		return instructionList;

@@ -2,16 +2,16 @@ package controlStructures;
 
 import expressionTree.ExpressionNode;
 
-public class Make extends ExpressionNode {
+public class MakeVariable extends ExpressionNode {
 
-	public Make(){
+	public MakeVariable(){
 		super(2);  
 	}
 	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myLeft.setInfo( myRight.evaluate());
+		myLeft.setValue( myRight.evaluate());
 		myValue = myRight.evaluate();
 		return myValue;
 	}

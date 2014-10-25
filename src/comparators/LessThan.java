@@ -2,10 +2,10 @@ package comparators;
 
 import commandAbstractClasses.Operation;
 
-public class Less extends Operation {
+public class LessThan extends Operation {
 
 
-	public Less () {
+	public LessThan () {
 		super(2); 
 		
 	}

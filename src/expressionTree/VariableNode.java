@@ -27,7 +27,7 @@ public class VariableNode extends ExpressionNode implements Serializable{
 	}
 
 
-	public double getInfo(){
+	public double getValue(){
 		return myValue; 
 	}
 

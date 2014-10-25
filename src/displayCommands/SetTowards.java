@@ -2,9 +2,9 @@ package displayCommands;
 
 import frontend.Turtle;
 
-public class Towards extends DisplayNode {
+public class SetTowards extends DisplayNode {
 
-	public Towards(){
+	public SetTowards(){
 		super(1); 
 	}
 

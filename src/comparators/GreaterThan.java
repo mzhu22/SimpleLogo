@@ -2,9 +2,9 @@ package comparators;
 
 import commandAbstractClasses.Operation;
 
-public class Greater extends Operation {
+public class GreaterThan extends Operation {
 
-	public Greater (){
+	public GreaterThan (){
 		super(2); 
 	}
 

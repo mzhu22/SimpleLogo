@@ -1,20 +1,22 @@
 package displayCommands;
 
+import displayCommands.DisplayNode;
 import frontend.Turtle;
 
-public class Stamp extends DisplayNode {
+public class Home extends DisplayNode {
 
-	public Stamp() {
+	public Home() {
 		super(0);
 	}
 
 	@Override
 	protected void doAction(Turtle turtle) {
-		turtle.stamp();
+		turtle.resetPosition();
 	}
 
 	@Override
 	public double evaluate() {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 

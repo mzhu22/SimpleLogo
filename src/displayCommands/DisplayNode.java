@@ -7,7 +7,7 @@ import frontend.TurtleCollection;
 public abstract class DisplayNode extends ExpressionNode{
 	
 	
-	public DisplayNode( int i) {
+	public DisplayNode(int i) {
 		super(i); 
 	}
 	

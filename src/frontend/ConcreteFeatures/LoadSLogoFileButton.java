@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import java.io.File;
+import static frontend.GUIMaker.EPU;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -37,8 +38,7 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 			try {
 				input = new Scanner(file).useDelimiter("\\Z").next();
 			} catch (FileNotFoundException e) {
-				ErrorPopUp epu = new ErrorPopUp();
-				epu.display("Bad file");
+				EPU.display("Bad file");
 			}
         	
         	InputController ic = new InputController(myTranslator);

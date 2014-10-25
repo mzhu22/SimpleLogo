@@ -16,4 +16,8 @@ public class Stamp extends ImageView{
 		this.setFitHeight(IMAGE_HEIGHT);
 		this.setFitWidth(IMAGE_WIDTH);
 	}
+
+	public Stamp() {
+		// TODO Auto-generated constructor stub
+	}
 }

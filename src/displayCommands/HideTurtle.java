@@ -10,13 +10,12 @@ public class HideTurtle extends DisplayNode {
 
 
 	@Override
-	public void doAction(Turtle turtle) {
+	protected void doAction(Turtle turtle) {
 		turtle.hideTurtle();
 	}
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
 		return ZERO;
 	}
 

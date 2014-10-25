@@ -7,12 +7,15 @@
 
 package frontend;
 
+import java.util.function.Predicate;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 
 public class SLogoCanvas extends Canvas {
@@ -31,7 +34,6 @@ public class SLogoCanvas extends Canvas {
 	 * @param y The y-Coordinate of the drawing area.
 	 */
 	public SLogoCanvas(double width, double height, double x, double y) {
-		// TODO Auto-generated constructor stub
 		super(width, height);
 
 		myHolder = new Pane();
@@ -64,6 +66,15 @@ public class SLogoCanvas extends Canvas {
 		myHolder.getChildren().add(this);
 		myHolder.getChildren().add(myGrid);
 	
+	}
+	
+	public void removeObjects(Object o){
+		this.getHolder().getChildren().removeIf(new Predicate<Object>(){
+			@Override
+			public boolean test(Object t) {
+				return t.getClass().equals(o.getClass());
+			}
+		});
 	}
 	
 	public void changeBackground(Color c){

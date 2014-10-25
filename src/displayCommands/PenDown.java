@@ -14,14 +14,13 @@ public class PenDown extends DisplayNode {
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
 		return ONE;
 	}
 
 
 
 	@Override
-	public void doAction(Turtle turtle) {
+	protected void doAction(Turtle turtle) {
 		turtle.getPen().penDown();
 	}
 

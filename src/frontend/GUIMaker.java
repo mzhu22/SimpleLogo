@@ -2,6 +2,7 @@ package frontend;
 
 import java.util.ResourceBundle;
 
+import errorsAndExceptions.ErrorPopUp;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
@@ -9,6 +10,7 @@ import javafx.stage.Stage;
 
 public class GUIMaker {
 	
+	public static final ErrorPopUp EPU = new ErrorPopUp();
 	public static final int BUTTON_OFFSET_X = 50;
 	private int myWidth;
 	private int myHeight;

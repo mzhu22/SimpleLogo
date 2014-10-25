@@ -20,14 +20,7 @@ public class ClearCanvasButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(Color.WHITE);
-		((SLogoCanvas)myCanvas).getHolder().getChildren().removeIf(new Predicate<Object>(){
-
-			@Override
-			public boolean test(Object t) {
-				return t instanceof Line;
-			}
-			
-		});
+		((SLogoCanvas)myCanvas).removeObjects(new Line());
 
 	}
 

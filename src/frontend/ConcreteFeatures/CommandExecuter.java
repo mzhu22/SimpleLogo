@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.control.TextArea;
+import static frontend.GUIMaker.EPU;
 import SLogoControllers.InputController;
 import errorsAndExceptions.ErrorPopUp;
 import expressionTree.HistoryCollection;
@@ -38,8 +39,7 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 			this.myPaneUpdater.updateAll();
 		}
 		else{
-			ErrorPopUp epu = new ErrorPopUp();
-			epu.display("Empty input");
+			EPU.display("Empty input");
 		}
 	}
 

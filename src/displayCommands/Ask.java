@@ -6,6 +6,7 @@ import java.util.List;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
 import frontend.Turtle;
+import frontend.TurtleCollection;
 
 public class Ask extends DisplayNode {
 
@@ -16,15 +17,25 @@ public class Ask extends DisplayNode {
 		super(2);
 		toAsk = new ArrayList<>(); 
 	}
+	
+	@Override
+	public void doAction(TurtleCollection turtles)
+	{
+		List<Integer> turtlesToAsk = new ArrayList<Integer>();
+		for(Double d : toAsk)
+		{
+			turtlesToAsk.add(d.intValue());
+		}
+		turtles.setActiveTurtles(turtlesToAsk);
+	}
 
 	@Override
-	public void doAction(Turtle turtle) {
+	protected void doAction(Turtle turtle) {
 		
 	}
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
 		myRight.evaluate(); 
 		myLeft.evaluate();
 		myCommandsListNode = (ListNode) myRight; 
@@ -39,7 +50,8 @@ public class Ask extends DisplayNode {
 	
 	@Override
 	public List<DisplayNode> makeInstructionList(){
-		instructionList = new ArrayList<>();	 
+		instructionList = new ArrayList<>();
+		instructionList.add(this);
 		return instructionList;
 	}
 }

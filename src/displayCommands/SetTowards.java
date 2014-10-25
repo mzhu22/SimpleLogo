@@ -10,7 +10,7 @@ public class SetTowards extends DisplayNode {
 
 
 	@Override
-	public void doAction(Turtle turtle) {
+	protected void doAction(Turtle turtle) {
 		turtle.setDirection(myValue);
 
 	}

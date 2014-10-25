@@ -128,7 +128,7 @@ public final class ExpressionNodeFactory {
 			
 			case "REPEAT" : return new Repeat();
 
-			case "MAKE" : case "SET" : return new Make(); 
+			case "MAKEVARIABLE" : case "SET" : return new Make(); 
 			
 			case "TO" : return new To();
 			

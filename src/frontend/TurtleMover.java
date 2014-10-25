@@ -18,8 +18,6 @@ public class TurtleMover {
 			for(Turtle t : myTurtleCollection){
 				((DisplayNode) n ).doAction(t);
 			}
-		}
-		
+		}	
 	}
-
 }

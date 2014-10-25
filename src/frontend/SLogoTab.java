@@ -30,6 +30,7 @@ import frontend.ConcreteFeatures.GUIChooseImage;
 import frontend.ConcreteFeatures.GUIChooseLineStyle;
 import frontend.ConcreteFeatures.HelpButton;
 import frontend.ConcreteFeatures.InputTextBox;
+import frontend.ConcreteFeatures.LoadSLogoFileButton;
 import frontend.ConcreteFeatures.QuitButton;
 import frontend.ConcreteFeatures.ResetButton;
 import frontend.ConcreteFeatures.SetLineColorButton;
@@ -108,8 +109,8 @@ public class SLogoTab {
 						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
-						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator)
-						
+						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
+						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator)
 					)
 				);
 		

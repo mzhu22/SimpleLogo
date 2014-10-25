@@ -22,6 +22,7 @@ public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 	@Override
 	public void action() {
 		try{
+			myTurtleCollection.setActiveTurtles();
 			for(Turtle t : this.myTurtleCollection)
 			{
 				t.getPen().setLineWidth(Integer.parseInt(inputBox.getText()));

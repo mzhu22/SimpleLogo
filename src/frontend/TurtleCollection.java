@@ -29,7 +29,15 @@ public class TurtleCollection implements Iterable<Turtle>{
 				myActiveTurtles.add(t);
 			}
 		}
-		
+	}
+	
+	public void setActiveTurtles(){
+		myActiveTurtles = new ArrayList<Turtle>();
+		for(Integer i : myTurtles.keySet()){
+			if(myTurtles.get(i).getIsActive()){
+				myActiveTurtles.add(myTurtles.get(i));
+			}
+		}
 	}
 	
 	public void addTurtle(Turtle t){

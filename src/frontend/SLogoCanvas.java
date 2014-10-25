@@ -57,6 +57,7 @@ public class SLogoCanvas extends Canvas {
 		myGrid.setGridLinesVisible(false);
 		
 		myBackground = new Rectangle(0,0,width, height);
+		
 		myBackground.setFill(Color.WHITE);
 		
 		myHolder.getChildren().add(myBackground);

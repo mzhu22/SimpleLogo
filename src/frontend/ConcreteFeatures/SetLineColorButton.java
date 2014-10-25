@@ -19,6 +19,7 @@ public class SetLineColorButton extends GUIFeatureWithButton{
 
 	@Override
 	public void action() {
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle t : this.myTurtleCollection)
 		{
 			t.getPen().setLineColor(this.myColorPicker.getValue());

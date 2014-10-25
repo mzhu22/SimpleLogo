@@ -4,7 +4,7 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 
 /**
- * The Javafx TabPane deafults to the arrow keys switching between tabs
+ * The Javafx TabPane defaults to the arrow keys switching between tabs
  * when pressed. To make sure the arrow keys were recognized by the TurtleKeyHandler,
  * we realized a button on the tab needed to be pressed. To accomplish this we added this button,
  * which has no real action, but once pressed acts like a normal button in that the

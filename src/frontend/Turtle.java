@@ -9,6 +9,8 @@ import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
@@ -85,6 +87,13 @@ public class Turtle {
 		
 		handleActiveOutline();
 		
+		myContainer.addEventHandler(MouseEvent.MOUSE_CLICKED, event -> toggleState());
+		
+	}
+	
+	private void toggleState(){
+		this.setActive(!this.getIsActive());
+		handleActiveOutline();
 	}
 	
 	

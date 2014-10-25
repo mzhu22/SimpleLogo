@@ -1,10 +1,12 @@
 package expressionTree;
 
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Stack;
 
 import displayCommands.DisplayNode;
+import errorsAndExceptions.ErrorPopUp;
 
 public abstract class ExpressionNode {
 	protected double myValue; 
@@ -72,9 +74,21 @@ public abstract class ExpressionNode {
 		return myValue; 
 	}
 
+	/**
+	 * Throws error when an EmptyStackException occurs, indicating that user did not follow
+	 * correct Slogo syntax (likely has too few arguments for a given method)
+	 * @param childStack
+	 */
 	public void setChildren( Stack<ExpressionNode> childStack){
 		if(getNumChildren() == 1){
-			setLeft(childStack.pop());
+			try{
+				setLeft(childStack.pop());
+			}
+			catch (EmptyStackException e){
+				ErrorPopUp error = new ErrorPopUp();
+				error.display("Insufficient arguments for method");
+				return;
+			}
 		}
 		else if(getNumChildren() == 2){
 			setLeft(childStack.pop());

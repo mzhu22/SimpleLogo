@@ -3,7 +3,22 @@ package expressionTree;
 import java.util.Stack;
 
 import commandAbstractClasses.*;
+import errorsAndExceptions.ErrorPopUp;
 
+/**
+ * Class called by ExpressionTreeBuilder that takes in a String representing user-input 
+ * Slogo code, returns a set of ExpressionNodes used to build the tree.
+ * 
+ * Contains code to parse two special cases:
+ * 1) Left and right brackets indicating sections of code used in Repeat and user-defined
+ * functions
+ * 2) Variables identified by a colon, e.g. :b
+ * 
+ * ExpressionNode objects are created using reflection. Throws up error window when 
+ * unrecognized commands are entered. 
+ * @author Mike Zhu
+ *
+ */
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
@@ -28,11 +43,11 @@ public final class ExpressionNodeFactory {
 		for(String string : split ){
 
 			//Case for code organized in brackets (e.g., for repeats)
-			if(string.matches("\\[") && balance == 0){
+			if(string.matches("ListStart") && balance == 0){
 				balance ++ ; 	
 				returnNodes.push(new ListNode());
 			}
-			else if(string.matches("\\]")){
+			else if(string.matches("ListEnd")){
 				balance -- ; 				
 			}
 			else{
@@ -84,7 +99,7 @@ public final class ExpressionNodeFactory {
 			command = "SlogoRandom";
 		}
 		
-		ExpressionNode node = new doNothing();
+		ExpressionNode node = null;
 
 		for(String packageName : myPackages){
 			String className = packageName + "." + command;
@@ -96,31 +111,19 @@ public final class ExpressionNodeFactory {
 				continue;
 			}
 		}
+		if(node == null){
+			userError("Unrecognized command");
+			return new doNothing();
+		}
 		return node;
 	}
 
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
 	}
-
-	/**
-	 * Called when Logo word is not one of the built-in commands. 
-	 * When word comes after the To command, either:
-	 * 	a. Adds word to the UserFunctionMap 
-	 * 	b. Throws error if the word is already in UserFunctionMap
-	 * 
-	 * When word is called as its own instruction, checks UserFunctionMap and
-	 * 	a. Returns ListNode representing that command
-	 * 	b. Throws error if the command was not found
-	 * 
-	 * @param s == Logo word input
-	 * @return
-	 */
-	public ExpressionNode unknownFunctionHandler(String s){
-		if(myUserFunctions.contains(s)){
-			return myUserFunctions.getFunction(s);
-		}
-		
-		return new doNothing(s);
+	
+	public void userError(String s){
+		ErrorPopUp error = new ErrorPopUp();
+		error.display(s);
 	}
 }

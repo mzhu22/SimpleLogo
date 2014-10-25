@@ -32,6 +32,7 @@ public class ResetButton extends ClearCanvasButton {
 	public void action(){
 		
 		super.action();
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle t : this.myTurtleCollection)
 		{
 			t.resetPosition();

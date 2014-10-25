@@ -36,7 +36,7 @@ public class ListNode extends ExpressionNode {
 		myBuilder = new ExpressionTreeBuilder(myLogoCode.toString());
 		myFundamentals.addAll(myBuilder.getOutputList());
 		allMyChildren = myBuilder.getAllNodes(); 
-		return myValue = allMyChildren.get(0).getInfo();
+		return myValue = allMyChildren.get(0).getValue();
 	}
 
 	public void add(String s){

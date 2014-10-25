@@ -15,6 +15,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
 import SLogoControllers.InputController;
+import expressionTree.HistoryCollection;
 import frontend.AbstractFeatures.GUIFeature;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 import frontend.AbstractFeatures.GUIFeatureWithColorPicker;
@@ -29,7 +30,9 @@ import frontend.ConcreteFeatures.EnableArrowsButton;
 import frontend.ConcreteFeatures.GUIChooseImage;
 import frontend.ConcreteFeatures.GUIChooseLineStyle;
 import frontend.ConcreteFeatures.HelpButton;
+import frontend.ConcreteFeatures.HistoryWindow;
 import frontend.ConcreteFeatures.InputTextBox;
+import frontend.ConcreteFeatures.LoadSLogoFileButton;
 import frontend.ConcreteFeatures.QuitButton;
 import frontend.ConcreteFeatures.ResetButton;
 import frontend.ConcreteFeatures.SetLineColorButton;
@@ -55,6 +58,7 @@ public class SLogoTab {
 	
 	public static final ResourceBundle GUI_NAMES = ResourceBundle.getBundle("resources.buttonLanguages/EnglishButtonNames");
 	private PaneUpdater myPaneUpdater;
+	private HistoryCollection myHistory;
 
 
 	public SLogoTab(TabPane tp)
@@ -75,17 +79,22 @@ public class SLogoTab {
 		myTurtleCollection.addTurtle(myTurtle);
 		myTurtleCollection.addTurtle(new Turtle(100, 100,TURTLE_DEFAULT_IMAGE, myCanvas));
 
+		
+		
+		
 		myTurtleCollection.setActiveTurtles(new ArrayList<Integer>(Arrays.asList(0, 1, 2)));
 		
 		myMover = new TurtleMover(myTurtleCollection);
 		
 		myTranslator = new Translator();
-
+		myHistory = new HistoryCollection();
+		
 		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
 				Arrays.asList(
 						new CurrentVariables(button_x - 200, 0, 200, 100),
 						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtleCollection),
-						new CommandsWindow(button_x - 200, 450, 200, 100)
+						new CommandsWindow(button_x - 200, 350, 200, 100),
+						new HistoryWindow(button_x - 200, 450, 200, 100, myHistory)
 						
 					)
 				);
@@ -95,7 +104,7 @@ public class SLogoTab {
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
 						new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator),
+						new InputTextBox(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator, myHistory),
 						new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 						new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 						new HelpButton(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
@@ -108,8 +117,8 @@ public class SLogoTab {
 						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
-						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator)
-						
+						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
+						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator)
 					)
 				);
 		

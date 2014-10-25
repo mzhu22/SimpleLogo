@@ -14,6 +14,7 @@ public class TurtleMover {
 	}
 	
 	public void startDrawing(List<ExpressionNode> instructions){
+		myTurtleCollection.setActiveTurtles();
 		for(ExpressionNode n : instructions){
 			for(Turtle t : myTurtleCollection){
 				((DisplayNode) n ).doAction(t);

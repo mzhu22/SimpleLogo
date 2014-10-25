@@ -16,6 +16,7 @@ public class GUIChooseLineStyle extends GUIFeatureWithDropDown {
 
 	@Override
 	public void doDropDownClickAction(String chosen) {
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle t: myTurtleCollection)
 		{
 			t.getPen().setLineStyle(chosen);

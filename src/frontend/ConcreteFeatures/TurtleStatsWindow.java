@@ -5,6 +5,7 @@ import static frontend.SLogoTab.CANVAS_WIDTH;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javafx.scene.text.Text;
 import frontend.Turtle;
@@ -22,10 +23,11 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 
 	@Override
 	public void updatePane() {
-		String finalOutput = "Statistics \n";
+		String finalOutput = "Active Turtle Statistics \n";
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle myTurtle : myTurtleCollection)
 		{
-			Map<String, String> turtleInfo = new HashMap<String, String>();
+			Map<String, String> turtleInfo = new TreeMap<String, String>();
 			turtleInfo.put("X:", ((Long) Math.round((myTurtle.getX() - CANVAS_WIDTH/2))).toString());
 			turtleInfo.put("Y:", ((Long) Math.round(-1* (myTurtle.getY() - CANVAS_HEIGHT/2))).toString());
 			turtleInfo.put("Heading:", ((Long) Math.round(myTurtle.getDirection())).toString());
@@ -35,6 +37,7 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 			for(String s : turtleInfo.keySet()){
 				finalOutput += "\t" + s + "\t" + turtleInfo.get(s) + "\n";
 			}
+			finalOutput += "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");

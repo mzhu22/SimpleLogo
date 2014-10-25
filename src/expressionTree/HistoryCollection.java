@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class HistoryCollection<T> implements Iterable<T>{
+public class HistoryCollection implements Iterable<String>{
 
-	private List<T> myHistory;
+	private List<String> myHistory;
 	
 	public HistoryCollection(){
-		myHistory = new ArrayList<T>();
+		myHistory = new ArrayList<String>();
 	}
 	
-	public void add(T s){
+	public void add(String s){
 		myHistory.add(s);
 	}
 	
 	@Override
-	public Iterator<T> iterator() {
-		return new Iterator<T>(){
+	public Iterator<String> iterator() {
+		return new Iterator<String>(){
 			
 			private int myCounter = 0;
 
@@ -28,7 +28,7 @@ public class HistoryCollection<T> implements Iterable<T>{
 			}
 
 			@Override
-			public T next() {
+			public String next() {
 				myCounter++;
 				return myHistory.get(myCounter-1);
 				

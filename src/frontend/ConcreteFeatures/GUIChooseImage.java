@@ -31,6 +31,7 @@ public class GUIChooseImage extends GUIFeatureWithDropDown{
 
 	@Override
 	public void doDropDownClickAction(String chosen) {
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle t : myTurtleCollection)
 		{
 			t.changeImage("images/" + chosen);

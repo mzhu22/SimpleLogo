@@ -1,4 +1,4 @@
-package commandAbstractClasses;
+package turtleQueries;
 
 /**
  * @author Dimeji Abidoye
@@ -15,8 +15,11 @@ public  abstract class TurtleQuery extends ExpressionNode {
 
 	protected Turtle myTurtle; 
 	
-	public TurtleQuery(Turtle actionable){
-		super(0); 
+	public TurtleQuery(){
+		super(0);
+	}
+	
+	public void setTurtle(Turtle actionable){
 		myTurtle = actionable; 
 	}
 	

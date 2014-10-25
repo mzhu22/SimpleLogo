@@ -3,7 +3,7 @@ package expressionTree;
 import java.util.Stack;
 
 import mathOperations.*;
-import commandAbstractClasses.Constant;
+import commandAbstractClasses.*;
 import comparators.*;
 import controlStructures.*;
 import displayCommands.*;
@@ -137,6 +137,8 @@ public final class ExpressionNodeFactory {
 			case "IFELSE" : return new IfElse(); 
 			
 			case "DOTIMES" : return new Do(); 
+			
+			case "TELL" : return new Tell(); 
 			default: return unknownFunctionHandler(s); 
 
 		}

@@ -12,12 +12,18 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import static frontend.SLogoTab.CANVAS_HEIGHT;
+import static frontend.SLogoTab.CANVAS_WIDTH;
 
 public class Turtle {
 	
 	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	private static final double WIDTH = 30;
 	private static final double HEIGHT = 30;
+	public static final String TURTLE_DEFAULT_IMAGE = "images/arrow_red.png";
+	private static final int TURTLE_DEFAULT_Y = CANVAS_HEIGHT/2;
+	private static final int TURTLE_DEFAULT_X = CANVAS_WIDTH/2;
+	
 	
 	private double myX;
 	private double myY;
@@ -38,6 +44,11 @@ public class Turtle {
 	private LineDrawer myDrawer;
 	
 	private boolean isActive;
+	
+	public Turtle(Canvas canvas){
+		this(TURTLE_DEFAULT_X, TURTLE_DEFAULT_Y, TURTLE_DEFAULT_IMAGE, canvas);
+	}
+	
 	
 	public Turtle(double startX, double startY, String startImage, Canvas canvas){
 		myX = startX;

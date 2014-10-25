@@ -4,16 +4,17 @@ import commandAbstractClasses.TurtleQuery;
 
 import frontend.Turtle;
 
-public class Showing extends TurtleQuery{
+public class IsPenDown extends TurtleQuery {
 
-	public Showing(Turtle actionable) {
-		super(actionable);
+	public IsPenDown(Turtle turtle) {
+		super(turtle);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myTurtle.isShowing() ? 1:0;
+		// return 1 if pendown, 0 otherwise
+		return myTurtle.getPen().isPenDown() ? 1:0;
 	}
 }

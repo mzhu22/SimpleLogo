@@ -2,9 +2,9 @@ package controlStructures;
 
 import expressionTree.ExpressionNode;
 
-public class Make extends ExpressionNode {
+public class MakeVariable extends ExpressionNode {
 
-	public Make(){
+	public MakeVariable(){
 		super(2);  
 	}
 	

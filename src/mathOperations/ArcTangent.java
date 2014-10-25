@@ -2,16 +2,16 @@ package mathOperations;
 
 import commandAbstractClasses.Operation;
 
-public class Add extends Operation {
+public class ArcTangent extends Operation {
 
-	public Add() {
-		super(2); 
-		
-	} 
+	
+	public ArcTangent(){
+		super(1); 
+	}
+	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myValue = getRight().evaluate() + getLeft().evaluate();
+		return Math.toDegrees(Math.atan(getLeft().evaluate()));
 	}
-	
 }

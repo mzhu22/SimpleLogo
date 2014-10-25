@@ -5,9 +5,9 @@ import java.util.Random;
 import commandAbstractClasses.Operation;
  
 
-public class Randoms extends Operation {
+public class SlogoRandom extends Operation {
 
-	public Randoms () {
+	public SlogoRandom () {
 		super(1);  
 	}
 	

@@ -7,9 +7,9 @@ import displayCommands.DisplayNode;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
 
-public class Do extends ExpressionNode {
+public class DoTimes extends ExpressionNode {
 
-	public Do() {
+	public DoTimes() {
 		super(2);
 		// TODO Auto-generated constructor stub
 	}

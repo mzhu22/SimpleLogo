@@ -37,7 +37,6 @@ public class ExpressionTreeBuilder {
 		Stack<ExpressionNode> temp = new Stack<>() ;
 		while(!processNodes.isEmpty()){ 
 			ExpressionNode holder = processNodes.pop(); 
-			System.out.println(holder.getClass()); 
 			holder.setChildren(temp);
 			
 		}

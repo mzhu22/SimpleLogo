@@ -3,9 +3,9 @@ package displayCommands;
 import frontend.Turtle;
 
 
-public class Back extends DisplayNode {
+public class Backward extends DisplayNode {
 
-	public Back() {
+	public Backward() {
 		super(1);
 		// TODO Auto-generated constructor stub
 	}

@@ -19,7 +19,6 @@ public class Parser {
 	public List<ExpressionNode>  parse (String input){
 		List<ExpressionNode> commandsForFrontEnd = new ArrayList<>(); 
 
-		input = input.toUpperCase();
 
 		String[] split = input.split("\n"); 
 		for(String s : split){

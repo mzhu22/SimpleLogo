@@ -2,18 +2,23 @@ package expressionTree;
 
 import java.util.Stack;
 
-import mathOperations.*;
 import commandAbstractClasses.*;
-import comparators.*;
-import controlStructures.*;
-import displayCommands.*;
 
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 	private UserFunctionMap myUserFunctions = UserFunctionMap.getUserFunctionNodeMap();
-		
-	
+
+
+	private String[] myPackages = { "commandAbstractClasses", 
+			"comparators",
+			"controlStructures",
+			"displayCommands",
+			"expressionTree",
+			"mathOperations",
+			"turtleQueries"};
+
+
 	public  Stack<ExpressionNode> getAllNodes(String s){
 		int balance = 0; 
 		Stack<ExpressionNode> returnNodes = new Stack<ExpressionNode>();
@@ -23,11 +28,11 @@ public final class ExpressionNodeFactory {
 		for(String string : split ){
 
 			//Case for code organized in brackets (e.g., for repeats)
-			if(string.equals("ListStart".toUpperCase()) && balance == 0){
+			if(string.matches("\\[") && balance == 0){
 				balance ++ ; 	
 				returnNodes.push(new ListNode());
 			}
-			else if(string.equals("ListEnd".toUpperCase())){
+			else if(string.matches("\\]")){
 				balance -- ; 				
 			}
 			else{
@@ -37,28 +42,33 @@ public final class ExpressionNodeFactory {
 				else  {				
 					ListNode list = (ListNode) returnNodes.peek();
 					list.add(string);
-					//returnNodes.push(list);
 				}
 			}
 
 		}
 		return returnNodes;
 	}
-	
-	
+
+
 	private ExpressionNode getNode( String s){
 
 		ExpressionNode toReturn; 
 		double constant =0; 
 
 		if(s.startsWith(":")) return variableHandler(s); 
-		
+
 		try{
 			constant = Double.parseDouble(s); 
 		}
 		catch(NumberFormatException e ){	
-			
-			return commandHandler(s);
+
+			try {
+				return commandHandler(s);
+			} catch (InstantiationException e1) {
+				e1.printStackTrace();
+			} catch (IllegalAccessException e1) {
+				e1.printStackTrace();
+			}
 		}
 
 		toReturn = new Constant(); 
@@ -67,87 +77,32 @@ public final class ExpressionNodeFactory {
 
 	}
 
-	private ExpressionNode commandHandler(String s) {
-		switch (s) {
-			//Display Node
-			case "FORWARD" : case "FD": return new Forward();
-			
-			case "RIGHT" : case "RT" : return new Right();
-			
-			case "PENUP" : case "PU": return new PenUp();
-			
-			case "PENDOWN" : case "PD": return new PenDown();
-			
-			case "BACK" : case "BK" : return new Back();
-			
-			case "LEFT" : case "LT" : return new Left();
-			
-			case "SHOWTURTLE" : case "ST" : return new ShowTurtle();
-			
-			case "HIDETURTLE" : case "HT" : return new HideTurtle();
-			
-			case "SUM" : case  "+": return new Add(); 
-
-			case "DIFFERENCE" : case "-": return new Difference(); 
-
-			case "PRODUCT" : case "*" : return new Product(); 
-
-			case "QUOTIENT" : case "/" : return new Quotient(); 
-
-			case "REMAINDER" : case "%" : return new Remainder(); 
-
-			case "MINUS" : case "~": return new Minus(); 
-
-			case "RANDOM" : return new Randoms();
-
-			case "SIN" : return new Sine(); 
-
-			case "COS" : return new Cosine(); 
-
-			case "TAN" : return new Tangent(); 
-
-			case "ATAN" : return new Arctan(); 
-
-			case "LOG" : return new Log(); 
-
-			case "POW" : return new Power(); 
-
-			case "AND" : return new And(); 
-
-			case "OR" : return new Or(); 
-
-			case "NOT" : return new Not(); 
-
-			case "NOTEQUAL?" : case "NOTEQUALP" :return new NotEqual(); 
-
-			case "EQUAL?" : case "EQUALP" :return new Equal(); 
-
-			case "GREATER?" : case "GREATERP" :return new Greater(); 
-
-			case "LESS?" : case  "LESSP" : return new Less(); 
-			
-			case "REPEAT" : return new Repeat();
-
-			case "MAKEVARIABLE": return new Make(); 
-			
-			case "TO" : return new To();
-			
-			case "IF" : return new If(); 
-			
-			case "IFELSE" : return new IfElse(); 
-			
-			case "DOTIMES" : return new Do(); 
-			
-			case "TELL" : return new Tell(); 
-			default: return unknownFunctionHandler(s); 
-
+	private ExpressionNode commandHandler(String command) throws InstantiationException, IllegalAccessException{
+		//For the extraodinary case of the Random command, which is already a Java
+		//class
+		if(command.equals("Random")){
+			command = "SlogoRandom";
 		}
+		
+		ExpressionNode node = new doNothing();
+
+		for(String packageName : myPackages){
+			String className = packageName + "." + command;
+
+			try {
+				Class<?> c = Class.forName(className);
+				node = (ExpressionNode) c.newInstance();
+			} catch (ClassNotFoundException e) {
+				continue;
+			}
+		}
+		return node;
 	}
 
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
 	}
-	
+
 	/**
 	 * Called when Logo word is not one of the built-in commands. 
 	 * When word comes after the To command, either:
@@ -162,7 +117,10 @@ public final class ExpressionNodeFactory {
 	 * @return
 	 */
 	public ExpressionNode unknownFunctionHandler(String s){
+		if(myUserFunctions.contains(s)){
 			return myUserFunctions.getFunction(s);
+		}
+		
+		return new doNothing(s);
 	}
-
 }

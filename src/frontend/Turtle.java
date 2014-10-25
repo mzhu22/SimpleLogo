@@ -20,8 +20,8 @@ import static frontend.SLogoTab.CANVAS_WIDTH;
 public class Turtle {
 	
 	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
-	private static final double WIDTH = 30;
-	private static final double HEIGHT = 30;
+	private static final double IMAGE_WIDTH = 30;
+	private static final double IMAGE_HEIGHT = 30;
 	public static final String TURTLE_DEFAULT_IMAGE = "images/arrow_red.png";
 	private static final int TURTLE_DEFAULT_Y = CANVAS_HEIGHT/2;
 	private static final int TURTLE_DEFAULT_X = CANVAS_WIDTH/2;
@@ -73,15 +73,15 @@ public class Turtle {
         myImage = new ImageView();
         myImage.setImage(image);
         myContainer = new HBox();
-        myContainer.setPrefSize(WIDTH, HEIGHT);
+        myContainer.setPrefSize(IMAGE_WIDTH, IMAGE_HEIGHT);
         
-		myImage.setFitHeight(HEIGHT);
-		myImage.setFitWidth(WIDTH);
+		myImage.setFitHeight(IMAGE_HEIGHT);
+		myImage.setFitWidth(IMAGE_WIDTH);
 			
 		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myImage);
 		
-		myContainer.setLayoutX(startX - (myContainer.getWidth() / 2));
-		myContainer.setLayoutY(startY - (myContainer.getHeight() / 2));
+		myContainer.setLayoutX(myX - (IMAGE_WIDTH / 2));
+		myContainer.setLayoutY(myY - (IMAGE_HEIGHT / 2));
 		myContainer.getChildren().add(myImage);
 		((SLogoCanvas) myCanvas).getHolder().getChildren().add(myContainer);
 		

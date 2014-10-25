@@ -6,14 +6,13 @@ import frontend.Turtle;
 
 public class Heading extends TurtleQuery{
 
-	public Heading(Turtle actionable) {
-		super(actionable);
+	public Heading(Turtle turtle) {
+		super(turtle);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
-		return 0;
+		return myTurtle.getDirection();
 	}
 }

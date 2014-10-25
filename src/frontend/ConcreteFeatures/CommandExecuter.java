@@ -10,14 +10,14 @@ import frontend.Translator;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
-public class InputTextBox extends GUIFeatureWithTextBox {
+public class CommandExecuter extends GUIFeatureWithTextBox {
 	
 	private TurtleMover myMover;
 	private PaneUpdater myPaneUpdater;
 	private Translator myTranslator;
 	private HistoryCollection myHistory;
 	
-	public InputTextBox(double x, double y, double width, double height, TurtleMover mover, String buttonName, String initialText, PaneUpdater pu, Translator t, HistoryCollection history) {
+	public CommandExecuter(double x, double y, double width, double height, TurtleMover mover, String buttonName, String initialText, PaneUpdater pu, Translator t, HistoryCollection history) {
 		super(x, y, width, height, buttonName, initialText);
 		this.inputBox = new TextArea();
 		this.myMover = mover;

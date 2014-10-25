@@ -2,6 +2,7 @@ package displayCommands;
 
 import expressionTree.ExpressionNode;
 import frontend.Turtle;
+import frontend.TurtleCollection;
 
 public abstract class DisplayNode extends ExpressionNode{
 	
@@ -19,8 +20,16 @@ public abstract class DisplayNode extends ExpressionNode{
 		toRet.append(getClass().toString() + " :" + myValue); 	
 		return toRet.toString(); 
 	}
-
-	public abstract void doAction(Turtle turtle);
+	
+	public void doAction(TurtleCollection turtles)
+	{
+		for(Turtle t : turtles)
+		{
+			doAction(t);
+		}
+	}
+	
+	protected abstract void doAction(Turtle turtle);
 	
 }
 

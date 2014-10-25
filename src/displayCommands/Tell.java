@@ -6,6 +6,7 @@ import java.util.List;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
 import frontend.Turtle;
+import frontend.TurtleCollection;
 
 public class Tell extends DisplayNode{
 	
@@ -17,9 +18,14 @@ public class Tell extends DisplayNode{
 	}
 
 	@Override
-	public void doAction(Turtle turtle) {
-		// TODO Auto-generated method stub
-		
+	public void doAction(TurtleCollection turtles)
+	{
+		List<Integer> turtlesToTell = new ArrayList<Integer>();
+		for(Double d : toTell)
+		{
+			turtlesToTell.add(d.intValue());
+		}
+		turtles.setActiveTurtles(turtlesToTell);
 	}
 
 	@Override
@@ -38,7 +44,14 @@ public class Tell extends DisplayNode{
 	public List<DisplayNode> makeInstructionList(){
 
 		List<DisplayNode> instructionList = new ArrayList<>();	
+		instructionList.add(this);
 		return instructionList;
+	}
+
+	@Override
+	protected void doAction(Turtle turtle) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -11,7 +11,7 @@ public class MakeVariable extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myLeft.setInfo( myRight.evaluate());
+		myLeft.setValue( myRight.evaluate());
 		myValue = myRight.evaluate();
 		return myValue;
 	}

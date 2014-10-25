@@ -20,7 +20,7 @@ public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 				
 		String finalOutput = "Variables \n";
 		for(String s : myVariables.keySet()){
-			finalOutput += "\t" + s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getInfo() + "\n";
+			finalOutput += "\t" + s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getValue() + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");

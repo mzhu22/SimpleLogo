@@ -29,7 +29,7 @@ public class Tell extends DisplayNode{
 		ListNode myListNode = (ListNode) getLeft(); 
 		List<ExpressionNode> temp = myListNode.getListContents(); 
 		for( ExpressionNode node : temp){
-			toTell.add(node.getInfo()); 
+			toTell.add(node.getValue()); 
 		}
 		return myValue = toTell.get(toTell.size() -1); 
 	}

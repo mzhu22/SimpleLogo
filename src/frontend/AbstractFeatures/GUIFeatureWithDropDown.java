@@ -1,8 +1,8 @@
 /**
  * This class represents a GUIFeature that uses a drop-down menu to interact.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 package frontend.AbstractFeatures;
 
@@ -23,7 +23,9 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	protected String myPromptText;
 	
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param prompt The string that the drop down should originally say when created.
 	 */
 	public GUIFeatureWithDropDown(double x, double y, String prompt) {
 		super(x, y);
@@ -33,19 +35,26 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void action(){
 		
 	}
 	
+	/**
+	 * Get the list of items from a directory and store it.
+	 */
 	public abstract void fillItemList();
 	
+	/**
+	 * Select the file chosen.
+	 * @param chosen The path of the file chosen.
+	 */
 	public abstract void doDropDownClickAction(String chosen);
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {

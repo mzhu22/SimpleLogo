@@ -1,8 +1,8 @@
 /**
  * This class represents a GUIFeature that uses a button to interact.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 package frontend.AbstractFeatures;
 
@@ -16,7 +16,9 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	public final static int BUTTON_HEIGHT = 25;
 	
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param buttonName String for the button.
 	 */
 	public GUIFeatureWithButton(double x, double y, String buttonName) {
 		super(x, y);
@@ -24,13 +26,13 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	}
 
 	/** 
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public abstract void action();
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {
@@ -49,5 +51,4 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 		
 		return g;
 	}
-
 }

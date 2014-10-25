@@ -1,9 +1,10 @@
 /**
  * This class represents a GUIFeature that uses a slider to interact.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
+
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
@@ -11,14 +12,17 @@ import javafx.scene.control.Slider;
 
 public abstract class GUIFeatureWithSlider extends GUIFeature {
 
-	
 	private int myMin;
 	private int myMax;
 	private int myStart;
-	
 	private Slider slider;
+	
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param min The minimum value of the slider.
+	 * @param max The maximum value of the slider.
+	 * @param startValue The start value of the slider.
 	 */
 	public GUIFeatureWithSlider(double x, double y, int min, int max, int startValue) {
 		super(x, y);
@@ -29,7 +33,7 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void action() {
@@ -37,7 +41,7 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {
@@ -49,8 +53,11 @@ public abstract class GUIFeatureWithSlider extends GUIFeature {
 		
 	}
 	
+	/**
+	 * Get the value from the slider and return it.
+	 * @return The value of the slider at its current position.
+	 */
 	public double getSliderValue(){
 		return slider.getValue();
 	}
-
 }

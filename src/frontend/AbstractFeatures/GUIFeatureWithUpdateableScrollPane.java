@@ -1,8 +1,8 @@
 /**
- * This class represents a GUIFeature that uses a window to interact.
+ * This class represents a GUIFeature that uses a ScrollPane to display information.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 package frontend.AbstractFeatures;
 
@@ -17,7 +17,10 @@ public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 	protected ScrollPane myWindow;
 	
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param width The width of the ScrollPane.
+	 * @param height The height of the ScrollPane.
 	 */
 	public GUIFeatureWithUpdateableScrollPane(double x, double y, double width, double height) {
 		super(x, y);
@@ -26,7 +29,7 @@ public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void action() {
@@ -35,7 +38,7 @@ public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {
@@ -50,8 +53,7 @@ public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 	}
 	
 	/**
-	 * Modifies the parameter Group to fill the Pane.
-	 * @param g
+	 * Update the ScrollPane to represent the new data.
 	 */
 	public abstract void updatePane();
 

@@ -1,8 +1,8 @@
 /**
  * This class represents a GUIFeature that uses a clickable window to interact.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 package frontend.AbstractFeatures;
 
@@ -11,7 +11,10 @@ import javafx.scene.Group;
 public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithUpdateableScrollPane {
 
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param width The width of the window.
+	 * @param height The height of the window.
 	 */
 	public GUIFeatureWithClickableWindow(double x, double y, double width, double height) {
 		super(x, y, width, height);
@@ -19,7 +22,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithUpdate
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public void action() {
@@ -28,7 +31,7 @@ public abstract class GUIFeatureWithClickableWindow extends GUIFeatureWithUpdate
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {

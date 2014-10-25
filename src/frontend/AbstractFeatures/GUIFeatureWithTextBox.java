@@ -1,8 +1,8 @@
 /**
  * This class represents a GUIFeature that uses a writable text box to interact.
  * 
- * @author Safkat Islam
  * @author Chris Bernt
+ * @author Safkat Islam
  */
 package frontend.AbstractFeatures;
 
@@ -21,7 +21,12 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 	protected String myInitialText;
 	
 	/**
-	 * @see frontend.GUIFeature@action()
+	 * @see GUIFeature#GUIFeature(double, double)
+	 * 
+	 * @param width The width of the text box.
+	 * @param height The height of the text box.
+	 * @param buttonName The text on the button.
+	 * @param initialText The initial text of the text box when created.
 	 */
 	public GUIFeatureWithTextBox(double x, double y, double width, double height, String buttonName, String initialText) {
 		super(x, y);
@@ -32,13 +37,13 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 	}
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#action()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public abstract void action();
 
 	/**
-	 * @see frontend.AbstractFeatures.GUIFeature#makeTool()
+	 * {@inheritDoc}
 	 */
 	@Override
 	public Group makeTool() {
@@ -68,5 +73,4 @@ public abstract class GUIFeatureWithTextBox extends GUIFeature {
 		
 		return g;
 	}	
-
 }

@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.control.TextField;
+import static frontend.GUIMaker.EPU;
 import errorsAndExceptions.ErrorPopUp;
 import frontend.Pen;
 import frontend.Turtle;
@@ -29,8 +30,7 @@ public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 			}
 		}
 		catch(NumberFormatException e){
-			ErrorPopUp epu = new ErrorPopUp();
-			epu.display("Did not enter an integer");
+			EPU.display("Did not enter an integer");
 			
 		}
 

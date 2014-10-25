@@ -1,11 +1,9 @@
 package displayCommands;
 
-import java.util.Arrays;
-
 import static frontend.GUIMaker.EPU;
-import errorsAndExceptions.InvalidImageIndexException;
-import frontend.Turtle;
 import static frontend.SLogoTab.IMAGE_LIST;
+import errorsAndExceptions.SLogoException;
+import frontend.Turtle;
 
 public class SetShape extends DisplayNode{
 
@@ -14,14 +12,14 @@ public class SetShape extends DisplayNode{
 	}
 
 	@Override
-	public void doAction(Turtle turtle) throws InvalidImageIndexException{
+	public void doAction(Turtle turtle) throws SLogoException{
 		try{
 			turtle.changeImage(IMAGE_LIST[(int) myValue].trim());
 		}
 		catch(ArrayIndexOutOfBoundsException e){
 			String error = "Not valid image index.";
 			EPU.display(error);
-			throw new InvalidImageIndexException(error);
+			throw new SLogoException(error);
 		}
 	}
 

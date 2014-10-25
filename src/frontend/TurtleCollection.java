@@ -1,15 +1,15 @@
 package frontend;
 
-import java.util.ArrayList;
 import static frontend.GUIMaker.EPU;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import errorsAndExceptions.ErrorPopUp;
-import errorsAndExceptions.NoActiveTurtlesException;
 import javafx.scene.canvas.Canvas;
+import errorsAndExceptions.SLogoException;
 
 public class TurtleCollection implements Iterable<Turtle>{
 
@@ -34,7 +34,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
-	public Turtle getLastActiveTurtle() throws NoActiveTurtlesException
+	public Turtle getLastActiveTurtle() throws SLogoException
 	{
 		try
 		{
@@ -44,7 +44,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		{
 			String error = "No active turtles.";
 			EPU.display(error);
-			throw new NoActiveTurtlesException(error);
+			throw new SLogoException(error);
 		}
 	}
 	

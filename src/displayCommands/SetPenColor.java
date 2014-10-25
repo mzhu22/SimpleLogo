@@ -1,6 +1,8 @@
 package displayCommands;
 
+import static frontend.GUIMaker.EPU;
 import javafx.scene.paint.Color;
+import errorsAndExceptions.SLogoException;
 import frontend.Turtle;
 import frontend.TurtleCollection;
 
@@ -19,10 +21,17 @@ public class SetPenColor extends DisplayNode {
 	}
 	
 	@Override
-	public void doAction(TurtleCollection turtles)
+	public void doAction(TurtleCollection turtles) throws SLogoException
 	{
-		myColor = turtles.getCanvas().getColor((int) myValue);
-		super.doAction(turtles);
+		try{
+			myColor = turtles.getCanvas().getColor((int) myValue);
+			super.doAction(turtles);
+		}
+		catch(IndexOutOfBoundsException e){
+			String error = "Not valid color index.";
+			EPU.display(error);
+			throw new SLogoException(error);
+		}
 	}
 
 	@Override

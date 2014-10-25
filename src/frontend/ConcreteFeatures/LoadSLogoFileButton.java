@@ -1,14 +1,15 @@
 package frontend.ConcreteFeatures;
 
-import java.io.File;
 import static frontend.GUIMaker.EPU;
+
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-import SLogoControllers.InputController;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import errorsAndExceptions.ErrorPopUp;
+import SLogoControllers.InputController;
+import errorsAndExceptions.SLogoException;
 import frontend.PaneUpdater;
 import frontend.Translator;
 import frontend.TurtleMover;
@@ -28,7 +29,7 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 	}
 
 	@Override
-	public void action() {
+	public void action() throws SLogoException{
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.dir") +"/examples/"));
         File file = fileChooser.showOpenDialog(new Stage());
@@ -38,7 +39,9 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 			try {
 				input = new Scanner(file).useDelimiter("\\Z").next();
 			} catch (FileNotFoundException e) {
-				EPU.display("Bad file");
+				String error = "Bad file";
+				EPU.display(error);
+				throw new SLogoException(error);
 			}
         	
         	InputController ic = new InputController(myTranslator);

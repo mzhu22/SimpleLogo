@@ -47,7 +47,8 @@ public class ListNode extends ExpressionNode {
 	public List<DisplayNode> makeInstructionList(){
 		List<DisplayNode> toReturn = new ArrayList<>(); 
 		for(DisplayNode instr : myFundamentals){		
-			if(!toReturn.contains(instr)) toReturn.add(instr); 
+//			if(!toReturn.contains(instr)) 
+				toReturn.add(instr); 
 		}
 		return toReturn; 
 	}

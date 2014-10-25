@@ -18,8 +18,7 @@ public class Tell extends DisplayNode{
 
 	@Override
 	public void doAction(Turtle turtle) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
 
 	@Override

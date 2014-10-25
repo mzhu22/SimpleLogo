@@ -21,16 +21,14 @@ public class SetPenColor extends DisplayNode {
 	}
 	
 	@Override
-	public void doAction(TurtleCollection turtles) throws SLogoException
+	public void doAction(TurtleCollection turtles)
 	{
 		try{
 			myColor = turtles.getCanvas().getColor((int) myValue);
 			super.doAction(turtles);
 		}
 		catch(IndexOutOfBoundsException e){
-			String error = "Not valid color index.";
-			EPU.display(error);
-			throw new SLogoException(error);
+			EPU.display("Not valid color index.", true);
 		}
 	}
 

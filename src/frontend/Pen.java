@@ -1,6 +1,7 @@
 package frontend;
 
 import java.util.HashMap;
+import static frontend.GUIMaker.EPU;
 import java.util.Map;
 
 import errorsAndExceptions.ErrorPopUp;
@@ -37,8 +38,7 @@ public class Pen {
 			myLineStyle = initStyle;
 		}
 		else{
-			ErrorPopUp epu = new ErrorPopUp();
-			epu.display("Entered invalid line style. Defaulted to " + DEFAULT_LINE_STYLE + ".");
+			EPU.display("Entered invalid line style. Defaulted to " + DEFAULT_LINE_STYLE + ".", false);
 			myLineStyle = DEFAULT_LINE_STYLE;
 		}
 	}

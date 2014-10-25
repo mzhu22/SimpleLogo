@@ -30,7 +30,7 @@ public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 			}
 		}
 		catch(NumberFormatException e){
-			EPU.display("Did not enter an integer");
+			EPU.display("Did not enter an integer", false);
 			
 		}
 

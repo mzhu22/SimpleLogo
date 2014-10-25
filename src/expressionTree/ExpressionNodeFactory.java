@@ -1,7 +1,7 @@
 package expressionTree;
 
 import java.util.Stack;
-
+import static frontend.GUIMaker.EPU;
 import commandAbstractClasses.*;
 import errorsAndExceptions.ErrorPopUp;
 
@@ -112,7 +112,7 @@ public final class ExpressionNodeFactory {
 			}
 		}
 		if(node == null){
-			userError("Unrecognized command");
+			EPU.display("Unrecognized command", false);
 			return new doNothing();
 		}
 		return node;
@@ -120,10 +120,5 @@ public final class ExpressionNodeFactory {
 
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
-	}
-	
-	public void userError(String s){
-		ErrorPopUp error = new ErrorPopUp();
-		error.display(s);
 	}
 }

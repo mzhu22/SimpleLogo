@@ -34,7 +34,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
-	public Turtle getLastActiveTurtle() throws SLogoException
+	public Turtle getLastActiveTurtle()
 	{
 		try
 		{
@@ -43,7 +43,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		catch (NullPointerException e)
 		{
 			String error = "No active turtles.";
-			EPU.display(error);
+			EPU.display("No active turtles.", false);
 			throw new SLogoException(error);
 		}
 	}

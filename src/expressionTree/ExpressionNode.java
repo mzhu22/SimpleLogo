@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Stack;
+import static frontend.GUIMaker.EPU;
 
 import displayCommands.DisplayNode;
 import errorsAndExceptions.ErrorPopUp;
@@ -85,8 +86,7 @@ public abstract class ExpressionNode {
 				setLeft(childStack.pop());
 			}
 			catch (EmptyStackException e){
-				ErrorPopUp error = new ErrorPopUp();
-				error.display("Insufficient arguments for method");
+				EPU.display("Insufficient arguments for method", true);
 				return;
 			}
 		}

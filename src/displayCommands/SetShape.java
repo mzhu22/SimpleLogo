@@ -12,14 +12,12 @@ public class SetShape extends DisplayNode{
 	}
 
 	@Override
-	public void doAction(Turtle turtle) throws SLogoException{
+	public void doAction(Turtle turtle) {
 		try{
 			turtle.changeImage(IMAGE_LIST[(int) myValue].trim());
 		}
 		catch(ArrayIndexOutOfBoundsException e){
-			String error = "Not valid image index.";
-			EPU.display(error);
-			throw new SLogoException(error);
+			EPU.display("Not valid image index.", true);
 		}
 	}
 

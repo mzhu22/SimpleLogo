@@ -29,7 +29,7 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 	}
 
 	@Override
-	public void action() throws SLogoException{
+	public void action() {
 		FileChooser fileChooser = new FileChooser();
         fileChooser.setInitialDirectory(new File(System.getProperty("user.dir") +"/examples/"));
         File file = fileChooser.showOpenDialog(new Stage());
@@ -39,9 +39,7 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 			try {
 				input = new Scanner(file).useDelimiter("\\Z").next();
 			} catch (FileNotFoundException e) {
-				String error = "Bad file";
-				EPU.display(error);
-				throw new SLogoException(error);
+				EPU.display("Bad file", true);
 			}
         	
         	InputController ic = new InputController(myTranslator);

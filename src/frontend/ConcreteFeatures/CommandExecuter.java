@@ -39,7 +39,7 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 			this.myPaneUpdater.updateAll();
 		}
 		else{
-			EPU.display("Empty input");
+			EPU.display("Empty input", false);
 		}
 	}
 

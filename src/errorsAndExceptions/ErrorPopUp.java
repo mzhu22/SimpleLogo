@@ -55,7 +55,7 @@ public class ErrorPopUp {
 	 * 
 	 * @param errorMessage Message from Exception to display to user.
 	 */
-	public void display(String errorMessage) {
+	public void display(String errorMessage, boolean throwException) throws SLogoException{
 		root.getChildren().clear();
 		Text errorText = new Text(TEXT_X_COORD, TEXT_Y_COORD, errorMessage);
 		root.getChildren().add(errorText);
@@ -67,6 +67,11 @@ public class ErrorPopUp {
 		root.getChildren().add(b);
 		b.setOnAction(closePopUp);
 		popUpStage.show();
+		
+		if(throwException)
+		{
+			throw new SLogoException(errorMessage);
+		}
 	}
 
 }

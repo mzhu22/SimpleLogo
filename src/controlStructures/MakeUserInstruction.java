@@ -4,7 +4,8 @@ import java.util.Stack;
 
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
-import expressionTree.UserFunction;
+import expressionTree.UnrecognizedFunction;
+import expressionTree.UserFunctionMap;
 
 /**
  * Used when the user wants to define custom functions
@@ -13,7 +14,7 @@ import expressionTree.UserFunction;
  */
 public class MakeUserInstruction extends ExpressionNode{
 	
-	private UserFunction myFunction;
+	private UnrecognizedFunction myFunction;
 	private ListNode myVariables; 
 	private ListNode myCommands; 
 	
@@ -24,30 +25,24 @@ public class MakeUserInstruction extends ExpressionNode{
 
 	@Override
 	public double evaluate() {
-		System.out.println("evaluating to"); 
 		myVariables.evaluate(); 
-		myCommands.evaluate(); 
-		 
+//		myCommands.evaluate(); 
+		UserFunctionMap map = UserFunctionMap.getUserFunctionNodeMap();
+		map.addFunction(myFunction.getIdentifier(), myCommands);
 		
-		myFunction.setMyVariables(myVariables);
-		System.out.println(myVariables.getListContents().size() + " blah");
-		myFunction.setMyCommands(myCommands);
-		System.out.println(myCommands.getListContents().size() + " blah"); 
+//		System.out.println(myVariables.getListContents().size() + " blah");
+//		System.out.println(myCommands.getListContents().size() + " blah"); 
 		return 0; 
-	
 	}
 	
 	public void setChildren( Stack<ExpressionNode> childStack){
-		myFunction = (UserFunction) childStack.pop();
+		myFunction = (UnrecognizedFunction) childStack.pop();
 		numChildren --; 
 		myVariables = (ListNode) childStack.pop(); 
 		numChildren --; 
 		myCommands = (ListNode) childStack.pop(); 
 		numChildren --; 
-	
-		
-		
-	
+		childStack.push(this);
 	}
 	
 }

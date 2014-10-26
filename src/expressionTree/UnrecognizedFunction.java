@@ -1,18 +1,18 @@
 package expressionTree;
 
 
-public class doNothing extends ExpressionNode {
+public class UnrecognizedFunction extends ExpressionNode {
 
 	/**
 	 * Used for user-defined function declarations
 	 */
 	private String identifier;
 	
-	public doNothing() {
+	public UnrecognizedFunction() {
 		super(0); 
 	}
 	
-	public doNothing(String s){
+	public UnrecognizedFunction(String s){
 		super(0); 
 		identifier = s;
 	}

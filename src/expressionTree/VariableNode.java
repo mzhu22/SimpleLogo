@@ -12,6 +12,11 @@ public class VariableNode extends ExpressionNode implements Serializable{
 		super(0); 		 
 	}
 	
+	public VariableNode (int value){
+		super(0);
+		SetInfo(value);
+	}
+	
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub

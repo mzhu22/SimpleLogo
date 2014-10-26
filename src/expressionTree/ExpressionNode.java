@@ -7,7 +7,6 @@ import java.util.Stack;
 import static frontend.GUIMaker.EPU;
 
 import displayCommands.DisplayNode;
-import errorsAndExceptions.ErrorPopUp;
 
 public abstract class ExpressionNode {
 	protected double myValue; 
@@ -82,13 +81,7 @@ public abstract class ExpressionNode {
 	 */
 	public void setChildren( Stack<ExpressionNode> childStack){
 		if(getNumChildren() == 1){
-			try{
-				setLeft(childStack.pop());
-			}
-			catch (EmptyStackException e){
-				EPU.display("Insufficient arguments for method", true);
-				return;
-			}
+			setLeft(childStack.pop());
 		}
 		else if(getNumChildren() == 2){
 			setLeft(childStack.pop());

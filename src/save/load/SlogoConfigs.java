@@ -15,6 +15,5 @@ import expressionTree.VariableNodeMap;
  */
 public class SlogoConfigs {
 	VariableNodeMap myVariables;
-	UserFunctionMap myUserFunctions;
-	
+	UserFunctionMap myUserFunctions;	
 }

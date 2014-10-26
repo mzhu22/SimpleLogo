@@ -19,7 +19,7 @@ public class FileWriter {
 	 * @throws IOException
 	 */
 	public void writeToFile() throws IOException{
-		FileOutputStream file = new FileOutputStream("slogo_configs.sav");
+		FileOutputStream file = new FileOutputStream("slogo_variables.sav");
 		ObjectOutputStream writer = new ObjectOutputStream(file);
 		
 		VariableNodeMap currentVariables = VariableNodeMap.getVariableNodeMap();
@@ -30,10 +30,12 @@ public class FileWriter {
 	}
 	
 	public void readFromFile() throws IOException, ClassNotFoundException{
-		FileInputStream file = new FileInputStream("slogo_configs.sav");
-		ObjectInputStream reader = new ObjectInputStream(file);
-		VariableNodeMap readVariables = (VariableNodeMap) reader.readObject();
+		FileInputStream file = new FileInputStream("slogo_variables.sav");
+		ObjectInputStream reader = new ObjectInputStream(file);		
+		VariableNodeMap currentMap = VariableNodeMap.getVariableNodeMap();
 		
+		currentMap.applyLoadedMap((VariableNodeMap) reader.readObject());
+
 		//TODO: output readVariables
 		
 		reader.close();

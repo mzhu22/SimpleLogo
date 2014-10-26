@@ -1,7 +1,6 @@
 package frontend;
 
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.Turtle.TURTLE_DEFAULT_IMAGE;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
-import SLogoControllers.InputController;
 import expressionTree.HistoryCollection;
 import frontend.AbstractFeatures.GUIFeature;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
@@ -24,6 +22,7 @@ import frontend.ConcreteFeatures.ChangeBackgroundButton;
 import frontend.ConcreteFeatures.ChangeCodingLanguage;
 import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
 import frontend.ConcreteFeatures.ClearCanvasButton;
+import frontend.ConcreteFeatures.CommandExecuter;
 import frontend.ConcreteFeatures.CommandsWindow;
 import frontend.ConcreteFeatures.CurrentVariables;
 import frontend.ConcreteFeatures.EnableArrowsButton;
@@ -31,10 +30,11 @@ import frontend.ConcreteFeatures.GUIChooseImage;
 import frontend.ConcreteFeatures.GUIChooseLineStyle;
 import frontend.ConcreteFeatures.HelpButton;
 import frontend.ConcreteFeatures.HistoryWindow;
-import frontend.ConcreteFeatures.CommandExecuter;
 import frontend.ConcreteFeatures.LoadSLogoFileButton;
+import frontend.ConcreteFeatures.LoadVariablesButton;
 import frontend.ConcreteFeatures.QuitButton;
 import frontend.ConcreteFeatures.ResetButton;
+import frontend.ConcreteFeatures.SaveVariablesButton;
 import frontend.ConcreteFeatures.SetLineColorButton;
 import frontend.ConcreteFeatures.ToggleGridLinesButton;
 import frontend.ConcreteFeatures.TurtleStatsWindow;
@@ -130,7 +130,9 @@ public class SLogoWorkspace {
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
 						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
-						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator)
+						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator),
+						new LoadVariablesButton(button_x, BUTTON_HEIGHT*15, "Load Variables"),
+						new SaveVariablesButton(button_x, BUTTON_HEIGHT*16, "Save Variables")
 					)
 				);
 		

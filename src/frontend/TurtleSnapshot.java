@@ -30,6 +30,7 @@ public class TurtleSnapshot {
 		penDown = turtle.getPen().isPenDown();
 		showing = turtle.isShowing();
 		id = turtle.getID();
+
 	}
 	
 	/**
@@ -40,6 +41,9 @@ public class TurtleSnapshot {
 	public static TurtleSnapshot getTurtleSnapshot(Turtle turtle){
 		if (instance == null){
 			instance = new TurtleSnapshot(turtle);
+		}
+		else{
+			TurtleSnapshot.update(turtle);
 		}
 		return instance;
 	}

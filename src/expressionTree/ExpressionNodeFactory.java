@@ -3,7 +3,6 @@ package expressionTree;
 import java.util.Stack;
 import static frontend.GUIMaker.EPU;
 import commandAbstractClasses.*;
-import errorsAndExceptions.ErrorPopUp;
 
 /**
  * Class called by ExpressionTreeBuilder that takes in a String representing user-input 
@@ -23,7 +22,7 @@ public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 	private UserFunctionMap myUserFunctions = UserFunctionMap.getUserFunctionNodeMap();
-
+	private boolean makingFunction = false;
 
 	private String[] myPackages = { "commandAbstractClasses", 
 			"comparators",
@@ -31,6 +30,7 @@ public final class ExpressionNodeFactory {
 			"displayCommands",
 			"expressionTree",
 			"mathOperations",
+			"multipleTurtleCommands",
 			"turtleQueries"};
 
 
@@ -92,13 +92,28 @@ public final class ExpressionNodeFactory {
 
 	}
 
+	/**
+	 * Uses reflection to create an ExpressionNode object based on input String. 
+	 * 
+	 * Unrecognized commands return a UnrecognizedFunction object that effectively a 
+	 * blank null object. Whether or not an error popup is then thrown depends on 
+	 * whether the unrecognized command followed the MakeUserInstruction command (for
+	 * which the function name must not be defined).
+	 * @param command
+	 * @return
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
 	private ExpressionNode commandHandler(String command) throws InstantiationException, IllegalAccessException{
-		//For the extraodinary case of the Random command, which is already a Java
+		//For the extraordinary case of the Random command, which is already a Java
 		//class
 		if(command.equals("Random")){
 			command = "SlogoRandom";
 		}
-		
+		if(command.equals("MakeUserInstruction")){
+			makingFunction = true;
+		}
+
 		ExpressionNode node = null;
 
 		for(String packageName : myPackages){
@@ -112,13 +127,27 @@ public final class ExpressionNodeFactory {
 			}
 		}
 		if(node == null){
-			EPU.display("Unrecognized command", false);
-			return new doNothing();
+			return unrecognizedCommandHandler(command);
 		}
 		return node;
 	}
 
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
+	}
+
+	private ExpressionNode unrecognizedCommandHandler(String command) {
+
+		if(myUserFunctions.contains(command)){
+			return myUserFunctions.getFunction(command);
+		}
+
+
+		if(!makingFunction){
+			EPU.display("Unrecognized command", false);
+		}
+		makingFunction = false;
+
+		return new UnrecognizedFunction(command);
 	}
 }

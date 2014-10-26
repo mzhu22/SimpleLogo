@@ -4,9 +4,10 @@ package expressionTree;
  * 
  *
  */
+import static frontend.GUIMaker.EPU;
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 import java.util.List;
-//import java.util.Scanner;
 import java.util.Stack;
 
 import displayCommands.DisplayNode;
@@ -36,8 +37,13 @@ public class ExpressionTreeBuilder {
 	private void getTree(Stack<ExpressionNode> processNodes){
 		Stack<ExpressionNode> temp = new Stack<>() ;
 		while(!processNodes.isEmpty()){ 
-			ExpressionNode holder = processNodes.pop(); 
-			holder.setChildren(temp);
+			try{
+				ExpressionNode holder = processNodes.pop(); 
+				holder.setChildren(temp);
+			}
+			catch (EmptyStackException e){ 
+				EPU.display("Insufficient inputs for method", true);
+			}
 			
 		}
 		while( !temp.isEmpty()){

@@ -31,7 +31,6 @@ public class UserFunction extends ExpressionNode{
 		myCommands = commands; 
 	}
 	
-	
 	@Override
 	public List<DisplayNode> makeInstructionList(){
 		List<DisplayNode> toReturn = new ArrayList<>(); 

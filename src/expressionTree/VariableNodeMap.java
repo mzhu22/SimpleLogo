@@ -43,4 +43,8 @@ public class VariableNodeMap implements Serializable{
 		return variableMap.keySet(); 
 	}
 	
+	public void applyLoadedMap(VariableNodeMap loadedMap){
+		myVariableNodeMap = loadedMap;
+	}
+	
 }

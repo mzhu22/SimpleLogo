@@ -1,5 +1,10 @@
 package frontend.ConcreteFeatures;
 
+import static frontend.GUIMaker.EPU;
+
+import java.io.IOException;
+
+import save.load.FileWriter;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class LoadVariablesButton extends GUIFeatureWithButton {
@@ -12,7 +17,12 @@ public class LoadVariablesButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-
+		FileWriter writer = new FileWriter();
+		try {
+			writer.readFromFile();
+		} catch (ClassNotFoundException | IOException e) {
+			EPU.display("No file found", true);
+		}
 	}
 
 }

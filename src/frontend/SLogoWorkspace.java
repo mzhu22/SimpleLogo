@@ -1,7 +1,6 @@
 package frontend;
 
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.Turtle.TURTLE_DEFAULT_IMAGE;
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
 
 import java.util.ArrayList;
@@ -14,7 +13,6 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
-import SLogoControllers.InputController;
 import expressionTree.HistoryCollection;
 import frontend.AbstractFeatures.GUIFeature;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
@@ -24,6 +22,7 @@ import frontend.ConcreteFeatures.ChangeBackgroundButton;
 import frontend.ConcreteFeatures.ChangeCodingLanguage;
 import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
 import frontend.ConcreteFeatures.ClearCanvasButton;
+import frontend.ConcreteFeatures.CommandExecuter;
 import frontend.ConcreteFeatures.CommandsWindow;
 import frontend.ConcreteFeatures.CurrentVariables;
 import frontend.ConcreteFeatures.EnableArrowsButton;
@@ -31,15 +30,23 @@ import frontend.ConcreteFeatures.GUIChooseImage;
 import frontend.ConcreteFeatures.GUIChooseLineStyle;
 import frontend.ConcreteFeatures.HelpButton;
 import frontend.ConcreteFeatures.HistoryWindow;
-import frontend.ConcreteFeatures.CommandExecuter;
 import frontend.ConcreteFeatures.LoadSLogoFileButton;
+import frontend.ConcreteFeatures.LoadVariablesButton;
 import frontend.ConcreteFeatures.QuitButton;
 import frontend.ConcreteFeatures.ResetButton;
+import frontend.ConcreteFeatures.SaveVariablesButton;
 import frontend.ConcreteFeatures.SetLineColorButton;
 import frontend.ConcreteFeatures.ToggleGridLinesButton;
 import frontend.ConcreteFeatures.TurtleStatsWindow;
 
-public class SLogoTab {
+/**
+ * This class represents a workspace with unique elements, including the turtles,
+ * and all GUIFeatures. It is added as a tab to the TabPane in the GUIMaker.
+ *
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
+public class SLogoWorkspace {
 
 	public static final int CANVAS_WIDTH = 500;
 	public static final int CANVAS_HEIGHT = 500;
@@ -62,7 +69,12 @@ public class SLogoTab {
 	private HistoryCollection myHistory;
 
 
-	public SLogoTab(TabPane tp)
+	/**
+	 * Constructor.
+	 * 
+	 * @param tp The TabPane to which to add workspaces.
+	 */
+	public SLogoWorkspace(TabPane tp)
 	{
 		this.myCanvas = new SLogoCanvas(CANVAS_WIDTH, CANVAS_HEIGHT, 0, 0);
 		
@@ -72,7 +84,7 @@ public class SLogoTab {
 
 		this.myRoot.getChildren().add(myCanvas.getHolder());
 		double button_x = this.myWidth - BUTTON_WIDTH;
-		myInitialTurtle = new Turtle(myCanvas);	
+		myInitialTurtle = new Turtle(myCanvas, 0);	
 		
 		
 		myTurtleCollection = new TurtleCollection(new ArrayList<Turtle>(), myCanvas);
@@ -83,6 +95,9 @@ public class SLogoTab {
 		myTranslator = new Translator();
 		myHistory = new HistoryCollection();
 		
+		/**
+		 * A List of panes with updateable information.
+		 */
 		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
 				Arrays.asList(
 						new CurrentVariables(button_x - 200, 0, 200, 100),
@@ -95,6 +110,9 @@ public class SLogoTab {
 
 		myPaneUpdater = new PaneUpdater(updateables);
 
+		/**
+		 * A List of all of the features to be added statically to the workspace.
+		 */
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
 						new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
@@ -112,14 +130,22 @@ public class SLogoTab {
 						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
 						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
-						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator)
+						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator),
+						new LoadVariablesButton(button_x, BUTTON_HEIGHT*15, "Load Variables"),
+						new SaveVariablesButton(button_x, BUTTON_HEIGHT*16, "Save Variables")
 					)
 				);
 		
 		startingFeatures.addAll(updateables);
 	}
 
-	public Tab createTab(int numTab) {
+	/**
+	 * Adds all of the initial GUIFeatures to the workspace. 
+	 * 
+	 * @param numTab The number of the tab being added.
+	 * @return The created tab.
+	 */
+	public Tab createWorkspace(int numTab) {
 
 		for(GUIFeature f : startingFeatures){
 			myRoot.getChildren().add(f.makeTool());
@@ -127,7 +153,7 @@ public class SLogoTab {
 
 		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new TurtleKeyHandler(myMover, myPaneUpdater));
 
-		String tabTitle = "Workspace " + numTab;
+		String tabTitle = "Workspace" + " " + numTab;
 		Tab tab = new Tab(tabTitle);
 		tab.setContent(myRoot);
 
@@ -135,18 +161,39 @@ public class SLogoTab {
 
 	}
 
+	/**
+	 * This class represents a button to add a workspace. This is inside of the
+	 * SLogoWorkspace class in order to access SLogoWorkspace without passing
+	 * it in.
+	 * 
+	 * @author Chris Bernt
+	 * @author Safkat Islam
+	 *
+	 */
 	public class AddWorkspaceButton extends GUIFeatureWithButton {
 
 		private TabPane myTabPane;
+		
+		/**
+		 * Constructor.
+		 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+		 * 
+		 * @param tp The TabPane to be added to.
+		 */
 		public AddWorkspaceButton(double x, double y, String buttonName, TabPane tp) {
 			super(x, y, buttonName);
 			this.myTabPane = tp;
 		}
 
+		
+		/**
+		 * {@inheritDoc}
+		 * Adds a new workspace to the TabPane.
+		 */
 		@Override
 		public void action() {
-			SLogoTab st = new SLogoTab(this.myTabPane);
-			this.myTabPane.getTabs().add(st.createTab(this.myTabPane.getTabs().size() + 1));
+			SLogoWorkspace st = new SLogoWorkspace(this.myTabPane);
+			this.myTabPane.getTabs().add(st.createWorkspace(this.myTabPane.getTabs().size() + 1));
 		}
 
 	}

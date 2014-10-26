@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import frontend.GUIMaker;
-import static frontend.SLogoTab.GUI_NAMES;
+import static frontend.SLogoWorkspace.GUI_NAMES;
 
 /**
  * The class that sets up the stage, initializes

@@ -1,7 +1,7 @@
 package frontend.ConcreteFeatures;
 
-import static frontend.SLogoTab.CANVAS_HEIGHT;
-import static frontend.SLogoTab.CANVAS_WIDTH;
+import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
+import static frontend.SLogoWorkspace.CANVAS_WIDTH;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +23,7 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 
 	@Override
 	public void updatePane() {
-		String finalOutput = "Active Turtle Statistics \n";
+		String finalOutput = "\t Active Turtle Statistics \n";
 		myTurtleCollection.setActiveTurtles();
 		for(Turtle myTurtle : myTurtleCollection)
 		{
@@ -35,7 +35,7 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 			turtleInfo.put("Pen Down:", ((Boolean) myTurtle.getPen().isPenDown()).toString());
 
 			for(String s : turtleInfo.keySet()){
-				finalOutput += "\t" + s + "\t" + turtleInfo.get(s) + "\n";
+				finalOutput += s + "\t" + turtleInfo.get(s) + "\n";
 			}
 			finalOutput += "\n";
 		}

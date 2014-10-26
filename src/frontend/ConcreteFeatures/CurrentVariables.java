@@ -18,9 +18,9 @@ public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 	public void updatePane() {
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 				
-		String finalOutput = "Variables \n";
+		String finalOutput = "\t Variables \n";
 		for(String s : myVariables.keySet()){
-			finalOutput += "\t" + s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getValue() + "\n";
+			finalOutput += s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getValue() + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");

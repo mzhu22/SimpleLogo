@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
  * 
  * @author Chris Bernt
  * @author Safkat Islam
+ * 
  */
 public abstract class GUIFeatureWithButton extends GUIFeature {
 

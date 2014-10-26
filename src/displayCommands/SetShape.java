@@ -1,7 +1,7 @@
 package displayCommands;
 
 import static frontend.GUIMaker.EPU;
-import static frontend.SLogoTab.IMAGE_LIST;
+import static frontend.SLogoWorkspace.IMAGE_LIST;
 import errorsAndExceptions.SLogoException;
 import frontend.Turtle;
 

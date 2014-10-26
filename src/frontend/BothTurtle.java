@@ -6,7 +6,8 @@
 ///**
 // * This class represents the prototype for a 
 // * Turtle refactored into a frontend and backend
-// * turtle with separate but related functions.
+// * turtle with separate but related functions. This
+// * design does not appear to be good.
 // *
 // */
 //public class BothTurtle {

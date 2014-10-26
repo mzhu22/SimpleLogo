@@ -3,7 +3,7 @@ package frontend.ConcreteFeatures;
 import static frontend.GUIMaker.EPU;
 
 import java.io.IOException;
-
+import save.load.CustomReaderWriter;
 import save.load.FileWriter;
 import frontend.AbstractFeatures.SLogoButton;
 
@@ -16,7 +16,7 @@ public class SaveVariablesButton extends SLogoButton {
 
 	@Override
 	public void action() {
-		FileWriter writer = new FileWriter();
+		CustomReaderWriter writer = new CustomReaderWriter();
 		try {
 			writer.writeToFile();
 		} catch (IOException e) {

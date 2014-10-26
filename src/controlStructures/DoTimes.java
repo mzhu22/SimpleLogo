@@ -7,6 +7,16 @@ import displayCommands.DisplayNode;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
 
+/**
+ * Runs the commands stored in the Right node up to the limit stored in the Left node. 
+ * The limit in the Left node is stored as a variable that can change value as the DoTimes
+ * is run.
+ * 
+ * NOTE: under current design this is functionally the same as Repeat, as the left node
+ * contains a constant value, rather than one that updates dynamically as DoTimes is run
+ * @author Mike Zhu
+ *
+ */
 public class DoTimes extends ExpressionNode {
 
 	public DoTimes() {

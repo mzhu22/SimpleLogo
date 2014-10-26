@@ -6,6 +6,7 @@ import java.io.IOException;
 
 import save.load.FileWriter;
 import frontend.AbstractFeatures.SLogoButton;
+import save.load.CustomReaderWriter;
 
 /**
  * 
@@ -22,7 +23,8 @@ public class LoadVariablesButton extends SLogoButton {
 
 	@Override
 	public void action() {
-		FileWriter writer = new FileWriter();
+		// TODO Auto-generated method stub
+		CustomReaderWriter writer = new CustomReaderWriter();
 		try {
 			writer.readFromFile();
 		} catch (ClassNotFoundException | IOException e) {

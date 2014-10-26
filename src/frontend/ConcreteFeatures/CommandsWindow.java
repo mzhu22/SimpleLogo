@@ -29,8 +29,7 @@ public class CommandsWindow extends SLogoScrollPane {
 	 */
 	@Override
 	public void updatePane() {
-		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionNodeMap();
-		
+		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionMap();
 		for(String s : myFunctions.keySet()){
 			finalOutput += s.toLowerCase() + "\n";
 		}

@@ -6,6 +6,19 @@ import java.util.Stack;
 
 import displayCommands.DisplayNode;
 
+/**
+ * Superclass for node representation of all instructions within the expression tree. 
+ * 
+ * Default assumes that Node has two children, as the vast majority of Slogo commands take
+ * in either one or two inputs. Those commands that take in greater than two inputs
+ * can overwrite the setChildren method in ExpressionNode and add new children variables.
+ * 
+ * Only evaluate() is abstract. Evaluate() sets the node's value by recursively evaluating
+ * its children - this method differs for different types of commands.
+ * 
+ * @author Mike Zhu
+ *
+ */
 public abstract class ExpressionNode {
 	protected double myValue; 
 	protected ExpressionNode myRight; 
@@ -27,7 +40,15 @@ public abstract class ExpressionNode {
 	}
 
 	public abstract double evaluate(); 
-
+	
+	/**
+	 * Extracts the displayNodes (those nodes sent to the frontend and run to move the
+	 * turtle) using in-order traversal starting from this node. Thus returns insns
+	 * in the order that they were typed.
+	 * 
+	 * This allows for nested "recursive" instructions.
+	 * @return
+	 */
 	public List<DisplayNode> makeInstructionList(){
 		instructionList = new ArrayList<>();
 
@@ -64,10 +85,11 @@ public abstract class ExpressionNode {
 	public void setValue(double a){
 		myValue = a; 
 	}
-	protected int  getNumChildren(){
-
+	
+	protected int getNumChildren(){
 		return numChildren; 	
 	}
+	
 	public double getValue(){
 		return myValue; 
 	}

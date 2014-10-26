@@ -8,7 +8,9 @@ import expressionTree.UnrecognizedFunction;
 import expressionTree.UserFunctionMap;
 
 /**
- * Used when the user wants to define custom functions
+ * Used when the user wants to define custom functions. Depends on the ListNode class 
+ * (for defining commands within brackets []) and of course the UserFunctionMap class,
+ * in which user defined functions and their String identifiers are stored. 
  * @author Mike Zhu
  *
  */
@@ -27,7 +29,7 @@ public class MakeUserInstruction extends ExpressionNode{
 	public double evaluate() {
 		myVariables.evaluate(); 
 //		myCommands.evaluate(); 
-		UserFunctionMap map = UserFunctionMap.getUserFunctionNodeMap();
+		UserFunctionMap map = UserFunctionMap.getUserFunctionMap();
 		map.addFunction(myFunction.getIdentifier(), myCommands);
 		
 //		System.out.println(myVariables.getListContents().size() + " blah");

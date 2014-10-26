@@ -2,6 +2,12 @@ package controlStructures;
 
 import expressionTree.ExpressionNode;
 
+/**
+ * Stores an expression to be evaluated in the left child, a set of commands to be run on 
+ * the right when expression==true.
+ * @author Mike Zhu
+ *
+ */
 public class If extends ExpressionNode {
 
 	public If() {
@@ -16,8 +22,4 @@ public class If extends ExpressionNode {
 	
 		 else return myValue =  0 ; 
 	}
-
-	
-	
-
 }

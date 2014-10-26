@@ -11,7 +11,7 @@ package frontend;
  */
 public class TurtleSnapshot {
 
-	private static TurtleSnapshot instance;
+	private static TurtleSnapshot instance = new TurtleSnapshot();
 	public double xCor;
 	public double yCor;
 	public double direction;
@@ -23,14 +23,8 @@ public class TurtleSnapshot {
 	 * Constructor, sets up all data.
 	 * @param turtle The turtle to copy data from.
 	 */
-	private TurtleSnapshot(Turtle turtle) {
-		xCor = turtle.getX();
-		yCor = turtle.getY();
-		direction = turtle.getDirection();
-		penDown = turtle.getPen().isPenDown();
-		showing = turtle.isShowing();
-		id = turtle.getID();
-
+	private TurtleSnapshot(){
+		
 	}
 	
 	/**
@@ -38,13 +32,7 @@ public class TurtleSnapshot {
 	 * @param turtle The turtle to get information from.
 	 * @return The turtle snapshot from the given turtle.
 	 */
-	public static TurtleSnapshot getTurtleSnapshot(Turtle turtle){
-		if (instance == null){
-			instance = new TurtleSnapshot(turtle);
-		}
-		else{
-			TurtleSnapshot.update(turtle);
-		}
+	public static TurtleSnapshot getTurtleSnapshot(){
 		return instance;
 	}
 	
@@ -52,7 +40,12 @@ public class TurtleSnapshot {
 	 * Updates the instance of the turtle snapshot.
 	 * @param turtle The turtle to get data from.
 	 */
-	public static void update(Turtle turtle){
-		instance = new TurtleSnapshot(turtle);
+	public void update(Turtle turtle){
+		xCor = turtle.getX();
+		yCor = turtle.getY();
+		direction = turtle.getDirection();
+		penDown = turtle.getPen().isPenDown();
+		showing = turtle.isShowing();
+		id = turtle.getID();
 	}
 }

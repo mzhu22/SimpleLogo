@@ -1,26 +1,18 @@
 package turtleQueries;
+import expressionTree.ExpressionNode;
 
 /**
+ * Abstract class for TurtleQuery commands. TurtleQuery commands are backend classes that
+ * access information of turtles stored on the frontend. Therefore they depend heavily
+ * on the singleton structure TurtleSnapshot containing latest turtle data and
+ * accessible globally.
  * @author Dimeji Abidoye
- * 
- *
  */
 
-import expressionTree.ExpressionNode;
-import frontend.Turtle;
-
-
-
 public  abstract class TurtleQuery extends ExpressionNode {
-
-	protected Turtle myTurtle; 
 	
 	public TurtleQuery(){
 		super(0);
-	}
-	
-	public void setTurtle(Turtle actionable){
-		myTurtle = actionable; 
 	}
 	
 	@Override

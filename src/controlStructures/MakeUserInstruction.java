@@ -4,6 +4,7 @@ import java.util.Stack;
 
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
+import expressionTree.UnrecognizedFunction;
 import expressionTree.UserFunction;
 
 /**
@@ -13,13 +14,13 @@ import expressionTree.UserFunction;
  */
 public class MakeUserInstruction extends ExpressionNode{
 	
-	private UserFunction myFunction;
+	private UnrecognizedFunction myFunction;
 	private ListNode myVariables; 
 	private ListNode myCommands; 
 	
 	
 	public MakeUserInstruction(){
-		super(3); 
+		super(2); 
 	}
 
 	@Override
@@ -29,25 +30,18 @@ public class MakeUserInstruction extends ExpressionNode{
 		myCommands.evaluate(); 
 		 
 		
-		myFunction.setMyVariables(myVariables);
 		System.out.println(myVariables.getListContents().size() + " blah");
-		myFunction.setMyCommands(myCommands);
 		System.out.println(myCommands.getListContents().size() + " blah"); 
 		return 0; 
-	
 	}
 	
 	public void setChildren( Stack<ExpressionNode> childStack){
-		myFunction = (UserFunction) childStack.pop();
+		myFunction = (UnrecognizedFunction) childStack.pop();
 		numChildren --; 
-		myVariables = (ListNode) childStack.pop(); 
-		numChildren --; 
+//		myVariables = (ListNode) childStack.pop(); 
+//		numChildren --; 
 		myCommands = (ListNode) childStack.pop(); 
 		numChildren --; 
-	
-		
-		
-	
 	}
 	
 }

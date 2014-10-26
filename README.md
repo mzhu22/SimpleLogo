@@ -22,7 +22,7 @@ Information about using the program: arrows keys move the turtles – up means f
 
 Bugs: Wraparound doesn’t work fully. Queries don’t work fully, meaning that it only takes into account the last active turtle’s stats before run is pressed. -User defined functions do not work with dynamic parameters (e.g., can only do "to method [ ] [ rt 90 ]" vs "to method [ :b ] [ rt :b ]"). Queries only return the turtle state BEFORE the command call. These queries do not update in the middle of calls. Doing queries/ask correctly is difficult under current design. Because we pass entire lists of commands rather than one command at a time, queries do not dynamically update within a single command call. Likewise Ask and DoTimes (which take in variables) are "static" rather than "dynamic." For this reason, Ask is functionally identical to Repeat.
 
-Assumptions: GUI buttons only work on active turtles. 
+Assumptions: GUI buttons only work on active turtles. Clear button, clearscreen command, and home command do not set the heading of the turtle to its original heading but instead keeps it as is. 
 
 No extra features. 
 

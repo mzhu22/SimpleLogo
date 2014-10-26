@@ -5,7 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * This class represents a button that allows
@@ -14,7 +14,7 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class HelpButton extends GUIFeatureWithButton {
+public class Help extends SLogoButton {
 
 	private final static int WIDTH = 800;
 	private final static int HEIGHT = 600;
@@ -25,10 +25,10 @@ public class HelpButton extends GUIFeatureWithButton {
 	/**
 	 * Constructor with custom web address.
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param address The web address to go to.
 	 */
-	public HelpButton(double x, double y, String buttonName, String address)
+	public Help(double x, double y, String buttonName, String address)
 	{
 		super(x,y, buttonName);
 		this.myWebAddress = address;
@@ -38,9 +38,9 @@ public class HelpButton extends GUIFeatureWithButton {
 	/**
 	 * Constructor that loads default address.
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 */
-	public HelpButton(double x, double y, String buttonName) {
+	public Help(double x, double y, String buttonName) {
 		this(x, y, buttonName, DEFAULT_ADDRESS);
 	}
 

@@ -1,6 +1,6 @@
 package frontend.ConcreteFeatures;
 
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * This class represents a button that allows the user
@@ -9,14 +9,14 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class QuitButton extends GUIFeatureWithButton{
+public class Quit extends SLogoButton{
 
 	/**
 	 * Constructor
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 */
-	public QuitButton(double x, double y, String buttonName) {
+	public Quit(double x, double y, String buttonName) {
 		super(x, y, buttonName);
 	}
 

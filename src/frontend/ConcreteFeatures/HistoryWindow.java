@@ -1,8 +1,7 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.text.Text;
 import expressionTree.HistoryCollection;
-import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
+import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
  * This class represents a window with an updateable history of commands run.
@@ -11,18 +10,18 @@ import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
  * @author Safkat Islam
  *
  */
-public class HistoryWindow extends GUIFeatureWithUpdateableScrollPane{
+public class HistoryWindow extends SLogoScrollPane{
 
 	private HistoryCollection myHistoryCollection;
 	
 	/**
 	 * Constructor.
 	 * 
-	 * @see GUIFeatureWithUpdateableScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
+	 * @see SLogoScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
 	 * @param hc The HistoryCollection to grab the history from.
 	 */
 	public HistoryWindow(double x, double y, double width, double height, HistoryCollection hc) {
-		super(x, y, width, height);
+		super(x, y, width, height,"\t History \n");
 		this.myHistoryCollection = hc;
 	}
 
@@ -32,14 +31,11 @@ public class HistoryWindow extends GUIFeatureWithUpdateableScrollPane{
 	 */
 	@Override
 	public void updatePane() {
-		String finalOutput = "\t History \n";
 		for(String s : this.myHistoryCollection)
 		{
 			finalOutput +=  s + "\n";
 		}
-		Text t = new Text(0, 0, finalOutput);
-		t.setStyle("-fx-font-size: 14px");
-		myWindow.setContent(t);
+		super.updatePane();
 	}
 
 }

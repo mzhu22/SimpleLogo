@@ -2,7 +2,7 @@ package frontend.ConcreteFeatures;
 
 import javafx.scene.canvas.Canvas;
 import frontend.SLogoCanvas;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * This class represents a button that allows the user to
@@ -12,17 +12,17 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class ToggleGridLinesButton extends GUIFeatureWithButton {
+public class ToggleGridLines extends SLogoButton {
 
 	private Canvas myCanvas;
 	
 	/**
 	 * Constructor
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param canvas The canvas on which to toggle the lines.
 	 */
-	public ToggleGridLinesButton(double x, double y, String buttonName, Canvas canvas) {
+	public ToggleGridLines(double x, double y, String buttonName, Canvas canvas) {
 		super(x, y, buttonName);
 		myCanvas = canvas;
 	}

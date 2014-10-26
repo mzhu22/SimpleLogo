@@ -6,10 +6,9 @@ import static frontend.SLogoWorkspace.CANVAS_WIDTH;
 import java.util.Map;
 import java.util.TreeMap;
 
-import javafx.scene.text.Text;
 import frontend.Turtle;
 import frontend.TurtleCollection;
-import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
+import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
  * This class represents a pane on which the 
@@ -19,18 +18,18 @@ import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
  * @author Safkat Islam
  *
  */
-public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
+public class TurtleStatsWindow extends SLogoScrollPane{
 
 	TurtleCollection myTurtleCollection;
 
 	/**
 	 * Constructor
 	 * 
-	 * @see GUIFeatureWithUpdateableScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
+	 * @see SLogoScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
 	 * @param turtles The turtles to display the statistics of
 	 */
 	public TurtleStatsWindow(double x, double y, double width, double height, TurtleCollection turtles) {
-		super(x, y, width, height);
+		super(x, y, width, height, "\t Active Turtle Statistics \n");
 		myTurtleCollection = turtles;
 	}
 
@@ -40,7 +39,6 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 	 */
 	@Override
 	public void updatePane() {
-		String finalOutput = "\t Active Turtle Statistics \n";
 		myTurtleCollection.setActiveTurtles();
 		for(Turtle myTurtle : myTurtleCollection)
 		{
@@ -56,9 +54,6 @@ public class TurtleStatsWindow extends GUIFeatureWithUpdateableScrollPane{
 			}
 			finalOutput += "\n";
 		}
-		Text t = new Text(0, 0, finalOutput);
-		t.setStyle("-fx-font-size: 14px");
-		myWindow.setContent(t);
-
+		super.updatePane();
 	}
 }

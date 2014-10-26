@@ -4,10 +4,10 @@ import static frontend.GUIMaker.EPU;
 
 import java.io.IOException;
 import save.load.CustomReaderWriter;
+import save.load.FileWriter;
+import frontend.AbstractFeatures.SLogoButton;
 
-import frontend.AbstractFeatures.GUIFeatureWithButton;
-
-public class SaveVariablesButton extends GUIFeatureWithButton {
+public class SaveVariablesButton extends SLogoButton {
 
 	public SaveVariablesButton(double x, double y, String buttonName) {
 		super(x, y, buttonName);

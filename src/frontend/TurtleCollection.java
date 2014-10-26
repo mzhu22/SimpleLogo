@@ -39,10 +39,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		for(int i = 0; i < turtles.size(); i++){
 			Turtle t = turtles.get(i);
 			myTurtles.put(t.getID(), t);
-			if(t.getIsActive())
-			{
-				myActiveTurtles.add(t);
-			}
+			checkAndAddActiveTurtle(t);
 		}
 	}
 	
@@ -62,7 +59,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 		catch (NullPointerException e)
 		{
 			String error = "No active turtles.";
-			EPU.display("No active turtles.", false);
+			EPU.display(error, false);
 			throw new SLogoException(error);
 		}
 	}
@@ -75,6 +72,13 @@ public class TurtleCollection implements Iterable<Turtle>{
 	 */
 	public void addTurtle(Turtle t){
 		myTurtles.put(myTurtles.size(), t);
+		checkAndAddActiveTurtle(t);
+	}
+
+	/**
+	 * @param t
+	 */
+	private void checkAndAddActiveTurtle(Turtle t) {
 		if(t.getIsActive())
 		{
 			myActiveTurtles.add(t);
@@ -110,7 +114,6 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
-	
 	/**
 	 * Manually sets the active turtle list
 	 * based on the current turtle map. Used after a user
@@ -119,9 +122,7 @@ public class TurtleCollection implements Iterable<Turtle>{
 	public void setActiveTurtles(){
 		myActiveTurtles = new ArrayList<Turtle>();
 		for(Integer i : myTurtles.keySet()){
-			if(myTurtles.get(i).getIsActive()){
-				myActiveTurtles.add(myTurtles.get(i));
-			}
+			this.checkAndAddActiveTurtle(myTurtles.get(i));
 		}
 	}
 	

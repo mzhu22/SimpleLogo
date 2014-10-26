@@ -1,8 +1,7 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.text.Text;
 import expressionTree.VariableNodeMap;
-import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
+import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
  * This class represents a pane that displays
@@ -12,14 +11,14 @@ import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
  * @author Safkat Islam
  *
  */
-public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
+public class CurrentVariablesWindow extends SLogoScrollPane{
 
 	/**
 	 * Constructor.
-	 * @see GUIFeatureWithUpdateableScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
+	 * @see SLogoScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
 	 */
-	public CurrentVariables(double x, double y, double width, double height) {
-		super(x, y, width, height);
+	public CurrentVariablesWindow(double x, double y, double width, double height) {
+		super(x, y, width, height, "\t Variables \n");
 	}
 
 	/**
@@ -30,14 +29,11 @@ public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 	@Override
 	public void updatePane() {
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
-				
-		String finalOutput = "\t Variables \n";
+		
 		for(String s : myVariables.keySet()){
 			finalOutput += s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getValue() + "\n";
 		}
-		Text t = new Text(0, 0, finalOutput);
-		t.setStyle("-fx-font-size: 14px");
-		myWindow.setContent(t);
+		super.updatePane();
 	}
 	
 

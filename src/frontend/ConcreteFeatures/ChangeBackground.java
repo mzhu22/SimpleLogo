@@ -3,7 +3,7 @@ package frontend.ConcreteFeatures;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ColorPicker;
 import frontend.SLogoCanvas;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * Concrete feature that allows a user to change the 
@@ -13,18 +13,18 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class ChangeBackgroundButton extends GUIFeatureWithButton{
+public class ChangeBackground extends SLogoButton{
 
 	private Canvas myCanvas;
 	private ColorPicker myColorPicker;
 	
 	/**
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param node The Canvas to change the background of.
 	 * @param cp The color picker object to get the chosen color from.
 	 */
-	public ChangeBackgroundButton(double x, double y, String buttonName, SLogoCanvas canvas, ColorPicker cp) {
+	public ChangeBackground(double x, double y, String buttonName, SLogoCanvas canvas, ColorPicker cp) {
 		super(x, y, buttonName);
 		myCanvas = canvas;
 		myColorPicker = cp;

@@ -4,7 +4,7 @@ import static frontend.GUIMaker.EPU;
 import javafx.scene.control.TextField;
 import frontend.Turtle;
 import frontend.TurtleCollection;
-import frontend.AbstractFeatures.GUIFeatureWithTextBox;
+import frontend.AbstractFeatures.SLogoTextBox;
 
 /**
  * This class represents a text box the user can enter numbers into to
@@ -14,17 +14,17 @@ import frontend.AbstractFeatures.GUIFeatureWithTextBox;
  * @author Safkat Islam
  *
  */
-public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
+public class ChangeLineWidth extends SLogoTextBox {
 
 	private TurtleCollection myTurtleCollection;
 	
 	/**
 	 * Constructor.
 	 * 
-	 * @see GUIFeatureWithTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
+	 * @see SLogoTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
 	 * @param turtles The turtles to change the line width for.
 	 */
-	public ChangeLineWidthTextBox(double x, double y, double width,
+	public ChangeLineWidth(double x, double y, double width,
 			double height, TurtleCollection turtles, String buttonName, String initialText) {
 		super(x, y, width, height, buttonName, initialText);
 		this.inputBox = new TextField();
@@ -48,9 +48,6 @@ public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 		}
 		catch(NumberFormatException e){
 			EPU.display("Did not enter an integer", false);
-			
 		}
-
 	}
-
 }

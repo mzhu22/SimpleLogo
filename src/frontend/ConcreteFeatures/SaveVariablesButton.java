@@ -3,7 +3,7 @@ package frontend.ConcreteFeatures;
 import java.io.IOException;
 
 import static frontend.GUIMaker.EPU;
-import save.load.FileWriter;
+import save.load.CustomReaderWriter;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class SaveVariablesButton extends GUIFeatureWithButton {
@@ -15,7 +15,7 @@ public class SaveVariablesButton extends GUIFeatureWithButton {
 
 	@Override
 	public void action() {
-		FileWriter writer = new FileWriter();
+		CustomReaderWriter writer = new CustomReaderWriter();
 		try {
 			writer.writeToFile();
 		} catch (IOException e) {

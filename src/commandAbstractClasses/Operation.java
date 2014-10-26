@@ -1,9 +1,8 @@
 package commandAbstractClasses;
 
 /**
+ * Abstract class for all math and boolean operations
  * @author Dimeji Abidoye
- * 
- *
  */
 
 import java.util.Random;

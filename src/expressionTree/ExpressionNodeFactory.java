@@ -21,7 +21,7 @@ import commandAbstractClasses.*;
 public final class ExpressionNodeFactory {
 
 	private VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
-	private UserFunctionMap myUserFunctions = UserFunctionMap.getUserFunctionNodeMap();
+	private UserFunctionMap myUserFunctions = UserFunctionMap.getUserFunctionMap();
 	private boolean makingFunction = false;
 
 	private String[] myPackages = { "commandAbstractClasses", 

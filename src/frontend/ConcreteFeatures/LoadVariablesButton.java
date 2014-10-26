@@ -4,7 +4,7 @@ import static frontend.GUIMaker.EPU;
 
 import java.io.IOException;
 
-import save.load.FileWriter;
+import save.load.CustomReaderWriter;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class LoadVariablesButton extends GUIFeatureWithButton {
@@ -17,7 +17,7 @@ public class LoadVariablesButton extends GUIFeatureWithButton {
 	@Override
 	public void action() {
 		// TODO Auto-generated method stub
-		FileWriter writer = new FileWriter();
+		CustomReaderWriter writer = new CustomReaderWriter();
 		try {
 			writer.readFromFile();
 		} catch (ClassNotFoundException | IOException e) {

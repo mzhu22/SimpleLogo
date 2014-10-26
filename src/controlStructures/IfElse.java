@@ -7,7 +7,12 @@ import java.util.Stack;
 import displayCommands.DisplayNode;
 import expressionTree.ExpressionNode;
 
-
+/**
+ * Special case of a node with 3 children. Left is the expression. Middle is command set 1,
+ * Right is command set 2. If Left evaluates to 1, run Middle, else run Right.
+ * @author Mike Zhu
+ *
+ */
 
 public class IfElse extends ExpressionNode {
 

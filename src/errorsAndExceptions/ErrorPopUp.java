@@ -69,10 +69,10 @@ public class ErrorPopUp {
 		b.setOnAction(closePopUp);
 		popUpStage.show();
 		
-		if(throwException)
-		{
-			throw new SLogoException(errorMessage);
-		}
+//		if(throwException)
+//		{
+//			throw new SLogoException(errorMessage);
+//		}
 	}
 
 }

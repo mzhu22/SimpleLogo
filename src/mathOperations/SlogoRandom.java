@@ -4,6 +4,11 @@ import java.util.Random;
 
 import commandAbstractClasses.Operation;
  
+/**
+ * This class is named SlogoRandom because there is already a class named Random.
+ * @author Mike Zhu
+ *
+ */
 
 public class SlogoRandom extends Operation {
 

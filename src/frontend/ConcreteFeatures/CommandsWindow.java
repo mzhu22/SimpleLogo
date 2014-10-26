@@ -15,7 +15,7 @@ public class CommandsWindow extends GUIFeatureWithUpdateableScrollPane {
 	public void updatePane() {
 		
 		//very similar to other updateable panes, will be refactored
-		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionNodeMap();
+		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionMap();
 		
 		String finalOutput = "\t Functions \n";
 		for(String s : myFunctions.keySet()){

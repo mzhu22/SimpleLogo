@@ -1,5 +1,7 @@
 package turtleQueries;
 
+import frontend.TurtleSnapshot;
+
 public class IsShowing extends TurtleQuery{
 
 	public IsShowing() {
@@ -10,6 +12,6 @@ public class IsShowing extends TurtleQuery{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myTurtle.isShowing() ? 1:0;
+		return (TurtleSnapshot.getTurtleSnapshot().showing) ? 1:0;
 	}
 }

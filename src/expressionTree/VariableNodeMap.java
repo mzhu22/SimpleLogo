@@ -4,12 +4,20 @@ import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
+/**
+ * Class that holds all user-defined variables. Contains Map variable that maps String
+ * identifier for each variable to a VariableNode object.. 
+ * 
+ * Class follows Singleton pattern as there should only be one map ever initialized, and 
+ * several classes on the backend require access to user-defined variables.
+ * 
+ * Class implements Serializable so that it can be written to a file using FileOutputStream,
+ * then read to enable save/load of user defined variables.
+ * @author Mike Zhu
+ *
+ */
 public class VariableNodeMap implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private Map<String, VariableNode> variableMap; 

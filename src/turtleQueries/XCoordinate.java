@@ -1,5 +1,7 @@
 package turtleQueries;
 
+import frontend.TurtleSnapshot;
+
 public class XCoordinate extends TurtleQuery {
 
 	public XCoordinate() {
@@ -11,6 +13,6 @@ public class XCoordinate extends TurtleQuery {
 	public double evaluate() {
 		// TODO Auto-generated method stub
 		// somehow get the turtle's x-coordinate
-		return myTurtle.getX();
+		return TurtleSnapshot.getTurtleSnapshot().xCor;
 	}
 }

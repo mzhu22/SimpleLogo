@@ -1,9 +1,8 @@
 package commandAbstractClasses;
 
 /**
+ * Represents constant value inputs (numbers). 
  * @author Dimeji Abidoye
- * 
- *
  */
 
 import expressionTree.ExpressionNode;

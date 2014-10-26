@@ -1,5 +1,7 @@
 package turtleQueries;
 
+import frontend.TurtleSnapshot;
+
 public class ID extends TurtleQuery{
 	
 	public ID(){
@@ -7,8 +9,7 @@ public class ID extends TurtleQuery{
 	}
 	@Override
 	public double evaluate() {
-//		return myTurtle.getID();
-		return 0;
+		return TurtleSnapshot.getTurtleSnapshot().id;
 	}
 
 }

@@ -1,11 +1,5 @@
-/**
- * This class creates a PopUp message used for displaying error messages to the user.
- * 
- * @author Chris Bernt
- * @author Safkat Islam
- */
-
 package errorsAndExceptions;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
@@ -15,6 +9,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+/**
+ * This class creates a PopUp message used for displaying error messages to the user.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
 public class ErrorPopUp {
 	
 	private static final int POP_UP_HEIGHT = 200;

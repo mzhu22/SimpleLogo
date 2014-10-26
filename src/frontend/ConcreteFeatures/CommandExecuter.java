@@ -7,7 +7,7 @@ import expressionTree.HistoryCollection;
 import frontend.PaneUpdater;
 import frontend.Translator;
 import frontend.TurtleMover;
-import frontend.AbstractFeatures.GUIFeatureWithTextBox;
+import frontend.AbstractFeatures.SLogoTextBox;
 
 /**
  * This class represents a text box with a run button, that, 
@@ -19,7 +19,7 @@ import frontend.AbstractFeatures.GUIFeatureWithTextBox;
  * @author Safkat Islam
  *
  */
-public class CommandExecuter extends GUIFeatureWithTextBox {
+public class CommandExecuter extends SLogoTextBox {
 	
 	private TurtleMover myMover;
 	private PaneUpdater myPaneUpdater;
@@ -28,7 +28,7 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 	
 	/**
 	 * 
-	 * @see GUIFeatureWithTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
+	 * @see SLogoTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
 	 * 
 	 * @param mover The TurtleMover that moves turtles based on the commands.
 	 * @param pu The PaneUpdater that updates panes based on the commands.

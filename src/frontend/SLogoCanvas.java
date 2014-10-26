@@ -121,7 +121,7 @@ public class SLogoCanvas extends Canvas {
 	 */
 	public void changeBackground(int index)
 	{
-		this.myBackground.setFill(this.getColor(index));
+		changeBackground(this.getColor(index));
 	}
 	
 	/**

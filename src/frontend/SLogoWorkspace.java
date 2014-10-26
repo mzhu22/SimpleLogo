@@ -1,7 +1,7 @@
 package frontend;
 
-import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_HEIGHT;
-import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
+import static frontend.AbstractFeatures.SLogoButton.BUTTON_HEIGHT;
+import static frontend.AbstractFeatures.SLogoButton.BUTTON_WIDTH;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,28 +15,28 @@ import javafx.scene.control.TabPane;
 import javafx.scene.input.KeyEvent;
 import expressionTree.HistoryCollection;
 import frontend.AbstractFeatures.GUIFeature;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
-import frontend.AbstractFeatures.GUIFeatureWithColorPicker;
-import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
-import frontend.ConcreteFeatures.ChangeBackgroundButton;
+import frontend.AbstractFeatures.SLogoButton;
+import frontend.AbstractFeatures.SLogoScrollPane;
+import frontend.ConcreteFeatures.ChangeBackground;
 import frontend.ConcreteFeatures.ChangeCodingLanguage;
-import frontend.ConcreteFeatures.ChangeLineWidthTextBox;
-import frontend.ConcreteFeatures.ClearCanvasButton;
+import frontend.ConcreteFeatures.ChangeLineWidth;
+import frontend.ConcreteFeatures.ChooseImage;
+import frontend.ConcreteFeatures.ChooseLineStyle;
+import frontend.ConcreteFeatures.ClearCanvas;
 import frontend.ConcreteFeatures.CommandExecuter;
 import frontend.ConcreteFeatures.CommandsWindow;
-import frontend.ConcreteFeatures.CurrentVariables;
-import frontend.ConcreteFeatures.EnableArrowsButton;
-import frontend.ConcreteFeatures.GUIChooseImage;
-import frontend.ConcreteFeatures.GUIChooseLineStyle;
-import frontend.ConcreteFeatures.HelpButton;
+import frontend.ConcreteFeatures.CurrentVariablesWindow;
+import frontend.ConcreteFeatures.EnableArrows;
+import frontend.ConcreteFeatures.Help;
 import frontend.ConcreteFeatures.HistoryWindow;
-import frontend.ConcreteFeatures.LoadSLogoFileButton;
+import frontend.ConcreteFeatures.LoadSLogoFile;
 import frontend.ConcreteFeatures.LoadVariablesButton;
-import frontend.ConcreteFeatures.QuitButton;
-import frontend.ConcreteFeatures.ResetButton;
+import frontend.ConcreteFeatures.Quit;
+import frontend.ConcreteFeatures.Reset;
+import frontend.ConcreteFeatures.SLogoColorPicker;
 import frontend.ConcreteFeatures.SaveVariablesButton;
-import frontend.ConcreteFeatures.SetLineColorButton;
-import frontend.ConcreteFeatures.ToggleGridLinesButton;
+import frontend.ConcreteFeatures.SetLineColor;
+import frontend.ConcreteFeatures.ToggleGridLines;
 import frontend.ConcreteFeatures.TurtleStatsWindow;
 
 /**
@@ -98,9 +98,9 @@ public class SLogoWorkspace {
 		/**
 		 * A List of panes with updateable information.
 		 */
-		List<GUIFeatureWithUpdateableScrollPane> updateables = new ArrayList<GUIFeatureWithUpdateableScrollPane>(
+		List<SLogoScrollPane> updateables = new ArrayList<SLogoScrollPane>(
 				Arrays.asList(
-						new CurrentVariables(button_x - 200, 0, 200, 100),
+						new CurrentVariablesWindow(button_x - 200, 0, 200, 100),
 						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtleCollection),
 						new CommandsWindow(button_x - 200, 350, 200, 100),
 						new HistoryWindow(button_x - 200, 450, 200, 100, myHistory)
@@ -115,22 +115,22 @@ public class SLogoWorkspace {
 		 */
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
-						new GUIFeatureWithColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
+						new SLogoColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
 						new CommandExecuter(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator, myHistory),
-						new QuitButton(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
-						new ChangeBackgroundButton(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
-						new HelpButton(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
-						new SetLineColorButton(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), myTurtleCollection, myColorPicker),
-						new ChangeLineWidthTextBox(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myTurtleCollection, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
-						new ClearCanvasButton(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
-						new ToggleGridLinesButton(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
-						new ResetButton(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtleCollection, myPaneUpdater),
-						new EnableArrowsButton(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
-						new GUIChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
-						new GUIChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
+						new Quit(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
+						new ChangeBackground(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
+						new Help(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
+						new SetLineColor(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), myTurtleCollection, myColorPicker),
+						new ChangeLineWidth(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myTurtleCollection, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
+						new ClearCanvas(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
+						new ToggleGridLines(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
+						new Reset(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtleCollection, myPaneUpdater),
+						new EnableArrows(button_x, BUTTON_HEIGHT*9, GUI_NAMES.getString("EnableArrows")),
+						new ChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
+						new ChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
 						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
-						new LoadSLogoFileButton(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator),
+						new LoadSLogoFile(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator),
 						new LoadVariablesButton(button_x, BUTTON_HEIGHT*15, "Load Variables"),
 						new SaveVariablesButton(button_x, BUTTON_HEIGHT*16, "Save Variables")
 					)
@@ -170,13 +170,13 @@ public class SLogoWorkspace {
 	 * @author Safkat Islam
 	 *
 	 */
-	public class AddWorkspaceButton extends GUIFeatureWithButton {
+	public class AddWorkspaceButton extends SLogoButton {
 
 		private TabPane myTabPane;
 		
 		/**
 		 * Constructor.
-		 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+		 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 		 * 
 		 * @param tp The TabPane to be added to.
 		 */

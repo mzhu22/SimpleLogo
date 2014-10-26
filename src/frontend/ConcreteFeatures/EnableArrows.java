@@ -1,6 +1,6 @@
 package frontend.ConcreteFeatures;
 
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 
 /**
@@ -12,9 +12,9 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Chris Bernt, Safkat Islam
  *
  */
-public class EnableArrowsButton extends GUIFeatureWithButton{
+public class EnableArrows extends SLogoButton{
 
-	public EnableArrowsButton(double x, double y, String buttonName) {
+	public EnableArrows(double x, double y, String buttonName) {
 		super(x, y, buttonName);
 	}
 

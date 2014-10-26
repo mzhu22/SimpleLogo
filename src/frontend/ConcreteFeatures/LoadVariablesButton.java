@@ -5,7 +5,7 @@ import static frontend.GUIMaker.EPU;
 import java.io.IOException;
 
 import save.load.FileWriter;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * 
@@ -14,7 +14,7 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class LoadVariablesButton extends GUIFeatureWithButton {
+public class LoadVariablesButton extends SLogoButton {
 
 	public LoadVariablesButton(double x, double y, String buttonName) {
 		super(x, y, buttonName);

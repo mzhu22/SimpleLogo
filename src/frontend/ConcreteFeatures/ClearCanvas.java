@@ -5,7 +5,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.shape.Line;
 import frontend.SLogoCanvas;
 import frontend.Stamp;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * This class represents a button that allows the user
@@ -15,17 +15,17 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class ClearCanvasButton extends GUIFeatureWithButton {
+public class ClearCanvas extends SLogoButton {
 
 	protected Canvas myCanvas;
 	
 	/**
 	 * Constructor.
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param canvas The canvas to clear lines from.
 	 */
-	public ClearCanvasButton(double x, double y, String buttonName, Canvas canvas) {
+	public ClearCanvas(double x, double y, String buttonName, Canvas canvas) {
 		super(x, y, buttonName);
 		myCanvas = canvas;
 	}

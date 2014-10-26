@@ -2,7 +2,7 @@ package frontend;
 
 import java.util.List;
 
-import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
+import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
  * This class updates the panes that show updateable
@@ -14,14 +14,14 @@ import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
  */
 public class PaneUpdater {
 
-	private List<GUIFeatureWithUpdateableScrollPane> myUpdateables;
+	private List<SLogoScrollPane> myUpdateables;
 	
 	/**
 	 * Constructor.
 	 * 
 	 * @param updateables List of panes with updateable information.
 	 */
-	public PaneUpdater(List<GUIFeatureWithUpdateableScrollPane> updateables) {
+	public PaneUpdater(List<SLogoScrollPane> updateables) {
 		myUpdateables = updateables;
 	}
 
@@ -30,7 +30,7 @@ public class PaneUpdater {
 	 */
 	public void updateAll()
 	{
-		for(GUIFeatureWithUpdateableScrollPane f: myUpdateables)
+		for(SLogoScrollPane f: myUpdateables)
 		{
 			f.updatePane();
 		}

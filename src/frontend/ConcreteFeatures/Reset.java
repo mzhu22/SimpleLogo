@@ -20,7 +20,7 @@ import frontend.TurtleCollection;
  * @author Safkat Islam
  *
  */
-public class ResetButton extends ClearCanvasButton {
+public class Reset extends ClearCanvas {
 
 	private TurtleCollection myTurtleCollection;
 	private PaneUpdater myPaneUpdater;
@@ -28,11 +28,11 @@ public class ResetButton extends ClearCanvasButton {
 	/**
 	 * Constructor
 	 * 
-	 * @see ClearCanvasButton#ClearCanvasButton(double, double, String, Canvas)
+	 * @see ClearCanvas#ClearCanvasButton(double, double, String, Canvas)
 	 * @param turtles Turtles to be reset.
 	 * @param pu PaneUpdater to update based on the reset.
 	 */
-	public ResetButton(double x, double y, String buttonName, Canvas canvas, TurtleCollection turtles, PaneUpdater pu) {
+	public Reset(double x, double y, String buttonName, Canvas canvas, TurtleCollection turtles, PaneUpdater pu) {
 		super(x, y, buttonName, canvas);
 		this.myTurtleCollection = turtles;
 		this.myPaneUpdater = pu;

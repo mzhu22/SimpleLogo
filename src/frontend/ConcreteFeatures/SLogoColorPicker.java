@@ -1,7 +1,8 @@
-package frontend.AbstractFeatures;
+package frontend.ConcreteFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
+import frontend.AbstractFeatures.GUIFeature;
 
 /**
  * This class represents a GUIFeature that uses a ColorPicker to pick colors for various thing on the screen.
@@ -9,7 +10,7 @@ import javafx.scene.control.ColorPicker;
  * @author Chris Bernt
  * @author Safkat Islam
  */
-public class GUIFeatureWithColorPicker extends GUIFeature {
+public class SLogoColorPicker extends GUIFeature {
 
 	private ColorPicker myColorPicker;
 	
@@ -19,7 +20,7 @@ public class GUIFeatureWithColorPicker extends GUIFeature {
 	 * @see GUIFeature#GUIFeature(double, double) 
 	 * @param cp The ColorPicker to get colors from.
 	 */
-	public GUIFeatureWithColorPicker(double x, double y, ColorPicker cp) {
+	public SLogoColorPicker(double x, double y, ColorPicker cp) {
 		super(x, y);
 		myColorPicker = cp;
 	}

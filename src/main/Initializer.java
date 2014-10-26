@@ -1,11 +1,11 @@
 package main;
 
+import static frontend.SLogoWorkspace.GUI_NAMES;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import frontend.GUIMaker;
-import static frontend.SLogoWorkspace.GUI_NAMES;
 
 /**
  * The class that sets up the stage, initializes

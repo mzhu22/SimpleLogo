@@ -12,7 +12,7 @@ import SLogoControllers.InputController;
 import frontend.PaneUpdater;
 import frontend.Translator;
 import frontend.TurtleMover;
-import frontend.AbstractFeatures.GUIFeatureWithButton;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * This class represents a button that allows the user
@@ -22,7 +22,7 @@ import frontend.AbstractFeatures.GUIFeatureWithButton;
  * @author Safkat Islam
  *
  */
-public class LoadSLogoFileButton extends GUIFeatureWithButton {
+public class LoadSLogoFile extends SLogoButton {
 
 	private PaneUpdater myPaneUpdater;
 	private TurtleMover myMover;
@@ -30,12 +30,12 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 	
 	/**
 	 * 
-	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param mover The TurtleMover to run the commands.
 	 * @param pu The PaneUpdater to update the panes based on the file's commands.
 	 * @param t The Translator to translate the text file.
 	 */
-	public LoadSLogoFileButton(double x, double y, String buttonName, TurtleMover mover, PaneUpdater pu, Translator t) {
+	public LoadSLogoFile(double x, double y, String buttonName, TurtleMover mover, PaneUpdater pu, Translator t) {
 		super(x, y, buttonName);
 		this.myPaneUpdater = pu;
 		this.myMover = mover;

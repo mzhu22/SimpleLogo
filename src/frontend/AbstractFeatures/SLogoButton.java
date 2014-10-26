@@ -10,7 +10,7 @@ import javafx.scene.control.Button;
  * @author Safkat Islam
  * 
  */
-public abstract class GUIFeatureWithButton extends GUIFeature {
+public abstract class SLogoButton extends GUIFeature {
 
 	private String myName;
 	public final static int BUTTON_WIDTH = 200;
@@ -22,7 +22,7 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	 * @see GUIFeature#GUIFeature(double, double) 
 	 * @param buttonName String for the button.
 	 */
-	public GUIFeatureWithButton(double x, double y, String buttonName) {
+	public SLogoButton(double x, double y, String buttonName) {
 		super(x, y);
 		myName = buttonName;
 	}

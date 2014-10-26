@@ -12,6 +12,10 @@ import frontend.Turtle;
  * Used to enable repeat instructions and for loops. Repeat simply holds subsequent 
  * instructions as children. When makeInstructionList is called, Repeat calls 
  * makeInstructionList on its children N times, where N is the input to Repeat.
+ * 
+ * Repeat relies heavily on the ListNode class, as the Logo syntax for repeat is 
+ * repeat N [ commands ]. In this case, Repeat holds the ListNode representing all 
+ * commands in the [] as a child.
  *  
  * @author Mike Zhu
  *

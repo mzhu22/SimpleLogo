@@ -6,8 +6,10 @@ package frontend;
  * for the backend's queries.
  *
  */
-public class TurtleSnapShot {
+public class TurtleSnapshot {
 
+	private static TurtleSnapshot instance;
+	
 	private Turtle myTurtle;
 	public double xCor;
 	public double yCor;
@@ -15,13 +17,23 @@ public class TurtleSnapShot {
 	public boolean penDown;
 	public boolean showing;
 	
-	
-	public TurtleSnapShot(Turtle turtle) {
+	private TurtleSnapshot(Turtle turtle) {
 		myTurtle = turtle;
 		xCor = myTurtle.getX();
 		yCor = myTurtle.getY();
 		direction = myTurtle.getDirection();
 		penDown = myTurtle.getPen().isPenDown();
 		showing = myTurtle.isShowing();
+	}
+		
+	public static TurtleSnapshot getTurtleSnapshot(Turtle turtle){
+		if (instance == null){
+			instance = new TurtleSnapshot(turtle);
+		}
+		return instance;
+	}
+	
+	public static void update(Turtle turtle){
+		instance = new TurtleSnapshot(turtle);
 	}
 }

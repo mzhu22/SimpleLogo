@@ -34,8 +34,6 @@ public class SetPalette extends DisplayNode {
 	@Override
 	public void setChildren( Stack<ExpressionNode> childStack){
 		
-		
-		
 	}
 
 }

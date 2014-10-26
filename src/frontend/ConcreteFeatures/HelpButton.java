@@ -7,6 +7,13 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
+/**
+ * This class represents a button that allows
+ * the user to access a help page.
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class HelpButton extends GUIFeatureWithButton {
 
 	private final static int WIDTH = 800;
@@ -15,16 +22,32 @@ public class HelpButton extends GUIFeatureWithButton {
 	private final static String TITLE = "Help Page";
 	private String myWebAddress;
 	
+	/**
+	 * Constructor with custom web address.
+	 * 
+	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @param address The web address to go to.
+	 */
 	public HelpButton(double x, double y, String buttonName, String address)
 	{
 		super(x,y, buttonName);
 		this.myWebAddress = address;
 		
 	}
+	
+	/**
+	 * Constructor that loads default address.
+	 * 
+	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 */
 	public HelpButton(double x, double y, String buttonName) {
 		this(x, y, buttonName, DEFAULT_ADDRESS);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Opens up a web browser window at the specified address.
+	 */
 	@Override
 	public void action() {
 		WebView browser = new WebView();

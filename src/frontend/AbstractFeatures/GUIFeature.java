@@ -27,7 +27,6 @@ public abstract class GUIFeature {
 	
 	/**
 	 * This method represents the action taken by the feature when it is interacted upon.
-	 * For example, the turtle changes color if the changeColor button is pressed.
 	 */
 	public abstract void action();
 	

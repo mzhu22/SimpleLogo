@@ -1,16 +1,24 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.control.TextArea;
 import static frontend.GUIMaker.EPU;
+import javafx.scene.control.TextArea;
 import SLogoControllers.InputController;
-import errorsAndExceptions.ErrorPopUp;
 import expressionTree.HistoryCollection;
-import expressionTree.VariableNodeMap;
 import frontend.PaneUpdater;
 import frontend.Translator;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
+/**
+ * This class represents a text box with a run button, that, 
+ * more importantly, delegates the commands off for execution.
+ * Since so many GUIFeatures change based on the commands,
+ * it requires many objects to run completely.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class CommandExecuter extends GUIFeatureWithTextBox {
 	
 	private TurtleMover myMover;
@@ -18,6 +26,15 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 	private Translator myTranslator;
 	private HistoryCollection myHistory;
 	
+	/**
+	 * 
+	 * @see GUIFeatureWithTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
+	 * 
+	 * @param mover The TurtleMover that moves turtles based on the commands.
+	 * @param pu The PaneUpdater that updates panes based on the commands.
+	 * @param t The Translator to translate the commands.
+	 * @param history The History to add the commands to.
+	 */
 	public CommandExecuter(double x, double y, double width, double height, TurtleMover mover, String buttonName, String initialText, PaneUpdater pu, Translator t, HistoryCollection history) {
 		super(x, y, width, height, buttonName, initialText);
 		this.inputBox = new TextArea();
@@ -27,6 +44,11 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 		this.myHistory = history;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Runs the commands and updates history and the panes.
+	 * Throws a SLogoException if the input is null.
+	 */
 	@Override
 	public void action() {
 		String input = inputBox.getText();
@@ -42,8 +64,4 @@ public class CommandExecuter extends GUIFeatureWithTextBox {
 			EPU.display("Empty input", false);
 		}
 	}
-
-	
-
-
 }

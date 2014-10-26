@@ -8,7 +8,6 @@ package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.Pane;
 
 public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 

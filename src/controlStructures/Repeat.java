@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import displayCommands.DisplayNode;
-import expressionTree.ListNode;
 import frontend.Turtle;
 
 /**

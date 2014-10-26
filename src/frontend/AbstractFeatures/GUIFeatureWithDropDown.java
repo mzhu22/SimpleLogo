@@ -48,7 +48,7 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	public abstract void fillItemList();
 	
 	/**
-	 * Select the file chosen.
+	 * Do something with the chosen item of the box.
 	 * @param chosen The path of the file chosen.
 	 */
 	public abstract void doDropDownClickAction(String chosen);

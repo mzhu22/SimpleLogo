@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import displayCommands.DisplayNode;
-import expressionTree.ExpressionNode;
-import expressionTree.ExpressionTreeBuilder;
 
 /**
  * ListNode represents a sequence of Expressions. ListNode enables storage of expressions 

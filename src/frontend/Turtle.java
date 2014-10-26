@@ -1,23 +1,16 @@
 package frontend;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javafx.geometry.Point2D;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.effect.BoxBlur;
-import javafx.scene.effect.GaussianBlur;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
 import static frontend.SLogoWorkspace.CANVAS_WIDTH;
+import javafx.geometry.Point2D;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 
 /**
+ * 
  * 
  * @author Chris Bernt
  * @author Safkat Islam
@@ -31,9 +24,10 @@ public class Turtle {
 	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	public static final double IMAGE_WIDTH = 30;
 	public static final double IMAGE_HEIGHT = 30;
-	public static final String TURTLE_DEFAULT_IMAGE = "images/arrow_red.png";
+	public static final String TURTLE_DEFAULT_IMAGE = "arrow_red.png";
 	private static final int TURTLE_DEFAULT_Y = CANVAS_HEIGHT/2;
 	private static final int TURTLE_DEFAULT_X = CANVAS_WIDTH/2;
+	public static final int TURTLE_DEFAULT_DIRECTION = 90;
 	
 	private double myX;
 	private double myY;
@@ -68,13 +62,13 @@ public class Turtle {
 
 		myShowTurtle = true;
 		
-		myDirection = 90; //START FACING UP
+		myDirection = TURTLE_DEFAULT_DIRECTION; //START FACING UP
 		
 		isActive = true;
 		
 		myID = id; 
 		
-		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
+		Image image = new Image(getClass().getResourceAsStream("../images/" + startImage));
         myImage = new ImageView();
         myImage.setImage(image);
         myContainer = new HBox();

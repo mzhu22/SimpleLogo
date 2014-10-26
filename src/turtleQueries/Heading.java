@@ -1,6 +1,5 @@
 package turtleQueries;
 
-import frontend.Turtle;
 
 public class Heading extends TurtleQuery{
 	

@@ -1,22 +1,37 @@
 package frontend.ConcreteFeatures;
 
 import java.io.File;
-import java.util.Arrays;
 
 import frontend.Translator;
 import frontend.AbstractFeatures.GUIFeatureWithDropDown;
 
+/**
+ * This class represents a button that allows the user to 
+ * change the language to code in.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class ChangeCodingLanguage extends GUIFeatureWithDropDown{
 
 	private static final String LANGUAGE_FOLDER_NAME = "src/resources/languages/";
 	private static final int LANGUAGE_FOLDER_NAME_LENGTH = LANGUAGE_FOLDER_NAME.length();
 	private Translator myTranslator;
 	
+	/**
+	 * 
+	 * @see GUIFeatureWithDropDown#GUIFeatureWithDropDown(double, double, String)
+	 * @param t The Translator object for this drop down.
+	 */
 	public ChangeCodingLanguage(double x, double y, String prompt, Translator t) {
 		super(x, y, prompt);
 		myTranslator = t;
 	}
 
+	/**
+	 * Grabs the language folders and fills the drop down with those file names.
+	 */
 	@Override
 	public void fillItemList() {
 		File[] files = new File(LANGUAGE_FOLDER_NAME).listFiles();
@@ -28,6 +43,10 @@ public class ChangeCodingLanguage extends GUIFeatureWithDropDown{
 		}
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Sets the chosen language.
+	 */
 	@Override
 	public void doDropDownClickAction(String chosen) {
 		myTranslator.setLanguage(chosen.split("\\.")[0]);

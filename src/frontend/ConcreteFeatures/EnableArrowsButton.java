@@ -22,5 +22,4 @@ public class EnableArrowsButton extends GUIFeatureWithButton{
 	public void action() {
 		//Action is intentionally nothing, see class documentation
 	}
-
 }

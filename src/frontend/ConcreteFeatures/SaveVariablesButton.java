@@ -1,8 +1,9 @@
 package frontend.ConcreteFeatures;
 
+import static frontend.GUIMaker.EPU;
+
 import java.io.IOException;
 
-import static frontend.GUIMaker.EPU;
 import save.load.FileWriter;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 

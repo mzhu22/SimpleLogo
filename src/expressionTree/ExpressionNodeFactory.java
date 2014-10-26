@@ -30,6 +30,7 @@ public final class ExpressionNodeFactory {
 			"displayCommands",
 			"expressionTree",
 			"mathOperations",
+			"multipleTurtleCommands",
 			"turtleQueries"};
 
 
@@ -112,7 +113,7 @@ public final class ExpressionNodeFactory {
 		if(command.equals("MakeUserInstruction")){
 			makingFunction = true;
 		}
-		
+
 		ExpressionNode node = null;
 
 		for(String packageName : myPackages){
@@ -130,23 +131,23 @@ public final class ExpressionNodeFactory {
 		}
 		return node;
 	}
-	
+
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
 	}
 
 	private ExpressionNode unrecognizedCommandHandler(String command) {
-		
+
 		if(myUserFunctions.contains(command)){
 			return myUserFunctions.getFunction(command);
 		}
-	
 
-	if(!makingFunction){
-		EPU.display("Unrecognized command", false);
-	}
-	makingFunction = false;
-	
-	return new UnrecognizedFunction(command);
+
+		if(!makingFunction){
+			EPU.display("Unrecognized command", false);
+		}
+		makingFunction = false;
+
+		return new UnrecognizedFunction(command);
 	}
 }

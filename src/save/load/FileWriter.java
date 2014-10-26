@@ -31,10 +31,11 @@ public class FileWriter {
 	
 	public void readFromFile() throws IOException, ClassNotFoundException{
 		FileInputStream file = new FileInputStream("slogo_variables.sav");
-		ObjectInputStream reader = new ObjectInputStream(file);
-		VariableNodeMap readVariables = (VariableNodeMap) reader.readObject();
+		ObjectInputStream reader = new ObjectInputStream(file);		
+		VariableNodeMap currentMap = VariableNodeMap.getVariableNodeMap();
 		
-		
+		currentMap.applyLoadedMap((VariableNodeMap) reader.readObject());
+
 		//TODO: output readVariables
 		
 		reader.close();

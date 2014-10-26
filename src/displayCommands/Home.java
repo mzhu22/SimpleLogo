@@ -1,6 +1,5 @@
 package displayCommands;
 
-import displayCommands.DisplayNode;
 import frontend.Turtle;
 
 public class Home extends DisplayNode {

@@ -1,10 +1,10 @@
 package frontend;
 
-import javafx.geometry.Point2D;
-import javafx.scene.layout.Pane;
 import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
 import static frontend.SLogoWorkspace.CANVAS_WIDTH;
 import static frontend.Turtle.DEGREES_TO_RADIANS_FACTOR;
+import javafx.geometry.Point2D;
+import javafx.scene.layout.Pane;
 
 /**
  * This class contains the ability to draw lines on the canvas

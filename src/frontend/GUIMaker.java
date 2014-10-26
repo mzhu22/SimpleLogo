@@ -1,12 +1,10 @@
 package frontend;
 
-import java.util.ResourceBundle;
-
-import errorsAndExceptions.ErrorPopUp;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.TabPane;
 import javafx.stage.Stage;
+import errorsAndExceptions.ErrorPopUp;
 
 /**
  * This class makes the window that represents

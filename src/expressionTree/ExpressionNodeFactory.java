@@ -1,8 +1,10 @@
 package expressionTree;
 
-import java.util.Stack;
 import static frontend.GUIMaker.EPU;
-import commandAbstractClasses.*;
+
+import java.util.Stack;
+
+import commandAbstractClasses.Constant;
 
 /**
  * Class called by ExpressionTreeBuilder that takes in a String representing user-input 

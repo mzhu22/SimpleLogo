@@ -1,17 +1,29 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.control.TextField;
 import static frontend.GUIMaker.EPU;
-import errorsAndExceptions.ErrorPopUp;
-import frontend.Pen;
+import javafx.scene.control.TextField;
 import frontend.Turtle;
 import frontend.TurtleCollection;
 import frontend.AbstractFeatures.GUIFeatureWithTextBox;
 
+/**
+ * This class represents a text box the user can enter numbers into to
+ * change the line width.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 
 	private TurtleCollection myTurtleCollection;
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @see GUIFeatureWithTextBox#GUIFeatureWithTextBox(double, double, double, double, String, String)
+	 * @param turtles The turtles to change the line width for.
+	 */
 	public ChangeLineWidthTextBox(double x, double y, double width,
 			double height, TurtleCollection turtles, String buttonName, String initialText) {
 		super(x, y, width, height, buttonName, initialText);
@@ -20,6 +32,11 @@ public class ChangeLineWidthTextBox extends GUIFeatureWithTextBox {
 		
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Changes the line width to what was entered.
+	 * Throws a SLogoException if an integer was not entered.
+	 */
 	@Override
 	public void action() {
 		try{

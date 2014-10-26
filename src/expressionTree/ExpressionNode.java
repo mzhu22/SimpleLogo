@@ -1,10 +1,8 @@
 package expressionTree;
 
 import java.util.ArrayList;
-import java.util.EmptyStackException;
 import java.util.List;
 import java.util.Stack;
-import static frontend.GUIMaker.EPU;
 
 import displayCommands.DisplayNode;
 

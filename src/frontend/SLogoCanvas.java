@@ -1,7 +1,8 @@
 package frontend;
 
-import java.util.ArrayList;
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -11,9 +12,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 
 /**
  * This class represents the field where the turtle can be and where the lines are drawn.
@@ -29,6 +28,7 @@ public class SLogoCanvas extends Canvas {
 	private List<Color> myColors;
 	
 	private static final int SPACE_BETWEEN_GRID_LINES = 10;
+	public static final Color START_COLOR = Color.WHITE;
 	
 	/**
 	 * Constructor. 
@@ -66,7 +66,7 @@ public class SLogoCanvas extends Canvas {
 		
 		myBackground = new Rectangle(0,0,width, height);
 		
-		myBackground.setFill(Color.WHITE);
+		myBackground.setFill(START_COLOR);
 		
 		myHolder.getChildren().add(myBackground);
 		myHolder.getChildren().add(this);

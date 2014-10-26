@@ -1,9 +1,10 @@
 package frontend.ConcreteFeatures;
 
-import java.io.IOException;
-
 import static frontend.GUIMaker.EPU;
+
+import java.io.IOException;
 import save.load.CustomReaderWriter;
+
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
 public class SaveVariablesButton extends GUIFeatureWithButton {

@@ -1,10 +1,10 @@
 package frontend;
 
-import java.util.HashMap;
 import static frontend.GUIMaker.EPU;
+
+import java.util.HashMap;
 import java.util.Map;
 
-import errorsAndExceptions.ErrorPopUp;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -26,7 +26,11 @@ public class Pen {
 	private String myLineStyle;
 	private boolean myIsPenDown;
 	private final static Map<String, Double> LINE_STYLES = new HashMap<String, Double>()
-			{{
+			{
+				//for serialization
+				private static final long serialVersionUID = 1L;
+
+			{
 				put("Dotted", 3d);
 				put("Dashed", 10d);
 				put("Solid", Double.MAX_VALUE);

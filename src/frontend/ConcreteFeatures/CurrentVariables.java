@@ -1,19 +1,32 @@
 package frontend.ConcreteFeatures;
 
-import javafx.scene.Group;
-import javafx.scene.layout.Pane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import expressionTree.VariableNodeMap;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 
+/**
+ * This class represents a pane that displays
+ * current user-defined variables and their values.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class CurrentVariables extends GUIFeatureWithUpdateableScrollPane{
 
+	/**
+	 * Constructor.
+	 * @see GUIFeatureWithUpdateableScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
+	 */
 	public CurrentVariables(double x, double y, double width, double height) {
 		super(x, y, width, height);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Checks the variable node map
+	 * and adds them to the pane.
+	 */
 	@Override
 	public void updatePane() {
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();

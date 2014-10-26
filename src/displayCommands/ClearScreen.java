@@ -2,7 +2,6 @@ package displayCommands;
 
 import javafx.scene.shape.Line;
 import frontend.Turtle;
-import frontend.TurtleCollection;
 
 public class ClearScreen extends ClearObjects{
 

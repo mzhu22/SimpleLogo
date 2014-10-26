@@ -1,12 +1,3 @@
-/**
- * The class that sets up the stage, initializes
- * the first scene and animation/frame details, and
- * runs the program as an Application.
- *
- * @author Chris Bernt
- * @author Safkat Islam
- */
-
 package main;
 
 import javafx.application.Application;
@@ -16,6 +7,14 @@ import javafx.stage.Stage;
 import frontend.GUIMaker;
 import static frontend.SLogoWorkspace.GUI_NAMES;
 
+/**
+ * The class that sets up the stage, initializes
+ * the first scene and animation/frame details, and
+ * runs the program as an Application.
+ *
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
 public class Initializer extends Application {
     private GUIMaker myMaker;
     private int guiWidth = 1000;
@@ -23,6 +22,8 @@ public class Initializer extends Application {
 
     /**
      * Set stage and scene up at the beginning.
+     * 
+     * @param s Stage to add the scene to.
      */
     @Override
     public void start (Stage s) {

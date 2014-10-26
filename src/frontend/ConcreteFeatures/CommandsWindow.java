@@ -2,15 +2,32 @@ package frontend.ConcreteFeatures;
 
 import javafx.scene.text.Text;
 import expressionTree.UserFunctionMap;
-import expressionTree.VariableNodeMap;
 import frontend.AbstractFeatures.GUIFeatureWithUpdateableScrollPane;
 
+/**
+ * This class represents a pane that displays the currently
+ * available user-defined commands.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class CommandsWindow extends GUIFeatureWithUpdateableScrollPane {
 
+	/**
+	 * Constructor.
+	 * 
+	 * @see GUIFeatureWithUpdateableScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
+	 */
 	public CommandsWindow(double x, double y, double width, double height) {
 		super(x, y, width, height);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Checks the user defined function map and 
+	 * adds all to the pane.
+	 */
 	@Override
 	public void updatePane() {
 		

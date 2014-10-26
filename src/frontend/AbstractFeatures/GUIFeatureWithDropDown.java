@@ -1,9 +1,3 @@
-/**
- * This class represents a GUIFeature that uses a drop-down menu to interact.
- * 
- * @author Chris Bernt
- * @author Safkat Islam
- */
 package frontend.AbstractFeatures;
 
 import static frontend.AbstractFeatures.GUIFeatureWithButton.BUTTON_WIDTH;
@@ -17,14 +11,21 @@ import javafx.collections.FXCollections;
 import javafx.scene.Group;
 import javafx.scene.control.ComboBox;
 
+/**
+ * This class represents a GUIFeature that uses a drop-down menu to interact.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
 public abstract class GUIFeatureWithDropDown extends GUIFeature {
 
 	protected List<String> myItems;
 	protected String myPromptText;
 	
 	/**
-	 * @see GUIFeature#GUIFeature(double, double)
+	 * Constructor.
 	 * 
+	 * @see GUIFeature#GUIFeature(double, double)
 	 * @param prompt The string that the drop down should originally say when created.
 	 */
 	public GUIFeatureWithDropDown(double x, double y, String prompt) {
@@ -48,7 +49,8 @@ public abstract class GUIFeatureWithDropDown extends GUIFeature {
 	public abstract void fillItemList();
 	
 	/**
-	 * Select the file chosen.
+	 * Do something with the chosen item of the box.
+	 * 
 	 * @param chosen The path of the file chosen.
 	 */
 	public abstract void doDropDownClickAction(String chosen);

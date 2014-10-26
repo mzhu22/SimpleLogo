@@ -1,9 +1,9 @@
 package frontend;
 
+import static frontend.Turtle.IMAGE_HEIGHT;
+import static frontend.Turtle.IMAGE_WIDTH;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import static frontend.Turtle.IMAGE_WIDTH;
-import static frontend.Turtle.IMAGE_HEIGHT;
 
 /**
  * This class represents a stamp on the screen made by a turtle. 

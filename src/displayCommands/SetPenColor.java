@@ -2,7 +2,6 @@ package displayCommands;
 
 import static frontend.GUIMaker.EPU;
 import javafx.scene.paint.Color;
-import errorsAndExceptions.SLogoException;
 import frontend.Turtle;
 import frontend.TurtleCollection;
 

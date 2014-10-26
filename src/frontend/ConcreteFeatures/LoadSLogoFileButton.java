@@ -9,18 +9,32 @@ import java.util.Scanner;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import SLogoControllers.InputController;
-import errorsAndExceptions.SLogoException;
 import frontend.PaneUpdater;
 import frontend.Translator;
 import frontend.TurtleMover;
 import frontend.AbstractFeatures.GUIFeatureWithButton;
 
+/**
+ * This class represents a button that allows the user
+ * to open a logo file from a folder and run it.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class LoadSLogoFileButton extends GUIFeatureWithButton {
 
 	private PaneUpdater myPaneUpdater;
 	private TurtleMover myMover;
 	private Translator myTranslator;
 	
+	/**
+	 * 
+	 * @see GUIFeatureWithButton#GUIFeatureWithButton(double, double, String)
+	 * @param mover The TurtleMover to run the commands.
+	 * @param pu The PaneUpdater to update the panes based on the file's commands.
+	 * @param t The Translator to translate the text file.
+	 */
 	public LoadSLogoFileButton(double x, double y, String buttonName, TurtleMover mover, PaneUpdater pu, Translator t) {
 		super(x, y, buttonName);
 		this.myPaneUpdater = pu;
@@ -28,6 +42,13 @@ public class LoadSLogoFileButton extends GUIFeatureWithButton {
 		this.myTranslator = t;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * When the button is clicked, create a new FileChooser
+	 * with an extension filter to .logo. Get the chosen file and
+	 * run it like a normal input. Throws a SLogoException
+	 * if the file cannot be found.
+	 */
 	@Override
 	public void action() {
 		FileChooser fileChooser = new FileChooser();

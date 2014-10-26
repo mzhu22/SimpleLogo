@@ -14,11 +14,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
-import static frontend.SLogoTab.CANVAS_HEIGHT;
-import static frontend.SLogoTab.CANVAS_WIDTH;
+import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
+import static frontend.SLogoWorkspace.CANVAS_WIDTH;
 
+/**
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class Turtle {
 	
+	/**
+	 * Constants
+	 */
 	public static final double DEGREES_TO_RADIANS_FACTOR = Math.PI / 180;
 	public static final double IMAGE_WIDTH = 30;
 	public static final double IMAGE_HEIGHT = 30;
@@ -26,33 +35,27 @@ public class Turtle {
 	private static final int TURTLE_DEFAULT_Y = CANVAS_HEIGHT/2;
 	private static final int TURTLE_DEFAULT_X = CANVAS_WIDTH/2;
 	
-	
 	private double myX;
 	private double myY;
 	private double myDirection; //0 is right, 90 up, 180 left, 270 down
-	
 	private ImageView myImage;
 	private HBox myContainer;
-	
 	private Canvas myCanvas;
 	private Pen myPen;
-	
 	private boolean myShowTurtle;
-	
 	private double myInitX;
 	private double myInitY;
 	private String myInitImage;
-	
 	private LineDrawer myDrawer;
-	
 	private boolean isActive;
+	private int myID;
 	
-	public Turtle(Canvas canvas){
-		this(TURTLE_DEFAULT_X, TURTLE_DEFAULT_Y, TURTLE_DEFAULT_IMAGE, canvas);
+	public Turtle(Canvas canvas, int id){
+		this(TURTLE_DEFAULT_X, TURTLE_DEFAULT_Y, TURTLE_DEFAULT_IMAGE, canvas, id);
 	}
 	
 	
-	public Turtle(double startX, double startY, String startImage, Canvas canvas){
+	public Turtle(double startX, double startY, String startImage, Canvas canvas, int id){
 		myX = startX;
 		myY = startY;
 		myCanvas = canvas;
@@ -68,6 +71,8 @@ public class Turtle {
 		myDirection = 90; //START FACING UP
 		
 		isActive = true;
+		
+		myID = id; 
 		
 		Image image = new Image(getClass().getResourceAsStream("../" + startImage));
         myImage = new ImageView();
@@ -198,8 +203,7 @@ public class Turtle {
 		myShowTurtle = false;
 		myContainer.setVisible(myShowTurtle);
 	}
-	
-	
+		
 	public Pen getPen(){
 		return myPen;
 	}
@@ -225,4 +229,8 @@ public class Turtle {
 		handleActiveOutline();
 	}
 
+	public int getID()
+	{
+		return myID;
+	}
 }

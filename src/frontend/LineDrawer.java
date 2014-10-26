@@ -2,10 +2,18 @@ package frontend;
 
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
-import static frontend.SLogoTab.CANVAS_HEIGHT;
-import static frontend.SLogoTab.CANVAS_WIDTH;
+import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
+import static frontend.SLogoWorkspace.CANVAS_WIDTH;
 import static frontend.Turtle.DEGREES_TO_RADIANS_FACTOR;
 
+/**
+ * This class contains the ability to draw lines on the canvas
+ * by calling on the Pen object.
+ * 
+ * @author Chris Bernt
+ * @author Sakfat Islam
+ *
+ */
 public class LineDrawer {
 	
 	private Turtle myTurtle;
@@ -15,6 +23,12 @@ public class LineDrawer {
 	private Pen myPen;
 	private Pane myPane;
 	
+	/**
+	 * Constructor.
+	 * 
+	 * @param turtle The turtle that needs to draw a line.
+	 * @param pane The pane on which to draw the line.
+	 */
 	public LineDrawer(Turtle turtle, Pane pane){
 		myTurtle = turtle;
 		this.myX = myTurtle.getX();
@@ -27,8 +41,11 @@ public class LineDrawer {
 	
 	/**
 	 * Draws the necessary lines and returns new (myX, myY) Point2D.
-	 * @param oldPosition
-	 * @return
+	 * Also handles edge cases (as in when the turtle goes off the edge
+	 * of the canvas, the proper lines are drawn and position updated).
+	 * 
+	 * @param oldPosition The position of the turtle when this is called.
+	 * @return The turtle's new position.
 	 */
 	public Point2D draw(Point2D oldPosition) {
 
@@ -73,6 +90,12 @@ public class LineDrawer {
 		return new Point2D(myX, myY);
 	}
 
+	/**
+	 * Draws a line on the canvas between two points.
+	 * 
+	 * @param oldPos Point2D representing first point of a line.
+	 * @param newPos Point2D representing second point of a line.
+	 */
 	private void makeLine(Point2D oldPos, Point2D newPos) {
 		myPen.drawLine(oldPos, newPos, myPane);
 	}

@@ -17,9 +17,9 @@ public class CommandsWindow extends GUIFeatureWithUpdateableScrollPane {
 		//very similar to other updateable panes, will be refactored
 		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionNodeMap();
 		
-		String finalOutput = "Functions \n";
+		String finalOutput = "\t Functions \n";
 		for(String s : myFunctions.keySet()){
-			finalOutput += "\t" + s.toLowerCase() + "\n";
+			finalOutput += s.toLowerCase() + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");

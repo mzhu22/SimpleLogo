@@ -10,6 +10,15 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
+/**
+ * This class represents a pen which contains information
+ * about the color, style, and width and has the ability
+ * to directly draw on a canvas.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class Pen {
 	
 	private Color myLineColor;
@@ -28,6 +37,14 @@ public class Pen {
 	public static final String DEFAULT_LINE_STYLE = "Solid";		
 			
 			
+	/**
+	 * Constructor.
+	 * 
+	 * @param initColor The initial color of the pen.
+	 * @param initWidth The initial width of the pen.
+	 * @param initIsDown The initial value of whether the pen is down.
+	 * @param initStyle The initial style value of the pen.
+	 */
 	public Pen(Color initColor, double initWidth, boolean initIsDown, String initStyle){
 	
 		myIsPenDown = initIsDown;
@@ -43,6 +60,12 @@ public class Pen {
 		}
 	}
 	
+	/**
+	 * Constructor.
+	 * 
+	 * Default pen constructor.
+	 * 
+	 */
 	public Pen()
 	{
 		this(DEFAULT_LINE_COLOR, DEFAULT_LINE_WIDTH, true, DEFAULT_LINE_STYLE);
@@ -84,16 +107,33 @@ public class Pen {
 		myLineWidth = width;
 	}
 	
+	/**
+	 * Sets the style of the pen.
+	 * 
+	 * @param style Style of the pen.
+	 */
 	public void setLineStyle(String style){
 		myLineStyle = style;
 	}
 	
+	/**
+	 * Sets the pen down.
+	 */
 	public void penUp(){
 		myIsPenDown = false;
 	}
+	
+	/**
+	 * Sets the pen up.
+	 */
 	public void penDown(){
 		myIsPenDown = true;
 	}
+	
+	/**
+	 * Checks whether the pen is down.
+	 * @return Whether the pen is down.
+	 */
 	public boolean isPenDown(){
 		return myIsPenDown; 
 	}

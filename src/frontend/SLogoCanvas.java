@@ -1,10 +1,3 @@
-/**
- * This class represents the field where the turtle can be and where the lines are drawn.
- * 
- * @author Safkat Islam
- * @author Chris Bernt
- */
-
 package frontend;
 
 import java.util.ArrayList;
@@ -20,8 +13,14 @@ import javafx.scene.layout.RowConstraints;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
-import static frontend.SLogoTab.GUI_PREFERENCES;
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 
+/**
+ * This class represents the field where the turtle can be and where the lines are drawn.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ */
 public class SLogoCanvas extends Canvas {
 
 	private Pane myHolder;
@@ -30,6 +29,7 @@ public class SLogoCanvas extends Canvas {
 	private List<Color> myColors;
 	
 	private static final int SPACE_BETWEEN_GRID_LINES = 10;
+	
 	/**
 	 * Constructor. 
 	 * 
@@ -76,6 +76,10 @@ public class SLogoCanvas extends Canvas {
 	
 	}
 	
+	/**
+	 * Removes all objects of this type from the canvas.
+	 * @param o The object to represent the type to remove.
+	 */
 	public void removeObjects(Object o){
 		this.getHolder().getChildren().removeIf(new Predicate<Object>(){
 			@Override
@@ -85,6 +89,10 @@ public class SLogoCanvas extends Canvas {
 		});
 	}
 	
+	/**
+	 * Takes the resource bundle and sets up the 
+	 * initial color list to grab from SLogo commands.
+	 */
 	public void setUpColorPalette(){
 		String[] colors = GUI_PREFERENCES.getString("StartingPalettes").split(";");
 		for(String s : colors){
@@ -97,30 +105,63 @@ public class SLogoCanvas extends Canvas {
 		}
 	}
 	
+	/**
+	 * Changes the canvas's background.
+	 * 
+	 * @param c The color to change the background to.
+	 */
 	public void changeBackground(Color c){
 		myBackground.setFill(c);
 	}
 	
+	/**
+	 * Changes the canvas's background.
+	 * 
+	 * @param index The index of the palette list from which to grab the color to change the background to.
+	 */
 	public void changeBackground(int index)
 	{
 		this.myBackground.setFill(this.getColor(index));
 	}
 	
+	/**
+	 * Adds a color specified by the given r,g,b values to
+	 * this particular index in the color list.
+	 * 
+	 * @param index The index at which to add this particular color in the palette.
+	 * @param r The red value 0-255.
+	 * @param g The green value 0-255.
+	 * @param b The blue value 0-255.
+	 */
 	public void addColor(double index, int r, int g, int b)
 	{
 		myColors.add((int) index, Color.rgb(r, g, b));
 	}
 	
+	/**
+	 * Gets the color at the index in the palette.
+	 * 
+	 * @param index The index from which to get the color in the palette.
+	 * @return The color at the given index.
+	 */
 	public Color getColor(int index)
 	{
 		return this.myColors.get(index);
 	}
 	
+	/**
+	 * Gets the holder (pane) that the canvas is in.
+	 * 
+	 * @return The pane the canvas is in.
+	 */
 	public Pane getHolder()
 	{
 		return myHolder;
 	}
 	
+	/**
+	 * Toggles whether the grid lines are displayed.
+	 */
 	public void toggleGridLines(){
 		this.myGrid.setGridLinesVisible(!this.myGrid.isGridLinesVisible());
 	}

@@ -11,22 +11,34 @@ import java.util.Map;
 import javafx.scene.canvas.Canvas;
 import errorsAndExceptions.SLogoException;
 
+/**
+ * A class representing a wrapper for a collection of turtles.
+ * Only allows specific things to be done, including iterating over it, 
+ * adding a turtle, and setting new turtles.
+ * 
+ * @author Chris Bernt
+ * @author Safkat Islam
+ *
+ */
 public class TurtleCollection implements Iterable<Turtle>{
 
-	private Map<Integer, Turtle> myTurtles;	
-	
-	private List<Turtle> myActiveTurtles;	
-	
+	private Map<Integer, Turtle> myTurtles;	//Maps ID to a turtle
+	private List<Turtle> myActiveTurtles;	//has active turtles 
 	private Canvas myCanvas;
 	
+	/**
+	 * Constructor. Also sets up the turtles map and active turtles list.
+	 * 
+	 * @param turtles The initial list of turtles to be in this collection.
+	 * @param canvas The canvas the turtles are added to.
+	 */
 	public TurtleCollection (List<Turtle> turtles, Canvas canvas){
 		myCanvas = canvas;
-		
 		myTurtles = new HashMap<Integer, Turtle>();
 		myActiveTurtles = new ArrayList<Turtle>();
 		for(int i = 0; i < turtles.size(); i++){
 			Turtle t = turtles.get(i);
-			myTurtles.put(i, t);
+			myTurtles.put(t.getID(), t);
 			if(t.getIsActive())
 			{
 				myActiveTurtles.add(t);
@@ -34,7 +46,14 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
-	public Turtle getLastActiveTurtle()
+	/**
+	 * Gets the last active turtle for queries.
+	 * Throws a SLogoException is there are 
+	 * no active turtles.
+	 * 
+	 * @return The last active turtle.
+	 */
+	public Turtle getLastActiveTurtle() throws SLogoException
 	{
 		try
 		{
@@ -48,15 +67,12 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
-	public void setActiveTurtles(){
-		myActiveTurtles = new ArrayList<Turtle>();
-		for(Integer i : myTurtles.keySet()){
-			if(myTurtles.get(i).getIsActive()){
-				myActiveTurtles.add(myTurtles.get(i));
-			}
-		}
-	}
-	
+	/**
+	 * Adds a turtle to the turtle map 
+	 * and to the active list if it is active.
+	 * 
+	 * @param t The turtle to be added.
+	 */
 	public void addTurtle(Turtle t){
 		myTurtles.put(myTurtles.size(), t);
 		if(t.getIsActive())
@@ -65,6 +81,12 @@ public class TurtleCollection implements Iterable<Turtle>{
 		}
 	}
 	
+	/**
+	 * Takes a list of turtles and makes these, and only
+	 * these, active. Used with Tell.
+	 * 
+	 * @param turtles List of turtles to be added as active.
+	 */
 	public void setActiveTurtles(List<Integer> turtles){
 		for(Turtle t : myActiveTurtles)
 		{
@@ -81,13 +103,31 @@ public class TurtleCollection implements Iterable<Turtle>{
 			}
 			else
 			{
-				t = new Turtle(myCanvas);
-				myTurtles.put(i, t);
+				t = new Turtle(myCanvas, i);
+				myTurtles.put(t.getID(), t);
 			}
 			myActiveTurtles.add(t);
 		}
 	}
 	
+	
+	/**
+	 * Manually sets the active turtle list
+	 * based on the current turtle map. Used after a user
+	 * clicks on turtles to toggle their activeness.
+	 */
+	public void setActiveTurtles(){
+		myActiveTurtles = new ArrayList<Turtle>();
+		for(Integer i : myTurtles.keySet()){
+			if(myTurtles.get(i).getIsActive()){
+				myActiveTurtles.add(myTurtles.get(i));
+			}
+		}
+	}
+	
+	/**
+	 * Iterator that iterates only the active turtles.
+	 */
 	@Override
 	public Iterator<Turtle> iterator() {
 		return new Iterator<Turtle>(){
@@ -108,6 +148,10 @@ public class TurtleCollection implements Iterable<Turtle>{
 		};
 	}
 	
+	/**
+	 * Gets the canvas turtles are added to. 
+	 * @return The canvas turtles are added to.
+	 */
 	public SLogoCanvas getCanvas(){
 		return (SLogoCanvas) myCanvas;
 	}

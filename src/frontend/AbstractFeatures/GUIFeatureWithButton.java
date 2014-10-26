@@ -3,6 +3,7 @@
  * 
  * @author Chris Bernt
  * @author Safkat Islam
+ * 
  */
 package frontend.AbstractFeatures;
 

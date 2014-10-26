@@ -16,10 +16,10 @@ public class HistoryWindow extends GUIFeatureWithUpdateableScrollPane{
 
 	@Override
 	public void updatePane() {
-		String finalOutput = "History \n";
+		String finalOutput = "\t History \n";
 		for(String s : this.myHistoryCollection)
 		{
-			finalOutput +=  "\t" + s + "\n";
+			finalOutput +=  s + "\n";
 		}
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");

@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import frontend.GUIMaker;
-import static frontend.SLogoTab.GUI_NAMES;
+import static frontend.SLogoWorkspace.GUI_NAMES;
 
 public class Initializer extends Application {
     private GUIMaker myMaker;

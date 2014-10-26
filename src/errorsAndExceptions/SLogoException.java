@@ -1,12 +1,12 @@
+package errorsAndExceptions;
+
 /**
  * This class is to represent the error that should be thrown if something goes wrong.
  * 
  * @author Chris Bernt
  * @author Safkat Islam
+ * @author Robert Duvall
  */
-
-package errorsAndExceptions;
-
 public class SLogoException extends RuntimeException {
 	
 	// for serialization

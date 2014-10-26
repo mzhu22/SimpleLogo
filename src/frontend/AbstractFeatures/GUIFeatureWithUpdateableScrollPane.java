@@ -1,14 +1,14 @@
+package frontend.AbstractFeatures;
+
+import javafx.scene.Group;
+import javafx.scene.control.ScrollPane;
+
 /**
  * This class represents a GUIFeature that uses a ScrollPane to display information.
  * 
  * @author Chris Bernt
  * @author Safkat Islam
  */
-package frontend.AbstractFeatures;
-
-import javafx.scene.Group;
-import javafx.scene.control.ScrollPane;
-
 public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 
 	private double myWidth;
@@ -16,8 +16,9 @@ public abstract class GUIFeatureWithUpdateableScrollPane extends GUIFeature {
 	protected ScrollPane myWindow;
 	
 	/**
-	 * @see GUIFeature#GUIFeature(double, double)
+	 * Constructor.
 	 * 
+	 * @see GUIFeature#GUIFeature(double, double)
 	 * @param width The width of the ScrollPane.
 	 * @param height The height of the ScrollPane.
 	 */

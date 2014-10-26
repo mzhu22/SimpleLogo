@@ -1,3 +1,7 @@
+package frontend.AbstractFeatures;
+
+import javafx.scene.Group;
+
 /**
  * This abstract class represents any sort of interaction tool that the user may have to deal with.
  * An example of this is a button or a drop down menu.
@@ -5,11 +9,6 @@
  * @author Chris Bernt
  * @author Safkat Islam
  */
-
-package frontend.AbstractFeatures;
-
-import javafx.scene.Group;
-
 public abstract class GUIFeature {
 	
 	protected double myX;
@@ -17,6 +16,7 @@ public abstract class GUIFeature {
 	
 	/**
 	 * Constructor.
+	 * 
 	 * @param x The x-coordinate of the tool on the screen.
 	 * @param y The y-coordinate of the tool on the screen.
 	 */
@@ -32,6 +32,7 @@ public abstract class GUIFeature {
 	
 	/**
 	 * Creates the graphical representation of the GUIFeature.
+	 * 
 	 * @return The JavaFX Node object that is the graphical representation and that the user interacts with.
 	 */
 	public abstract Group makeTool();

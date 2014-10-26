@@ -1,3 +1,8 @@
+package frontend.AbstractFeatures;
+
+import javafx.scene.Group;
+import javafx.scene.control.Button;
+
 /**
  * This class represents a GUIFeature that uses a button to interact.
  * 
@@ -5,11 +10,6 @@
  * @author Safkat Islam
  * 
  */
-package frontend.AbstractFeatures;
-
-import javafx.scene.Group;
-import javafx.scene.control.Button;
-
 public abstract class GUIFeatureWithButton extends GUIFeature {
 
 	private String myName;
@@ -17,8 +17,9 @@ public abstract class GUIFeatureWithButton extends GUIFeature {
 	public final static int BUTTON_HEIGHT = 25;
 	
 	/**
-	 * @see GUIFeature#GUIFeature(double, double)
+	 * Constructor.
 	 * 
+	 * @see GUIFeature#GUIFeature(double, double) 
 	 * @param buttonName String for the button.
 	 */
 	public GUIFeatureWithButton(double x, double y, String buttonName) {

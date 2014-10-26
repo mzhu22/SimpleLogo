@@ -3,10 +3,10 @@ package displayCommands;
 import java.util.ArrayList;
 import java.util.List;
 
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 
 public class Tell extends DisplayNode{
 	

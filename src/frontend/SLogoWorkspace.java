@@ -8,6 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
+import turtleClasses.TurtleKeyHandler;
+import turtleClasses.TurtleMover;
 import javafx.scene.Group;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Tab;
@@ -48,6 +52,11 @@ import frontend.ConcreteFeatures.TurtleStatsWindow;
  */
 public class SLogoWorkspace {
 
+	private static final int LINE_WIDTH_TEXT_BOX_HEIGHT = 10;
+	private static final int CANVAS_OFFSET = 10;
+	private static final int PANE_HEIGHT = 100;
+	private static final int PANE_WIDTH = 200;
+	private static final int TEXT_BOX_WIDTH = 100;
 	public static final int CANVAS_WIDTH = 500;
 	public static final int CANVAS_HEIGHT = 500;
 	private double myWidth;
@@ -95,15 +104,16 @@ public class SLogoWorkspace {
 		myTranslator = new Translator();
 		myHistory = new HistoryCollection();
 		
+		double pane_x = button_x - 200;
 		/**
 		 * A List of panes with updateable information.
 		 */
 		List<SLogoScrollPane> updateables = new ArrayList<SLogoScrollPane>(
 				Arrays.asList(
-						new CurrentVariablesWindow(button_x - 200, 0, 200, 100),
-						new TurtleStatsWindow(button_x - 200, 250, 200, 100, myTurtleCollection),
-						new CommandsWindow(button_x - 200, 350, 200, 100),
-						new HistoryWindow(button_x - 200, 450, 200, 100, myHistory)
+						new CurrentVariablesWindow(pane_x, 0, PANE_WIDTH, PANE_HEIGHT),
+						new TurtleStatsWindow(pane_x, 250, PANE_WIDTH, PANE_HEIGHT, myTurtleCollection),
+						new CommandsWindow(pane_x, 350, PANE_WIDTH, PANE_HEIGHT),
+						new HistoryWindow(pane_x, 450, PANE_WIDTH, PANE_HEIGHT, myHistory)
 						
 					)
 				);
@@ -116,12 +126,12 @@ public class SLogoWorkspace {
 		startingFeatures = new ArrayList<GUIFeature>(
 				Arrays.asList(
 						new SLogoColorPicker(button_x, BUTTON_HEIGHT*0, myColorPicker),
-						new CommandExecuter(0, myCanvas.getHeight() + 10, myCanvas.getWidth() - BUTTON_WIDTH, 100, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator, myHistory),
+						new CommandExecuter(0, myCanvas.getHeight() + CANVAS_OFFSET, myCanvas.getWidth() - BUTTON_WIDTH, TEXT_BOX_WIDTH, myMover, GUI_NAMES.getString("Run"), GUI_NAMES.getString("InputPrompt"), myPaneUpdater, myTranslator, myHistory),
 						new Quit(button_x, BUTTON_HEIGHT*1, GUI_NAMES.getString("Quit")),
 						new ChangeBackground(button_x, BUTTON_HEIGHT*2, GUI_NAMES.getString("ChangeBG"), myCanvas, myColorPicker),
 						new Help(button_x, BUTTON_HEIGHT*3, GUI_NAMES.getString("Help")),
 						new SetLineColor(button_x, BUTTON_HEIGHT*4, GUI_NAMES.getString("ChangeLC"), myTurtleCollection, myColorPicker),
-						new ChangeLineWidth(button_x -100 , BUTTON_HEIGHT*8, 100, 10, myTurtleCollection, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
+						new ChangeLineWidth(button_x - TEXT_BOX_WIDTH , BUTTON_HEIGHT*8, TEXT_BOX_WIDTH, LINE_WIDTH_TEXT_BOX_HEIGHT, myTurtleCollection, GUI_NAMES.getString("ChangeLW"), GUI_NAMES.getString("LWPromptText")),
 						new ClearCanvas(button_x, BUTTON_HEIGHT*5, GUI_NAMES.getString("Clear"), myCanvas),
 						new ToggleGridLines(button_x, BUTTON_HEIGHT*6, GUI_NAMES.getString("ToggleGrid"), myCanvas),
 						new Reset(button_x, BUTTON_HEIGHT*7, GUI_NAMES.getString("Reset"), myCanvas, myTurtleCollection, myPaneUpdater),
@@ -129,10 +139,10 @@ public class SLogoWorkspace {
 						new ChooseImage(button_x, BUTTON_HEIGHT*10, GUI_NAMES.getString("SelectImage"), myTurtleCollection),
 						new ChooseLineStyle(button_x, BUTTON_HEIGHT*11, GUI_NAMES.getString("SelectLS"), myTurtleCollection),
 						new AddWorkspaceButton(button_x, BUTTON_HEIGHT*12, GUI_NAMES.getString("AddWorkspace"), myTabPane),
-						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, "Choose Coding Language", myTranslator),
-						new LoadSLogoFile(button_x, BUTTON_HEIGHT*14, "Load SLogoFile", myMover, myPaneUpdater, myTranslator),
-						new LoadVariablesButton(button_x, BUTTON_HEIGHT*15, "Load Variables"),
-						new SaveVariablesButton(button_x, BUTTON_HEIGHT*16, "Save Variables")
+						new ChangeCodingLanguage(button_x, BUTTON_HEIGHT*13, GUI_NAMES.getString("ChooseLang"), myTranslator),
+						new LoadSLogoFile(button_x, BUTTON_HEIGHT*14, GUI_NAMES.getString("LoadSLogoFile"), myMover, myPaneUpdater, myTranslator),
+						new LoadVariablesButton(button_x, BUTTON_HEIGHT*15, GUI_NAMES.getString("LoadVars")),
+						new SaveVariablesButton(button_x, BUTTON_HEIGHT*16, GUI_NAMES.getString("SaveVars"))
 					)
 				);
 		
@@ -153,7 +163,7 @@ public class SLogoWorkspace {
 
 		myRoot.addEventHandler(KeyEvent.KEY_PRESSED, new TurtleKeyHandler(myMover, myPaneUpdater));
 
-		String tabTitle = "Workspace" + " " + numTab;
+		String tabTitle = GUI_NAMES.getString("Workspace") + " " + numTab;
 		Tab tab = new Tab(tabTitle);
 		tab.setContent(myRoot);
 

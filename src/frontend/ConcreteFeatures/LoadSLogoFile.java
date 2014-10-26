@@ -6,12 +6,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
+import turtleClasses.TurtleMover;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import SLogoControllers.InputController;
 import frontend.PaneUpdater;
 import frontend.Translator;
-import frontend.TurtleMover;
 import frontend.AbstractFeatures.SLogoButton;
 
 /**

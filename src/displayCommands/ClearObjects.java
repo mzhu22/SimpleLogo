@@ -1,7 +1,7 @@
 package displayCommands;
 
-import frontend.Turtle;
-import frontend.TurtleCollection;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 
 public class ClearObjects extends DisplayNode {
 

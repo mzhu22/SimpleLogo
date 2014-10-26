@@ -5,9 +5,9 @@ import static frontend.GUIMaker.EPU;
 import java.util.EmptyStackException;
 import java.util.Stack;
 
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import expressionTree.ExpressionNode;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 
 public class SetPalette extends DisplayNode {
 

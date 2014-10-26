@@ -1,7 +1,7 @@
-package frontend;
+package turtleClasses;
 
-import static frontend.Turtle.IMAGE_HEIGHT;
-import static frontend.Turtle.IMAGE_WIDTH;
+import static turtleClasses.Turtle.IMAGE_HEIGHT;
+import static turtleClasses.Turtle.IMAGE_WIDTH;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
  * @author Safkat Islam
  *
  */
-public class Stamp extends ImageView{
+public class TurtleStamp extends ImageView{
 
 	/**
 	 * 
@@ -31,7 +31,7 @@ public class Stamp extends ImageView{
 	 * @param direction The direction of the stamp.
 	 * @param im The image of the stamp.
 	 */
-	public Stamp(double x, double y, double direction, Image im){
+	public TurtleStamp(double x, double y, double direction, Image im){
 		super(im);
 		this.setX(x - IMAGE_WIDTH/2);
 		this.setY(y - IMAGE_HEIGHT/2);
@@ -45,7 +45,7 @@ public class Stamp extends ImageView{
 	 * constructor in order to get a class type in the ClearStamps
 	 * command.
 	 */
-	public Stamp() {
+	public TurtleStamp() {
 		//Intentionally left blank.
 	}
 }

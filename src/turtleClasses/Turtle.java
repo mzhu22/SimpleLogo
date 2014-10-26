@@ -1,7 +1,10 @@
-package frontend;
+package turtleClasses;
 
 import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
 import static frontend.SLogoWorkspace.CANVAS_WIDTH;
+import frontend.LineDrawer;
+import frontend.Pen;
+import frontend.SLogoCanvas;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
@@ -200,7 +203,7 @@ public class Turtle {
 	 * Places a stamp of the turtle on the canvas.
 	 */
 	public void stamp(){
-		Stamp stamp = new Stamp(myX, myY, myDirection,  myImage.getImage());
+		TurtleStamp stamp = new TurtleStamp(myX, myY, myDirection,  myImage.getImage());
 		((SLogoCanvas) myCanvas).getHolder().getChildren().add(stamp);
 		
 	}

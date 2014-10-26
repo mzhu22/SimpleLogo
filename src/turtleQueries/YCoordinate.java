@@ -1,6 +1,6 @@
 package turtleQueries;
 
-import frontend.TurtleSnapshot;
+import turtleClasses.TurtleSnapshot;
 
 public class YCoordinate  extends TurtleQuery {
 

@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import expressionTree.VariableNodeMap;
+import static frontend.SLogoWorkspace.GUI_NAMES;
 import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
@@ -18,7 +19,7 @@ public class CurrentVariablesWindow extends SLogoScrollPane{
 	 * @see SLogoScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
 	 */
 	public CurrentVariablesWindow(double x, double y, double width, double height) {
-		super(x, y, width, height, "\t Variables \n");
+		super(x, y, width, height, "\t" + GUI_NAMES.getString("Variables") + "\n");
 	}
 
 	/**
@@ -28,6 +29,7 @@ public class CurrentVariablesWindow extends SLogoScrollPane{
 	 */
 	@Override
 	public void updatePane() {
+		finalOutput = initialString;
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 		
 		for(String s : myVariables.keySet()){

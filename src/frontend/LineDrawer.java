@@ -2,7 +2,8 @@ package frontend;
 
 import static frontend.SLogoWorkspace.CANVAS_HEIGHT;
 import static frontend.SLogoWorkspace.CANVAS_WIDTH;
-import static frontend.Turtle.DEGREES_TO_RADIANS_FACTOR;
+import static turtleClasses.Turtle.DEGREES_TO_RADIANS_FACTOR;
+import turtleClasses.Turtle;
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 

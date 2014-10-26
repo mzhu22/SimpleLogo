@@ -1,8 +1,8 @@
 package frontend.ConcreteFeatures;
 
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import javafx.scene.control.ColorPicker;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 import frontend.AbstractFeatures.SLogoButton;
 
 /**

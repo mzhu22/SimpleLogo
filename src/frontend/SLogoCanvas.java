@@ -28,7 +28,7 @@ public class SLogoCanvas extends Canvas {
 	private List<Color> myColors;
 	
 	private static final int SPACE_BETWEEN_GRID_LINES = 10;
-	public static final Color START_COLOR = Color.WHITE;
+	public static final Color START_COLOR = Color.web(GUI_PREFERENCES.getString("CanvasBackgroundColor"));
 	
 	/**
 	 * Constructor. 

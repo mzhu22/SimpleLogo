@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import javafx.scene.Group;
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 import javafx.scene.Scene;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -18,7 +19,7 @@ public class Help extends SLogoButton {
 
 	private final static int WIDTH = 800;
 	private final static int HEIGHT = 600;
-	private final static String DEFAULT_ADDRESS = "http://www.cs.duke.edu/courses/compsci308/current/assign/03_slogo/commands.php";
+	private final static String DEFAULT_ADDRESS = GUI_PREFERENCES.getString("HelpAddress");
 	private final static String TITLE = "Help Page";
 	private String myWebAddress;
 	

@@ -1,12 +1,12 @@
 package frontend.ConcreteFeatures;
 
 import static frontend.GUIMaker.EPU;
+import turtleClasses.TurtleMover;
 import javafx.scene.control.TextArea;
 import SLogoControllers.InputController;
 import expressionTree.HistoryCollection;
 import frontend.PaneUpdater;
 import frontend.Translator;
-import frontend.TurtleMover;
 import frontend.AbstractFeatures.SLogoTextBox;
 
 /**

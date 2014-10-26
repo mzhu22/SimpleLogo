@@ -1,10 +1,9 @@
 package frontend;
 
 import static frontend.GUIMaker.EPU;
-
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 import java.util.HashMap;
 import java.util.Map;
-
 import javafx.geometry.Point2D;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -36,9 +35,9 @@ public class Pen {
 				put("Solid", Double.MAX_VALUE);
 			}};
 	
-	public static final Color DEFAULT_LINE_COLOR = Color.BLACK;
-	public static final double DEFAULT_LINE_WIDTH = 1;
-	public static final String DEFAULT_LINE_STYLE = "Solid";		
+	public static final Color DEFAULT_LINE_COLOR = Color.web(GUI_PREFERENCES.getString("LineColor"));
+	public static final double DEFAULT_LINE_WIDTH = Double.parseDouble(GUI_PREFERENCES.getString("LineWidth"));
+	public static final String DEFAULT_LINE_STYLE = GUI_PREFERENCES.getString("LineStyle");		
 			
 			
 	/**

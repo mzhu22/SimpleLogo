@@ -1,7 +1,7 @@
 package frontend.ConcreteFeatures;
 
-import frontend.Turtle;
-import frontend.TurtleCollection;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import frontend.AbstractFeatures.SLogoDropDown;
 
 /**

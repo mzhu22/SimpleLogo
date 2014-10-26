@@ -1,10 +1,10 @@
 package frontend.ConcreteFeatures;
 
 import static frontend.SLogoCanvas.START_COLOR;
+import turtleClasses.TurtleStamp;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.shape.Line;
 import frontend.SLogoCanvas;
-import frontend.Stamp;
 import frontend.AbstractFeatures.SLogoButton;
 
 /**
@@ -38,7 +38,7 @@ public class ClearCanvas extends SLogoButton {
 	public void action() {
 		((SLogoCanvas) myCanvas).changeBackground(START_COLOR);
 		((SLogoCanvas)myCanvas).removeObjects(new Line());
-		((SLogoCanvas)myCanvas).removeObjects(new Stamp());
+		((SLogoCanvas)myCanvas).removeObjects(new TurtleStamp());
 
 	}
 

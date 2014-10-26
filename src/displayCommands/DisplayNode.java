@@ -1,8 +1,8 @@
 package displayCommands;
 
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import expressionTree.ExpressionNode;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 
 /**
  * Superclass for all instructions that are sent to the frontend and run to move the

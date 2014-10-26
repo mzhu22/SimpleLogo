@@ -4,8 +4,8 @@ package controlStructures;
 import java.util.ArrayList;
 import java.util.List;
 
+import turtleClasses.Turtle;
 import displayCommands.DisplayNode;
-import frontend.Turtle;
 
 /**
  * Used to enable repeat instructions and for loops. Repeat simply holds subsequent 

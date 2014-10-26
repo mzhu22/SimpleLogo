@@ -1,7 +1,7 @@
 package frontend.ConcreteFeatures;
 
-import frontend.Turtle;
-import frontend.TurtleCollection;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import frontend.AbstractFeatures.SLogoDropDown;
 
 public abstract class TurtleChanger extends SLogoDropDown {
@@ -23,6 +23,7 @@ public abstract class TurtleChanger extends SLogoDropDown {
 	 */
 	public void doDropDownClickAction(String chosen)
 	{
+		myTurtleCollection.setActiveTurtles();
 		for(Turtle t : myTurtleCollection)
 		{
 			doAction(t, chosen);

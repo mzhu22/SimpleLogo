@@ -1,6 +1,7 @@
 package main;
 
 import static frontend.SLogoWorkspace.GUI_NAMES;
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
@@ -33,7 +34,7 @@ public class Initializer extends Application {
         myMaker = new GUIMaker(guiWidth, guiHeight);
         
         Scene scene = myMaker.make(s);
-        scene.setFill(Color.LIGHTGRAY);
+        scene.setFill(Color.web(GUI_PREFERENCES.getString("BackgroundColor")));
         s.setScene(scene);
         s.show();
         

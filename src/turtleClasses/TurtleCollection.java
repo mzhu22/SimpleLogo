@@ -1,4 +1,4 @@
-package frontend;
+package turtleClasses;
 
 import static frontend.GUIMaker.EPU;
 
@@ -10,6 +10,7 @@ import java.util.Map;
 
 import javafx.scene.canvas.Canvas;
 import errorsAndExceptions.SLogoException;
+import frontend.SLogoCanvas;
 
 /**
  * A class representing a wrapper for a collection of turtles.

@@ -2,7 +2,7 @@ package displayCommands;
 
 import static frontend.GUIMaker.EPU;
 import static frontend.SLogoWorkspace.IMAGE_LIST;
-import frontend.Turtle;
+import turtleClasses.Turtle;
 
 public class SetShape extends DisplayNode{
 

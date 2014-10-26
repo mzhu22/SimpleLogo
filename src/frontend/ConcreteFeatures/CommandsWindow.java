@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import expressionTree.UserFunctionMap;
+import static frontend.SLogoWorkspace.GUI_NAMES;
 import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
@@ -19,7 +20,7 @@ public class CommandsWindow extends SLogoScrollPane {
 	 * @see SLogoScrollPane#GUIFeatureWithUpdateableScrollPane(double, double, double, double)
 	 */
 	public CommandsWindow(double x, double y, double width, double height) {
-		super(x, y, width, height, "\t Functions \n");
+		super(x, y, width, height, "\t" + GUI_NAMES.getString("Commands") + "\n");
 	}
 
 	/**
@@ -29,6 +30,7 @@ public class CommandsWindow extends SLogoScrollPane {
 	 */
 	@Override
 	public void updatePane() {
+		finalOutput = initialString;
 		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionMap();
 		for(String s : myFunctions.keySet()){
 			finalOutput += s.toLowerCase() + "\n";

@@ -1,6 +1,7 @@
 package frontend;
 
 import java.util.HashMap;
+import static frontend.SLogoWorkspace.GUI_PREFERENCES;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -15,8 +16,7 @@ import java.util.ResourceBundle;
  */
 public class Translator {
 	
-	// 'MURICA!
-	public static final String DEFAULT_BUNDLE = "resources.languages/English";
+	public static final String DEFAULT_BUNDLE = "resources.languages/" + GUI_PREFERENCES.getString("StartingLanguage");
 	private static final String START_TO_BUNDLE = "resources.languages/";
 	
 	private ResourceBundle myLanguage;

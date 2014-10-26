@@ -1,10 +1,10 @@
 package displayCommands;
 
-import frontend.Stamp;
+import turtleClasses.TurtleStamp;
 
 public class ClearStamps extends ClearObjects{
 
 	public ClearStamps() {
-		super(new Stamp());
+		super(new TurtleStamp());
 	}
 }

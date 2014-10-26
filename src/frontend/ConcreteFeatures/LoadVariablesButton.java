@@ -23,7 +23,6 @@ public class LoadVariablesButton extends SLogoButton {
 
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
 		CustomReaderWriter writer = new CustomReaderWriter();
 		try {
 			writer.readFromFile();

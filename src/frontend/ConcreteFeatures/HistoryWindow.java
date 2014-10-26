@@ -1,6 +1,7 @@
 package frontend.ConcreteFeatures;
 
 import expressionTree.HistoryCollection;
+import static frontend.SLogoWorkspace.GUI_NAMES;
 import frontend.AbstractFeatures.SLogoScrollPane;
 
 /**
@@ -21,7 +22,7 @@ public class HistoryWindow extends SLogoScrollPane{
 	 * @param hc The HistoryCollection to grab the history from.
 	 */
 	public HistoryWindow(double x, double y, double width, double height, HistoryCollection hc) {
-		super(x, y, width, height,"\t History \n");
+		super(x, y, width, height,"\t" + GUI_NAMES.getString("History") + "\n");
 		this.myHistoryCollection = hc;
 	}
 
@@ -31,6 +32,7 @@ public class HistoryWindow extends SLogoScrollPane{
 	 */
 	@Override
 	public void updatePane() {
+		finalOutput = initialString;
 		for(String s : this.myHistoryCollection)
 		{
 			finalOutput +=  s + "\n";

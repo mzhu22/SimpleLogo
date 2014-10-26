@@ -1,9 +1,9 @@
 package frontend.ConcreteFeatures;
 
 import static frontend.GUIMaker.EPU;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import javafx.scene.control.TextField;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 import frontend.AbstractFeatures.SLogoTextBox;
 
 /**

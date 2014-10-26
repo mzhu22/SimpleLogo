@@ -3,12 +3,12 @@ package frontend.ConcreteFeatures;
 import static frontend.Pen.DEFAULT_LINE_COLOR;
 import static frontend.Pen.DEFAULT_LINE_STYLE;
 import static frontend.Pen.DEFAULT_LINE_WIDTH;
-import static frontend.Turtle.TURTLE_DEFAULT_DIRECTION;
+import static turtleClasses.Turtle.TURTLE_DEFAULT_DIRECTION;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import javafx.scene.canvas.Canvas;
 import frontend.PaneUpdater;
 import frontend.Pen;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 
 /**
  * This class represents a button that allows

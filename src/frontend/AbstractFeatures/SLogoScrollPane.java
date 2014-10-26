@@ -16,6 +16,7 @@ public abstract class SLogoScrollPane extends GUIFeature {
 	private double myHeight;
 	protected ScrollPane myWindow;
 	protected String finalOutput;
+	protected String initialString;
 	
 	/**
 	 * Constructor.
@@ -30,6 +31,7 @@ public abstract class SLogoScrollPane extends GUIFeature {
 		myWidth = width;
 		myHeight = height;
 		finalOutput = s;
+		initialString = s;
 	}
 
 	/**
@@ -37,7 +39,6 @@ public abstract class SLogoScrollPane extends GUIFeature {
 	 */
 	@Override
 	public void action() {
-		// TODO Auto-generated method stub
 
 	}
 

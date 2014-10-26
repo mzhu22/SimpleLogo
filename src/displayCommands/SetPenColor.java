@@ -1,9 +1,9 @@
 package displayCommands;
 
 import static frontend.GUIMaker.EPU;
+import turtleClasses.Turtle;
+import turtleClasses.TurtleCollection;
 import javafx.scene.paint.Color;
-import frontend.Turtle;
-import frontend.TurtleCollection;
 
 
 public class SetPenColor extends DisplayNode {

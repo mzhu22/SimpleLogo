@@ -1,8 +1,9 @@
-package frontend;
+package turtleClasses;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import frontend.PaneUpdater;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;

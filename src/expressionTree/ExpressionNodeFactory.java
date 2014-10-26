@@ -3,7 +3,6 @@ package expressionTree;
 import java.util.Stack;
 import static frontend.GUIMaker.EPU;
 import commandAbstractClasses.*;
-import errorsAndExceptions.ErrorPopUp;
 
 /**
  * Class called by ExpressionTreeBuilder that takes in a String representing user-input 

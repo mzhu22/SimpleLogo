@@ -15,6 +15,8 @@ public class TurtleMover {
 	
 	public void startDrawing(List<ExpressionNode> instructions){
 		myTurtleCollection.setActiveTurtles();
+		
+		TurtleSnapshot snap = TurtleSnapshot.getTurtleSnapshot(myTurtleCollection.getLastActiveTurtle());
 		for(ExpressionNode n : instructions){
 			((DisplayNode) n ).doAction(myTurtleCollection);
 		}	

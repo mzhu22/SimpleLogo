@@ -10,7 +10,6 @@ public class TurtleSnapshot {
 
 	private static TurtleSnapshot instance;
 	
-	private Turtle myTurtle;
 	public double xCor;
 	public double yCor;
 	public double direction;
@@ -18,22 +17,24 @@ public class TurtleSnapshot {
 	public boolean showing;
 	
 	private TurtleSnapshot(Turtle turtle) {
-		myTurtle = turtle;
-		xCor = myTurtle.getX();
-		yCor = myTurtle.getY();
-		direction = myTurtle.getDirection();
-		penDown = myTurtle.getPen().isPenDown();
-		showing = myTurtle.isShowing();
+		xCor = turtle.getX();
+		yCor = turtle.getY();
+		direction = turtle.getDirection();
+		penDown = turtle.getPen().isPenDown();
+		showing = turtle.isShowing();
 	}
 		
 	public static TurtleSnapshot getTurtleSnapshot(Turtle turtle){
 		if (instance == null){
 			instance = new TurtleSnapshot(turtle);
 		}
+		else{
+			instance.update(turtle);
+		}
 		return instance;
 	}
 	
-	public static void update(Turtle turtle){
+	public void update(Turtle turtle){
 		instance = new TurtleSnapshot(turtle);
 	}
 }

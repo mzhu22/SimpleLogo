@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class UserFunctionMap {
 
-	private Map<String, UserFunction> userFunctionMap; 
+	private Map<String, ListNode> userFunctionMap; 
 	
 	private static UserFunctionMap myUserFunctionNodeMap = new UserFunctionMap();
 	
@@ -15,7 +15,7 @@ public class UserFunctionMap {
 	}
 	
 	public ExpressionNode getFunction(String s){
-		addFunction(s); 
+//		addFunction(s); 
 		return userFunctionMap.get(s);
 	}
 	
@@ -27,9 +27,15 @@ public class UserFunctionMap {
 		return myUserFunctionNodeMap; 
 	}
 
-	public void addFunction(String identifier){
+//	public void addFunction(String identifier){
+//		if(!userFunctionMap.keySet().contains(identifier) ) {
+//			userFunctionMap.put(identifier, new UserFunction());
+//		}
+//	}
+	
+	public void addFunction(String identifier, ListNode commands){
 		if(!userFunctionMap.keySet().contains(identifier) ) {
-			userFunctionMap.put(identifier, new UserFunction());
+			userFunctionMap.put(identifier, commands);
 		}
 	}
 

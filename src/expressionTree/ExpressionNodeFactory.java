@@ -126,16 +126,27 @@ public final class ExpressionNodeFactory {
 			}
 		}
 		if(node == null){
-			if(!makingFunction){
-				EPU.display("Unrecognized command", false);
-			}
-			makingFunction = false;
-			return new UnrecognizedFunction(command);
+			return unrecognizedCommandHandler(command);
 		}
 		return node;
 	}
-
+	
 	public ExpressionNode variableHandler(String s){
 		return myVariables.getVariable(s); 
+	}
+
+	private ExpressionNode unrecognizedCommandHandler(String command) {
+		
+		if(myUserFunctions.contains(command)){
+			return myUserFunctions.getFunction(command);
+		}
+	
+
+	if(!makingFunction){
+		EPU.display("Unrecognized command", false);
+	}
+	makingFunction = false;
+	
+	return new UnrecognizedFunction(command);
 	}
 }

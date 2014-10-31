@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 package displayCommands;
 
 import java.util.ArrayList;
@@ -31,8 +33,8 @@ public class Tell extends DisplayNode{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myLeft.evaluate();
-		ListNode myListNode = (ListNode) getLeft(); 
+		evaluateAllChildren(); 
+		ListNode myListNode = (ListNode) getChild(MY_LEFT_CHILD); 
 		List<ExpressionNode> temp = myListNode.getListContents(); 
 		for( ExpressionNode node : temp){
 			toTell.add(node.getValue()); 

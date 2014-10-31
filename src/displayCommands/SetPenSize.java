@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package displayCommands;
 
 import turtleClasses.Turtle;
@@ -17,7 +20,7 @@ public class SetPenSize extends DisplayNode{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myValue = myLeft.evaluate();
+		return myValue = getChild(MY_LEFT_CHILD).evaluate();
 	}
 
 }

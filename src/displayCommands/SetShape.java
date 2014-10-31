@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package displayCommands;
 
 import static frontend.GUIMaker.EPU;
@@ -22,7 +25,7 @@ public class SetShape extends DisplayNode{
 
 	@Override
 	public double evaluate() {
-		return myValue = myLeft.evaluate();
+		return myValue = getChild(MY_LEFT_CHILD).evaluate();
 	}
 
 }

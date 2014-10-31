@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package displayCommands;
 
 import turtleClasses.Turtle;
@@ -21,10 +24,9 @@ public class AskWith extends DisplayNode{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myRight.evaluate(); 
-		myLeft.evaluate(); 
-		myConditionListNode = (ListNode) myLeft; 
-		myCommandsListNode = (ListNode) myRight; 
+		evaluateAllChildren(); 
+		myConditionListNode = (ListNode) getChild(MY_LEFT_CHILD); 
+		myCommandsListNode = (ListNode) getChild(MY_RIGHT_CHILD); 
 		return myValue = myCommandsListNode.getListContents().get(myCommandsListNode.getListContents().size() - 1).getValue(); 
 	}
 

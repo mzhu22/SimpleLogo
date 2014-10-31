@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package displayCommands;
 
 import java.util.ArrayList;
@@ -36,10 +39,9 @@ public class Ask extends DisplayNode {
 
 	@Override
 	public double evaluate() {
-		myRight.evaluate(); 
-		myLeft.evaluate();
-		myCommandsListNode = (ListNode) myRight; 
-		myTurtleList = (ListNode) myLeft; 
+		evaluateAllChildren(); 
+		myCommandsListNode = (ListNode) getChild(MY_RIGHT_CHILD); 
+		myTurtleList = (ListNode) getChild(MY_LEFT_CHILD); 
 		
 		List<ExpressionNode> temp = myTurtleList.getListContents(); 
 		for( ExpressionNode node : temp){

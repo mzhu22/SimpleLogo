@@ -20,11 +20,8 @@ public class FileWriter {
 	public void writeToFile() throws IOException{
 		FileOutputStream file = new FileOutputStream("slogo_variables.sav");
 		ObjectOutputStream writer = new ObjectOutputStream(file);
-		
 		VariableNodeMap currentVariables = VariableNodeMap.getVariableNodeMap();
-		
 		writer.writeObject(currentVariables);
-		
 		writer.close();
 	}
 	
@@ -46,11 +43,11 @@ public class FileWriter {
 	 * @throws IOException 
 	 * @throws ClassNotFoundException 
 	 */
-	public static void main (String[] args) throws IOException, ClassNotFoundException{
-		FileWriter tester = new FileWriter();
-		VariableNodeMap temp = VariableNodeMap.getVariableNodeMap();
-		temp.getVariable("B");
-		tester.writeToFile();
-		tester.readFromFile();
-	}
+//	public static void main (String[] args) throws IOException, ClassNotFoundException{
+//		FileWriter tester = new FileWriter();
+//		VariableNodeMap temp = VariableNodeMap.getVariableNodeMap();
+//		temp.getVariable("B");
+//		tester.writeToFile();
+//		tester.readFromFile();
+//	}
 }

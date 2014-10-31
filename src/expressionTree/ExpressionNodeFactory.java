@@ -88,8 +88,7 @@ public final class ExpressionNodeFactory {
 			}
 		}
 
-		toReturn = new Constant(); 
-		toReturn.setValue(constant); 
+		toReturn = new Constant(constant); 
 		return toReturn; 
 
 	}

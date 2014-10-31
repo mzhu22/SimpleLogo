@@ -1,4 +1,8 @@
+//This entire file is part of my masterpiece.
+//Dimeji Abidoye
+
 package controlStructures;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +18,7 @@ import expressionTree.ListNode;
  * 
  * NOTE: under current design this is functionally the same as Repeat, as the left node
  * contains a constant value, rather than one that updates dynamically as DoTimes is run
- * @author Mike Zhu
+ * @author Dimeji Abidoye
  *
  */
 public class DoTimes extends ExpressionNode {
@@ -27,17 +31,16 @@ public class DoTimes extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		getLeft().evaluate();
-		getRight().evaluate();
-		return 0;
+		evaluateAllChildren(); 
+		return myValue;
 	}
 
 	public List<DisplayNode> makeInstructionList(){
 		instructionList = new ArrayList<>();
-		ListNode myLeft = (ListNode) getLeft(); 
+		ListNode myLeft = (ListNode) getChild(MY_LEFT_CHILD); 
 		
 		for(int i =1 ; i <= myLeft.getListContents().get(1).getValue(); i++){
-			instructionList.addAll(getRight().makeInstructionList());
+			instructionList.addAll(getChild(MY_RIGHT_CHILD).makeInstructionList());
 			myLeft.getListContents().get(0).setValue(i);			
 		}
 		

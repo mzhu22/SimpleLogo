@@ -1,6 +1,7 @@
-package controlStructures;
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 
-import java.util.Stack;
+package controlStructures;
 
 import expressionTree.ExpressionNode;
 import expressionTree.ListNode;
@@ -11,15 +12,14 @@ import expressionTree.UserFunctionMap;
  * Used when the user wants to define custom functions. Depends on the ListNode class 
  * (for defining commands within brackets []) and of course the UserFunctionMap class,
  * in which user defined functions and their String identifiers are stored. 
- * @author Mike Zhu
+ * @author Dimeji Abidoye
  *
  */
 public class MakeUserInstruction extends ExpressionNode{
 	
-	private UnrecognizedFunction myFunction;
-	private ListNode myVariables; 
-	private ListNode myCommands; 
-	
+	private static final int MY_FUNCTION = 0; 
+	private static final int MY_VARIABLES = 1; 
+	private static final int MY_COMMANDS = 2; 
 	
 	public MakeUserInstruction(){
 		super(3); 
@@ -27,24 +27,10 @@ public class MakeUserInstruction extends ExpressionNode{
 
 	@Override
 	public double evaluate() {
-		myVariables.evaluate(); 
-//		myCommands.evaluate(); 
+		evaluateChild(MY_VARIABLES); 
 		UserFunctionMap map = UserFunctionMap.getUserFunctionMap();
-		map.addFunction(myFunction.getIdentifier(), myCommands);
-		
-//		System.out.println(myVariables.getListContents().size() + " blah");
-//		System.out.println(myCommands.getListContents().size() + " blah"); 
-		return 0; 
-	}
-	
-	public void setChildren( Stack<ExpressionNode> childStack){
-		myFunction = (UnrecognizedFunction) childStack.pop();
-		numChildren --; 
-		myVariables = (ListNode) childStack.pop(); 
-		numChildren --; 
-		myCommands = (ListNode) childStack.pop(); 
-		numChildren --; 
-		childStack.push(this);
+		map.addFunction( ((UnrecognizedFunction) getChild(MY_FUNCTION)).getIdentifier(), (ListNode) getChild(MY_COMMANDS));
+		return myValue; 
 	}
 	
 }

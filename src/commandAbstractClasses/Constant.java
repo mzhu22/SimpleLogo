@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 package commandAbstractClasses;
 
 /**
@@ -9,9 +11,14 @@ import expressionTree.ExpressionNode;
 
 public class Constant extends ExpressionNode {
 
-	public Constant(){
+	public Constant(double value){
 		super (0); 
+		myValue = value; 
 	}
+	
+	public Constant(){
+		super(0); 
+		}
 	
 	@Override
 	public double evaluate() {

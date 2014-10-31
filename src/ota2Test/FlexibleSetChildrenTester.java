@@ -1,29 +1,25 @@
 // This entire file is part of my masterpiece.
 // Dimeji Abidoye
-package mathOperations;
+package ota2Test;
 
-import commandAbstractClasses.Operation;
 import expressionTree.ExpressionNode;
 
-public class Product extends Operation{
+public class FlexibleSetChildrenTester extends ExpressionNode {
 
-	
-	public Product() {
+	public FlexibleSetChildrenTester(int numChildren) {
+		super(numChildren);
 		
-		super(2); 
-	}
-	
-	public Product(int numChildren){
-		super(numChildren); 
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myValue = 1;
 		for( ExpressionNode n : myChildren){
-			myValue*= n.evaluate(); 
+			
+			myValue +=  n.evaluate()*3 ; 
 		}
 		return myValue; 
 	}
+
 }

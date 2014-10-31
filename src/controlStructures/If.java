@@ -1,3 +1,5 @@
+//This entire file is part of my masterpiece.
+//Dimeji Abidoye
 package controlStructures;
 
 import expressionTree.ExpressionNode;
@@ -5,7 +7,7 @@ import expressionTree.ExpressionNode;
 /**
  * Stores an expression to be evaluated in the left child, a set of commands to be run on 
  * the right when expression==true.
- * @author Mike Zhu
+ * @author Dimeji Abidoye
  *
  */
 public class If extends ExpressionNode {
@@ -18,8 +20,8 @@ public class If extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		 if (myLeft.evaluate() !=0 )  return myValue = myRight.evaluate();
+		 if (getChild(MY_LEFT_CHILD).evaluate() !=0 )  return myValue = getChild(MY_RIGHT_CHILD).evaluate();
 	
-		 else return myValue =  0 ; 
+		 else return myValue; 
 	}
 }

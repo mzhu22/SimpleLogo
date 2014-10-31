@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 package mathOperations;
 
 import java.util.Random;
@@ -19,6 +21,6 @@ public class SlogoRandom extends Operation {
 	@Override
 	public double evaluate() {
 		randomizer= new Random(); 
-		return (randomizer.nextDouble()) * Math.abs(getLeft().evaluate());
+		return (randomizer.nextDouble()) * Math.abs(getChild(MY_LEFT_CHILD).evaluate());
 	}
 }

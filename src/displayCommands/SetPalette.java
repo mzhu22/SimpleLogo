@@ -1,65 +1,35 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package displayCommands;
-
-import static frontend.GUIMaker.EPU;
-
-import java.util.EmptyStackException;
-import java.util.Stack;
 
 import turtleClasses.Turtle;
 import turtleClasses.TurtleCollection;
-import expressionTree.ExpressionNode;
 
 public class SetPalette extends DisplayNode {
 
-	private ExpressionNode myIndexNode;
-	private ExpressionNode myBlueNode;
-
-	private double index;
-	private double r;
-	private double g;
-	private double b;
+	private static final int MY_INDEX_NODE = 0; 
+	private static final int MY_RED_NODE = 1; 
+	private static final int MY_GREEN_NODE = 2; 
+	private static final int MY_BLUE_NODE =3; 
 
 	public SetPalette() {
 		super(4);
 	}
-
 	@Override
 	public void doAction(TurtleCollection turtles)
 	{
 		//turtles.getCanvas().addColor(index, r, g, b);
 	}
-
 	@Override
 	protected void doAction(Turtle turtle) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public double evaluate() {
-		index = myIndexNode.evaluate();
-		r = myLeft.evaluate();
-		g = myRight.evaluate();
-		b = myBlueNode.evaluate();
-		return myValue = index;
-	}
-
-	@Override
-	/**
-	 * setChildren implementation for 4 children used for SetPalette 
-	 */
-	public void setChildren( Stack<ExpressionNode> childStack){
-		try{
-			myIndexNode = childStack.pop();
-			myLeft = childStack.pop();
-			myRight = childStack.pop();
-			myBlueNode = childStack.pop();
-		}
-		catch (EmptyStackException e){
-			EPU.display("Insufficient arguments for method", true);
-		}
-
-		childStack.push(this);
+		evaluateAllChildren(); 
+		return myValue = getChild(MY_INDEX_NODE).getValue();
 	}
 
 }

@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
+
 package controlStructures;
 
 
@@ -16,7 +19,7 @@ import displayCommands.DisplayNode;
  * repeat N [ commands ]. In this case, Repeat holds the ListNode representing all 
  * commands in the [] as a child.
  *  
- * @author Mike Zhu
+ * @author Dimeji Abidoye 
  *
  */
 public class Repeat extends DisplayNode{
@@ -27,11 +30,8 @@ public class Repeat extends DisplayNode{
 	
 	@Override
 	public double evaluate() {
-		//Evaluate this node == evaluate all children first (make sure each node has a val)
-		
-		getLeft().evaluate();
-		getRight().evaluate();
-		return 0;
+		evaluateAllChildren(); 
+		return myValue;
 	}
 
 	public void doAction(Turtle turtle) {
@@ -43,16 +43,8 @@ public class Repeat extends DisplayNode{
 
 		List<DisplayNode> instructionList = new ArrayList<>();	
 
-		for(int i =0 ; i < getLeft().evaluate(); i++){
-			if(getLeft()!=null){
-				instructionList.addAll(getLeft().makeInstructionList());
-			}
-			if(DisplayNode.class.isAssignableFrom(getClass())){
-				instructionList.add((DisplayNode)this);
-			}
-			if(getRight()!=null){
-				instructionList.addAll(getRight().makeInstructionList());
-			}
+		for(int i =0 ; i < getChild(MY_LEFT_CHILD).evaluate(); i++){
+			instructionList.addAll(super.makeInstructionList()); 
 		}
 		return instructionList;
 	}

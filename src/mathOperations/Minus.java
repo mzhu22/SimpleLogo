@@ -1,3 +1,5 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 package mathOperations;
 
 import commandAbstractClasses.Operation;
@@ -12,6 +14,6 @@ public class Minus extends Operation{
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return -getLeft().evaluate();
+		return -getChild(MY_LEFT_CHILD).evaluate();
 	}
 }

@@ -1,8 +1,9 @@
+//This entire file is part of my masterpiece.
+//Dimeji Abidoye
 package controlStructures;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stack;
 
 import displayCommands.DisplayNode;
 import expressionTree.ExpressionNode;
@@ -15,8 +16,8 @@ import expressionTree.ExpressionNode;
  */
 
 public class IfElse extends ExpressionNode {
-
-	private ExpressionNode myMiddle ; 
+ 
+	private static final int MY_ELSE_CHILD = 2;  
 	
 	public IfElse() {
 		super(3);
@@ -26,28 +27,16 @@ public class IfElse extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		if (myLeft.evaluate() !=0 )  return myValue = myMiddle.evaluate();
-		 else return myValue =  myRight.evaluate() ; 
+		if (getChild(MY_LEFT_CHILD).evaluate() !=0 )  return myValue = getChild(MY_RIGHT_CHILD).evaluate();
+		 else return myValue =  getChild(MY_ELSE_CHILD).evaluate() ; 
 	}
 
-	@Override 
-	public void setChildren( Stack<ExpressionNode> childStack){
-		setLeft(childStack.pop());
-		setMiddle(childStack.pop()); 
-		setRight(childStack.pop());
-		childStack.push(this); 
-	}
-	
-	private void setMiddle( ExpressionNode toSet){
-		myMiddle = toSet; 
-		numChildren --; 
-	}
 	
 	public List<DisplayNode> makeInstructionList(){
 		instructionList = new ArrayList<>();
-
-		if (myLeft.evaluate() !=0 )  instructionList.addAll(myMiddle.makeInstructionList());
-		else instructionList.addAll(myRight.makeInstructionList());
+		
+		if (getChild(MY_LEFT_CHILD).evaluate() !=0 )  instructionList.addAll(getChild(MY_RIGHT_CHILD).makeInstructionList());
+		else instructionList.addAll(getChild(MY_ELSE_CHILD).makeInstructionList());
 		return instructionList;
 }
 

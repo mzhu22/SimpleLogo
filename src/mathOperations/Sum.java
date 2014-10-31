@@ -1,6 +1,9 @@
+// This entire file is part of my masterpiece.
+// Dimeji Abidoye
 package mathOperations;
 
 import commandAbstractClasses.Operation;
+import expressionTree.ExpressionNode;
 
 public class Sum extends Operation {
 
@@ -8,10 +11,17 @@ public class Sum extends Operation {
 		super(2); 
 		
 	} 
+	
+	public Sum( int numChildren) {
+		super (numChildren); 
+	}
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myValue = getRight().evaluate() + getLeft().evaluate();
+		for( ExpressionNode n : myChildren ){
+			myValue += n.getValue(); 
+		}
+		return myValue; 
 	}
 	
 }

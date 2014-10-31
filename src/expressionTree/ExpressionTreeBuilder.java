@@ -30,11 +30,8 @@ public class ExpressionTreeBuilder {
 		nodeGetter = new ExpressionNodeFactory(); 
 		outputList = new ArrayList<>();
 		nodeList = new ArrayList<>();
-		Stack<ExpressionNode> process = nodeGetter.getAllNodes(s); 
-
-				
+		Stack<ExpressionNode> process = nodeGetter.getAllNodes(s); 	
 		getTree(process); 
-
 		for(ExpressionNode n: nodeList){
 			outputList.addAll(n.makeInstructionList());
 		}

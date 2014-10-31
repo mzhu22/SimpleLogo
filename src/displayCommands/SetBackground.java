@@ -23,7 +23,7 @@ public class SetBackground extends DisplayNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		return myValue = myLeft.evaluate();
+		return myValue = getChild(MY_LEFT_CHILD).evaluate();
 	}
 
 }

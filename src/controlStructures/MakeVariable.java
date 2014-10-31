@@ -1,3 +1,5 @@
+//This entire file is part of my masterpiece.
+//Dimeji Abidoye
 package controlStructures;
 
 import expressionTree.ExpressionNode;
@@ -19,9 +21,9 @@ public class MakeVariable extends ExpressionNode {
 	@Override
 	public double evaluate() {
 		// TODO Auto-generated method stub
-		myLeft.setValue( myRight.evaluate());
-		myValue = myRight.evaluate();
-		return myValue;
+		getChild(MY_LEFT_CHILD).setValue( getChild(MY_RIGHT_CHILD).evaluate());
+		return myValue = getChild(MY_RIGHT_CHILD).evaluate();
+		
 	}
 
 }

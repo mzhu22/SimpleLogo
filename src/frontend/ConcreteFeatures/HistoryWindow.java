@@ -31,13 +31,11 @@ public class HistoryWindow extends SLogoScrollPane{
 	 * Adds new history commands to the pane.
 	 */
 	@Override
-	public void updatePane() {
-		finalOutput = initialString;
+	protected void fillTextBox() {
 		for(String s : this.myHistoryCollection)
 		{
 			finalOutput +=  s + "\n";
 		}
-		super.updatePane();
 	}
 
 }

@@ -1,3 +1,6 @@
+// THIS ENTIRE FILE IS A PART OF MY MASTERPIECE
+// SAFKAT ISLAM
+
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
@@ -62,9 +65,12 @@ public abstract class SLogoScrollPane extends GUIFeature {
 	 */
 	public void updatePane()
 	{
+		finalOutput = initialString;
+		fillTextBox();
 		Text t = new Text(0, 0, finalOutput);
 		t.setStyle("-fx-font-size: 14px");
 		myWindow.setContent(t);
 	}
 
+	protected abstract void fillTextBox();
 }

@@ -28,14 +28,12 @@ public class CurrentVariablesWindow extends SLogoScrollPane{
 	 * and adds them to the pane.
 	 */
 	@Override
-	public void updatePane() {
-		finalOutput = initialString;
+	protected void fillTextBox() {
 		VariableNodeMap myVariables = VariableNodeMap.getVariableNodeMap();
 		
 		for(String s : myVariables.keySet()){
 			finalOutput += s.substring(1).toLowerCase() + "\t" + myVariables.getVariable(s).getValue() + "\n";
 		}
-		super.updatePane();
 	}
 	
 

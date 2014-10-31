@@ -39,8 +39,7 @@ public class TurtleStatsWindow extends SLogoScrollPane{
 	 * The stats include: X, Y, Heading, Showing, and Pen Down.
 	 */
 	@Override
-	public void updatePane() {
-		finalOutput = initialString;
+	protected void fillTextBox() {
 		myTurtleCollection.setActiveTurtles();
 		for(Turtle myTurtle : myTurtleCollection)
 		{
@@ -56,6 +55,5 @@ public class TurtleStatsWindow extends SLogoScrollPane{
 			}
 			finalOutput += "\n";
 		}
-		super.updatePane();
 	}
 }

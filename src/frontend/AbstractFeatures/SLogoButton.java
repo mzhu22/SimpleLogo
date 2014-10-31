@@ -1,3 +1,6 @@
+// THIS ENTIRE FILE IS A PART OF MY MASTERPIECE
+// SAFKAT ISLAM
+
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;

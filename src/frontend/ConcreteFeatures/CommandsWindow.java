@@ -29,13 +29,11 @@ public class CommandsWindow extends SLogoScrollPane {
 	 * adds all to the pane.
 	 */
 	@Override
-	public void updatePane() {
-		finalOutput = initialString;
+	protected void fillTextBox() {
 		UserFunctionMap myFunctions = UserFunctionMap.getUserFunctionMap();
 		for(String s : myFunctions.keySet()){
 			finalOutput += s.toLowerCase() + "\n";
 		}
-		super.updatePane();
 	}
 	
 }

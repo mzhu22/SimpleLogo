@@ -15,7 +15,7 @@ import javafx.scene.control.Button;
  */
 public abstract class SLogoButton extends GUIFeature {
 
-	private String myName;
+	protected String myName;
 	public final static int BUTTON_WIDTH = 200;
 	public final static int BUTTON_HEIGHT = 25;
 	

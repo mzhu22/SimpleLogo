@@ -3,8 +3,8 @@ package frontend.ConcreteFeatures;
 import static frontend.GUIMaker.EPU;
 
 import java.io.IOException;
+
 import save.load.CustomReaderWriter;
-import save.load.FileWriter;
 import frontend.AbstractFeatures.SLogoButton;
 
 public class SaveVariablesButton extends SLogoButton {

@@ -16,7 +16,6 @@ public class SetPenSize extends DisplayNode{
 
 	@Override
 	public double evaluate() {
-		// TODO Auto-generated method stub
 		return myValue = myLeft.evaluate();
 	}
 

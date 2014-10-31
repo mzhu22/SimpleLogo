@@ -4,9 +4,8 @@ import static frontend.GUIMaker.EPU;
 
 import java.io.IOException;
 
-import save.load.FileWriter;
-import frontend.AbstractFeatures.SLogoButton;
 import save.load.CustomReaderWriter;
+import frontend.AbstractFeatures.SLogoButton;
 
 /**
  * 

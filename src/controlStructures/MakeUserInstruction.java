@@ -39,11 +39,11 @@ public class MakeUserInstruction extends ExpressionNode{
 	
 	public void setChildren( Stack<ExpressionNode> childStack){
 		myFunction = (UnrecognizedFunction) childStack.pop();
-		numChildren --; 
+		numUnfilledChildren --; 
 		myVariables = (ListNode) childStack.pop(); 
-		numChildren --; 
+		numUnfilledChildren --; 
 		myCommands = (ListNode) childStack.pop(); 
-		numChildren --; 
+		numUnfilledChildren --; 
 		childStack.push(this);
 	}
 	

@@ -1,3 +1,6 @@
+// This entire file is part of my masterpiece
+// MIKE ZHU
+
 package expressionTree;
 
 import java.util.ArrayList;
@@ -7,11 +10,14 @@ import java.util.Stack;
 import displayCommands.DisplayNode;
 
 /**
+ * MASTERPIECE REWRITE - now handles any number of children without needing to overwrite
+ * setChildren or similar methods. Default constructor still creates node for expression
+ * with 2 input params.	
+ * 
  * Superclass for node representation of all instructions within the expression tree. 
  * 
  * Default assumes that Node has two children, as the vast majority of Slogo commands take
- * in either one or two inputs. Those commands that take in greater than two inputs
- * can overwrite the setChildren method in ExpressionNode and add new children variables.
+ * in either one or two inputs. 
  * 
  * Only evaluate() is abstract. Evaluate() sets the node's value by recursively evaluating
  * its children - this method differs for different types of commands.
@@ -21,22 +27,27 @@ import displayCommands.DisplayNode;
  */
 public abstract class ExpressionNode {
 	protected double myValue; 
-	protected ExpressionNode myRight; 
-	protected ExpressionNode myLeft; 
+	private List<ExpressionNode> myChildren;
 	protected int numChildren; 
 	
-	protected List<DisplayNode> instructionList ; 
+	protected List<DisplayNode> instructionList; 
 	
 	/**
-	 * Default number of children is 2. The vast majority of Slogo commands follows this
-	 * syntax
-	 */
+	 * Default number of children is 2. The vast majority of Slogo commands are part of 
+	 * this group
+	 */	
 	public ExpressionNode(){
-		numChildren = 2;
+		numChildren = 2; 
+		myChildren = new ArrayList<ExpressionNode>();
 	} 
 
+	/**
+	 * Constructor used for those Slogo instructions that do not take in 2 input parameters
+	 * @param numChild
+	 */
 	public ExpressionNode(int numChild){
 		numChildren = numChild;		
+		myChildren = new ArrayList<ExpressionNode>();
 	}
 
 	public abstract double evaluate(); 
@@ -52,41 +63,38 @@ public abstract class ExpressionNode {
 	public List<DisplayNode> makeInstructionList(){
 		instructionList = new ArrayList<>();
 
-		if(getLeft()!=null){
-			instructionList.addAll(getLeft().makeInstructionList());
+		for(int i=0; i<myChildren.size()-1; i++){
+			if(myChildren.get(i)!=null){
+				instructionList.addAll(myChildren.get(i).makeInstructionList());
+			}
 		}
 		if(DisplayNode.class.isAssignableFrom(this.getClass())){
 			instructionList.add((DisplayNode)this);
 		}
-		if(getRight()!=null){
-			instructionList.addAll(getRight().makeInstructionList());
+		if(getLastChild()!=null){
+			instructionList.addAll(getLastChild().makeInstructionList());
 		}
+		
 		return instructionList;
-}
-
-	protected ExpressionNode getLeft(){
-		return myLeft; 
-	}
-
-	protected ExpressionNode getRight(){	
-		return myRight; 
-	}
-
-	protected void setLeft( ExpressionNode toSet){
-		myLeft = toSet; 
-		numChildren --; 
-	}
-
-	protected void setRight( ExpressionNode toSet){
-		myRight = toSet;
-		numChildren--; 
-	}
-
-	public void setValue(double a){
-		myValue = a; 
 	}
 	
-	protected int getNumChildren(){
+	protected ExpressionNode getChild(int i){
+		return myChildren.get(i);
+	}
+	
+	protected ExpressionNode getLastChild(){
+		if(myChildren.size()==0){
+			return null;
+		}
+		return myChildren.get(myChildren.size()-1);
+	}
+	
+	protected void addChild(ExpressionNode toAdd){
+		myChildren.add(toAdd);
+		numChildren--;
+	}
+	
+	public int getNumChildren(){
 		return numChildren; 	
 	}
 	
@@ -100,14 +108,14 @@ public abstract class ExpressionNode {
 	 * @param childStack
 	 */
 	public void setChildren( Stack<ExpressionNode> childStack){
-		if(getNumChildren() == 1){
-			setLeft(childStack.pop());
-		}
-		else if(getNumChildren() == 2){
-			setLeft(childStack.pop());
-			setRight(childStack.pop());
+		while(numChildren!=0){
+			addChild(childStack.pop());
 		}
 		childStack.push(this); 
+	}
+
+	public void setValue(double constant) {
+		myValue = constant;
 	}
 	
 }

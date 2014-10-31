@@ -40,7 +40,7 @@ public class IfElse extends ExpressionNode {
 	
 	private void setMiddle( ExpressionNode toSet){
 		myMiddle = toSet; 
-		numChildren --; 
+		numUnfilledChildren --; 
 	}
 	
 	public List<DisplayNode> makeInstructionList(){

@@ -1,3 +1,6 @@
+//This entire file is part of my masterpiece.
+//CHRIS BERNT
+
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;

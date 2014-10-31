@@ -1,3 +1,6 @@
+//This entire file is part of my masterpiece.
+//CHRIS BERNT
+
 package frontend.AbstractFeatures;
 
 import javafx.scene.Group;
@@ -35,6 +38,8 @@ public abstract class SLogoButton extends GUIFeature {
 
 	/**
 	 * {@inheritDoc}
+	 * Specifically, makes a button and sets its on clicked action
+	 * to be an abstract method defined by subclasses.
 	 */
 	@Override
 	public Group makeTool() {
@@ -43,14 +48,16 @@ public abstract class SLogoButton extends GUIFeature {
 		Button b = new Button(myName);
 		b.setLayoutX(myX);
 		b.setLayoutY(myY);
-		b.setMinWidth(BUTTON_WIDTH);
-		b.setMaxWidth(BUTTON_WIDTH);
-		b.setMinHeight(BUTTON_HEIGHT);
-		b.setMaxHeight(BUTTON_HEIGHT);
+		setExactSize(b, BUTTON_WIDTH, BUTTON_HEIGHT);
 		b.setOnMouseClicked(event -> action());
-		
 		g.getChildren().add(b);
 		
 		return g;
+	}
+	public void setExactSize(Button b, double width, double height){
+		b.setMinWidth(width);
+		b.setMaxWidth(width);
+		b.setMinHeight(height);
+		b.setMaxHeight(height);
 	}
 }

@@ -1,6 +1,8 @@
+//This entire file is part of my masterpiece.
+//CHRIS BERNT
+
 package frontend.ConcreteFeatures;
 
-import javafx.scene.canvas.Canvas;
 import frontend.SLogoCanvas;
 import frontend.AbstractFeatures.SLogoButton;
 
@@ -14,7 +16,7 @@ import frontend.AbstractFeatures.SLogoButton;
  */
 public class ToggleGridLines extends SLogoButton {
 
-	private Canvas myCanvas;
+	private SLogoCanvas myCanvas;
 	
 	/**
 	 * Constructor
@@ -22,7 +24,7 @@ public class ToggleGridLines extends SLogoButton {
 	 * @see SLogoButton#GUIFeatureWithButton(double, double, String)
 	 * @param canvas The canvas on which to toggle the lines.
 	 */
-	public ToggleGridLines(double x, double y, String buttonName, Canvas canvas) {
+	public ToggleGridLines(double x, double y, String buttonName, SLogoCanvas canvas) {
 		super(x, y, buttonName);
 		myCanvas = canvas;
 	}
@@ -33,7 +35,7 @@ public class ToggleGridLines extends SLogoButton {
 	 */
 	@Override
 	public void action() {
-		((SLogoCanvas) myCanvas).toggleGridLines();
+		myCanvas.toggleGridLines();
 	}
 
 }

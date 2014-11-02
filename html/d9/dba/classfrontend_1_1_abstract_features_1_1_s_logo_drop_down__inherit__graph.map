@@ -1,0 +1,7 @@
+<map id="frontend.AbstractFeatures.SLogoDropDown" name="frontend.AbstractFeatures.SLogoDropDown">
+<area shape="rect" id="node3" href="$dc/d4d/classfrontend_1_1_concrete_features_1_1_change_coding_language.html" title="frontend.ConcreteFeatures.\lChangeCodingLanguage" alt="" coords="491,5,688,46"/>
+<area shape="rect" id="node4" href="$d0/d3e/classfrontend_1_1_concrete_features_1_1_turtle_changer.html" title="frontend.ConcreteFeatures.\lTurtleChanger" alt="" coords="491,70,688,111"/>
+<area shape="rect" id="node2" href="$dc/db4/classfrontend_1_1_abstract_features_1_1_g_u_i_feature.html" title="frontend.AbstractFeatures.\lGUIFeature" alt="" coords="6,38,199,79"/>
+<area shape="rect" id="node5" href="$dc/d0b/classfrontend_1_1_concrete_features_1_1_choose_image.html" title="frontend.ConcreteFeatures.\lChooseImage" alt="" coords="736,37,933,78"/>
+<area shape="rect" id="node6" href="$db/d1c/classfrontend_1_1_concrete_features_1_1_choose_line_style.html" title="frontend.ConcreteFeatures.\lChooseLineStyle" alt="" coords="736,102,933,143"/>
+</map>

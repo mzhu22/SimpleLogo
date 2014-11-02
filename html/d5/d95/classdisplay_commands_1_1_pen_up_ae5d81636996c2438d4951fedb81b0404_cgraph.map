@@ -1,0 +1,4 @@
+<map id="displayCommands.PenUp.doAction" name="displayCommands.PenUp.doAction">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#aebccf7c8d3ea7b21ea040ec199df9524" title="turtleClasses.Turtle.getPen" alt="" coords="261,5,453,32"/>
+<area shape="rect" id="node3" href="$d3/d0e/classfrontend_1_1_pen.html#ab6f45d99563514905c39cd838db033fd" title="frontend.Pen.penUp" alt="" coords="282,56,433,83"/>
+</map>

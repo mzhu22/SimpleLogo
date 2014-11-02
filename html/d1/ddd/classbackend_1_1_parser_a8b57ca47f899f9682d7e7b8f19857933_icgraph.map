@@ -1,0 +1,6 @@
+<map id="backend.Parser.parse" name="backend.Parser.parse">
+<area shape="rect" id="node2" href="$d2/dea/class_s_logo_controllers_1_1_input_controller.html#a7ce411d6699e0b45d54f63e43995c6a0" title="SLogoControllers.InputController.get\lInstructions" alt="" coords="213,70,467,111"/>
+<area shape="rect" id="node3" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="547,5,744,46"/>
+<area shape="rect" id="node4" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="547,70,744,111"/>
+<area shape="rect" id="node5" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="515,136,776,163"/>
+</map>

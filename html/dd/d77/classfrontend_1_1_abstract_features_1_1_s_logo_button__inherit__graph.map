@@ -1,0 +1,15 @@
+<map id="frontend.AbstractFeatures.SLogoButton" name="frontend.AbstractFeatures.SLogoButton">
+<area shape="rect" id="node3" href="$d5/de3/classfrontend_1_1_concrete_features_1_1_change_background.html" title="frontend.ConcreteFeatures.\lChangeBackground" alt="" coords="505,6,703,47"/>
+<area shape="rect" id="node4" href="$d4/d78/classfrontend_1_1_concrete_features_1_1_clear_canvas.html" title="frontend.ConcreteFeatures.\lClearCanvas" alt="" coords="505,71,703,113"/>
+<area shape="rect" id="node6" href="$d8/d23/classfrontend_1_1_concrete_features_1_1_enable_arrows.html" title="frontend.ConcreteFeatures.\lEnableArrows" alt="" coords="505,137,703,178"/>
+<area shape="rect" id="node7" href="$dc/d90/classfrontend_1_1_concrete_features_1_1_help.html" title="frontend.ConcreteFeatures.Help" alt="" coords="491,203,717,229"/>
+<area shape="rect" id="node8" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html" title="frontend.ConcreteFeatures.\lLoadSLogoFile" alt="" coords="505,254,703,295"/>
+<area shape="rect" id="node9" href="$d9/d35/classfrontend_1_1_concrete_features_1_1_load_variables_button.html" title="frontend.ConcreteFeatures.\lLoadVariablesButton" alt="" coords="505,319,703,361"/>
+<area shape="rect" id="node10" href="$da/d39/classfrontend_1_1_concrete_features_1_1_quit.html" title="frontend.ConcreteFeatures.Quit" alt="" coords="493,385,715,412"/>
+<area shape="rect" id="node11" href="$da/dc2/classfrontend_1_1_concrete_features_1_1_save_variables_button.html" title="frontend.ConcreteFeatures.\lSaveVariablesButton" alt="" coords="505,437,703,478"/>
+<area shape="rect" id="node12" href="$d6/d89/classfrontend_1_1_concrete_features_1_1_set_line_color.html" title="frontend.ConcreteFeatures.\lSetLineColor" alt="" coords="505,502,703,543"/>
+<area shape="rect" id="node13" href="$d2/d8e/classfrontend_1_1_concrete_features_1_1_toggle_grid_lines.html" title="frontend.ConcreteFeatures.\lToggleGridLines" alt="" coords="505,567,703,609"/>
+<area shape="rect" id="node14" href="$dc/dae/classfrontend_1_1_s_logo_workspace_1_1_add_workspace_button.html" title="frontend.SLogoWorkspace.\lAddWorkspaceButton" alt="" coords="508,633,700,674"/>
+<area shape="rect" id="node2" href="$dc/db4/classfrontend_1_1_abstract_features_1_1_g_u_i_feature.html" title="frontend.AbstractFeatures.\lGUIFeature" alt="" coords="6,319,199,361"/>
+<area shape="rect" id="node5" href="$d0/d72/classfrontend_1_1_concrete_features_1_1_reset.html" title="frontend.ConcreteFeatures.\lReset" alt="" coords="765,71,963,113"/>
+</map>

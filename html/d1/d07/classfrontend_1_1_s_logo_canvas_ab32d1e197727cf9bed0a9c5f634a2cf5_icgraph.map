@@ -1,0 +1,6 @@
+<map id="frontend.SLogoCanvas.getHolder" name="frontend.SLogoCanvas.getHolder">
+<area shape="rect" id="node2" href="$d1/d07/classfrontend_1_1_s_logo_canvas.html#ab568d13de0b72b80b87728b7c3c73b20" title="frontend.SLogoCanvas.remove\lObjects" alt="" coords="246,5,466,46"/>
+<area shape="rect" id="node4" href="$df/de4/classfrontend_1_1_s_logo_workspace.html#afdbe19fcd31fb74f31efbea44ac0c24c" title="frontend.SLogoWorkspace.\lSLogoWorkspace" alt="" coords="260,70,452,111"/>
+<area shape="rect" id="node3" href="$dd/d33/classdisplay_commands_1_1_clear_objects.html#a21cffe30d5c5ea33afa426d791d827b3" title="displayCommands.ClearObjects.do\lAction" alt="" coords="515,5,760,46"/>
+<area shape="rect" id="node5" href="$dc/dae/classfrontend_1_1_s_logo_workspace_1_1_add_workspace_button.html#a156aecbf6509dec903bb35c7ada6257e" title="frontend.SLogoWorkspace.\lAddWorkspaceButton.action" alt="" coords="537,70,738,111"/>
+</map>

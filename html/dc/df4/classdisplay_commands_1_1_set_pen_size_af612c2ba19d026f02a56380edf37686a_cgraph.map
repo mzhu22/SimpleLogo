@@ -1,0 +1,4 @@
+<map id="displayCommands.SetPenSize.doAction" name="displayCommands.SetPenSize.doAction">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#aebccf7c8d3ea7b21ea040ec199df9524" title="turtleClasses.Turtle.getPen" alt="" coords="291,5,483,32"/>
+<area shape="rect" id="node3" href="$d3/d0e/classfrontend_1_1_pen.html#a8a90b592552fe72196f66c7641bccb35" title="frontend.Pen.setLineWidth" alt="" coords="292,56,481,83"/>
+</map>

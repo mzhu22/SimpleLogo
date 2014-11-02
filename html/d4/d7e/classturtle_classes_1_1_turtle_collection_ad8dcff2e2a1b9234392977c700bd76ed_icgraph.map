@@ -1,0 +1,6 @@
+<map id="turtleClasses.TurtleCollection.getLastActiveTurtle" name="turtleClasses.TurtleCollection.getLastActiveTurtle">
+<area shape="rect" id="node2" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="286,70,501,111"/>
+<area shape="rect" id="node3" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="581,5,779,46"/>
+<area shape="rect" id="node4" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="581,70,779,111"/>
+<area shape="rect" id="node5" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="549,136,811,163"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="displayCommands.ClearObjects.doAction" name="displayCommands.ClearObjects.doAction">
+<area shape="rect" id="node2" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html#a8b89821e45d78b1168249c798c3c5756" title="turtleClasses.TurtleCollection.get\lCanvas" alt="" coords="299,5,530,46"/>
+<area shape="rect" id="node3" href="$d1/d07/classfrontend_1_1_s_logo_canvas.html#ab568d13de0b72b80b87728b7c3c73b20" title="frontend.SLogoCanvas.remove\lObjects" alt="" coords="305,70,525,111"/>
+<area shape="rect" id="node4" href="$d1/d07/classfrontend_1_1_s_logo_canvas.html#ab32d1e197727cf9bed0a9c5f634a2cf5" title="frontend.SLogoCanvas.get\lHolder" alt="" coords="579,70,771,111"/>
+</map>

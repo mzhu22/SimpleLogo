@@ -1,0 +1,5 @@
+<map id="turtleClasses.Turtle.changeImage" name="turtleClasses.Turtle.changeImage">
+<area shape="rect" id="node2" href="$da/d72/classdisplay_commands_1_1_set_shape.html#a3b6ba10639b5442c50a582b8aea76770" title="displayCommands.SetShape.do\lAction" alt="" coords="248,5,475,46"/>
+<area shape="rect" id="node3" href="$dc/d0b/classfrontend_1_1_concrete_features_1_1_choose_image.html#a1bf565a5c25190432e98ea73c63a7d3b" title="frontend.ConcreteFeatures.\lChooseImage.doAction" alt="" coords="263,70,460,111"/>
+<area shape="rect" id="node4" href="$d8/d89/classturtle_classes_1_1_turtle.html#ab7c5a000ffbe99644c2ed77db5d781cf" title="turtleClasses.Turtle.reset\lImage" alt="" coords="271,135,451,177"/>
+</map>

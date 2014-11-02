@@ -1,0 +1,5 @@
+<map id="turtleClasses.Turtle.move" name="turtleClasses.Turtle.move">
+<area shape="rect" id="node2" href="$da/deb/classfrontend_1_1_line_drawer.html#a6989f18991010fb1e13d2e451f2464f1" title="frontend.LineDrawer.draw" alt="" coords="237,5,421,32"/>
+<area shape="rect" id="node3" href="$da/deb/classfrontend_1_1_line_drawer.html#a815e10401e7bee5986e490aeb87b6c33" title="frontend.LineDrawer.makeLine" alt="" coords="469,5,685,32"/>
+<area shape="rect" id="node4" href="$d3/d0e/classfrontend_1_1_pen.html#a53a8026e193d2ea338c563eaa0abf5ee" title="frontend.Pen.drawLine" alt="" coords="734,5,898,32"/>
+</map>

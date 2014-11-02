@@ -1,0 +1,13 @@
+<map id="turtleClasses.TurtleCollection.setActiveTurtles" name="turtleClasses.TurtleCollection.setActiveTurtles">
+<area shape="rect" id="node2" href="$d6/d89/classfrontend_1_1_concrete_features_1_1_set_line_color.html#add708f64c58cef9f6a09b1eaa9431253" title="frontend.ConcreteFeatures.\lSetLineColor.action" alt="" coords="316,5,513,46"/>
+<area shape="rect" id="node3" href="$d4/d4a/classfrontend_1_1_concrete_features_1_1_change_line_width.html#adde04d20814309d03954f834f7bc9af0" title="frontend.ConcreteFeatures.\lChangeLineWidth.action" alt="" coords="316,70,513,111"/>
+<area shape="rect" id="node4" href="$d0/d72/classfrontend_1_1_concrete_features_1_1_reset.html#ab7b13b161309fd31ad8c3faeacec0986" title="frontend.ConcreteFeatures.\lReset.action" alt="" coords="316,135,513,177"/>
+<area shape="rect" id="node5" href="$d9/d2b/classdisplay_commands_1_1_tell.html#a47e19aa9c97125a95f06c67dc189fc53" title="displayCommands.Tell.doAction" alt="" coords="303,201,526,228"/>
+<area shape="rect" id="node6" href="$dc/d9a/classdisplay_commands_1_1_ask.html#a8b9d7e789a2cd29220b440ae03c70432" title="displayCommands.Ask.doAction" alt="" coords="301,252,528,279"/>
+<area shape="rect" id="node7" href="$d0/d3e/classfrontend_1_1_concrete_features_1_1_turtle_changer.html#a61a656e67b68f3aff1d55cad3cd823d6" title="frontend.ConcreteFeatures.\lTurtleChanger.doDropDownClickAction" alt="" coords="283,303,547,345"/>
+<area shape="rect" id="node8" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="307,369,522,410"/>
+<area shape="rect" id="node12" href="$d3/dc9/classfrontend_1_1_concrete_features_1_1_turtle_stats_window.html#ac10aeedb8611acaf30a7eab04d2a59db" title="frontend.ConcreteFeatures.\lTurtleStatsWindow.updatePane" alt="" coords="307,434,523,475"/>
+<area shape="rect" id="node9" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="627,303,824,345"/>
+<area shape="rect" id="node10" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="627,369,824,410"/>
+<area shape="rect" id="node11" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="595,435,856,461"/>
+</map>

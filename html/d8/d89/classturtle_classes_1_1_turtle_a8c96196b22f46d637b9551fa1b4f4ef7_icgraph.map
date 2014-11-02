@@ -1,0 +1,7 @@
+<map id="turtleClasses.Turtle.handleDirection" name="turtleClasses.Turtle.handleDirection">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#abe6e640dc9ac91a8dc2d88e24a4337cc" title="turtleClasses.Turtle.rotate" alt="" coords="245,64,432,91"/>
+<area shape="rect" id="node5" href="$d8/d89/classturtle_classes_1_1_turtle.html#aa759f24ff87f3272314528e985ada496" title="turtleClasses.Turtle.set\lDirection" alt="" coords="255,118,422,159"/>
+<area shape="rect" id="node3" href="$d3/d7b/classdisplay_commands_1_1_left.html#aead3279c90c12d534b3e7bc065fdfe0c" title="displayCommands.Left.doAction" alt="" coords="485,5,713,32"/>
+<area shape="rect" id="node4" href="$d6/d3d/classdisplay_commands_1_1_right.html#aa446276b20f723f51c31f70e28c93445" title="displayCommands.Right.do\lAction" alt="" coords="501,57,697,98"/>
+<area shape="rect" id="node6" href="$d6/d8f/classdisplay_commands_1_1_set_towards.html#a91f4f9fee7d7ad51b938afa3d8013611" title="displayCommands.SetTowards.do\lAction" alt="" coords="481,122,717,163"/>
+</map>

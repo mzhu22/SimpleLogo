@@ -1,0 +1,11 @@
+<map id="frontend.SLogoWorkspace" name="frontend.SLogoWorkspace">
+<area shape="rect" id="node2" href="$df/d0e/classfrontend_1_1_pane_updater.html" title="frontend.PaneUpdater" alt="" coords="843,300,1005,327"/>
+<area shape="rect" id="node23" href="$d4/dbc/classfrontend_1_1_translator.html" title="frontend.Translator" alt="" coords="853,592,995,619"/>
+<area shape="rect" id="node5" href="$d8/d89/classturtle_classes_1_1_turtle.html" title="turtleClasses.Turtle" alt="" coords="853,137,995,164"/>
+<area shape="rect" id="node10" href="$da/deb/classfrontend_1_1_line_drawer.html" title="frontend.LineDrawer" alt="" coords="1217,75,1367,101"/>
+<area shape="rect" id="node6" href="$d3/d0e/classfrontend_1_1_pen.html" title="frontend.Pen" alt="" coords="469,69,573,96"/>
+<area shape="rect" id="node26" href="$d1/d07/classfrontend_1_1_s_logo_canvas.html" title="frontend.SLogoCanvas" alt="" coords="438,363,605,389"/>
+<area shape="rect" id="node17" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html" title="turtleClasses.TurtleCollection" alt="" coords="419,760,624,787"/>
+<area shape="rect" id="node14" href="$d1/ded/classexpression_tree_1_1_history_collection.html" title="expressionTree.HistoryCollection" alt="" coords="810,643,1038,669"/>
+<area shape="rect" id="node21" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html" title="turtleClasses.TurtleMover" alt="" coords="833,760,1015,787"/>
+</map>

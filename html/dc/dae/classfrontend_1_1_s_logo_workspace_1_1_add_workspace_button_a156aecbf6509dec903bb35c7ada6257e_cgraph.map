@@ -1,0 +1,8 @@
+<map id="frontend.SLogoWorkspace.AddWorkspaceButton.action" name="frontend.SLogoWorkspace.AddWorkspaceButton.action">
+<area shape="rect" id="node2" href="$df/de4/classfrontend_1_1_s_logo_workspace.html#a80ce8f0c42c40fbb7ac2f94ba0d9ac68" title="frontend.SLogoWorkspace.create\lWorkspace" alt="" coords="257,5,490,46"/>
+<area shape="rect" id="node3" href="$df/de4/classfrontend_1_1_s_logo_workspace.html#afdbe19fcd31fb74f31efbea44ac0c24c" title="frontend.SLogoWorkspace.\lSLogoWorkspace" alt="" coords="277,70,469,111"/>
+<area shape="rect" id="node4" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html#aef78a61da5522d472e6c70b49e8e1b0d" title="turtleClasses.TurtleCollection.add\lTurtle" alt="" coords="539,37,773,78"/>
+<area shape="rect" id="node7" href="$d1/d07/classfrontend_1_1_s_logo_canvas.html#ab32d1e197727cf9bed0a9c5f634a2cf5" title="frontend.SLogoCanvas.get\lHolder" alt="" coords="560,102,752,143"/>
+<area shape="rect" id="node5" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html#a40bfa92a3800e4441e66c3c2964559f0" title="turtleClasses.TurtleCollection.check\lAndAddActiveTurtle" alt="" coords="822,37,1069,78"/>
+<area shape="rect" id="node6" href="$d8/d89/classturtle_classes_1_1_turtle.html#a2d2fbb81602870ad25869504ebc47a96" title="turtleClasses.Turtle.get\lIsActive" alt="" coords="1117,37,1285,78"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="turtleClasses.Turtle.goToCoord" name="turtleClasses.Turtle.goToCoord">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#a53d9176187343ac218a61f6fac465311" title="turtleClasses.Turtle.reset\lPosition" alt="" coords="230,34,410,75"/>
+<area shape="rect" id="node3" href="$d6/dc6/classdisplay_commands_1_1_clear_screen.html#a16dad5bd8da6feccf5189f224fa90ca8" title="displayCommands.ClearScreen.do\lAction" alt="" coords="459,5,701,46"/>
+<area shape="rect" id="node4" href="$d7/d1e/classdisplay_commands_1_1_home.html#af60bb4a9108d53104f7974dd6a6a2529" title="displayCommands.Home.doAction" alt="" coords="459,71,701,97"/>
+</map>

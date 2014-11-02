@@ -1,0 +1,4 @@
+<map id="displayCommands.ClearScreen.doAction" name="displayCommands.ClearScreen.doAction">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#a53d9176187343ac218a61f6fac465311" title="turtleClasses.Turtle.reset\lPosition" alt="" coords="297,5,477,46"/>
+<area shape="rect" id="node3" href="$d8/d89/classturtle_classes_1_1_turtle.html#a8bd726e933011431af1d19e7b963ef30" title="turtleClasses.Turtle.goTo\lCoord" alt="" coords="525,5,701,46"/>
+</map>

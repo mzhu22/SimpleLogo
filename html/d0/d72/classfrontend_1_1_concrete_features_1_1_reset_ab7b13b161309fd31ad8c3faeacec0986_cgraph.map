@@ -1,0 +1,10 @@
+<map id="frontend.ConcreteFeatures.Reset.action" name="frontend.ConcreteFeatures.Reset.action">
+<area shape="rect" id="node2" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html#a61f007615f0fd523dae94957f8022100" title="turtleClasses.TurtleCollection.set\lActiveTurtles" alt="" coords="251,34,480,75"/>
+<area shape="rect" id="node6" href="$d3/d0e/classfrontend_1_1_pen.html#a7b51bb8c3fd5081a403b802169cf3914" title="frontend.Pen.setLineColor" alt="" coords="272,100,459,127"/>
+<area shape="rect" id="node7" href="$d3/d0e/classfrontend_1_1_pen.html#ab49e5bce4b3a5c7532a395f9ce669944" title="frontend.Pen.setLineStyle" alt="" coords="272,151,459,177"/>
+<area shape="rect" id="node8" href="$d3/d0e/classfrontend_1_1_pen.html#a8a90b592552fe72196f66c7641bccb35" title="frontend.Pen.setLineWidth" alt="" coords="271,201,460,228"/>
+<area shape="rect" id="node9" href="$df/d0e/classfrontend_1_1_pane_updater.html#a5fcda115228f65df7abd8ec164ca67f9" title="frontend.PaneUpdater.updateAll" alt="" coords="252,252,479,279"/>
+<area shape="rect" id="node3" href="$d8/d89/classturtle_classes_1_1_turtle.html#a2d3828dbca854624cc75fca5aa65b4c5" title="turtleClasses.Turtle.set\lActive" alt="" coords="535,5,702,46"/>
+<area shape="rect" id="node5" href="$d8/d89/classturtle_classes_1_1_turtle.html#aff48aa8a8ca4bb8a7aa40743a1a944c4" title="turtleClasses.Turtle.getID" alt="" coords="528,71,709,97"/>
+<area shape="rect" id="node4" href="$d8/d89/classturtle_classes_1_1_turtle.html#abd769212afc56f042db3d4b5ee33790e" title="turtleClasses.Turtle.handle\lActiveOutline" alt="" coords="758,5,949,46"/>
+</map>

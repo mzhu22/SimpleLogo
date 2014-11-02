@@ -1,0 +1,17 @@
+<map id="turtleClasses.Turtle.handleActiveOutline" name="turtleClasses.Turtle.handleActiveOutline">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#a2d3828dbca854624cc75fca5aa65b4c5" title="turtleClasses.Turtle.set\lActive" alt="" coords="246,111,413,153"/>
+<area shape="rect" id="node3" href="$d8/d89/classturtle_classes_1_1_turtle.html#ab95a54f66d8824ececa5f3dd2394ac3a" title="turtleClasses.Turtle.toggle\lActive" alt="" coords="483,57,669,98"/>
+<area shape="rect" id="node4" href="$d8/d89/classturtle_classes_1_1_turtle.html#a1e1a7a5fffde6f8c7ce5cee72ad927b1" title="turtleClasses.Turtle.Turtle" alt="" coords="780,5,961,32"/>
+<area shape="rect" id="node5" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html#a61f007615f0fd523dae94957f8022100" title="turtleClasses.TurtleCollection.set\lActiveTurtles" alt="" coords="461,223,691,265"/>
+<area shape="rect" id="node6" href="$dc/d9a/classdisplay_commands_1_1_ask.html#a8b9d7e789a2cd29220b440ae03c70432" title="displayCommands.Ask.doAction" alt="" coords="757,56,984,83"/>
+<area shape="rect" id="node7" href="$d9/d2b/classdisplay_commands_1_1_tell.html#a47e19aa9c97125a95f06c67dc189fc53" title="displayCommands.Tell.doAction" alt="" coords="759,107,982,133"/>
+<area shape="rect" id="node8" href="$d4/d4a/classfrontend_1_1_concrete_features_1_1_change_line_width.html#adde04d20814309d03954f834f7bc9af0" title="frontend.ConcreteFeatures.\lChangeLineWidth.action" alt="" coords="772,158,969,199"/>
+<area shape="rect" id="node9" href="$d0/d72/classfrontend_1_1_concrete_features_1_1_reset.html#ab7b13b161309fd31ad8c3faeacec0986" title="frontend.ConcreteFeatures.\lReset.action" alt="" coords="772,223,969,265"/>
+<area shape="rect" id="node10" href="$d6/d89/classfrontend_1_1_concrete_features_1_1_set_line_color.html#add708f64c58cef9f6a09b1eaa9431253" title="frontend.ConcreteFeatures.\lSetLineColor.action" alt="" coords="772,289,969,330"/>
+<area shape="rect" id="node11" href="$d0/d3e/classfrontend_1_1_concrete_features_1_1_turtle_changer.html#a61a656e67b68f3aff1d55cad3cd823d6" title="frontend.ConcreteFeatures.\lTurtleChanger.doDropDownClickAction" alt="" coords="739,354,1003,395"/>
+<area shape="rect" id="node12" href="$d3/dc9/classfrontend_1_1_concrete_features_1_1_turtle_stats_window.html#ac10aeedb8611acaf30a7eab04d2a59db" title="frontend.ConcreteFeatures.\lTurtleStatsWindow.updatePane" alt="" coords="763,419,979,461"/>
+<area shape="rect" id="node13" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="763,485,978,526"/>
+<area shape="rect" id="node14" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="1083,419,1280,461"/>
+<area shape="rect" id="node15" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="1083,485,1280,526"/>
+<area shape="rect" id="node16" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="1051,551,1312,577"/>
+</map>

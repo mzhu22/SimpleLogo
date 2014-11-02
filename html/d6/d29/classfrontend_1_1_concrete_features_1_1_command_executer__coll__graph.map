@@ -1,0 +1,9 @@
+<map id="frontend.ConcreteFeatures.CommandExecuter" name="frontend.ConcreteFeatures.CommandExecuter">
+<area shape="rect" id="node2" href="$d8/d40/classfrontend_1_1_abstract_features_1_1_s_logo_text_box.html" title="frontend.AbstractFeatures.\lSLogoTextBox" alt="" coords="786,63,979,105"/>
+<area shape="rect" id="node3" href="$dc/db4/classfrontend_1_1_abstract_features_1_1_g_u_i_feature.html" title="frontend.AbstractFeatures.\lGUIFeature" alt="" coords="385,5,578,46"/>
+<area shape="rect" id="node5" href="$df/d0e/classfrontend_1_1_pane_updater.html" title="frontend.PaneUpdater" alt="" coords="801,139,964,165"/>
+<area shape="rect" id="node7" href="$d1/ded/classexpression_tree_1_1_history_collection.html" title="expressionTree.HistoryCollection" alt="" coords="769,200,997,227"/>
+<area shape="rect" id="node10" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html" title="turtleClasses.TurtleMover" alt="" coords="791,261,974,288"/>
+<area shape="rect" id="node11" href="$d4/d7e/classturtle_classes_1_1_turtle_collection.html" title="turtleClasses.TurtleCollection" alt="" coords="379,289,584,316"/>
+<area shape="rect" id="node16" href="$d4/dbc/classfrontend_1_1_translator.html" title="frontend.Translator" alt="" coords="811,340,954,367"/>
+</map>

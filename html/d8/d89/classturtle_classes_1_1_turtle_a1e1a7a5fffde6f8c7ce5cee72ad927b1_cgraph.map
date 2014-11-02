@@ -1,0 +1,6 @@
+<map id="turtleClasses.Turtle.Turtle" name="turtleClasses.Turtle.Turtle">
+<area shape="rect" id="node2" href="$d8/d89/classturtle_classes_1_1_turtle.html#abd769212afc56f042db3d4b5ee33790e" title="turtleClasses.Turtle.handle\lActiveOutline" alt="" coords="686,19,877,61"/>
+<area shape="rect" id="node3" href="$d8/d89/classturtle_classes_1_1_turtle.html#ab95a54f66d8824ececa5f3dd2394ac3a" title="turtleClasses.Turtle.toggle\lActive" alt="" coords="235,53,421,94"/>
+<area shape="rect" id="node4" href="$d8/d89/classturtle_classes_1_1_turtle.html#a2d3828dbca854624cc75fca5aa65b4c5" title="turtleClasses.Turtle.set\lActive" alt="" coords="470,78,637,119"/>
+<area shape="rect" id="node5" href="$d8/d89/classturtle_classes_1_1_turtle.html#a2d2fbb81602870ad25869504ebc47a96" title="turtleClasses.Turtle.get\lIsActive" alt="" coords="469,143,637,185"/>
+</map>

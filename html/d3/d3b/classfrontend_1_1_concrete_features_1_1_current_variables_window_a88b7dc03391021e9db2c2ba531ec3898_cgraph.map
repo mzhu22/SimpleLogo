@@ -1,0 +1,7 @@
+<map id="frontend.ConcreteFeatures.CurrentVariablesWindow.updatePane" name="frontend.ConcreteFeatures.CurrentVariablesWindow.updatePane">
+<area shape="rect" id="node2" href="$d4/d83/classexpression_tree_1_1_variable_node.html#ab796c0a24b78271ecf015e92481d035b" title="expressionTree.VariableNode.get\lValue" alt="" coords="310,5,541,46"/>
+<area shape="rect" id="node3" href="$de/d4e/classexpression_tree_1_1_variable_node_map.html#a4855134d1fd875836c2c9944ec2079f4" title="expressionTree.VariableNode\lMap.getVariable" alt="" coords="322,70,529,111"/>
+<area shape="rect" id="node5" href="$de/d4e/classexpression_tree_1_1_variable_node_map.html#afa5500d8a01c92260f32d787c802b802" title="expressionTree.VariableNode\lMap.getVariableNodeMap" alt="" coords="322,135,529,177"/>
+<area shape="rect" id="node6" href="$de/d4e/classexpression_tree_1_1_variable_node_map.html#a3084617a836630c5e2e01ca1ba78ecd2" title="expressionTree.VariableNode\lMap.keySet" alt="" coords="322,201,529,242"/>
+<area shape="rect" id="node4" href="$de/d4e/classexpression_tree_1_1_variable_node_map.html#aa39aa781cc2fe52784af8657407974ce" title="expressionTree.VariableNode\lMap.addVariable" alt="" coords="590,70,797,111"/>
+</map>

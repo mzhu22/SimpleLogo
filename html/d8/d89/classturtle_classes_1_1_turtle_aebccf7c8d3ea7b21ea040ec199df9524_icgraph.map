@@ -1,0 +1,13 @@
+<map id="turtleClasses.Turtle.getPen" name="turtleClasses.Turtle.getPen">
+<area shape="rect" id="node2" href="$dc/df4/classdisplay_commands_1_1_set_pen_size.html#af612c2ba19d026f02a56380edf37686a" title="displayCommands.SetPenSize.do\lAction" alt="" coords="253,5,491,46"/>
+<area shape="rect" id="node3" href="$d5/d95/classdisplay_commands_1_1_pen_up.html#ae5d81636996c2438d4951fedb81b0404" title="displayCommands.PenUp.do\lAction" alt="" coords="269,70,475,111"/>
+<area shape="rect" id="node4" href="$d7/d5b/classdisplay_commands_1_1_set_pen_color.html#adebba7ec6180d3c1e9a40088aebbd4bc" title="displayCommands.SetPenColor.do\lAction" alt="" coords="251,135,493,177"/>
+<area shape="rect" id="node5" href="$d6/dc9/classdisplay_commands_1_1_pen_down.html#aa2e7411c283573f5fbc3c1e3815e4c62" title="displayCommands.PenDown.do\lAction" alt="" coords="261,201,483,242"/>
+<area shape="rect" id="node6" href="$db/d1c/classfrontend_1_1_concrete_features_1_1_choose_line_style.html#ad358a27add1b656c5dd89713108fc39c" title="frontend.ConcreteFeatures.\lChooseLineStyle.doAction" alt="" coords="273,266,471,307"/>
+<area shape="rect" id="node7" href="$da/deb/classfrontend_1_1_line_drawer.html#a2810dbf0c438f8b25e458ffdd631eeb0" title="frontend.LineDrawer.Line\lDrawer" alt="" coords="282,331,462,373"/>
+<area shape="rect" id="node8" href="$dc/d69/classturtle_classes_1_1_turtle_snapshot.html#a15dec792db9c32413964d88bae094216" title="turtleClasses.TurtleSnapshot.update" alt="" coords="245,397,499,424"/>
+<area shape="rect" id="node9" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="547,390,762,431"/>
+<area shape="rect" id="node10" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="843,325,1040,366"/>
+<area shape="rect" id="node11" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="843,390,1040,431"/>
+<area shape="rect" id="node12" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="811,456,1072,483"/>
+</map>

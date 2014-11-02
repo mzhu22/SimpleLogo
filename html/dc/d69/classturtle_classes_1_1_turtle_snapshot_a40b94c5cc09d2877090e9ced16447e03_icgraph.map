@@ -1,0 +1,12 @@
+<map id="turtleClasses.TurtleSnapshot.getTurtleSnapshot" name="turtleClasses.TurtleSnapshot.getTurtleSnapshot">
+<area shape="rect" id="node2" href="$de/d5c/classturtle_queries_1_1_i_d.html#aa6b4cc7779724021820ca7739aeefbd0" title="turtleQueries.ID.evaluate" alt="" coords="315,5,496,32"/>
+<area shape="rect" id="node3" href="$db/dff/classturtle_queries_1_1_y_coordinate.html#a70c892565ea4f8ed3da178fda1c7e32c" title="turtleQueries.YCoordinate.evaluate" alt="" coords="283,56,527,83"/>
+<area shape="rect" id="node4" href="$dd/dc8/classturtle_queries_1_1_is_pen_down.html#a4b06744ee6848a4633e573aa7505d9f9" title="turtleQueries.IsPenDown.evaluate" alt="" coords="287,107,524,133"/>
+<area shape="rect" id="node5" href="$d9/d12/classturtle_queries_1_1_heading.html#aa0e95fea13c414b8bf4cdc10f4ba6134" title="turtleQueries.Heading.evaluate" alt="" coords="295,157,516,184"/>
+<area shape="rect" id="node6" href="$de/dc6/classturtle_queries_1_1_x_coordinate.html#afffa54d3bdc77f15330788b8de016198" title="turtleQueries.XCoordinate.evaluate" alt="" coords="283,208,528,235"/>
+<area shape="rect" id="node7" href="$da/dc2/classturtle_queries_1_1_is_showing.html#ae07f20b5292e17a48ec71737dbcad192" title="turtleQueries.IsShowing.evaluate" alt="" coords="290,259,521,285"/>
+<area shape="rect" id="node8" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="298,310,513,351"/>
+<area shape="rect" id="node9" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="608,245,805,286"/>
+<area shape="rect" id="node10" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="608,310,805,351"/>
+<area shape="rect" id="node11" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="576,376,837,403"/>
+</map>

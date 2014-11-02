@@ -1,0 +1,8 @@
+<map id="turtleClasses.Turtle.getDirection" name="turtleClasses.Turtle.getDirection">
+<area shape="rect" id="node2" href="$da/deb/classfrontend_1_1_line_drawer.html#a2810dbf0c438f8b25e458ffdd631eeb0" title="frontend.LineDrawer.Line\lDrawer" alt="" coords="258,11,438,53"/>
+<area shape="rect" id="node3" href="$dc/d69/classturtle_classes_1_1_turtle_snapshot.html#a15dec792db9c32413964d88bae094216" title="turtleClasses.TurtleSnapshot.update" alt="" coords="221,77,475,104"/>
+<area shape="rect" id="node4" href="$d3/d17/classturtle_classes_1_1_turtle_mover.html#a955db4be8fe596975332813b98a0cecf" title="turtleClasses.TurtleMover.start\lDrawing" alt="" coords="523,70,738,111"/>
+<area shape="rect" id="node5" href="$d8/dc1/classfrontend_1_1_concrete_features_1_1_command_executer.html#a14b9b724db30e6cc89f62304f7bf40b2" title="frontend.ConcreteFeatures.\lCommandExecuter.action" alt="" coords="819,5,1016,46"/>
+<area shape="rect" id="node6" href="$de/d9f/classfrontend_1_1_concrete_features_1_1_load_s_logo_file.html#aa491ddd476ad22ed21a358b21c01605f" title="frontend.ConcreteFeatures.\lLoadSLogoFile.action" alt="" coords="819,70,1016,111"/>
+<area shape="rect" id="node7" href="$d7/d78/classturtle_classes_1_1_turtle_key_handler.html#a7dfe582e767f31105e84278d26dbc4c1" title="turtleClasses.TurtleKeyHandler.handle" alt="" coords="787,136,1048,163"/>
+</map>
